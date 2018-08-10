@@ -1,12 +1,27 @@
 <template>
-  <div class="ds-container">
+  <component 
+    :is="type" 
+    class="ds-container">
     <slot />
-  </div>
+  </component>
 </template>
 
 <script>
+/**
+ * This component is used as a wrapper for the page's content
+ * @version 1.0.0
+ */
 export default {
-  name: 'DsContainer'
+  name: 'DsContainer',
+  props: {
+    /**
+     * The html element name used for the wrapper.
+     */
+    type: {
+      type: String,
+      default: 'div'
+    }
+  }
 }
 </script>
 

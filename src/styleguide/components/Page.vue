@@ -1,21 +1,16 @@
 <template>
   <div>
     <div v-html="description"/>
-    <div 
-      v-for="component in components" 
-      :key="component.name">
-      <h2>{{ component.name }}</h2>
-      <div>
-        <vuep :template="createTemplate(component)"/>
-      </div>
-    </div>
+    <component-doc 
+      v-for="component in components"
+      :key="component.name"
+      :component="component" />
   </div>
 </template>
 
 <script>
 import { componentsMap } from '../../system'
-import Vuep from 'vuep'
-import 'vuep/dist/vuep.css'
+import ComponentDoc from './ComponentDoc'
 
 export default {
   name: 'Page',
@@ -26,17 +21,12 @@ export default {
     }
   },
   components: {
-    Vuep
+    ComponentDoc
   },
   data() {
     return {
       description: '',
       components: []
-    }
-  },
-  methods: {
-    createTemplate(component) {
-      return component.__docs
     }
   },
   created() {
@@ -46,7 +36,6 @@ export default {
     this.description = mdFile
     if (componentsMap[folder]) {
       this.components = componentsMap[folder]
-      console.log(this.components)
     }
   }
 }

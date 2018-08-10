@@ -1,6 +1,6 @@
 // Defines contexts to require
 const context = require.context('.', true, /\.vue$/)
-const contextRaw = require.context(
+const contextMeta = require.context(
   '!../utils/jsdoc-loader?modules!.',
   true,
   /\.vue$/
@@ -10,14 +10,16 @@ const components = []
 const componentsMap = {}
 context.keys().forEach(key => {
   const c = context(key).default
+  const meta = contextMeta(key)
   const folder = key.split('/')[1]
-
-  console.log(contextRaw(key))
 
   if (!componentsMap[folder]) {
     componentsMap[folder] = []
   }
   componentsMap[folder].push({
+    ...meta,
+    name: c.name,
+    docs: c.__docs,
     component: c
   })
   components.push(c)
