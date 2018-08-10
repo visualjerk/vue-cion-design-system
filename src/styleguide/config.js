@@ -1,7 +1,11 @@
 export default {
   sections: [
     {
-      name: 'Introduction'
+      name: 'Introduction',
+      path: '/'
+    },
+    {
+      name: 'Design Tokens'
     },
     {
       name: 'Layout'

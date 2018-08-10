@@ -1,5 +1,6 @@
-// Defines contexts to require
+// Get components
 const context = require.context('.', true, /\.vue$/)
+// Get components meta info
 const contextMeta = require.context(
   '!../utils/jsdoc-loader?modules!.',
   true,

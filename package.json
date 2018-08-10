@@ -17,7 +17,6 @@
     "@vue/cli-plugin-eslint": "^3.0.0-rc.12",
     "@vue/cli-service": "^3.0.0-rc.12",
     "@vue/eslint-config-prettier": "^3.0.0-rc.12",
-    "@vuedoc/parser": "^1.4.0",
     "codemirror": "^5.39.2",
     "html-loader": "^0.5.5",
     "markdown": "^0.5.0",
