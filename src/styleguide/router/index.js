@@ -1,11 +1,12 @@
 import Vue from 'vue'
 import VueRouter from 'vue-router'
+
+import createUrl from '@@/utils/create-url'
+import { componentsMap } from '@@/system/components'
 import config from '../config'
 import PageWrapper from '../components/PageWrapper'
 import SectionPage from '../components/SectionPage'
 import ComponentPage from '../components/ComponentPage'
-import createUrl from '../../utils/create-url'
-import { componentsMap } from '../../system'
 
 Vue.use(VueRouter)
 

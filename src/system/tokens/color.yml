@@ -1,0 +1,134 @@
+#
+# COLOR TOKENS
+# Use these tokens to set a color.
+# For reference, see http://hslpicker.com/
+#
+# To make things a little simpler for your team,
+# utilize both global & local tokens for colors.
+#
+
+$orange: hsl(14, 100%, 53%);
+$yellow: hsl(48, 100%, 67%);
+$green: #4AA41E;
+$turquoise: $green;
+$blue: hsl(217, 71%, 53%);
+$purple: hsl(271, 100%, 71%);
+$red: hsl(12, 51%, 55%);
+$primary: $green;
+$link: $green;
+
+aliases:
+  black:
+    value: "0, 0%"
+  white:
+    value: "0, 0%"
+  green:
+    value: "100, 69%"
+  orange:
+    value: "14, 100%"
+  yellow:
+    value: "48, 100%"
+  blue:
+    value: "217, 71%"
+  purple:
+    value: "271, 100%"
+  red:
+    value: "12, 51%"
+
+props:
+  color_black:
+    value: "hsla({!black}, 4%, 1)"
+    category: color_group_1
+  color_black_bis:
+    value: "hsla({!black}, 7%, 1)"
+    category: color_group_1
+  color_black_ter:
+    value: "hsla({!black}, 14%, 1)"
+    category: color_group_1
+  color_grey_darker:
+    value: "hsla({!black}, 25%, 1)"
+    category: color_group_1
+  color_grey_dark:
+    value: "hsla({!black}, 34%, 1)"
+    category: color_group_1
+  color_grey:
+    value: "hsla({!black}, 48%, 1)"
+    category: color_group_1
+  color_grey_light:
+    value: "hsla({!black}, 71%, 1)"
+    category: color_group_1
+  color_grey_lighter:
+    value: "hsla({!black}, 86%, 1)"
+    category: color_group_1
+  color_white:
+    value: "hsla({!white}, 100%, 1)"
+    category: color_group_2
+  color_white_bis:
+    value: "hsla({!white}, 98%, 1)"
+    category: color_group_2
+  color_white_ter:
+    value: "hsla({!white}, 96%, 1)"
+    category: color_group_2
+  color_white_dar:
+    value: "hsla({!white}, 92%, 1)"
+    category: color_group_2
+  color_primary:
+    value: "hsla({!green}, 38%, 1)"
+    category: color_group_3
+  color_green:
+    value: "hsla({!green}, 38%, 1)"
+    category: color_group_3
+  color_green_bis:
+    value: "hsla({!green}, 42%, 1)"
+    category: color_group_3
+  color_green_ter:
+    value: "hsla({!green}, 46%, 1)"
+    category: color_group_3
+  color_blue:
+    value: "hsla({!blue}, 53%, 1)"
+    category: color_group_4
+  color_blue_bis:
+    value: "hsla({!blue}, 57%, 1)"
+    category: color_group_4
+  color_blue_ter:
+    value: "hsla({!blue}, 61%, 1)"
+    category: color_group_4
+  color_red:
+    value: "hsla({!red},55%, 1)"
+    category: color_group_4
+  color_red_bis:
+    value: "hsla({!red}, 59%, 1)"
+    category: color_group_4
+  color_red_ter:
+    value: "hsla({!red}, 63%, 1)"
+    category: color_group_4
+  color_yellow:
+    value: "hsla({!yellow},67%, 1)"
+    category: color_group_4
+  color_yellow_bis:
+    value: "hsla({!yellow}, 71%, 1)"
+    category: color_group_4
+  color_yellow_ter:
+    value: "hsla({!yellow}, 75%, 1)"
+    category: color_group_4
+  color_orange:
+    value: "hsla({!orange}, 53%, 1)"
+    category: color_group_5
+  color_orange_bis:
+    value: "hsla({!orange}, 57%, 1)"
+    category: color_group_5
+  color_orange_ter:
+    value: "hsla({!orange}, 61%, 1)"
+    category: color_group_5
+  color_purple:
+    value: "hsla({!purple},71%, 1)"
+    category: color_group_5
+  color_purple_bis:
+    value: "hsla({!purple}, 75%, 1)"
+    category: color_group_5
+  color_purple_ter:
+    value: "hsla({!purple}, 79%, 1)"
+    category: color_group_5
+global:
+  type: color
+  category: color

@@ -6,6 +6,8 @@ node_modules
 .env.local
 .env.*.local
 
+/src/system/assets/tokens
+
 # Log files
 npm-debug.log*
 yarn-debug.log*

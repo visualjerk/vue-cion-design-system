@@ -1,9 +1,12 @@
+const path = require('path')
+
 // config at your vue.config.js
 module.exports = {
   configureWebpack: {
     resolve: {
       alias: {
-        vue$: 'vue/dist/vue.common'
+        vue$: 'vue/dist/vue.common',
+        '@@': path.resolve(__dirname, './src')
       }
     },
     module: {

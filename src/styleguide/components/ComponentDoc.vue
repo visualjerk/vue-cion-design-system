@@ -78,9 +78,6 @@ export default {
     createTemplate(component) {
       return component.docs
     }
-  },
-  created() {
-    console.log(this.component)
   }
 }
 </script>
