@@ -1,5 +1,3 @@
 # Design Tokens
 
-<ds-container>
-  Test
-</ds-container>
+<color-tokens />
