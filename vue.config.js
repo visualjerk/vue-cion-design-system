@@ -12,20 +12,6 @@ module.exports = {
     module: {
       rules: [
         {
-          test: /\.md$/,
-          use: [
-            {
-              loader: 'html-loader'
-            },
-            {
-              loader: 'markdown-loader',
-              options: {
-                /* your options here */
-              }
-            }
-          ]
-        },
-        {
           resourceQuery: /blockType=docs/,
           loader: require.resolve('./src/utils/docs-loader.js')
         }
@@ -38,6 +24,18 @@ module.exports = {
       .use('eslint-loader')
       .options({
         fix: true
+      })
+
+    config.module
+      .rule('md')
+      .test(/\.md/)
+      .use('vue-loader')
+      .loader('vue-loader')
+      .end()
+      .use('vue-markdown-loader')
+      .loader('vue-markdown-loader/lib/markdown-compiler')
+      .options({
+        raw: true
       })
   }
 }

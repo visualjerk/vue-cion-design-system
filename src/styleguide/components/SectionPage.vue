@@ -1,6 +1,9 @@
 <template>
   <div>
-    <div v-html="description"/>
+    <div 
+      v-if="description" 
+      v-html="description"/>
+    <description v-else />
     <component-item
       v-if="components" 
       v-for="component in components"
@@ -30,14 +33,14 @@ export default {
   },
   data() {
     return {
-      description: `<h1>${this.section.name}</h1>`
+      description: null
     }
   },
   created() {
     const name = this.section.name.replace(' ', '')
     try {
-      const mdFile = require(`../docs/${name}.md`)
-      this.description = mdFile
+      const mdFile = require(`../docs/${name}.md`).default
+      this.$options.components.Description = mdFile
     } catch (err) {
       this.description = `<h1>${this.section.name}</h1>`
     }
