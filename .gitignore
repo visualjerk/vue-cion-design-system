@@ -6,7 +6,7 @@ node_modules
 .env.local
 .env.*.local
 
-/src/system/assets/tokens
+/src/system/tokens/generated
 
 # Log files
 npm-debug.log*

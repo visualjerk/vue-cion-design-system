@@ -42,8 +42,8 @@ export default {
     if (this.section.requiredComponents) {
       this.section.requiredComponents.forEach(component => {
         try {
-          const cFile = require(`./${component}`)
-          requiredComponents[component] = cFile.default
+          const cFile = require(`./${component}`).default
+          requiredComponents[cFile.name] = cFile
         } catch (err) {
           console.error('could not get required component', err)
         }
@@ -51,9 +51,9 @@ export default {
     }
 
     try {
-      const mdFile = require(`../docs/${name}.md`)
-      mdFile.default.components = requiredComponents
-      this.$options.components.SectionDescription = mdFile.default
+      const mdFile = require(`../docs/${name}.md`).default
+      mdFile.components = requiredComponents
+      this.$options.components.SectionDescription = mdFile
     } catch (err) {
       this.description = `<h1>${this.section.name}</h1>`
     }

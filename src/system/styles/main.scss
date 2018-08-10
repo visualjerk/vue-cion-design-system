@@ -1,0 +1,13 @@
+/* Main Styles
+ *
+ * Include this only once in your outermost component (ex. App.vue)
+ *
+--------------------------------------------- */
+
+@import "./styles";
+@import "./fonts/lato";
+
+html, body {
+  font-size: $font-size-body;
+  font-family: $font-family-text;
+}

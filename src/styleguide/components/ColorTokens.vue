@@ -9,3 +9,9 @@ export default {
   name: 'ColorTokens'
 }
 </script>
+
+<style lang="scss" scoped>
+h2 {
+  color: $color-blue-bis;
+}
+</style>

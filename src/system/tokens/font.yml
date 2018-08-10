@@ -5,9 +5,9 @@
 
 props:
   font_family_heading:
-    value: "'LatoWeb', 'Roboto', 'Droid Sans', 'Helvetica Neue', 'Helvetica', 'Arial', sans-serif"
+    value: "'LatoWeb', sans-serif"
   font_family_text:
-    value: "'LatoWeb', 'Roboto', 'Droid Sans', 'Helvetica Neue', 'Helvetica', 'Arial', sans-serif"
+    value: "'LatoWeb', sans-serif"
   font_weight_bold:
     value: "600"
   font_weight_regular:

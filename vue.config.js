@@ -2,6 +2,13 @@ const path = require('path')
 
 // config at your vue.config.js
 module.exports = {
+  css: {
+    loaderOptions: {
+      sass: {
+        data: `@import "@@/system/styles/styles.scss";`
+      }
+    }
+  },
   configureWebpack: {
     resolve: {
       alias: {

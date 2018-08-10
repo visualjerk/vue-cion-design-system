@@ -1,7 +1,9 @@
-import Components from './components'
+import components from './components'
+import tokens from './tokens'
 
 export default {
   install(Vue) {
-    Vue.use(Components)
+    Vue.use(components)
+    Vue.use(tokens)
   }
 }
