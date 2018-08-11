@@ -8,7 +8,7 @@
 
 <script>
 /**
- * This component is used as a wrapper for the page's content
+ * This component is used as a wrapper for the page's content.
  * @version 1.0.0
  */
 export default {

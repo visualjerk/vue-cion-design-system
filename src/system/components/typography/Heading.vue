@@ -31,7 +31,7 @@ export default {
     },
     /**
      * The color used for the heading.
-     * `default, primary`
+     * `default, primary, inverse`
      */
     color: {
       type: String,
@@ -80,15 +80,7 @@ h6 {
   font-size: $font-size-small;
   font-weight: $font-weight-regular;
 }
-.default {
-  color: $text-color-default;
-}
-.primary {
-  color: $text-color-primary;
-}
-.inverse {
-  color: $text-color-inverse;
-}
+@include text-colors;
 </style>
 
 <docs>

@@ -1,0 +1,83 @@
+/* COLOR MIXINS
+--------------------------------------------- */
+
+@mixin text-colors {
+  .default {
+    color: $text-color-default;
+  }
+  .light {
+    color: $text-color-light;
+  }
+  .lighter {
+    color: $text-color-lighter;
+  }
+  .primary {
+    color: $text-color-primary;
+  }
+  .inverse {
+    color: $text-color-inverse;
+  }
+  .success {
+    color: $text-color-success;
+  }
+  .warning {
+    color: $text-color-warning;
+  }
+  .error {
+    color: $text-color-error;
+  }
+}
+
+@mixin background-colors {
+  .background-default {
+    background-color: $background-color-default;
+  }
+  .background-light {
+    background-color: $background-color-light;
+  }
+  .background-lighter {
+    background-color: $background-color-lighter;
+  }
+  .background-dark {
+    background-color: $background-color-dark;
+  }
+  .background-primary {
+    background-color: $background-color-primary;
+  }
+  .background-primary {
+    background-color: $background-color-primary;
+  }
+  .background-success {
+    background-color: $background-color-success;
+  }
+  .background-warning {
+    background-color: $background-color-warning;
+  }
+  .background-error {
+    background-color: $background-color-error;
+  }
+}
+
+@mixin border-colors {
+  .border-default {
+    border-color: $border-color-default;
+  }
+  .border-light {
+    border-color: $border-color-light;
+  }
+  .border-active {
+    border-color: $border-color-active;
+  }
+  .border-primary {
+    border-color: $border-color-primary;
+  }
+  .border-success {
+    border-color: $border-color-success;
+  }
+  .border-warning {
+    border-color: $border-color-warning;
+  }
+  .border-error {
+    border-color: $border-color-error;
+  }
+}

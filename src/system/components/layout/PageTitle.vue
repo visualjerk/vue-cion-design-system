@@ -11,7 +11,7 @@
 
 <script>
 /**
- * This component is used as the title of a page or section.
+ * This component is used as the title of a page.
  * @version 1.0.0
  */
 export default {

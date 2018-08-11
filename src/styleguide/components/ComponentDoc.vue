@@ -1,6 +1,6 @@
 <template>
   <div>
-    <ds-page-title :heading="component.name" />
+    <ds-page-title :heading="component.name | componentName" />
     <div v-if="component.tags">
       <span
         v-for="(tagGroup, name) in component.tags"
@@ -32,7 +32,14 @@
             :key="name">
             <td>{{ name }}<span v-if="prop.required">*</span></td>
             <td>{{ prop.type.name }}</td>
-            <td>{{ prop.defaultValue.value }}</td>
+            <td>
+              <span v-if="prop.defaultValue.func">
+                Function()
+              </span>
+              <span v-else>
+                {{ prop.defaultValue.value }}
+              </span>
+            </td>
             <td>{{ prop.description }}</td>
           </tr>
         </tbody>
@@ -81,3 +88,25 @@ export default {
   }
 }
 </script>
+
+<style lang="scss">
+.vuep {
+  display: flex;
+  height: auto;
+  font-family: inherit;
+  flex-direction: column;
+}
+
+.vuep-editor {
+  width: auto;
+  margin-right: 0;
+  margin-bottom: $space-small;
+}
+
+.vuep-preview {
+  width: auto;
+  border-radius: 0;
+  border: $border-size-default solid $border-color-light;
+  padding: $space-base;
+}
+</style>

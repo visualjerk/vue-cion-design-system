@@ -1,7 +1,7 @@
 <template>
   <li>
     <router-link :to="{ name: route.name }">
-      {{ route.name }}
+      {{ route.name | componentName }}
     </router-link>
     <ul v-if="route.children && route.children.length">
       <navigation-item 
