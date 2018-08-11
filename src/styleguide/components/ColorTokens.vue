@@ -1,40 +1,53 @@
 <template>
   <div>
-    <h2>Color Tokens</h2>
     <div
       v-for="(group, key) in colorGroups"
       :key="key">
       <h3>{{ group.description }}</h3>
-      <div 
-        v-for="color in tokenMap[key]" 
-        :key="color.name">
-        <div :style="{ backgroundColor: color.value, height: '30px' }" />
-        {{ color.scss }}
-      </div>
+      <table>
+        <thead>
+          <tr>
+            <th>Token</th>
+            <th>Example</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr
+            v-for="color in tokenMap[key]" 
+            :key="color.name">
+            <td>{{ color.scss }}</td>
+            <td>
+              <color-token :color="color" />
+            </td>
+          </tr>
+        </tbody>
+      </table>
     </div>
   </div>
 </template>
 
 <script>
+import ColorToken from './ColorToken'
+
 export default {
   name: 'ColorTokens',
+  components: {
+    ColorToken
+  },
   data() {
     return {
       colorGroups: {
-        colorGroup1: {
-          description: 'First colors'
+        textColor: {
+          description: 'Text Color'
         },
-        colorGroup2: {
-          description: 'Second colors'
+        backgroundColor: {
+          description: 'Background Color'
         },
-        colorGroup3: {
-          description: 'Third colors'
+        borderColor: {
+          description: 'Border Color'
         },
-        colorGroup4: {
-          description: '4th colors'
-        },
-        colorGroup5: {
-          description: '5th colors'
+        color: {
+          description: 'Base Color'
         }
       }
     }

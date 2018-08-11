@@ -1,5 +1,6 @@
 <template>
   <div>
+    <h1>{{ section.name }}</h1>
     <div 
       v-if="description" 
       v-html="description"/>

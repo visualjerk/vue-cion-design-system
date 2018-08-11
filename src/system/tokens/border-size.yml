@@ -1,0 +1,11 @@
+#
+# BORDER RADIUS TOKENS
+# Use these tokens to change border-radius size.
+#
+
+props:
+  border_size_default:
+    value: "1px"
+global:
+  type: number
+  category: border-size

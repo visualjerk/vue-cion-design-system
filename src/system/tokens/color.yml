@@ -7,25 +7,15 @@
 # utilize both global & local tokens for colors.
 #
 
-$orange: hsl(14, 100%, 53%);
-$yellow: hsl(48, 100%, 67%);
-$green: #4AA41E;
-$turquoise: $green;
-$blue: hsl(217, 71%, 53%);
-$purple: hsl(271, 100%, 71%);
-$red: hsl(12, 51%, 55%);
-$primary: $green;
-$link: $green;
-
 aliases:
-  black:
+  neutral:
     value: "0, 0%"
   white:
     value: "0, 0%"
   green:
     value: "100, 69%"
   orange:
-    value: "14, 100%"
+    value: "28, 70%"
   yellow:
     value: "48, 100%"
   blue:
@@ -33,102 +23,188 @@ aliases:
   purple:
     value: "271, 100%"
   red:
-    value: "12, 51%"
+    value: "3, 60%"
 
 props:
-  color_black:
-    value: "hsla({!black}, 4%, 1)"
-    category: color_group_1
-  color_black_bis:
-    value: "hsla({!black}, 7%, 1)"
-    category: color_group_1
-  color_black_ter:
-    value: "hsla({!black}, 14%, 1)"
-    category: color_group_1
-  color_grey_darker:
-    value: "hsla({!black}, 25%, 1)"
-    category: color_group_1
-  color_grey_dark:
-    value: "hsla({!black}, 34%, 1)"
-    category: color_group_1
-  color_grey:
-    value: "hsla({!black}, 48%, 1)"
-    category: color_group_1
-  color_grey_light:
-    value: "hsla({!black}, 71%, 1)"
-    category: color_group_1
-  color_grey_lighter:
-    value: "hsla({!black}, 86%, 1)"
-    category: color_group_1
-  color_white:
-    value: "hsla({!white}, 100%, 1)"
-    category: color_group_2
-  color_white_bis:
-    value: "hsla({!white}, 98%, 1)"
-    category: color_group_2
-  color_white_ter:
-    value: "hsla({!white}, 96%, 1)"
-    category: color_group_2
-  color_white_dar:
-    value: "hsla({!white}, 92%, 1)"
-    category: color_group_2
-  color_primary:
-    value: "hsla({!green}, 38%, 1)"
-    category: color_group_3
-  color_green:
-    value: "hsla({!green}, 38%, 1)"
-    category: color_group_3
-  color_green_bis:
-    value: "hsla({!green}, 42%, 1)"
-    category: color_group_3
-  color_green_ter:
-    value: "hsla({!green}, 46%, 1)"
-    category: color_group_3
-  color_blue:
-    value: "hsla({!blue}, 53%, 1)"
-    category: color_group_4
-  color_blue_bis:
-    value: "hsla({!blue}, 57%, 1)"
-    category: color_group_4
-  color_blue_ter:
-    value: "hsla({!blue}, 61%, 1)"
-    category: color_group_4
-  color_red:
-    value: "hsla({!red},55%, 1)"
-    category: color_group_4
-  color_red_bis:
-    value: "hsla({!red}, 59%, 1)"
-    category: color_group_4
-  color_red_ter:
-    value: "hsla({!red}, 63%, 1)"
-    category: color_group_4
-  color_yellow:
-    value: "hsla({!yellow},67%, 1)"
-    category: color_group_4
-  color_yellow_bis:
-    value: "hsla({!yellow}, 71%, 1)"
-    category: color_group_4
-  color_yellow_ter:
-    value: "hsla({!yellow}, 75%, 1)"
-    category: color_group_4
-  color_orange:
-    value: "hsla({!orange}, 53%, 1)"
-    category: color_group_5
-  color_orange_bis:
-    value: "hsla({!orange}, 57%, 1)"
-    category: color_group_5
-  color_orange_ter:
-    value: "hsla({!orange}, 61%, 1)"
-    category: color_group_5
-  color_purple:
-    value: "hsla({!purple},71%, 1)"
-    category: color_group_5
-  color_purple_bis:
-    value: "hsla({!purple}, 75%, 1)"
-    category: color_group_5
-  color_purple_ter:
-    value: "hsla({!purple}, 79%, 1)"
-    category: color_group_5
+  # Basic Colors
+  - name: color-black
+    value: &color-black "hsla({!neutral}, 16%, 1)"
+
+  - name: color-neutral
+    value: &color-neutral "hsla({!neutral}, 30%, 1)"
+  - name: color-neutral-10
+    value: &color-neutral-10 "hsla({!neutral}, 45%, 1)"
+  - name: color-neutral-20
+    value: &color-neutral-20 "hsla({!neutral}, 60%, 1)"
+  - name: color-neutral-30
+    value: &color-neutral-30 "hsla({!neutral}, 70%, 1)"
+  - name: color-neutral-40
+    value: &color-neutral-40 "hsla({!neutral}, 80%, 1)"
+  - name: color-neutral-50
+    value: &color-neutral-50 "hsla({!neutral}, 90%, 1)"
+  - name: color-neutral-60
+    value: &color-neutral-60 "hsla({!neutral}, 94%, 1)"
+  - name: color-neutral-70
+    value: &color-neutral-70 "hsla({!neutral}, 96%, 1)"
+  - name: color-neutral-80
+    value: &color-neutral-80 "hsla({!neutral}, 98%, 1)"
+
+  - name: color-white
+    value: &color-white "hsla({!white}, 100%, 1)"
+
+  - name: color-green
+    value: &color-green "hsla({!green}, 40%, 1)"
+  - name: color-green-light
+    value: &color-green-light "hsla({!green}, 46%, 1)"
+
+  - name: color-blue
+    value: &color-blue "hsla({!blue}, 46%, 1)"
+  - name: color-blue-light
+    value: &color-blue-light "hsla({!blue}, 54%, 1)"
+
+  - name: color-purple
+    value: &color-purple "hsla({!purple}, 50%, 1)"
+  - name: color-purple-light
+    value: &color-purple-light "hsla({!purple}, 56%, 1)"
+
+  - name: color-red
+    value: &color-red "hsla({!red}, 50%, 1)"
+  - name: color-red-light
+    value: &color-red-light "hsla({!red}, 56%, 1)"
+
+  - name: color-orange
+    value: &color-orange "hsla({!orange}, 50%, 1)"
+  - name: color-orange-light
+    value: &color-orange-light "hsla({!orange}, 56%, 1)"
+
+  - name: color-yellow
+    value: &color-yellow "hsla({!yellow}, 48%, 1)"
+  - name: color-yellow-light
+    value: &color-yellow-light "hsla({!yellow}, 52%, 1)"
+
+  # Text Colors
+  - name: text-color-default
+    value: *color-neutral
+    category: text-color
+
+  - name: text-color-light
+    value: *color-neutral-10
+    category: text-color
+
+  - name: text-color-lighter
+    value: *color-neutral-30
+    category: text-color
+
+  - name: text-color-disabled
+    value: *color-neutral-30
+    category: text-color
+
+  - name: text-color-inverse
+    value: *color-neutral-80
+    category: text-color
+
+  - name: text-color-link
+    value: *color-blue
+    category: text-color
+
+  - name: text-color-link-active
+    value: *color-blue-light
+    category: text-color
+
+  - name: text-color-primary
+    value: *color-blue
+    category: text-color
+
+  - name: text-color-success
+    value: *color-green
+    category: text-color
+
+  - name: text-color-warning
+    value: *color-orange
+    category: text-color
+
+  - name: text-color-error
+    value: *color-red
+    category: text-color
+
+  # Background Colors
+  - name: background-color-default
+    value: *color-white
+    category: background-color
+
+  - name: background-color-light
+    value: *color-neutral-70
+    category: background-color
+
+  - name: background-color-lighter
+    value: *color-neutral-80
+    category: background-color
+
+  - name: background-color-dark
+    value: *color-neutral
+    category: background-color
+
+  - name: background-color-primary
+    value: *color-blue
+    category: background-color
+
+  - name: background-color-primary-active
+    value: *color-blue-light
+    category: background-color
+
+  - name: background-color-success
+    value: *color-green
+    category: background-color
+
+  - name: background-color-success-hover
+    value: *color-green-light
+    category: background-color
+
+  - name: background-color-warning
+    value: *color-orange
+    category: background-color
+
+  - name: background-color-warning-active
+    value: *color-orange-light
+    category: background-color
+
+  - name: background-color-error
+    value: *color-red
+    category: background-color
+
+  - name: background-color-error-active
+    value: *color-red-light
+    category: background-color
+
+  # Border Colors
+  - name: border-color-default
+    value: *color-neutral-30
+    category: border-color
+
+  - name: border-color-light
+    value: *color-neutral-40
+    category: border-color
+
+  - name: border-color-active
+    value: *color-blue
+    category: border-color
+
+  - name: border-color-primary
+    value: *color-blue
+    category: border-color
+
+  - name: border-color-success
+    value: *color-green
+    category: border-color
+
+  - name: border-color-warning
+    value: *color-orange
+    category: border-color
+
+  - name: border-color-error
+    value: *color-red
+    category: border-color
+
 global:
   type: color
   category: color

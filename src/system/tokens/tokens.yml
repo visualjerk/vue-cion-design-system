@@ -13,6 +13,7 @@ imports:
   - ./media-query.yml
   - ./box-shadow.yml
   - ./letter-spacing.yml
+  - ./border-size.yml
   - ./border-radius.yml
   - ./spacing.yml
   - ./line-height.yml

@@ -4,6 +4,12 @@
 #
 
 props:
+  height_xlarge:
+    value: "60px"
+  height_large:
+    value: "50px"
+  height_base:
+    value: "42px"
   height_footer:
     value: "64px"
   tappable_square:
