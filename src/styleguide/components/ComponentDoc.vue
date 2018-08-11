@@ -1,6 +1,6 @@
 <template>
   <div>
-    <h1>{{ component.name }}</h1>
+    <ds-page-title :heading="component.name" />
     <div v-if="component.tags">
       <span
         v-for="(tagGroup, name) in component.tags"

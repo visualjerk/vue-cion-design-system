@@ -3,7 +3,7 @@
     <div
       v-for="(group, key) in colorGroups"
       :key="key">
-      <h3>{{ group.description }}</h3>
+      <ds-heading type="h3">{{ group.description }}</ds-heading>
       <table>
         <thead>
           <tr>

@@ -10,6 +10,9 @@ export default {
     },
     {
       name: 'Layout'
+    },
+    {
+      name: 'Typography'
     }
   ]
 }

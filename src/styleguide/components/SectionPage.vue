@@ -1,10 +1,7 @@
 <template>
   <div>
-    <h1>{{ section.name }}</h1>
-    <div 
-      v-if="description" 
-      v-html="description"/>
-    <section-description v-else />
+    <ds-page-title :heading="section.name" />
+    <section-description v-if="hasDescription" />
     <component-item
       v-if="components" 
       v-for="component in components"
@@ -33,7 +30,7 @@ export default {
   },
   data() {
     return {
-      description: null
+      hasDescription: true
     }
   },
   created() {
@@ -56,7 +53,7 @@ export default {
       mdFile.components = requiredComponents
       this.$options.components.SectionDescription = mdFile
     } catch (err) {
-      this.description = `<h1>${this.section.name}</h1>`
+      this.hasDescription = false
     }
   }
 }
