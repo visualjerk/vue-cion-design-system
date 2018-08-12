@@ -37,5 +37,7 @@ export default {
 .navigation {
   background-color: $background-color-lighter;
   padding: $space-base;
+  min-height: 100vh;
+  height: 100%;
 }
 </style>
