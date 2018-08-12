@@ -1,6 +1,6 @@
 <template>
   <component 
-    :is="type" 
+    :is="tag"
     class="page-title">
     <ds-container>
       <ds-heading :color="color">
@@ -41,7 +41,7 @@ export default {
     /**
      * The html element name used for the title.
      */
-    type: {
+    tag: {
       type: String,
       default: 'header'
     }

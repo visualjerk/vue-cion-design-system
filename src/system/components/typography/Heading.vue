@@ -1,6 +1,6 @@
 <template>
   <component 
-    :is="type" 
+    :is="tag"
     class="heading"
     :class="color">
     <slot />
@@ -22,7 +22,7 @@ export default {
      * The heading type used for the heading.
      * `h1, h2, h3, h4, h5, h6`
      */
-    type: {
+    tag: {
       type: String,
       default: 'h1',
       validator: value => {
@@ -88,11 +88,11 @@ h6 {
     <div>
       <ds-heading>The quick brown fox</ds-heading>
       <ds-heading color="primary">The quick brown fox</ds-heading>
-      <ds-heading type="h2">The quick brown fox</ds-heading>
-      <ds-heading type="h3">The quick brown fox</ds-heading>
-      <ds-heading type="h4">The quick brown fox</ds-heading>
-      <ds-heading type="h5">The quick brown fox</ds-heading>
-      <ds-heading type="h6">The quick brown fox</ds-heading>
+      <ds-heading tag="h2">The quick brown fox</ds-heading>
+      <ds-heading tag="h3">The quick brown fox</ds-heading>
+      <ds-heading tag="h4">The quick brown fox</ds-heading>
+      <ds-heading tag="h5">The quick brown fox</ds-heading>
+      <ds-heading tag="h6">The quick brown fox</ds-heading>
     </div>
   </template>
   <script></script>

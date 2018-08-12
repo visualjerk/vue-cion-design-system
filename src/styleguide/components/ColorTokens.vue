@@ -13,7 +13,7 @@
         </thead>
         <tbody>
           <tr
-            v-for="color in tokenMap[key]" 
+            v-for="color in $tokenMap[key]"
             :key="color.name">
             <td>{{ color.scss }}</td>
             <td>

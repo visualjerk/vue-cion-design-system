@@ -1,6 +1,6 @@
 <template>
   <component 
-    :is="type" 
+    :is="tag"
     class="text"
     :class="`${color}${bold ? ' bold' : ''}`">
     <slot />
@@ -20,7 +20,7 @@ export default {
     /**
      * The html element name used for the text.
      */
-    type: {
+    tag: {
       type: String,
       default() {
         return this.$parent.$options._componentTag ===

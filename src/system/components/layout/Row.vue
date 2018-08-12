@@ -1,18 +1,18 @@
 <template>
   <component 
     :is="tag"
-    class="container">
+    class="row">
     <slot />
   </component>
 </template>
 
 <script>
 /**
- * This component is used as a wrapper for the page's content.
+ * Used in combination with the col component to create flexible layouts.
  * @version 1.0.0
  */
 export default {
-  name: 'DsContainer',
+  name: 'DsRow',
   props: {
     /**
      * The html element name used for the wrapper.
@@ -26,26 +26,19 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-.container {
-  max-width: 1000px;
-  padding: 0 $space-small;
-  margin: 0 auto;
-
-  @media #{$media-query-medium} {
-    padding: 0 $space-base;
-  }
+.row {
+  display: flex;
+  flex-wrap: wrap;
 }
 </style>
 
 <docs>
   <template>
     <div>
-      <ds-container>
-        I am contained
-      </ds-container>
-      <ds-container>
-        I am contained as well
-      </ds-container>
+      <ds-row>
+        <ds-col>row 1</ds-col>
+        <ds-col>row 2</ds-col>
+      </ds-row>
     </div>
   </template>
   <script></script>
