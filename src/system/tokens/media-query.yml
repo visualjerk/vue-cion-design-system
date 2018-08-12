@@ -15,7 +15,6 @@ aliases:
   xl:
     value: &xl 1200
 
-
 props:
   - name: xs
     value: *xs

@@ -1,6 +1,7 @@
 <template>
   <component 
     :is="tag"
+    :style="styles"
     class="row">
     <slot />
   </component>
@@ -13,13 +14,51 @@
  */
 export default {
   name: 'DsRow',
+  provide() {
+    return {
+      parentRow: this
+    }
+  },
   props: {
+    /**
+     * The default gutter size for the columns.
+     */
+    gutter: {
+      type: [Number, String, Object],
+      default: 0
+    },
+    /**
+     * The default width for the columns.
+     */
+    width: {
+      type: [String, Number, Object],
+      default: 1
+    },
     /**
      * The html element name used for the wrapper.
      */
     tag: {
       type: String,
       default: 'div'
+    }
+  },
+  computed: {
+    styles() {
+      const gutterStyle = this.gutter
+        ? this.$getResponsiveStyles(this.gutter, this.parseGutter)
+        : {}
+      return {
+        ...gutterStyle
+      }
+    }
+  },
+  methods: {
+    parseGutter(gutter) {
+      const realGutter = this.$getSpace(gutter)
+      return {
+        marginLeft: `-${realGutter / 2}px`,
+        marginRight: `-${realGutter / 2}px`
+      }
     }
   }
 }

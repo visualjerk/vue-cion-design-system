@@ -3,21 +3,60 @@
 # Use these tokens to set padding, margin and position coordinates.
 #
 
+aliases:
+  xx-large:
+    value: &xx-large 128
+  x-large:
+    value: &x-large 64
+  large:
+    value: &large 48
+  base:
+    value: &base 24
+  small:
+    value: &small 16
+  x-small:
+    value: &x-small 8
+  xx-small:
+    value: &xx-small 4
+
 props:
-  space_xx_large:
-    value: "128px"
-  space_x_large:
-    value: "64px"
-  space_large:
-    value: "48px"
-  space_base:
-    value: "24px"
-  space_small:
-    value: "16px"
-  space_x_small:
-    value: "8px"
-  space_xx_small:
-    value: "4px"
+  - name: xx-large
+    value: *xx-large
+    category: space-size
+  - name: x-large
+    value: *x-large
+    category: space-size
+  - name: large
+    value: *large
+    category: space-size
+  - name: base
+    value: *base
+    category: space-size
+  - name: small
+    value: *small
+    category: space-size
+  - name: x-small
+    value: *x-small
+    category: space-size
+  - name: xx-small
+    value: *xx-small
+    category: space-size
+
+  - name: space-xx-large
+    value: "{!xx-large}px"
+  - name: space-x-large
+    value: "{!x-large}px"
+  - name: space-large
+    value: "{!x-large}px"
+  - name: space-base
+    value: "{!base}px"
+  - name: space-small
+    value: "{!small}px"
+  - name: space-x-small
+    value: "{!x-small}px"
+  - name: space-xx-small
+    value: "{!xx-small}px"
+
 global:
   type: number
   category: space

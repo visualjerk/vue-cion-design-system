@@ -1,4 +1,5 @@
 import Vue from 'vue'
+import { camelCase } from 'lodash'
 
 const bus = new Vue({
   data: {
@@ -54,6 +55,12 @@ export default {
               }
             })
           return result
+        },
+        $getSpace(space) {
+          const spaceName = camelCase(space)
+          return this.$tokenMap.spaceSize[spaceName]
+            ? this.$tokenMap.spaceSize[spaceName].value
+            : space
         }
       }
     })
