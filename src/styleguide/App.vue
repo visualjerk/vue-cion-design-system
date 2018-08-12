@@ -1,8 +1,9 @@
 <template>
   <div id="app">
-    <header>Design System</header>
     <navigation/>
-    <router-view/>
+    <div class="app-main">
+      <router-view/>
+    </div>
   </div>
 </template>
 
@@ -19,4 +20,13 @@ export default {
 
 <style lang="scss">
 @import '@@/system/styles/main.scss';
+
+#app {
+  display: flex;
+  min-height: 100vh;
+}
+
+.app-main {
+  flex: 1 1 0;
+}
 </style>

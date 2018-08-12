@@ -1,5 +1,6 @@
 <template>
-  <div>
+  <div class="navigation">
+    <header>Design System</header>
     <nav>
       <ul>
         <navigation-item 
@@ -32,5 +33,9 @@ export default {
 }
 </script>
 
-<style>
+<style lang="scss" scoped>
+.navigation {
+  background-color: $background-color-lighter;
+  padding: $space-base;
+}
 </style>

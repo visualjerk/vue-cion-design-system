@@ -2,10 +2,12 @@
   <component 
     :is="type" 
     class="page-title">
-    <ds-heading :color="color">
-      {{ heading }}
-    </ds-heading>
-    <slot />
+    <ds-container>
+      <ds-heading :color="color">
+        {{ heading }}
+      </ds-heading>
+      <slot />
+    </ds-container>
   </component>
 </template>
 
@@ -49,11 +51,11 @@ export default {
 
 <style lang="scss" scoped>
 .page-title {
-  padding: $space-base $space-small;
+  padding: $space-base 0;
   background-color: $background-color-light;
 
   @media #{$media-query-medium} {
-    padding: $space-large $space-small;
+    padding: $space-large 0;
   }
 }
 </style>

@@ -1,12 +1,14 @@
 <template>
   <div>
     <ds-page-title :heading="section.name" />
-    <section-description v-if="hasDescription" />
-    <component-item
-      v-if="components" 
-      v-for="component in components"
-      :key="component.name"
-      :component="component" />
+    <ds-container>
+      <section-description v-if="hasDescription" />
+      <component-item
+        v-if="components" 
+        v-for="component in components"
+        :key="component.name"
+        :component="component" />
+    </ds-container>
   </div>
 </template>
 

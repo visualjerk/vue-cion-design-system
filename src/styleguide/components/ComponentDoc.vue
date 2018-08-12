@@ -1,68 +1,70 @@
 <template>
   <div>
     <ds-page-title :heading="component.name | componentName" />
-    <div v-if="component.tags">
-      <span
-        v-for="(tagGroup, name) in component.tags"
-        :key="name">
-        <span 
-          v-for="(tag, index) in tagGroup" 
-          :key="index">
-          {{ tag.title }} {{ tag.description }}
+    <ds-container>
+      <div v-if="component.tags">
+        <span
+          v-for="(tagGroup, name) in component.tags"
+          :key="name">
+          <span 
+            v-for="(tag, index) in tagGroup" 
+            :key="index">
+            {{ tag.title }} {{ tag.description }}
+          </span>
         </span>
-      </span>
-    </div>
-    <p>{{ component.description }}</p>
-    <div>
-      <vuep :template="createTemplate(component)"/>
-    </div>
-    <div v-if="component.props">
-      <table>
-        <thead>
-          <tr>
-            <th>Prop Name</th>
-            <th>Type</th>
-            <th>Default</th>
-            <th>Description</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr 
-            v-for="(prop, name) in component.props" 
-            :key="name">
-            <td>{{ name }}<span v-if="prop.required">*</span></td>
-            <td>{{ prop.type.name }}</td>
-            <td>
-              <span v-if="prop.defaultValue.func">
-                Function()
-              </span>
-              <span v-else>
-                {{ prop.defaultValue.value }}
-              </span>
-            </td>
-            <td>{{ prop.description }}</td>
-          </tr>
-        </tbody>
-      </table>
-    </div>
-    <div v-if="component.slots">
-      <table>
-        <thead>
-          <tr>
-            <th>Slot Name</th>
-            <th>Description</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr 
-            v-for="(slot, name) in component.slots" 
-            :key="name">
-            <td>{{ name }}</td>
-            <td>{{ slot.description }}</td>
-          </tr>
-        </tbody>
-      </table>
-    </div>
+      </div>
+      <ds-text>{{ component.description }}</ds-text>
+      <div>
+        <vuep :template="createTemplate(component)"/>
+      </div>
+      <div v-if="component.props">
+        <table>
+          <thead>
+            <tr>
+              <th>Prop Name</th>
+              <th>Type</th>
+              <th>Default</th>
+              <th>Description</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr 
+              v-for="(prop, name) in component.props" 
+              :key="name">
+              <td>{{ name }}<span v-if="prop.required">*</span></td>
+              <td>{{ prop.type.name }}</td>
+              <td>
+                <span v-if="prop.defaultValue.func">
+                  Function()
+                </span>
+                <span v-else>
+                  {{ prop.defaultValue.value }}
+                </span>
+              </td>
+              <td>{{ prop.description }}</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      <div v-if="component.slots">
+        <table>
+          <thead>
+            <tr>
+              <th>Slot Name</th>
+              <th>Description</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr 
+              v-for="(slot, name) in component.slots" 
+              :key="name">
+              <td>{{ name }}</td>
+              <td>{{ slot.description }}</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </ds-container>
   </div>
 </template>
 
@@ -99,14 +101,20 @@ export default {
 
 .vuep-editor {
   width: auto;
+  height: auto;
   margin-right: 0;
   margin-bottom: $space-small;
 }
 
 .vuep-preview {
   width: auto;
+  height: auto;
   border-radius: 0;
   border: $border-size-default solid $border-color-light;
   padding: $space-base;
+}
+
+.CodeMirror {
+  padding: $space-x-small 0;
 }
 </style>

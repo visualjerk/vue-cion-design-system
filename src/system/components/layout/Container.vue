@@ -25,11 +25,15 @@ export default {
 }
 </script>
 
-<style scoped>
+<style lang="scss" scoped>
 .container {
   max-width: 1000px;
-  padding: 20px;
+  padding: 0 $space-small;
   margin: 0 auto;
+
+  @media #{$media-query-medium} {
+    padding: 0 $space-base;
+  }
 }
 </style>
 
