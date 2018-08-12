@@ -73,6 +73,7 @@ export default {
 <style lang="scss" scoped>
 .col {
   @include layout-flex-fix;
+  box-sizing: border-box;
 }
 </style>
 
@@ -113,7 +114,7 @@ export default {
       <ds-text>You can go crazy.</ds-text>
       <ds-row
         :gutter="{ base: 'xx-small', md: 'small' }"
-        :width="{ base: '100%', sm: '50%', lg: '20%' }">
+        :width="{ base: '100%', sm: '50%', lg: '33.3332%' }">
         <ds-col><ds-placeholder>same</ds-placeholder></ds-col>
         <ds-col><ds-placeholder>same</ds-placeholder></ds-col>
         <ds-col><ds-placeholder>same</ds-placeholder></ds-col>
