@@ -2,7 +2,7 @@
   <component 
     :is="tag"
     class="text"
-    :class="`${color} ${size}${bold ? ' bold' : ''}`">
+    :class="`text-${color} ${size}${bold ? ' bold' : ''}`">
     <slot />
   </component>
 </template>
@@ -83,7 +83,6 @@ export default {
   @include stack-space($space-x-small);
   font-family: $font-family-text;
   line-height: $line-height-base;
-  font-size: $font-size-base;
 }
 @include text-colors;
 @include font-sizes;

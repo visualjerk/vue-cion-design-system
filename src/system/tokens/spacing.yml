@@ -18,6 +18,8 @@ aliases:
     value: &x-small 8
   xx-small:
     value: &xx-small 4
+  xxx-small:
+    value: &xxx-small 2
 
 props:
   - name: xx-large
@@ -41,6 +43,9 @@ props:
   - name: xx-small
     value: *xx-small
     category: space-size
+  - name: xxx-small
+    value: *xxx-small
+    category: space-size
 
   - name: space-xx-large
     value: "{!xx-large}px"
@@ -56,6 +61,8 @@ props:
     value: "{!x-small}px"
   - name: space-xx-small
     value: "{!xx-small}px"
+  - name: space-xxx-small
+    value: "{!xxx-small}px"
 
 global:
   type: number

@@ -8,11 +8,12 @@
         <span
           v-for="(tagGroup, name) in component.tags"
           :key="name">
-          <span 
-            v-for="(tag, index) in tagGroup" 
+          <ds-badge
+            v-for="(tag, index) in tagGroup"
+            color="dark"
             :key="index">
             {{ tag.title }} {{ tag.description }}
-          </span>
+          </ds-badge>
         </span>
       </div>
       <div class="component-description">

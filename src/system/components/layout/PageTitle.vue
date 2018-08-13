@@ -1,9 +1,10 @@
 <template>
   <component 
     :is="tag"
-    class="page-title">
+    class="page-title"
+    :class="`background-${backgroundColor}`">
     <ds-container>
-      <ds-heading :color="color">
+      <ds-heading>
         {{ heading }}
       </ds-heading>
       <slot />
@@ -18,6 +19,11 @@
  */
 export default {
   name: 'DsPageTitle',
+  provide() {
+    return {
+      $parentText: this
+    }
+  },
   props: {
     /**
      * The heading of the page.
@@ -28,15 +34,12 @@ export default {
       required: true
     },
     /**
-     * The color used for the title.
-     * `default, primary`
+     * Whether this title should be highlighted
+     * `true, false`
      */
-    color: {
-      type: String,
-      default: 'primary',
-      validator: value => {
-        return value.match(/(default|primary)/)
-      }
+    highlight: {
+      type: Boolean,
+      default: false
     },
     /**
      * The html element name used for the title.
@@ -44,6 +47,14 @@ export default {
     tag: {
       type: String,
       default: 'header'
+    }
+  },
+  computed: {
+    color() {
+      return this.highlight ? 'inverse' : 'primary'
+    },
+    backgroundColor() {
+      return this.highlight ? 'primary' : 'light'
     }
   }
 }
@@ -53,19 +64,38 @@ export default {
 .page-title {
   @include reset;
   padding: $space-base 0;
-  background-color: $background-color-light;
 
   @media #{$media-query-medium} {
     padding: $space-large 0;
   }
 }
+
+@include background-colors;
 </style>
 
 <docs>
+  ## Default
+
+  The default page title
   ```
     <ds-page-title heading="Give a little respect">
     </ds-page-title>
+  ```
+
+  ## Adding text
+
+  You can add additional text
+  ```
     <ds-page-title heading="Give a little respect">
+      <ds-text>Some additional title information.</ds-text>
+    </ds-page-title>
+  ```
+
+  ## Highlight
+
+  You can highlight the page title
+  ```
+    <ds-page-title heading="Give a little respect" highlight>
       <ds-text>Some additional title information.</ds-text>
     </ds-page-title>
   ```

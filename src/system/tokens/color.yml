@@ -15,7 +15,7 @@ aliases:
   green:
     value: "100, 69%"
   orange:
-    value: "28, 70%"
+    value: "28, 80%"
   yellow:
     value: "48, 100%"
   blue:
@@ -23,7 +23,7 @@ aliases:
   purple:
     value: "271, 100%"
   red:
-    value: "3, 60%"
+    value: "3, 65%"
 
 props:
   # Basic Colors

@@ -2,28 +2,28 @@
 --------------------------------------------- */
 
 @mixin text-colors {
-  .default {
+  .text-default {
     color: $text-color-default;
   }
-  .light {
+  .text-light {
     color: $text-color-light;
   }
-  .lighter {
+  .text-lighter {
     color: $text-color-lighter;
   }
-  .primary {
+  .text-primary {
     color: $text-color-primary;
   }
-  .inverse {
+  .text-inverse {
     color: $text-color-inverse;
   }
-  .success {
+  .text-success {
     color: $text-color-success;
   }
-  .warning {
+  .text-warning {
     color: $text-color-warning;
   }
-  .error {
+  .text-error {
     color: $text-color-error;
   }
 }
