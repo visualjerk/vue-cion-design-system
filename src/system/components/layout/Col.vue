@@ -151,8 +151,12 @@ export default {
   Fix sidebar row
   ```
     <ds-row>
-      <ds-col :width="{ base: '60px', md: '200px' }"><ds-placeholder>sidebar</ds-placeholder></ds-col>
-      <ds-col><ds-placeholder>main content</ds-placeholder></ds-col>
+      <ds-col :width="{ base: '60px', md: '200px' }">
+        <ds-placeholder>sidebar</ds-placeholder>
+      </ds-col>
+      <ds-col>
+        <ds-placeholder>main content</ds-placeholder>
+      </ds-col>
     </ds-row>
   ```
 
@@ -161,12 +165,24 @@ export default {
     <ds-row
       :gutter="{ base: 'x-small', md: 'small' }"
       :width="{ base: '100%', sm: '50%', lg: '33.333332%' }">
-      <ds-col><ds-placeholder>item</ds-placeholder></ds-col>
-      <ds-col><ds-placeholder>item</ds-placeholder></ds-col>
-      <ds-col><ds-placeholder>item</ds-placeholder></ds-col>
-      <ds-col><ds-placeholder>item</ds-placeholder></ds-col>
-      <ds-col><ds-placeholder>item</ds-placeholder></ds-col>
-      <ds-col><ds-placeholder>item</ds-placeholder></ds-col>
+      <ds-col>
+        <ds-placeholder>item</ds-placeholder>
+      </ds-col>
+      <ds-col>
+        <ds-placeholder>item</ds-placeholder>
+      </ds-col>
+      <ds-col>
+        <ds-placeholder>item</ds-placeholder>
+      </ds-col>
+      <ds-col>
+        <ds-placeholder>item</ds-placeholder>
+      </ds-col>
+      <ds-col>
+        <ds-placeholder>item</ds-placeholder>
+      </ds-col>
+      <ds-col>
+        <ds-placeholder>item</ds-placeholder>
+      </ds-col>
     </ds-row>
   ```
 </docs>

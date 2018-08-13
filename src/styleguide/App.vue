@@ -24,4 +24,5 @@ export default {
 
 <style lang="scss">
 @import '@@/system/styles/main.scss';
+@import '~codemirror/theme/monokai.css';
 </style>

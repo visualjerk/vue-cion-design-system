@@ -29,6 +29,7 @@
         </div>
         <vuep
           :template="createTemplate(part.example)"
+          :options="{ theme: 'monokai' }"
           v-if="part.example"/>
       </div>
 

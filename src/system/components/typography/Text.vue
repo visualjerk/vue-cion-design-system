@@ -94,7 +94,7 @@ export default {
 </style>
 
 <docs>
-  ## Use different sizes
+  ## Use different sizes to create hierarchy
   ```
     <ds-text size="x-large">The quick brown fox (x-large)</ds-text>
     <ds-text size="large">The quick brown fox (large)</ds-text>
@@ -103,7 +103,7 @@ export default {
     <ds-text size="x-small">The quick brown fox (x-small)</ds-text>
   ```
 
-  ## Use different colors
+  ## Use colors to highlight or deemphasize
   ```
     <ds-text>The quick brown fox</ds-text>
     <ds-text color="light">The quick brown fox</ds-text>
