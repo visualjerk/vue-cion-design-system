@@ -189,6 +189,10 @@ props:
     value: *color-neutral-40
     category: border-color
 
+  - name: border-color-lighter
+    value: *color-neutral-50
+    category: border-color
+
   - name: border-color-active
     value: *color-blue
     category: border-color

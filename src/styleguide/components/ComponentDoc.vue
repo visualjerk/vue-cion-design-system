@@ -32,52 +32,40 @@
           v-if="part.example"/>
       </div>
 
-      <div v-if="component.props">
-        <table>
-          <thead>
-            <tr>
-              <th>Prop Name</th>
-              <th>Type</th>
-              <th>Default</th>
-              <th>Description</th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr 
-              v-for="(prop, name) in component.props" 
-              :key="name">
-              <td>{{ name }}<span v-if="prop.required">*</span></td>
-              <td>{{ prop.type.name }}</td>
-              <td>
-                <span v-if="prop.defaultValue.func">
-                  Function()
-                </span>
-                <span v-else>
-                  {{ prop.defaultValue.value }}
-                </span>
-              </td>
-              <td>{{ prop.description }}</td>
-            </tr>
-          </tbody>
-        </table>
+      <div v-if="componentProps">
+        <ds-table :data="componentProps">
+          <template slot-scope="scope">
+            <ds-table-col label="Prop Name">
+              {{ scope.row.name }} <span v-if="scope.row.required">*</span>
+            </ds-table-col>
+            <ds-table-col label="Type">
+              {{ scope.row.type.name }}
+            </ds-table-col>
+            <ds-table-col label="Default">
+              <span v-if="scope.row.defaultValue.func">
+                Function()
+              </span>
+              <span v-else>
+                {{ scope.row.defaultValue.value }}
+              </span>
+            </ds-table-col>
+            <ds-table-col label="Description">
+              {{ scope.row.description }}
+            </ds-table-col>
+          </template>
+        </ds-table>
       </div>
-      <div v-if="component.slots">
-        <table>
-          <thead>
-            <tr>
-              <th>Slot Name</th>
-              <th>Description</th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr 
-              v-for="(slot, name) in component.slots" 
-              :key="name">
-              <td>{{ name }}</td>
-              <td>{{ slot.description }}</td>
-            </tr>
-          </tbody>
-        </table>
+      <div v-if="componentSlots">
+        <ds-table :data="componentSlots">
+          <template slot-scope="scope">
+            <ds-table-col label="Slot Name">
+              {{ scope.row.name }}
+            </ds-table-col>
+            <ds-table-col label="Description">
+              {{ scope.row.description }}
+            </ds-table-col>
+          </template>
+        </ds-table>
       </div>
     </ds-container>
   </div>
@@ -99,6 +87,22 @@ export default {
     Vuep
   },
   computed: {
+    componentProps() {
+      return Object.keys(this.component.props).map(name => {
+        return {
+          name,
+          ...this.component.props[name]
+        }
+      })
+    },
+    componentSlots() {
+      return Object.keys(this.component.slots).map(name => {
+        return {
+          name,
+          ...this.component.slots[name]
+        }
+      })
+    },
     docParts() {
       if (!this.component.docs) {
         return []
@@ -121,6 +125,9 @@ export default {
   },
   methods: {
     createTemplate(example) {
+      if (example.match(/<template>/g)) {
+        return example
+      }
       /* eslint-disable */
       return `<template>
 <div>${example}</div>

@@ -1,0 +1,58 @@
+<template>
+  <td class="table-col">
+    <slot/>
+  </td>
+</template>
+
+<script>
+/**
+ * Used in combination with the table component to create data tables.
+ * @version 1.0.0
+ */
+export default {
+  name: 'DsTableCol',
+  inject: {
+    $parentTable: {
+      default: null
+    }
+  },
+  props: {
+    /**
+     * The column label
+     */
+    label: {
+      type: String,
+      required: true
+    },
+    /**
+     * The column width
+     */
+    width: {
+      type: [String, Number, Object],
+      default: null
+    }
+  },
+  computed: {},
+  created() {
+    this.$parentTable.addColumn(this)
+  }
+}
+</script>
+
+<style lang="scss" scoped>
+.table-col {
+  @include reset;
+  border-bottom: $border-color-lighter solid $border-size-default;
+  padding: $space-small $space-x-small;
+
+  &:last-child {
+    padding-right: 0;
+  }
+}
+</style>
+
+<docs>
+  ## Basic usage
+
+  Look at the table component
+</docs>

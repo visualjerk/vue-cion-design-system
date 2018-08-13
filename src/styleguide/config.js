@@ -13,6 +13,9 @@ export default {
     },
     {
       name: 'Typography'
+    },
+    {
+      name: 'Data Display'
     }
   ]
 }

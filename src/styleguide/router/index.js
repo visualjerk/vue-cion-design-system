@@ -1,5 +1,6 @@
 import Vue from 'vue'
 import VueRouter from 'vue-router'
+import { kebabCase } from 'lodash'
 
 import createUrl from '@@/utils/create-url'
 import { componentsMap } from '@@/system/components'
@@ -11,9 +12,7 @@ import ComponentPage from '../components/ComponentPage'
 Vue.use(VueRouter)
 
 function createRoute(section) {
-  const name = section.name.replace(' ', '')
-  const folder = name.toLowerCase()
-  const components = componentsMap[folder] || null
+  const components = componentsMap[kebabCase(section.name)] || null
   const route = {
     path: section.path ? section.path : createUrl(section.name),
     component: createPageWrapper(section, components),
