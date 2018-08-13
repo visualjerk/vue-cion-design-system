@@ -16,7 +16,7 @@ export default {
   name: 'DsRow',
   provide() {
     return {
-      parentRow: this
+      $parentRow: this
     }
   },
   props: {
@@ -66,19 +66,38 @@ export default {
 
 <style lang="scss" scoped>
 .row {
+  @include reset;
   display: flex;
   flex-wrap: wrap;
 }
 </style>
 
 <docs>
-  <template>
-    <div>
-      <ds-row>
-        <ds-col>row 1</ds-col>
-        <ds-col>row 2</ds-col>
-      </ds-row>
-    </div>
-  </template>
-  <script></script>
+  ## Column width
+
+  Set the default width for each column on the row.
+  ```
+    <ds-row width="50%">
+      <ds-col><ds-placeholder>item</ds-placeholder></ds-col>
+      <ds-col><ds-placeholder>item</ds-placeholder></ds-col>
+      <ds-col width="100%"><ds-placeholder>item</ds-placeholder></ds-col>
+      <ds-col><ds-placeholder>item</ds-placeholder></ds-col>
+      <ds-col><ds-placeholder>item</ds-placeholder></ds-col>
+    </ds-row>
+  ```
+
+  ## Column gutter
+
+  Set the column gutter on the row.
+  ```
+    <ds-row gutter="base">
+      <ds-col><ds-placeholder>item</ds-placeholder></ds-col>
+      <ds-col><ds-placeholder>item</ds-placeholder></ds-col>
+      <ds-col><ds-placeholder>item</ds-placeholder></ds-col>
+    </ds-row>
+  ```
+
+  ## More examples
+
+  For more examples like responsive layouts and nesting take look at the col component.
 </docs>

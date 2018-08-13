@@ -2,7 +2,7 @@
   <component 
     :is="tag"
     class="text"
-    :class="`${color}${bold ? ' bold' : ''}`">
+    :class="`${color} ${size}${bold ? ' bold' : ''}`">
     <slot />
   </component>
 </template>
@@ -16,26 +16,26 @@
  */
 export default {
   name: 'DsText',
+  provide() {
+    return {
+      $parentText: this
+    }
+  },
+  inject: {
+    $parentText: {
+      default: null
+    }
+  },
   props: {
-    /**
-     * The html element name used for the text.
-     */
-    tag: {
-      type: String,
-      default() {
-        return this.$parent.$options._componentTag ===
-          this.$options._componentTag
-          ? 'span'
-          : 'p'
-      }
-    },
     /**
      * The color used for the text.
      * `default, light, lighter, primary, inverse, success, warning, error`
      */
     color: {
       type: String,
-      default: 'default',
+      default() {
+        return this.$parentText ? this.$parentText.color : 'default'
+      },
       validator: value => {
         return value.match(
           /(default|light|lighter|primary|inverse|success|warning|error)/
@@ -47,7 +47,31 @@ export default {
      */
     bold: {
       type: Boolean,
-      default: false
+      default() {
+        return this.$parentText ? this.$parentText.bold : false
+      }
+    },
+    /**
+     * The size used for the text.
+     * `base, large, x-large, small, x-small`
+     */
+    size: {
+      type: String,
+      default() {
+        return this.$parentText ? this.$parentText.size : 'base'
+      },
+      validator: value => {
+        return value.match(/(base|large|x-large|small|x-small)/)
+      }
+    },
+    /**
+     * The html element name used for the text.
+     */
+    tag: {
+      type: String,
+      default() {
+        return this.$parentText ? 'span' : 'p'
+      }
     }
   }
 }
@@ -62,6 +86,7 @@ export default {
   font-size: $font-size-base;
 }
 @include text-colors;
+@include font-sizes;
 
 .bold {
   font-weight: $font-weight-bold;
@@ -69,14 +94,28 @@ export default {
 </style>
 
 <docs>
-  <template>
-    <div>
-      <ds-text>The quick brown fox</ds-text>
-      <ds-text color="light">The quick brown fox</ds-text>
-      <ds-text>
-        The quick <ds-text bold>brown</ds-text> fox
-      </ds-text>
-    </div>
-  </template>
-  <script></script>
+  ## Use different sizes
+  ```
+    <ds-text size="x-large">The quick brown fox (x-large)</ds-text>
+    <ds-text size="large">The quick brown fox (large)</ds-text>
+    <ds-text size="base">The quick brown fox (base)</ds-text>
+    <ds-text size="small">The quick brown fox (small)</ds-text>
+    <ds-text size="x-small">The quick brown fox (x-small)</ds-text>
+  ```
+
+  ## Use different colors
+  ```
+    <ds-text>The quick brown fox</ds-text>
+    <ds-text color="light">The quick brown fox</ds-text>
+    <ds-text color="primary">
+      The quick <ds-text bold>brown</ds-text> fox
+    </ds-text>
+  ```
+
+  ## Nested text components use their parents format by default
+  ```
+    <ds-text color="primary" size="large">
+      The quick <ds-text bold>brown</ds-text> fox
+    </ds-text>
+  ```
 </docs>

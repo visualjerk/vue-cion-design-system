@@ -10,6 +10,8 @@
 html, body {
   font-size: $font-size-body;
   font-family: $font-family-text;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
   color: $text-color-default;
   margin: 0;
   padding: 0;

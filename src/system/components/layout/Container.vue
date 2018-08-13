@@ -27,6 +27,7 @@ export default {
 
 <style lang="scss" scoped>
 .container {
+  @include reset;
   max-width: 1200px;
   padding: 0 $space-small;
   margin: 0 auto;
@@ -38,15 +39,9 @@ export default {
 </style>
 
 <docs>
-  <template>
-    <div>
-      <ds-container>
-        I am contained
-      </ds-container>
-      <ds-container>
-        I am contained as well
-      </ds-container>
-    </div>
-  </template>
-  <script></script>
+  ```
+    <ds-container>
+      <ds-placeholder>I am contained</ds-placeholder>
+    </ds-container>
+  ```
 </docs>

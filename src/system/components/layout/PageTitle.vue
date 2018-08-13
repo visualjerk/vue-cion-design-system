@@ -51,6 +51,7 @@ export default {
 
 <style lang="scss" scoped>
 .page-title {
+  @include reset;
   padding: $space-base 0;
   background-color: $background-color-light;
 
@@ -61,14 +62,11 @@ export default {
 </style>
 
 <docs>
-  <template>
-    <div>
-      <ds-page-title heading="Give a little respect">
-      </ds-page-title>
-      <ds-page-title heading="Give a little respect">
-        <ds-text>Some additional title information.</ds-text>
-      </ds-page-title>
-    </div>
-  </template>
-  <script></script>
+  ```
+    <ds-page-title heading="Give a little respect">
+    </ds-page-title>
+    <ds-page-title heading="Give a little respect">
+      <ds-text>Some additional title information.</ds-text>
+    </ds-page-title>
+  ```
 </docs>

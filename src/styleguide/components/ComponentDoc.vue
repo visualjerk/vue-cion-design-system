@@ -13,10 +13,16 @@
           </span>
         </span>
       </div>
-      <ds-text>{{ component.description }}</ds-text>
-      <div>
-        <vuep :template="createTemplate(component)"/>
+      <ds-text size="x-large">{{ component.description }}</ds-text>
+      <div
+        v-for="(part, index) in docParts"
+        :key="index">
+        <div><vue-markdown :source="part.description"/></div>
+        <vuep
+          :template="createTemplate(part.example)"
+          v-if="part.example"/>
       </div>
+
       <div v-if="component.props">
         <table>
           <thead>
@@ -83,9 +89,35 @@ export default {
   components: {
     Vuep
   },
+  computed: {
+    docParts() {
+      if (!this.component.docs) {
+        return []
+      }
+      const parts = this.component.docs.split('```')
+      let i = 0
+      const parsed = parts.reduce((result, part, index) => {
+        if (index % 2 === 0) {
+          result[i] = {
+            description: part
+          }
+        } else {
+          result[i].example = part
+          i++
+        }
+        return result
+      }, [])
+      console.log(parsed)
+      return parsed
+    }
+  },
   methods: {
-    createTemplate(component) {
-      return component.docs
+    createTemplate(example) {
+      /* eslint-disable */
+      return `<template>
+<div>${example}</div>
+</template>
+<script><\/script>`
     }
   }
 }

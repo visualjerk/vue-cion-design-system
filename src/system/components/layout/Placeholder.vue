@@ -10,7 +10,7 @@
 
 <script>
 /**
- * This component is used as a placeholder for other stuff.
+ * This component is used as a placeholder for other content.
  * @version 1.0.0
  */
 export default {
@@ -29,6 +29,7 @@ export default {
 
 <style lang="scss" scoped>
 .placeholder {
+  @include reset;
   padding: $space-base;
   display: flex;
   align-items: center;
@@ -43,12 +44,9 @@ export default {
 </style>
 
 <docs>
-  <template>
-    <div>
-      <ds-placeholder>
-        Holding my ground
-      </ds-placeholder>
-    </div>
-  </template>
-  <script></script>
+  ```
+    <ds-placeholder>
+      Holding my ground
+    </ds-placeholder>
+  ```
 </docs>

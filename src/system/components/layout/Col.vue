@@ -14,14 +14,20 @@
  */
 export default {
   name: 'DsCol',
-  inject: ['parentRow'],
+  inject: {
+    $parentRow: {
+      default: null
+    }
+  },
   props: {
     /**
      * The width of the column.
      */
     width: {
       type: [String, Number, Object],
-      default: null
+      default() {
+        return this.$parentRow ? this.$parentRow.width : 1
+      }
     },
     /**
      * The html element name used for the wrapper.
@@ -33,12 +39,10 @@ export default {
   },
   computed: {
     styles() {
-      const width = this.width !== null ? this.width : this.parentRow.width
-      const widthStyle = this.$getResponsiveStyles(width, this.parseWidth)
-      const gutterStyle =
-        this.parentRow && this.parentRow.gutter !== undefined
-          ? this.$getResponsiveStyles(this.parentRow.gutter, this.parseGutter)
-          : {}
+      const widthStyle = this.$getResponsiveStyles(this.width, this.parseWidth)
+      const gutterStyle = this.$parentRow
+        ? this.$getResponsiveStyles(this.$parentRow.gutter, this.parseGutter)
+        : {}
       return {
         ...widthStyle,
         ...gutterStyle
@@ -60,6 +64,9 @@ export default {
     },
     parseGutter(gutter) {
       const realGutter = this.$getSpace(gutter)
+      if (realGutter === 0) {
+        return {}
+      }
       return {
         paddingLeft: `${realGutter / 2}px`,
         paddingRight: `${realGutter / 2}px`,
@@ -72,57 +79,94 @@ export default {
 
 <style lang="scss" scoped>
 .col {
+  @include reset;
   @include layout-flex-fix;
-  box-sizing: border-box;
 }
 </style>
 
 <docs>
-  <template>
-    <div>
-      <ds-text>By default each row has the same width.</ds-text>
-      <ds-row>
-        <ds-col><ds-placeholder>same</ds-placeholder></ds-col>
-        <ds-col><ds-placeholder>same</ds-placeholder></ds-col>
-      </ds-row>
-      <ds-text>You can set widths as parts of the whole.</ds-text>
-      <ds-row>
-        <ds-col><ds-placeholder>1</ds-placeholder></ds-col>
-        <ds-col width="2"><ds-placeholder>2</ds-placeholder></ds-col>
-        <ds-col width="3"><ds-placeholder>3</ds-placeholder></ds-col>
-      </ds-row>
-      <ds-text>You can set widths as fix values.</ds-text>
-      <ds-row>
-        <ds-col width="200px"><ds-placeholder>200px</ds-placeholder></ds-col>
-        <ds-col><ds-placeholder>1</ds-placeholder></ds-col>
-        <ds-col width="30%"><ds-placeholder>30%</ds-placeholder></ds-col>
-      </ds-row>
-      <ds-text>You can set widths for each breakpoint `base, xs, sm, md, lg, xl`</ds-text>
-      <ds-row>
-        <ds-col :width="{ base: '100%', sm: 1, md: 1 }">
-          <ds-placeholder>1@md</ds-placeholder>
-        </ds-col>
-        <ds-col :width="{ base: '100%', sm: 1, md: 2 }">
-          <ds-placeholder>2@md</ds-placeholder>
-        </ds-col>
-      </ds-row>
-      <ds-text>You can set a gutter for the columns.</ds-text>
-      <ds-row gutter="small">
-        <ds-col><ds-placeholder>same</ds-placeholder></ds-col>
-        <ds-col><ds-placeholder>same</ds-placeholder></ds-col>
-      </ds-row>
-      <ds-text>You can go crazy.</ds-text>
-      <ds-row
-        :gutter="{ base: 'xx-small', md: 'small' }"
-        :width="{ base: '100%', sm: '50%', lg: '33.3332%' }">
-        <ds-col><ds-placeholder>same</ds-placeholder></ds-col>
-        <ds-col><ds-placeholder>same</ds-placeholder></ds-col>
-        <ds-col><ds-placeholder>same</ds-placeholder></ds-col>
-        <ds-col><ds-placeholder>same</ds-placeholder></ds-col>
-        <ds-col><ds-placeholder>same</ds-placeholder></ds-col>
-        <ds-col><ds-placeholder>same</ds-placeholder></ds-col>
-      </ds-row>
-    </div>
-  </template>
-  <script></script>
+  ## Column widths
+
+  By default each column has the same width.
+  ```
+    <ds-row>
+      <ds-col><ds-placeholder>same</ds-placeholder></ds-col>
+      <ds-col><ds-placeholder>same</ds-placeholder></ds-col>
+    </ds-row>
+  ```
+
+  You can set widths as parts of the whole.
+  ```
+    <ds-row>
+      <ds-col><ds-placeholder>1</ds-placeholder></ds-col>
+      <ds-col width="2"><ds-placeholder>2</ds-placeholder></ds-col>
+      <ds-col width="3"><ds-placeholder>3</ds-placeholder></ds-col>
+    </ds-row>
+  ```
+
+  You can set widths as fix values.
+  ```
+    <ds-row>
+      <ds-col width="200px"><ds-placeholder>200px</ds-placeholder></ds-col>
+      <ds-col><ds-placeholder>1</ds-placeholder></ds-col>
+      <ds-col width="30%"><ds-placeholder>30%</ds-placeholder></ds-col>
+    </ds-row>
+  ```
+
+  ## Column Gutter
+
+  You can set a gutter for the columns as a row prop.
+  ```
+    <ds-row gutter="small">
+      <ds-col><ds-placeholder>same</ds-placeholder></ds-col>
+      <ds-col><ds-placeholder>same</ds-placeholder></ds-col>
+    </ds-row>
+    <ds-row gutter="base">
+      <ds-col><ds-placeholder>same</ds-placeholder></ds-col>
+      <ds-col><ds-placeholder>same</ds-placeholder></ds-col>
+    </ds-row>
+    <ds-row gutter="large">
+      <ds-col><ds-placeholder>same</ds-placeholder></ds-col>
+      <ds-col><ds-placeholder>same</ds-placeholder></ds-col>
+    </ds-row>
+  ```
+
+  ## Responsive Breakpoints
+
+  Sometimes we need to adjust the layout for different screen sizes.
+  Therefore Width and gutter can be set as an object of breakpoints `base, xs, sm, md, lg, xl`
+  ```
+    <ds-row :gutter="{ base: 'xx-small', md: 'small' }">
+      <ds-col :width="{ base: '100%', sm: 1, md: 1 }">
+        <ds-placeholder>1@md</ds-placeholder>
+      </ds-col>
+      <ds-col :width="{ base: '100%', sm: 1, md: 2 }">
+        <ds-placeholder>2@md</ds-placeholder>
+      </ds-col>
+    </ds-row>
+  ```
+
+  ## Common Patterns
+
+  Fix sidebar row
+  ```
+    <ds-row>
+      <ds-col :width="{ base: '60px', md: '200px' }"><ds-placeholder>sidebar</ds-placeholder></ds-col>
+      <ds-col><ds-placeholder>main content</ds-placeholder></ds-col>
+    </ds-row>
+  ```
+
+  Grid list of items
+  ```
+    <ds-row
+      :gutter="{ base: 'x-small', md: 'small' }"
+      :width="{ base: '100%', sm: '50%', lg: '33.333332%' }">
+      <ds-col><ds-placeholder>item</ds-placeholder></ds-col>
+      <ds-col><ds-placeholder>item</ds-placeholder></ds-col>
+      <ds-col><ds-placeholder>item</ds-placeholder></ds-col>
+      <ds-col><ds-placeholder>item</ds-placeholder></ds-col>
+      <ds-col><ds-placeholder>item</ds-placeholder></ds-col>
+      <ds-col><ds-placeholder>item</ds-placeholder></ds-col>
+    </ds-row>
+  ```
 </docs>

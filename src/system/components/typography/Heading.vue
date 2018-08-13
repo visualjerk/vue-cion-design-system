@@ -84,16 +84,19 @@ h6 {
 </style>
 
 <docs>
-  <template>
-    <div>
-      <ds-heading>The quick brown fox</ds-heading>
-      <ds-heading color="primary">The quick brown fox</ds-heading>
-      <ds-heading tag="h2">The quick brown fox</ds-heading>
-      <ds-heading tag="h3">The quick brown fox</ds-heading>
-      <ds-heading tag="h4">The quick brown fox</ds-heading>
-      <ds-heading tag="h5">The quick brown fox</ds-heading>
-      <ds-heading tag="h6">The quick brown fox</ds-heading>
-    </div>
-  </template>
-  <script></script>
+  ## Use different heading tags (defaults to h1)
+  ```
+    <ds-heading>The quick brown fox</ds-heading>
+    <ds-heading tag="h2">The quick brown fox</ds-heading>
+    <ds-heading tag="h3">The quick brown fox</ds-heading>
+    <ds-heading tag="h4">The quick brown fox</ds-heading>
+    <ds-heading tag="h5">The quick brown fox</ds-heading>
+    <ds-heading tag="h6">The quick brown fox</ds-heading>
+  ```
+
+  ## Use colors to highlight or deemphasize
+  ```
+    <ds-heading color="primary">The quick brown fox</ds-heading>
+    <ds-heading color="light">The quick brown fox</ds-heading>
+  ```
 </docs>

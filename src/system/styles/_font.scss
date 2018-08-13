@@ -1,0 +1,20 @@
+/* COLOR MIXINS
+--------------------------------------------- */
+
+@mixin font-sizes {
+  .base {
+    font-size: $font-size-base;
+  }
+  .large {
+    font-size: $font-size-large;
+  }
+  .x-large {
+    font-size: $font-size-x-large;
+  }
+  .small {
+    font-size: $font-size-small;
+  }
+  .x-small {
+    font-size: $font-size-x-small;
+  }
+}
