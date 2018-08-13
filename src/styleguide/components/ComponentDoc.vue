@@ -2,7 +2,9 @@
   <div>
     <ds-page-title :heading="component.name | componentName" />
     <ds-container>
-      <div v-if="component.tags">
+      <div
+        class="component-tags"
+        v-if="component.tags">
         <span
           v-for="(tagGroup, name) in component.tags"
           :key="name">
@@ -13,11 +15,18 @@
           </span>
         </span>
       </div>
-      <ds-text size="x-large">{{ component.description }}</ds-text>
+      <div class="component-description">
+        <ds-text size="x-large">{{ component.description }}</ds-text>
+      </div>
       <div
+        class="example"
         v-for="(part, index) in docParts"
         :key="index">
-        <div><vue-markdown :source="part.description"/></div>
+        <div class="example-description">
+          <component
+            v-if="part.component"
+            :is="part.component"/>
+        </div>
         <vuep
           :template="createTemplate(part.example)"
           v-if="part.example"/>
@@ -75,8 +84,23 @@
 </template>
 
 <script>
+import cheerio from 'cheerio'
 import Vuep from 'vuep'
 import 'vuep/dist/vuep.css'
+import Vue from 'vue/dist/vue.common'
+import ComponentItem from './ComponentItem.vue'
+
+import markdownIt from 'markdown-it'
+import emoji from 'markdown-it-emoji'
+import subscript from 'markdown-it-sub'
+import superscript from 'markdown-it-sup'
+import footnote from 'markdown-it-footnote'
+import deflist from 'markdown-it-deflist'
+import abbreviation from 'markdown-it-abbr'
+import insert from 'markdown-it-ins'
+import mark from 'markdown-it-mark'
+import katex from 'markdown-it-katex'
+import tasklists from 'markdown-it-task-lists'
 
 export default {
   name: 'ComponentDoc',
@@ -87,7 +111,23 @@ export default {
     }
   },
   components: {
+    ComponentItem,
     Vuep
+  },
+  data() {
+    return {
+      md: new markdownIt()
+        .use(emoji)
+        .use(subscript)
+        .use(superscript)
+        .use(footnote)
+        .use(deflist)
+        .use(abbreviation)
+        .use(insert)
+        .use(mark)
+        .use(katex, { throwOnError: false, errorColor: ' #cc0000' })
+        .use(tasklists)
+    }
   },
   computed: {
     docParts() {
@@ -99,7 +139,7 @@ export default {
       const parsed = parts.reduce((result, part, index) => {
         if (index % 2 === 0) {
           result[i] = {
-            description: part
+            component: this.createDocComponent(part, i)
           }
         } else {
           result[i].example = part
@@ -107,11 +147,46 @@ export default {
         }
         return result
       }, [])
-      console.log(parsed)
       return parsed
     }
   },
   methods: {
+    createDocComponent(desc, index) {
+      const html = this.md.render(desc) || ''
+      const $ = cheerio.load(html)
+
+      // Replace h-tags
+      for (let l = 1; l <= 6; l++) {
+        $(`h${l}`).each((i, item) => {
+          $(item).replaceWith(
+            $(
+              '<ds-heading tag="' +
+                `h${l}` +
+                '">' +
+                $(item).html() +
+                '</ds-heading>'
+            )
+          )
+        })
+      }
+
+      // Replace p-tags
+      $('p').each((i, item) => {
+        $(item).replaceWith($('<ds-text>' + $(item).html() + '</ds-text>'))
+      })
+
+      const componentHtml = $('body').html()
+      const template = `<div>${componentHtml}</div>`
+      const component = Vue.compile(template)
+      const name = `doc-component-${index}`
+
+      this.$options.components[`doc-component-${index}`] = {
+        name,
+        ...component
+      }
+
+      return name
+    },
     createTemplate(example) {
       /* eslint-disable */
       return `<template>
@@ -124,6 +199,23 @@ export default {
 </script>
 
 <style lang="scss">
+.component-tags {
+  margin-top: $space-base;
+  margin-bottom: $space-large;
+}
+
+.component-description {
+  margin-bottom: $space-large;
+}
+
+.example {
+  margin-bottom: $space-large;
+}
+
+.example-description {
+  margin-bottom: $space-base;
+}
+
 .vuep {
   display: flex;
   height: auto;

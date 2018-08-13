@@ -20,6 +20,7 @@
     "@vue/cli-plugin-eslint": "^3.0.0-rc.12",
     "@vue/cli-service": "^3.0.0-rc.12",
     "@vue/eslint-config-prettier": "^3.0.0-rc.12",
+    "cheerio": "^1.0.0-rc.2",
     "codemirror": "^5.39.2",
     "lodash": "^4.17.10",
     "node-sass": "^4.9.3",
@@ -28,7 +29,6 @@
     "sass-loader": "^7.1.0",
     "theo": "^8.0.0-beta.2",
     "vue-docgen-api": "^2.3.13",
-    "vue-markdown": "^2.2.4",
     "vue-markdown-loader": "^2.4.1",
     "vue-template-compiler": "^2.5.17",
     "vuep": "^0.8.0"

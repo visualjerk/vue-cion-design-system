@@ -37,7 +37,7 @@ export default {
       type: String,
       default: 'default',
       validator: value => {
-        return value.match(/(default|primary|inverse)/)
+        return value.match(/(default|primary|inverse|light)/)
       }
     }
   }
