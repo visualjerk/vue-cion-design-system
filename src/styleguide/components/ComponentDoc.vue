@@ -160,14 +160,13 @@ export default {
   display: flex;
   height: auto;
   font-family: inherit;
-  flex-direction: column;
+  flex-direction: column-reverse;
 }
 
 .vuep-editor {
   width: auto;
   height: auto;
   margin-right: 0;
-  margin-bottom: $space-small;
 }
 
 .vuep-preview {
@@ -176,6 +175,7 @@ export default {
   border-radius: 0;
   border: $border-size-default solid $border-color-light;
   padding: $space-base;
+  margin-bottom: $space-small;
 }
 
 .CodeMirror {
