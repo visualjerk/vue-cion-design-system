@@ -24,9 +24,7 @@
         v-for="(part, index) in docParts"
         :key="index">
         <div class="example-description">
-          <component
-            v-if="part.component"
-            :is="part.component"/>
+          <markdown :content="part.description"/>
         </div>
         <vuep
           :template="createTemplate(part.example)"
@@ -86,23 +84,8 @@
 </template>
 
 <script>
-import cheerio from 'cheerio'
 import Vuep from 'vuep'
 import 'vuep/dist/vuep.css'
-import Vue from 'vue/dist/vue.common'
-import ComponentItem from './ComponentItem.vue'
-
-import markdownIt from 'markdown-it'
-import emoji from 'markdown-it-emoji'
-import subscript from 'markdown-it-sub'
-import superscript from 'markdown-it-sup'
-import footnote from 'markdown-it-footnote'
-import deflist from 'markdown-it-deflist'
-import abbreviation from 'markdown-it-abbr'
-import insert from 'markdown-it-ins'
-import mark from 'markdown-it-mark'
-import katex from 'markdown-it-katex'
-import tasklists from 'markdown-it-task-lists'
 
 export default {
   name: 'ComponentDoc',
@@ -113,23 +96,7 @@ export default {
     }
   },
   components: {
-    ComponentItem,
     Vuep
-  },
-  data() {
-    return {
-      md: new markdownIt()
-        .use(emoji)
-        .use(subscript)
-        .use(superscript)
-        .use(footnote)
-        .use(deflist)
-        .use(abbreviation)
-        .use(insert)
-        .use(mark)
-        .use(katex, { throwOnError: false, errorColor: ' #cc0000' })
-        .use(tasklists)
-    }
   },
   computed: {
     docParts() {
@@ -141,7 +108,7 @@ export default {
       const parsed = parts.reduce((result, part, index) => {
         if (index % 2 === 0) {
           result[i] = {
-            component: this.createDocComponent(part, i)
+            description: part
           }
         } else {
           result[i].example = part
@@ -153,42 +120,6 @@ export default {
     }
   },
   methods: {
-    createDocComponent(desc, index) {
-      const html = this.md.render(desc) || ''
-      const $ = cheerio.load(html)
-
-      // Replace h-tags
-      for (let l = 1; l <= 6; l++) {
-        $(`h${l}`).each((i, item) => {
-          $(item).replaceWith(
-            $(
-              '<ds-heading tag="' +
-                `h${l}` +
-                '">' +
-                $(item).html() +
-                '</ds-heading>'
-            )
-          )
-        })
-      }
-
-      // Replace p-tags
-      $('p').each((i, item) => {
-        $(item).replaceWith($('<ds-text>' + $(item).html() + '</ds-text>'))
-      })
-
-      const componentHtml = $('body').html()
-      const template = `<div>${componentHtml}</div>`
-      const component = Vue.compile(template)
-      const name = `doc-component-${index}`
-
-      this.$options.components[`doc-component-${index}`] = {
-        name,
-        ...component
-      }
-
-      return name
-    },
     createTemplate(example) {
       /* eslint-disable */
       return `<template>

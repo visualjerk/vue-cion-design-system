@@ -140,6 +140,10 @@ props:
     value: *color-neutral-80
     category: background-color
 
+  - name: background-color-medium
+    value: *color-neutral-60
+    category: background-color
+
   - name: background-color-dark
     value: *color-neutral
     category: background-color

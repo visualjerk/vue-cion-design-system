@@ -2,7 +2,10 @@
   <div>
     <ds-page-title :heading="section.name" />
     <ds-container>
-      <section-description v-if="hasDescription" />
+      <markdown 
+        :content="description"
+        :components="requiredComponents"
+        v-if="description"/>
       <component-item
         v-if="components" 
         v-for="component in components"
@@ -32,30 +35,30 @@ export default {
   },
   data() {
     return {
-      hasDescription: true
+      description: null,
+      requiredComponents: {}
     }
   },
   created() {
     const name = this.section.name.replace(' ', '')
-    const requiredComponents = {}
 
     if (this.section.requiredComponents) {
       this.section.requiredComponents.forEach(component => {
         try {
           const cFile = require(`./${component}`).default
-          requiredComponents[cFile.name] = cFile
+          this.requiredComponents[cFile.name] = cFile
         } catch (err) {
+          // eslint-disable-next-line
           console.error('could not get required component', err)
         }
       })
     }
 
     try {
-      const mdFile = require(`../docs/${name}.md`).default
-      mdFile.components = requiredComponents
-      this.$options.components.SectionDescription = mdFile
+      const mdFile = require(`!raw-loader?modules!../docs/${name}.md`)
+      this.description = mdFile
     } catch (err) {
-      this.hasDescription = false
+      this.description = null
     }
   }
 }

@@ -94,6 +94,7 @@ export default {
 
 <docs>
   ## Use different sizes to create hierarchy
+
   ```
     <ds-text size="x-large">The quick brown fox (x-large)</ds-text>
     <ds-text size="large">The quick brown fox (large)</ds-text>

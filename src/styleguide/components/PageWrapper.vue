@@ -1,8 +1,6 @@
 <template>
   <div>
-    <router-view
-      :section="section"
-      :components="components"/>
+    <router-view/>
   </div>
 </template>
 

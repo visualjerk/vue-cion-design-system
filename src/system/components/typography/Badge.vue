@@ -22,9 +22,9 @@ export default {
      */
     color: {
       type: String,
-      default: 'light',
+      default: 'medium',
       validator: value => {
-        return value.match(/(light|dark|primary|success|warning|error)/)
+        return value.match(/(medium|dark|primary|success|warning|error)/)
       }
     },
     /**
@@ -56,7 +56,7 @@ export default {
   },
   computed: {
     textColor() {
-      return ['light'].includes(this.color) ? 'default' : 'inverse'
+      return ['medium'].includes(this.color) ? 'default' : 'inverse'
     }
   }
 }

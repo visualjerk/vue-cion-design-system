@@ -1,6 +1,7 @@
 import Vue from 'vue'
 
 import System from '@@/system'
+import Components from './components/global'
 import App from './App.vue'
 import router from './router'
 import { startCase } from 'lodash'
@@ -8,6 +9,7 @@ import { startCase } from 'lodash'
 Vue.config.productionTip = false
 
 Vue.use(System)
+Vue.use(Components)
 
 Vue.filter('componentName', value => {
   return startCase(value.replace(/^Ds/, ''))
