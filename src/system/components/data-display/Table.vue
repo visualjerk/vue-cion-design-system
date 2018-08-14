@@ -6,6 +6,12 @@
       cellpadding="0"
       cellspacing="0"
       class="table">
+      <colgroup>
+        <col
+          v-for="header in headers"
+          :key="header.key"
+          :width="header.width">
+      </colgroup>
       <thead>
         <tr>
           <ds-table-head-col
@@ -22,8 +28,9 @@
           <ds-table-col
             v-for="col in row"
             :key="col.key">
+            <!-- @slot Slots are named by fields -->
             <slot
-              :name="`col-${col.key}`"
+              :name="col.key"
               :row="data[index] ? data[index] : null"
               :col="col"
               :index="index">
@@ -85,7 +92,8 @@ export default {
       return keys.map(key => {
         let header = {
           key,
-          label: this.parseLabel(key)
+          label: this.parseLabel(key),
+          width: ''
         }
         if (headerObj[key]) {
           const headerMerge =
@@ -232,7 +240,8 @@ export default {
             tableFields: {
               name: 'Hero',
               type: {
-                label: 'Job'
+                label: 'Job',
+                width: '300px'
               }
             },
             tableData: [
@@ -272,10 +281,10 @@ export default {
   <template>
     <div>
       <ds-table :data="tableData" :fields="tableFields">
-        <template slot="col-loves" slot-scope="scope">
+        <template slot="loves" slot-scope="scope">
           {{ scope.row.name }} loves {{ scope.row.loves }}
         </template>
-        <template slot="col-edit" slot-scope="scope">
+        <template slot="edit" slot-scope="scope">
           <button @click="deleteRow(scope.row)">delete</button>
         </template>
       </ds-table>

@@ -33,25 +33,28 @@
       </div>
 
       <div v-if="componentProps">
-        <ds-table :data="componentProps">
-          <template slot-scope="scope">
-            <ds-table-col label="Prop Name">
-              {{ scope.row.name }} <span v-if="scope.row.required">*</span>
-            </ds-table-col>
-            <ds-table-col label="Type">
-              {{ scope.row.type.name }}
-            </ds-table-col>
-            <ds-table-col label="Default">
-              <span v-if="scope.row.defaultValue.func">
-                Function()
-              </span>
-              <span v-else>
-                {{ scope.row.defaultValue.value }}
-              </span>
-            </ds-table-col>
-            <ds-table-col label="Description">
-              {{ scope.row.description }}
-            </ds-table-col>
+        <ds-table 
+          :data="componentProps" 
+          :fields="propFields">
+          <template 
+            slot="name" 
+            slot-scope="scope">
+            {{ scope.row.name }} <span v-if="scope.row.required">*</span>
+          </template>
+          <template 
+            slot="type" 
+            slot-scope="scope">
+            {{ scope.row.type.name }}
+          </template>
+          <template 
+            slot="default" 
+            slot-scope="scope">
+            <span v-if="scope.row.defaultValue.func">
+              Function()
+            </span>
+            <span v-else>
+              {{ scope.row.defaultValue.value }}
+            </span>
           </template>
         </ds-table>
       </div>
@@ -85,6 +88,25 @@ export default {
   },
   components: {
     Vuep
+  },
+  data() {
+    return {
+      propFields: {
+        name: {
+          label: 'Prop Name',
+          width: '20%'
+        },
+        type: {
+          label: 'Type',
+          width: '20%'
+        },
+        default: {
+          label: 'Default',
+          width: '20%'
+        },
+        description: 'Description'
+      }
+    }
   },
   computed: {
     componentProps() {
