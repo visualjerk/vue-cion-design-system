@@ -2,10 +2,12 @@
   <div>
     <ds-page-title :heading="section.name" />
     <ds-container>
-      <markdown 
-        :content="description"
-        :components="requiredComponents"
-        v-if="description"/>
+      <ds-space margin-top="x-large">
+        <markdown
+          :content="description"
+          :components="requiredComponents"
+          v-if="description"/>
+      </ds-space>
       <component-item
         v-if="components" 
         v-for="component in components"

@@ -24,8 +24,8 @@ export default {
      * The default gutter size for the columns.
      */
     gutter: {
-      type: [Number, String, Object],
-      default: 0
+      type: [String, Object],
+      default: null
     },
     /**
      * The default width for the columns.

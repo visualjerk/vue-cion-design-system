@@ -134,7 +134,7 @@ export default {
   ## Responsive Breakpoints
 
   Sometimes we need to adjust the layout for different screen sizes.
-  Therefore Width and gutter can be set as an object of breakpoints `base, xs, sm, md, lg, xl`
+  Therefore width and gutter can be set as an object of breakpoints `base, xs, sm, md, lg, xl`
   ```
     <ds-row :gutter="{ base: 'xx-small', md: 'small' }">
       <ds-col :width="{ base: '100%', sm: 1, md: 1 }">

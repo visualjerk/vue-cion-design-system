@@ -2,9 +2,9 @@
   <div>
     <ds-page-title :heading="component.name | componentName" />
     <ds-container>
-      <div
-        class="component-tags"
-        v-if="component.tags">
+      <ds-space
+        v-if="component.tags"
+        margin-top="base">
         <span
           v-for="(tagGroup, name) in component.tags"
           :key="name">
@@ -15,24 +15,25 @@
             {{ tag.title }} {{ tag.description }}
           </ds-badge>
         </span>
-      </div>
-      <div class="component-description">
+      </ds-space>
+      <ds-space margin-bottom="xx-large">
         <ds-text size="x-large">{{ component.description }}</ds-text>
-      </div>
-      <div
-        class="example"
+      </ds-space>
+      <ds-space
         v-for="(part, index) in docParts"
+        margin-bottom="xx-large"
         :key="index">
-        <div class="example-description">
+        <ds-space>
           <markdown :content="part.description"/>
-        </div>
+        </ds-space>
         <vuep
           :template="createTemplate(part.example)"
           :options="{ theme: 'monokai' }"
           v-if="part.example"/>
-      </div>
+      </ds-space>
 
-      <div v-if="componentProps">
+      <ds-space v-if="componentProps">
+        <ds-heading tag="h2">Component Props</ds-heading>
         <ds-table 
           :data="componentProps" 
           :fields="propFields">
@@ -57,8 +58,9 @@
             </span>
           </template>
         </ds-table>
-      </div>
-      <div v-if="componentSlots">
+      </ds-space>
+      <ds-space v-if="componentSlots">
+        <ds-heading tag="h2">Component Slots</ds-heading>
         <ds-table :data="componentSlots">
           <template slot-scope="scope">
             <ds-table-col label="Slot Name">
@@ -69,7 +71,7 @@
             </ds-table-col>
           </template>
         </ds-table>
-      </div>
+      </ds-space>
     </ds-container>
   </div>
 </template>
@@ -161,23 +163,6 @@ export default {
 </script>
 
 <style lang="scss">
-.component-tags {
-  margin-top: $space-base;
-  margin-bottom: $space-large;
-}
-
-.component-description {
-  margin-bottom: $space-large;
-}
-
-.example {
-  margin-bottom: $space-large;
-}
-
-.example-description {
-  margin-bottom: $space-base;
-}
-
 .vuep {
   display: flex;
   height: auto;

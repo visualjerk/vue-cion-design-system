@@ -1,0 +1,134 @@
+<template>
+  <component 
+    :is="tag"
+    :style="styles"
+    class="space">
+    <slot />
+  </component>
+</template>
+
+<script>
+/**
+ * Use this component for grouping and separation.
+ * @version 1.0.0
+ */
+export default {
+  name: 'DsSpace',
+  inject: {
+    $parentRow: {
+      default: null
+    }
+  },
+  props: {
+    /**
+     * The top margin of this space.
+     */
+    marginTop: {
+      type: [String, Object],
+      default: null
+    },
+    /**
+     * The bottom margin of this space.
+     */
+    marginBottom: {
+      type: [String, Object],
+      default: 'large'
+    },
+    /**
+     * The html element name used for this space.
+     */
+    tag: {
+      type: String,
+      default: 'div'
+    }
+  },
+  computed: {
+    styles() {
+      const marginTopStyle = this.$getResponsiveStyles(
+        this.marginTop,
+        this.parseMargin('Top')
+      )
+      const marginBottomStyle = this.$getResponsiveStyles(
+        this.marginBottom,
+        this.parseMargin('Bottom')
+      )
+
+      return {
+        ...marginTopStyle,
+        ...marginBottomStyle
+      }
+    }
+  },
+  methods: {
+    parseMargin(direction) {
+      const vm = this
+      return margin => {
+        const styles = {}
+        const realMargin = vm.$getSpace(margin)
+        if (realMargin !== 0) {
+          styles[`margin${direction}`] = `${realMargin}px`
+        }
+        console.log(styles)
+        return styles
+      }
+    }
+  }
+}
+</script>
+
+<style lang="scss" scoped>
+.space {
+  @include reset;
+}
+</style>
+
+<docs>
+  ## Default margins
+
+  By default the top margin is 0 and the bottom margin is `large`.
+  ```
+    <ds-space>
+      <ds-placeholder>I have my own space</ds-placeholder>
+    </ds-space>
+    <ds-space>
+      <ds-placeholder>I have my own space</ds-placeholder>
+    </ds-space>
+  ```
+
+  ## Custom margins
+
+  Margins can be `xxx-small, xx-small, x-small, small, base, large, x-large, xx-large and xxx-large`
+  ```
+    <ds-space margin-bottom="xx-small">
+      <ds-placeholder>I have my own space (xx-small)</ds-placeholder>
+    </ds-space>
+    <ds-space margin-bottom="small">
+      <ds-placeholder>I have my own space (small)</ds-placeholder>
+    </ds-space>
+    <ds-space margin-bottom="base">
+      <ds-placeholder>I have my own space (base)</ds-placeholder>
+    </ds-space>
+    <ds-space margin-bottom="large">
+      <ds-placeholder>I have my own space (large)</ds-placeholder>
+    </ds-space>
+    <ds-space margin-bottom="xx-large">
+      <ds-placeholder>I have my own space (xx-large)</ds-placeholder>
+    </ds-space>
+    <ds-space>
+      <ds-placeholder>I have my own space</ds-placeholder>
+    </ds-space>
+  ```
+
+  ## Responsive Breakpoints
+
+  Sometimes we need to adjust the layout for different screen sizes.
+  Therefore margin can be set as an object of breakpoints `base, xs, sm, md, lg, xl`
+  ```
+    <ds-space :margin-bottom="{ base: 'small', md: 'base', lg: 'large' }">
+      <ds-placeholder>I have my own space</ds-placeholder>
+    </ds-space>
+    <ds-space>
+      <ds-placeholder>I have my own space</ds-placeholder>
+    </ds-space>
+  ```
+</docs>

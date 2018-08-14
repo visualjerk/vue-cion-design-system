@@ -60,7 +60,7 @@ export default {
           const spaceName = camelCase(space)
           return this.$tokenMap.spaceSize[spaceName]
             ? this.$tokenMap.spaceSize[spaceName].value
-            : space
+            : 0
         }
       }
     })
