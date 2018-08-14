@@ -35,6 +35,9 @@ export default {
   computed: {},
   created() {
     this.$parentTable.addColumn(this)
+  },
+  beforeDestroy() {
+    this.$parentTable.deleteColumn(this)
   }
 }
 </script>

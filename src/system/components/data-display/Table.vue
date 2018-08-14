@@ -88,6 +88,7 @@ export default {
         labels.push(column.label)
         return false
       })
+      console.log(labels)
       return labels
     },
     styles() {
@@ -105,6 +106,11 @@ export default {
     },
     addColumn(column) {
       this.columns.push(column)
+    },
+    deleteColumn(column) {
+      const index = this.columns.indexOf(column)
+      console.log('delete column', index)
+      this.columns.slice(index, 1)
     }
   }
 }
@@ -202,6 +208,73 @@ export default {
               loves: 'Hook you up'
             }
           ]
+        }
+      }
+    }
+  </script>
+  ```
+
+  ## Reactive Columns
+
+  Define column templates
+  ```
+  <template>
+    <div>
+      <ds-table :data="tableData">
+        <template slot-scope="scope">
+          <ds-table-col label="Name" v-if="tableData[0].name">
+            {{ scope.row.name }}
+          </ds-table-col>
+          <ds-table-col label="Activity">
+            As a {{ scope.row.type }} I love to play {{ scope.row.loves }}
+          </ds-table-col>
+        </template>
+      </ds-table>
+      <button @click="deleteRow">delete</button>
+      <button @click="addRow">add</button>
+    </div>
+  </template>
+
+  <script>
+    export default {
+      data() {
+        return {
+          tableData: [
+            {
+              name: 'Rengar',
+              type: 'Jungler',
+              loves: 'Hide and seek'
+            },
+            {
+              name: 'Renekton',
+              type: 'Toplaner',
+              loves: 'Slice and dice'
+            },
+            {
+              name: 'Twitch',
+              type: 'ADC',
+              loves: 'Spray and pray'
+            },
+            {
+              name: 'Blitz',
+              type: 'Support',
+              loves: 'Hook you up'
+            }
+          ]
+        }
+      },
+      methods: {
+        deleteRow() {
+          this.tableData.forEach((data, index) => {
+            this.$delete(this.tableData[index], 'name')
+          })
+          console.log(this.tableData)
+        },
+        addRow() {
+          this.tableData.forEach((data, index) => {
+            this.$set(this.tableData[index], 'name', 'Test')
+          })
+          console.log(this.tableData)
         }
       }
     }
