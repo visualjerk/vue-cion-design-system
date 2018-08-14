@@ -18,13 +18,6 @@ export default {
   },
   props: {
     /**
-     * The column label
-     */
-    label: {
-      type: String,
-      required: true
-    },
-    /**
      * The column width
      */
     width: {
@@ -32,13 +25,7 @@ export default {
       default: null
     }
   },
-  computed: {},
-  created() {
-    this.$parentTable.addColumn(this)
-  },
-  beforeDestroy() {
-    this.$parentTable.deleteColumn(this)
-  }
+  computed: {}
 }
 </script>
 

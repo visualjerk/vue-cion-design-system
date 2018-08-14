@@ -3,32 +3,33 @@
     class="table-wrap"
     v-if="data">
     <table
-      :style="styles"
       cellpadding="0"
       cellspacing="0"
       class="table">
       <thead>
         <tr>
           <ds-table-head-col
-            v-for="label in labels"
-            :key="label">
-            {{ parseLabel(label) }}
+            v-for="header in headers"
+            :key="header.key">
+            {{ header.label }}
           </ds-table-head-col>
         </tr>
       </thead>
       <tbody>
         <tr
-          v-for="(row, index) in data"
-          :key="index"
-          :ref="`row${index}`">
-          <slot :row="row">
-            <ds-table-col
-              v-for="(value, label) in row"
-              :label="parseLabel(label)"
-              :key="label">
-              {{ value }}
-            </ds-table-col>
-          </slot>
+          v-for="(row, index) in rows"
+          :key="index">
+          <ds-table-col
+            v-for="col in row"
+            :key="col.key">
+            <slot
+              :name="`col-${col.key}`"
+              :row="data[index] ? data[index] : null"
+              :col="col"
+              :index="index">
+              {{ col.value }}
+            </slot>
+          </ds-table-col>
         </tr>
       </tbody>
     </table>
@@ -53,64 +54,70 @@ export default {
      * The table's data
      */
     data: {
-      type: [Array, Object],
+      type: Array,
       default() {
         return []
       }
     },
     /**
-     * The default gutter size for the columns.
+     * The table's header config
      */
-    gutter: {
-      type: [Number, String, Object],
-      default: 0
-    },
-    /**
-     * The default width for the columns.
-     */
-    width: {
-      type: [String, Number, Object],
-      default: 1
-    }
-  },
-  data() {
-    return {
-      columns: []
+    fields: {
+      type: [Array, Object],
+      default() {
+        return null
+      }
     }
   },
   computed: {
-    labels() {
-      const labels = []
-      this.columns.some(column => {
-        if (labels.includes(column.label)) {
-          return true
+    headers() {
+      let keys = this.data[0] ? Object.keys(this.data[0]) : []
+      let headerObj = {}
+      if (this.fields) {
+        if (Array.isArray(this.fields)) {
+          keys = this.fields
+        } else if (typeof this.fields === 'object') {
+          keys = Object.keys(this.fields)
+          headerObj = this.fields
         }
-        labels.push(column.label)
-        return false
-      })
-      console.log(labels)
-      return labels
-    },
-    styles() {
-      const gutterStyle = this.gutter
-        ? this.$getResponsiveStyles(this.gutter, this.parseGutter)
-        : {}
-      return {
-        ...gutterStyle
       }
+
+      return keys.map(key => {
+        let header = {
+          key,
+          label: this.parseLabel(key)
+        }
+        if (headerObj[key]) {
+          const headerMerge =
+            typeof headerObj[key] === 'string'
+              ? { label: headerObj[key] }
+              : headerObj[key]
+          header = Object.assign(header, headerMerge)
+        }
+        return header
+      })
+    },
+    rows() {
+      let keys = this.data[0] ? Object.keys(this.data[0]) : []
+      return this.data.map(row => {
+        if (this.fields) {
+          keys = Array.isArray(this.fields)
+            ? this.fields
+            : Object.keys(this.fields)
+        }
+
+        return keys.map(key => {
+          return {
+            key,
+            value: row[key]
+          }
+        })
+      })
     }
   },
   methods: {
     parseLabel(label) {
       return startCase(label)
-    },
-    addColumn(column) {
-      this.columns.push(column)
-    },
-    deleteColumn(column) {
-      const index = this.columns.indexOf(column)
-      console.log('delete column', index)
-      this.columns.slice(index, 1)
     }
   }
 }
@@ -165,73 +172,113 @@ export default {
   </script>
   ```
 
-  ## Custom columns
+  ## Specify fields
 
-  Define column templates
+  You can specify which fields to display
   ```
-  <template>
-    <ds-table :data="tableData">
-      <template slot-scope="scope">
-        <ds-table-col label="Name">
-          {{ scope.row.name }}
-        </ds-table-col>
-        <ds-table-col label="Activity">
-          As a {{ scope.row.type }} I love to play {{ scope.row.loves }}
-        </ds-table-col>
-      </template>
-    </ds-table>
-  </template>
+    <template>
+      <ds-table :data="tableData" :fields="tableFields">
+      </ds-table>
+    </template>
 
-  <script>
-    export default {
-      data() {
-        return {
-          tableData: [
-            {
-              name: 'Rengar',
-              type: 'Jungler',
-              loves: 'Hide and seek'
-            },
-            {
-              name: 'Renekton',
-              type: 'Toplaner',
-              loves: 'Slice and dice'
-            },
-            {
-              name: 'Twitch',
-              type: 'ADC',
-              loves: 'Spray and pray'
-            },
-            {
-              name: 'Blitz',
-              type: 'Support',
-              loves: 'Hook you up'
-            }
-          ]
+    <script>
+      export default {
+        data() {
+          return {
+            tableFields: ['name', 'type'],
+            tableData: [
+              {
+                name: 'Rengar',
+                type: 'Jungler',
+                loves: 'Hide and seek'
+              },
+              {
+                name: 'Renekton',
+                type: 'Toplaner',
+                loves: 'Slice and dice'
+              },
+              {
+                name: 'Twitch',
+                type: 'ADC',
+                loves: 'Spray and pray'
+              },
+              {
+                name: 'Blitz',
+                type: 'Support',
+                loves: 'Hook you up'
+              }
+            ]
+          }
         }
       }
-    }
-  </script>
+    </script>
   ```
 
-  ## Reactive Columns
+  ## Customize header
 
-  Define column templates
+  You can customize the header by setting fields as an object.
+
+  The value can be a string representing the fields label or an object with options.
+  ```
+    <template>
+      <ds-table :data="tableData" :fields="tableFields">
+      </ds-table>
+    </template>
+
+    <script>
+      export default {
+        data() {
+          return {
+            tableFields: {
+              name: 'Hero',
+              type: {
+                label: 'Job'
+              }
+            },
+            tableData: [
+              {
+                name: 'Rengar',
+                type: 'Jungler',
+                loves: 'Hide and seek'
+              },
+              {
+                name: 'Renekton',
+                type: 'Toplaner',
+                loves: 'Slice and dice'
+              },
+              {
+                name: 'Twitch',
+                type: 'ADC',
+                loves: 'Spray and pray'
+              },
+              {
+                name: 'Blitz',
+                type: 'Support',
+                loves: 'Hook you up'
+              }
+            ]
+          }
+        }
+      }
+    </script>
+  ```
+
+  ## Custom columns
+
+  You can define custom templates for columns and create columns that do not have a corresponding data attribute.
+
+  Via scoped slots you have access to the columns `row`, `index` and `col`.
   ```
   <template>
     <div>
-      <ds-table :data="tableData">
-        <template slot-scope="scope">
-          <ds-table-col label="Name" v-if="tableData[0].name">
-            {{ scope.row.name }}
-          </ds-table-col>
-          <ds-table-col label="Activity">
-            As a {{ scope.row.type }} I love to play {{ scope.row.loves }}
-          </ds-table-col>
+      <ds-table :data="tableData" :fields="tableFields">
+        <template slot="col-loves" slot-scope="scope">
+          {{ scope.row.name }} loves {{ scope.row.loves }}
+        </template>
+        <template slot="col-edit" slot-scope="scope">
+          <button @click="deleteRow(scope.row)">delete</button>
         </template>
       </ds-table>
-      <button @click="deleteRow">delete</button>
-      <button @click="addRow">add</button>
     </div>
   </template>
 
@@ -239,6 +286,7 @@ export default {
     export default {
       data() {
         return {
+          tableFields: ['name', 'type', 'loves', 'edit'],
           tableData: [
             {
               name: 'Rengar',
@@ -264,17 +312,11 @@ export default {
         }
       },
       methods: {
-        deleteRow() {
-          this.tableData.forEach((data, index) => {
-            this.$delete(this.tableData[index], 'name')
-          })
-          console.log(this.tableData)
-        },
-        addRow() {
-          this.tableData.forEach((data, index) => {
-            this.$set(this.tableData[index], 'name', 'Test')
-          })
-          console.log(this.tableData)
+        deleteRow(row) {
+          const index = this.tableData.indexOf(row)
+          if (index > -1) {
+            this.tableData.splice(index, 1)
+          }
         }
       }
     }
