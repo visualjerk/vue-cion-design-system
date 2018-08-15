@@ -21,7 +21,7 @@ props:
   font_size_small:
     value: "0.8rem"
   font_size_x_small:
-    value: "0.75rem"
+    value: "0.7rem"
   font_size_xx_small:
     value: "0.6rem"
 global:

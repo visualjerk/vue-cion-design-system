@@ -11,6 +11,8 @@
 /**
  * Used in combination with the row component to create flexible layouts.
  * @version 1.0.0
+ * @deprecated
+ * @see Row
  */
 export default {
   name: 'DsCol',

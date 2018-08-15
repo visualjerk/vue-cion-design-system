@@ -1,7 +1,7 @@
 <template>
   <component 
     :is="tag"
-    class="badge"
+    class="tag"
     :class="`text-${textColor} ${size} background-${color}${round ? ' round' : ''}`">
     <slot />
   </component>
@@ -9,12 +9,12 @@
 
 <script>
 /**
- * Badges are used for styling and highlighting small pieces of information.
+ * Tags are used for styling and highlighting small pieces of information.
  * Most of the time they are used for keywords or numbers.
  * @version 1.0.0
  */
 export default {
-  name: 'DsBadge',
+  name: 'DsTag',
   props: {
     /**
      * The color used for the text.
@@ -29,17 +29,17 @@ export default {
     },
     /**
      * The size used for the text.
-     * `base, large, x-large, small, x-small`
+     * `base, large, x-large, small, x-small, xx-small`
      */
     size: {
       type: String,
-      default: 'small',
+      default: 'x-small',
       validator: value => {
-        return value.match(/(base|large|x-large|small|x-small)/)
+        return value.match(/(base|large|x-large|small|x-small|xx-small)/)
       }
     },
     /**
-     * Whether the badge should be round
+     * Whether the tag should be round
      * `true, false`
      */
     round: {
@@ -63,15 +63,17 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-.badge {
+.tag {
   @include reset;
-  @include stack-space($space-x-small);
+  @include stack-space($space-xx-small);
   display: inline-block;
   font-family: $font-family-text;
   line-height: $line-height-base;
   padding: 0 $space-x-small;
   border-radius: $border-radius-default;
   font-weight: $font-weight-bold;
+  letter-spacing: 0.1;
+  text-transform: uppercase;
 }
 @include text-colors;
 @include background-colors;
@@ -85,26 +87,26 @@ export default {
 <docs>
   ## Use different colors to emphasize or provide meaning
   ```
-    <ds-badge>default</ds-badge>
-    <ds-badge color="dark">dark</ds-badge>
-    <ds-badge color="primary">primary</ds-badge>
-    <ds-badge color="success">success</ds-badge>
-    <ds-badge color="warning">warning</ds-badge>
-    <ds-badge color="error">error</ds-badge>
+    <ds-tag>default</ds-tag>
+    <ds-tag color="dark">dark</ds-tag>
+    <ds-tag color="primary">primary</ds-tag>
+    <ds-tag color="success">success</ds-tag>
+    <ds-tag color="warning">warning</ds-tag>
+    <ds-tag color="error">error</ds-tag>
   ```
 
   ## Use different sizes to create hierarchy
   ```
-    <ds-badge size="x-small">x-small</ds-badge>
-    <ds-badge>small</ds-badge>
-    <ds-badge size="base">base</ds-badge>
-    <ds-badge size="large">large</ds-badge>
-    <ds-badge size="x-large">x-large</ds-badge>
+    <ds-tag size="x-small">x-small</ds-tag>
+    <ds-tag>small</ds-tag>
+    <ds-tag size="base">base</ds-tag>
+    <ds-tag size="large">large</ds-tag>
+    <ds-tag size="x-large">x-large</ds-tag>
   ```
 
   ## Use a round tag to present small numbers
   ```
-    <ds-badge color="primary" round>7</ds-badge>
-    <ds-badge color="primary" round>42</ds-badge>
+    <ds-tag color="primary" round>7</ds-tag>
+    <ds-tag color="primary" round>42</ds-tag>
   ```
 </docs>

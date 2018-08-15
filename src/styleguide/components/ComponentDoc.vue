@@ -5,16 +5,15 @@
       <ds-space
         v-if="component.tags"
         margin-top="base">
-        <span
-          v-for="(tagGroup, name) in component.tags"
-          :key="name">
-          <ds-badge
+        <template
+          v-for="(tagGroup, name) in component.tags">
+          <ds-tag
             v-for="(tag, index) in tagGroup"
-            color="dark"
-            :key="index">
-            {{ tag.title }} {{ tag.description }}
-          </ds-badge>
-        </span>
+            :color="tagColor(tag)"
+            :key="`${name}${index}`">
+            {{ tagDescription(tag) }}
+          </ds-tag>&nbsp;
+        </template>
       </ds-space>
       <ds-space margin-bottom="xx-large">
         <ds-text size="x-large">{{ component.description }}</ds-text>
@@ -33,7 +32,7 @@
       </ds-space>
 
       <ds-space v-if="componentProps">
-        <ds-heading tag="h2">Component Props</ds-heading>
+        <ds-heading tag="h2">{{ component.name | componentName }} Props</ds-heading>
         <ds-table 
           :data="componentProps" 
           :fields="propFields">
@@ -60,7 +59,7 @@
         </ds-table>
       </ds-space>
       <ds-space v-if="componentSlots">
-        <ds-heading tag="h2">Component Slots</ds-heading>
+        <ds-heading tag="h2">{{ component.name | componentName }} Slots</ds-heading>
         <ds-table :data="componentSlots">
           <template slot-scope="scope">
             <ds-table-col label="Slot Name">
@@ -148,6 +147,24 @@ export default {
     }
   },
   methods: {
+    tagColor(tag) {
+      if (tag.title === 'deprecated') {
+        return 'warning'
+      }
+      if (tag.title === 'see') {
+        return 'primary'
+      }
+      return 'dark'
+    },
+    tagDescription(tag) {
+      if (tag.description === true) {
+        return tag.title
+      }
+      if (tag.title === 'see') {
+        return `Child of ${tag.description}`
+      }
+      return `${tag.title} ${tag.description}`
+    },
     createTemplate(example) {
       if (example.match(/<template>/g)) {
         return example

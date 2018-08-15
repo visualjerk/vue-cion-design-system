@@ -23,6 +23,7 @@ context.keys().forEach(key => {
     docs: c.__docs,
     component: c
   })
+  console.log(meta)
   components.push(c)
 })
 

@@ -68,7 +68,6 @@ export default {
         if (realMargin !== 0) {
           styles[`margin${direction}`] = `${realMargin}px`
         }
-        console.log(styles)
         return styles
       }
     }
