@@ -12,20 +12,26 @@ import ComponentPage from '../components/ComponentPage'
 Vue.use(VueRouter)
 
 function createRoute(section) {
-  const components = componentsMap[kebabCase(section.name)] || null
+  const components = componentsMap[kebabCase(section.name)]
+  const filteredComponents = components
+    ? components.filter(c => !c.parent)
+    : null
+
   const route = {
     path: section.path ? section.path : createUrl(section.name),
-    component: createPageWrapper(section, components),
+    component: createPageWrapper(section, filteredComponents),
     children: [
       {
         path: '',
         name: section.name,
-        component: createSectionPage(section, components)
+        component: createSectionPage(section, filteredComponents)
       }
     ]
   }
-  if (components) {
-    route.children = route.children.concat(components.map(createComponentRoute))
+  if (filteredComponents) {
+    route.children = route.children.concat(
+      filteredComponents.map(createComponentRoute)
+    )
   }
   return route
 }

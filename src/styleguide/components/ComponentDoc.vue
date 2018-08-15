@@ -31,53 +31,24 @@
           v-if="part.example"/>
       </ds-space>
 
-      <ds-space v-if="componentProps">
-        <ds-heading tag="h2">{{ component.name | componentName }} Props</ds-heading>
-        <ds-table 
-          :data="componentProps" 
-          :fields="propFields">
-          <template 
-            slot="name" 
-            slot-scope="scope">
-            {{ scope.row.name }} <span v-if="scope.row.required">*</span>
-          </template>
-          <template 
-            slot="type" 
-            slot-scope="scope">
-            {{ scope.row.type.name }}
-          </template>
-          <template 
-            slot="default" 
-            slot-scope="scope">
-            <span v-if="scope.row.defaultValue.func">
-              Function()
-            </span>
-            <span v-else>
-              {{ scope.row.defaultValue.value }}
-            </span>
-          </template>
-        </ds-table>
+      <ds-space margin-bottom="xx-large">
+        <component-options-doc :component="component" />
       </ds-space>
-      <ds-space v-if="componentSlots">
-        <ds-heading tag="h2">{{ component.name | componentName }} Slots</ds-heading>
-        <ds-table :data="componentSlots">
-          <template slot-scope="scope">
-            <ds-table-col label="Slot Name">
-              {{ scope.row.name }}
-            </ds-table-col>
-            <ds-table-col label="Description">
-              {{ scope.row.description }}
-            </ds-table-col>
-          </template>
-        </ds-table>
+
+      <ds-space
+        margin-bottom="xx-large"
+        v-if="component.children"
+        v-for="child in component.children"
+        :key="child.name">
+        <component-options-doc :component="child" />
       </ds-space>
-    </ds-container>
-  </div>
+  </ds-container></div>
 </template>
 
 <script>
 import Vuep from 'vuep'
 import 'vuep/dist/vuep.css'
+import ComponentOptionsDoc from './ComponentOptionsDoc'
 
 export default {
   name: 'ComponentDoc',
@@ -88,7 +59,8 @@ export default {
     }
   },
   components: {
-    Vuep
+    Vuep,
+    ComponentOptionsDoc
   },
   data() {
     return {

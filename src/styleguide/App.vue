@@ -1,13 +1,13 @@
 <template>
   <div id="app">
-    <ds-row>
+    <ds-flex>
       <ds-col width="200px">
         <navigation/>
       </ds-col>
       <ds-col>
         <router-view/>
       </ds-col>
-    </ds-row>
+    </ds-flex>
   </div>
 </template>
 

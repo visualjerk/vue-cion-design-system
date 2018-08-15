@@ -8,6 +8,8 @@
 /**
  * Used in combination with the table component to create data tables.
  * @version 1.0.0
+ * @see DsTable
+ * @private
  */
 export default {
   name: 'DsTableCol',
@@ -42,7 +44,4 @@ export default {
 </style>
 
 <docs>
-  ## Basic usage
-
-  Look at the table component
 </docs>

@@ -9,6 +9,7 @@ const contextMeta = require.context(
 
 const components = []
 const componentsMap = {}
+const componentsByName = {}
 context.keys().forEach(key => {
   const c = context(key).default
   const meta = contextMeta(key)
@@ -17,14 +18,38 @@ context.keys().forEach(key => {
   if (!componentsMap[folder]) {
     componentsMap[folder] = []
   }
-  componentsMap[folder].push({
-    ...meta,
-    name: c.name,
-    docs: c.__docs,
-    component: c
-  })
-  console.log(meta)
+
+  const hidden =
+    meta.tags.access && meta.tags.access[0].description === 'private'
+
+  if (!hidden) {
+    const parent = meta.tags.see ? meta.tags.see[0].description : null
+    const componentData = {
+      ...meta,
+      parent,
+      folder,
+      name: c.name,
+      docs: c.__docs,
+      component: c
+    }
+
+    componentsByName[c.name] = componentData
+    componentsMap[folder].push(componentsByName[c.name])
+  }
+
   components.push(c)
+})
+
+// Add child components data to parent
+Object.keys(componentsByName).forEach(name => {
+  const component = componentsByName[name]
+  if (!component.parent || !componentsByName[component.parent]) {
+    return
+  }
+  if (!componentsByName[component.parent].children) {
+    componentsByName[component.parent].children = []
+  }
+  componentsByName[component.parent].children.push(component)
 })
 
 export { componentsMap }
