@@ -87,7 +87,9 @@ export default {
 
       // Replace p-tags
       $('p').each((i, item) => {
-        $(item).replaceWith($('<ds-text>' + $(item).html() + '</ds-text>'))
+        $(item).replaceWith(
+          $('<ds-text size="large">' + $(item).html() + '</ds-text>')
+        )
       })
 
       const componentHtml = $('body').html()

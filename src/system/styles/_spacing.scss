@@ -27,10 +27,18 @@ $spacing-ratio: 1.618;
 // Create stack-space
 //
 // @param  {Number} stack-space to set
-@mixin stack-space($value) {
-  margin-bottom: $value;
-  &:last-child {
-    margin-bottom: 0;
+@mixin stack-space($bottom, $top: 0) {
+  @if $bottom != 0 {
+    margin-bottom: $bottom;
+    &:last-child {
+      margin-bottom: 0;
+    }
+  }
+  @if $top != 0 {
+    margin-top: $top;
+    &:first-child {
+      margin-top: 0;
+    }
   }
 }
 
