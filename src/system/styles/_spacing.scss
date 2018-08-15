@@ -26,7 +26,8 @@ $spacing-ratio: 1.618;
 
 // Create stack-space
 //
-// @param  {Number} stack-space to set
+// @param  {bottom} margin-bottom to set
+// @param  {top} margin-top to set
 @mixin stack-space($bottom, $top: 0) {
   @if $bottom != 0 {
     margin-bottom: $bottom;

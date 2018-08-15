@@ -4,7 +4,7 @@ This Design System provides us with essential components and guidelines to achie
 
 ### How to use it
 
-Use the system's components to solve common UX problems like layout, typography, displaying data or data input.
+Use the system's components to solve common UI problems like layout, typography, displaying data or data input.
 
 When no component fits your case, either extend an existing one or create a new one.
 

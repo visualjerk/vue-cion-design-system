@@ -1,4 +1,5 @@
 import Vue from 'vue'
+import { tokenMap } from '@/system/tokens'
 import { camelCase } from 'lodash'
 
 const bus = new Vue({
@@ -45,10 +46,10 @@ export default {
             return parser(prop)
           }
           let result = prop.base ? parser(prop.base) : {}
-          Object.keys(vm.$tokenMap.mediaSize)
+          Object.keys(tokenMap.mediaSize)
             .reverse()
             .some(key => {
-              const width = this.$tokenMap.mediaSize[key].value
+              const width = tokenMap.mediaSize[key].value
               if (width <= vm.$windowSize.width && prop[key]) {
                 result = parser(prop[key])
                 return true
@@ -58,8 +59,8 @@ export default {
         },
         $getSpace(space) {
           const spaceName = camelCase(space)
-          return this.$tokenMap.spaceSize[spaceName]
-            ? this.$tokenMap.spaceSize[spaceName].value
+          return tokenMap.spaceSize[spaceName]
+            ? tokenMap.spaceSize[spaceName].value
             : 0
         }
       }
