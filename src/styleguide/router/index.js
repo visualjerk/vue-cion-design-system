@@ -82,6 +82,7 @@ function createComponentPage(component) {
 const routes = config.sections.map(createRoute)
 
 const router = new VueRouter({
+  mode: 'history',
   routes
 })
 

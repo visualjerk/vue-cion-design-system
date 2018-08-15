@@ -148,6 +148,10 @@ props:
     value: *color-neutral
     category: background-color
 
+  - name: background-color-black
+    value: *color-black
+    category: background-color
+
   - name: background-color-primary
     value: *color-blue
     category: background-color

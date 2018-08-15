@@ -10,6 +10,9 @@ module.exports = {
     }
   },
   configureWebpack: {
+    devServer: {
+      historyApiFallback: true
+    },
     resolve: {
       alias: {
         vue$: 'vue/dist/vue.common',
