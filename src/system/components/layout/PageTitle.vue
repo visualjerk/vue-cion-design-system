@@ -66,7 +66,7 @@ export default {
   padding: $space-base 0;
 
   @media #{$media-query-medium} {
-    padding: $space-large 0;
+    padding: $space-x-large 0;
   }
 }
 

@@ -59,7 +59,7 @@ props:
   - name: space-x-large
     value: "{!x-large}px"
   - name: space-large
-    value: "{!x-large}px"
+    value: "{!large}px"
   - name: space-base
     value: "{!base}px"
   - name: space-small

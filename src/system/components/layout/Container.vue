@@ -35,6 +35,10 @@ export default {
   @media #{$media-query-medium} {
     padding: 0 $space-base;
   }
+
+  @media #{$media-query-large} {
+    padding: 0 $space-x-large;
+  }
 }
 </style>
 

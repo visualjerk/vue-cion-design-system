@@ -1,7 +1,7 @@
 <template>
   <div
     class="table-wrap"
-    v-if="data">
+    v-if="dataArray">
     <table
       cellpadding="0"
       cellspacing="0"
@@ -31,7 +31,7 @@
             <!-- @slot Slots are named by fields -->
             <slot
               :name="col.key"
-              :row="data[index] ? data[index] : null"
+              :row="dataArray[index] ? dataArray[index] : null"
               :col="col"
               :index="index">
               {{ col.value }}
@@ -61,7 +61,7 @@ export default {
      * The table's data
      */
     data: {
-      type: Array,
+      type: [Array, Object],
       default() {
         return []
       }
@@ -77,8 +77,17 @@ export default {
     }
   },
   computed: {
+    dataArray() {
+      if (Array.isArray(this.data)) {
+        return this.data
+      }
+      if (typeof this.data === 'object') {
+        return Object.keys(this.data).map(key => this.data[key])
+      }
+      return []
+    },
     headers() {
-      let keys = this.data[0] ? Object.keys(this.data[0]) : []
+      let keys = this.dataArray[0] ? Object.keys(this.dataArray[0]) : []
       let headerObj = {}
       if (this.fields) {
         if (Array.isArray(this.fields)) {
@@ -106,8 +115,8 @@ export default {
       })
     },
     rows() {
-      let keys = this.data[0] ? Object.keys(this.data[0]) : []
-      return this.data.map(row => {
+      let keys = this.dataArray[0] ? Object.keys(this.dataArray[0]) : []
+      return this.dataArray.map(row => {
         if (this.fields) {
           keys = Array.isArray(this.fields)
             ? this.fields

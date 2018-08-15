@@ -1,11 +1,11 @@
 <template>
   <div id="app">
-    <ds-flex>
-      <ds-col width="200px">
-        <navigation/>
-      </ds-col>
-      <ds-col>
+    <ds-flex :direction="{ md: 'row-reverse' }">
+      <ds-col :width="{ base: '100%', md: 1 }">
         <router-view/>
+      </ds-col>
+      <ds-col :width="{ base: '100%', md: '200px' }">
+        <navigation/>
       </ds-col>
     </ds-flex>
   </div>

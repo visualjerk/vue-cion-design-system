@@ -28,6 +28,7 @@ export default {
       switch (this.color.category) {
         case 'text-color':
           styles.color = this.color.value
+          styles.borderColor = 'transparent'
           break
         case 'border-color':
           styles.borderColor = this.color.value
@@ -46,7 +47,6 @@ export default {
   height: $height-base;
   display: flex;
   align-items: center;
-  justify-content: center;
-  border: $border-size-default solid transparent;
+  border: $border-size-default solid $border-color-lighter;
 }
 </style>

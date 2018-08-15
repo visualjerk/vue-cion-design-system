@@ -1,29 +1,27 @@
 <template>
-  <div>
-    <div
-      v-for="(group, key) in colorGroups"
+  <ds-space>
+    <ds-space
+      v-for="key in groups"
       :key="key">
-      <ds-heading tag="h3">{{ group.description }}</ds-heading>
-      <table>
-        <thead>
-          <tr>
-            <th>Token</th>
-            <th>Example</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr
-            v-for="color in $tokenMap[key]"
-            :key="color.name">
-            <td>{{ color.scss }}</td>
-            <td>
-              <color-token :color="color" />
-            </td>
-          </tr>
-        </tbody>
-      </table>
-    </div>
-  </div>
+      <ds-heading 
+        tag="h3" 
+        :id="key">{{ key | startCase }}</ds-heading>
+      <ds-table
+        :data="$tokenMap[key]"
+        :fields="{token: { width: '30%' }, example: 'Example'}">
+        <template
+          slot="token"
+          slot-scope="data">
+          {{ data.row.scss }}
+        </template>
+        <template
+          slot="example"
+          slot-scope="data">
+          <color-token :color="data.row" />
+        </template>
+      </ds-table>
+    </ds-space>
+  </ds-space>
 </template>
 
 <script>
@@ -36,20 +34,7 @@ export default {
   },
   data() {
     return {
-      colorGroups: {
-        textColor: {
-          description: 'Text Color'
-        },
-        backgroundColor: {
-          description: 'Background Color'
-        },
-        borderColor: {
-          description: 'Border Color'
-        },
-        color: {
-          description: 'Base Color'
-        }
-      }
+      groups: ['textColor', 'backgroundColor', 'borderColor', 'color']
     }
   }
 }

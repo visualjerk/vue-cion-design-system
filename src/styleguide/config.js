@@ -6,7 +6,7 @@ export default {
     },
     {
       name: 'Design Tokens',
-      requiredComponents: ['ColorTokens']
+      requiredComponents: ['DesignTokens']
     },
     {
       name: 'Layout'

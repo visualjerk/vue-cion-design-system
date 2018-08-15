@@ -38,7 +38,7 @@ export default {
   border: $border-size-default dashed $border-color-default;
 
   @media #{$media-query-medium} {
-    padding: $space-large 0;
+    padding: $space-x-large 0;
   }
 }
 </style>
