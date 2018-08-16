@@ -1,21 +1,22 @@
 <template>
-  <li>
-    <router-link
+  <li @click.capture="handleClick">
+    <component
       v-if="route"
       :class="`link level-${level}${$parentMenu.inverse ? ' inverse' : ''}`"
       :to="url"
-      :exact="isExact">
+      :href="url"
+      :exact="isExact"
+      :is="linkTag">
       <slot>
         {{ route.name }}
       </slot>
-    </router-link>
+    </component>
     <ul v-if="route.children && route.children.length">
       <ds-menu-item
         v-for="child in route.children"
         :key="child.name"
         :route="child"
-        :parents="[...parents, route]"
-        :level="level + 1" />
+        :parents="[...parents, route]"/>
     </ul>
   </li>
 </template>
@@ -44,19 +45,27 @@ export default {
       }
     },
     /**
-     * The level of this menu item
-     */
-    level: {
-      type: Number,
-      default: 0
-    },
-    /**
      * The parents of this route
      */
     parents: {
       type: Array,
       default() {
         return []
+      }
+    },
+    /**
+     * The component / tag used for the link of this route
+     * `router-link, a`
+     */
+    linkTag: {
+      type: String,
+      default() {
+        return this.$parentMenu.linkTag
+          ? this.$parentMenu.linkTag
+          : 'router-link'
+      },
+      validator: value => {
+        return value.match(/(router-link|a)/)
       }
     }
   },
@@ -66,6 +75,14 @@ export default {
     },
     isExact() {
       return this.$parentMenu.isExact(this.url)
+    },
+    level() {
+      return this.parents.length
+    }
+  },
+  methods: {
+    handleClick(event) {
+      this.$emit('click', event, this.route)
     }
   }
 }

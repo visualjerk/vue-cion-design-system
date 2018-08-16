@@ -3,10 +3,15 @@
     :class="`menu${inverse ? ' inverse' : ''}`">
     <ul>
       <slot>
-        <ds-menu-item
+        <slot
           v-for="(route, index) in routes"
-          :key="route.path ? route.path : index"
-          :route="route" />
+          :route="route"
+          :parents="[]"
+          :name="route.name">
+          <ds-menu-item
+            :key="route.path ? route.path : index"
+            :route="route" />
+        </slot>
       </slot>
     </ul>
   </nav>
@@ -43,6 +48,17 @@ export default {
     inverse: {
       type: Boolean,
       default: false
+    },
+    /**
+     * The default component / tag used for the link of menu items
+     * `router-link, a`
+     */
+    linkTag: {
+      type: String,
+      default: 'router-link',
+      validator: value => {
+        return value.match(/(router-link|a)/)
+      }
     },
     /**
      * Function that parses the url for each menu item
@@ -197,6 +213,70 @@ ul {
         },
         isExact(url) {
           return url.name === 'Introduction'
+        }
+      }
+    }
+  </script>
+  ```
+
+  ## Customize menu items
+
+  You can customize top level menu items using slots. The slot name is equal to the routes name.
+
+  If you want to keep the sub menu for this menu item, be sure to use the `ds-menu-item` component and pass down the `route` and `parents` prop.
+
+  ```
+  <template>
+    <ds-menu :routes="routes">
+      <ds-menu-item
+        @click="handleClick"
+        slot="Navigation"
+        slot-scope="item"
+        :route="item.route"
+        :parents="item.parents">
+        Custom {{ item.route.name }}
+      </ds-menu-item>
+    </ds-menu>
+  </template>
+
+  <script>
+    export default {
+      data() {
+        return {
+          routes: [
+            {
+              name: 'Introduction',
+              path: '/'
+            },
+            {
+              name: 'Navigation',
+              path: '/navigation',
+              children: [
+                {
+                  name: 'Menu',
+                  path: '/navigation/dsmenu'
+                },
+                {
+                  name: 'Breadcrumb',
+                  path: '/navigation/dsbreadcrumb'
+                }
+              ]
+            },
+            {
+              name: 'Typography',
+              path: '/typography'
+            },
+            {
+              name: 'Layout',
+              path: '/layout'
+            }
+          ]
+        }
+      },
+      methods: {
+        handleClick(event, route) {
+          event.preventDefault()
+          alert(`you clicked on ${route.name}`)
         }
       }
     }

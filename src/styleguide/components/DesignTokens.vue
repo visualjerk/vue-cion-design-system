@@ -5,15 +5,7 @@
       :direction="{ lg: 'row-reverse' }">
       <ds-flex-item :width="{ base: '100%', lg: '250px' }">
         <ds-heading tag="h4">Categories</ds-heading>
-        <nav>
-          <ul>
-            <li 
-              v-for="(category, key) in $tokenMap" 
-              :key="key">
-              <a :href="`#${key}`">{{ key | startCase }}</a>
-            </li>
-          </ul>
-        </nav>
+        <ds-menu :routes="tokenMenu" />
       </ds-flex-item>
       <ds-flex-item>
         <color-tokens />
@@ -29,6 +21,16 @@ export default {
   name: 'DesignTokens',
   components: {
     ColorTokens
+  },
+  computed: {
+    tokenMenu() {
+      return Object.keys(this.$tokenMap).map(key => {
+        return {
+          name: this.$options.filters.startCase(key),
+          path: `#${key}`
+        }
+      })
+    }
   }
 }
 </script>
