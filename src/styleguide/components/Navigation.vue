@@ -1,25 +1,15 @@
 <template>
   <div class="navigation">
     <header>Design System</header>
-    <nav>
-      <ul>
-        <navigation-item 
-          v-for="route in routes" 
-          :key="route.name"
-          :route="route" />
-      </ul>
-    </nav>
+    <ds-menu 
+      :routes="routes" 
+      inverse />
   </div>
 </template>
 
 <script>
-import NavigationItem from './NavigationItem'
-
 export default {
   name: 'Navigation',
-  components: {
-    NavigationItem
-  },
   computed: {
     routes() {
       const routes = this.$router.options.routes

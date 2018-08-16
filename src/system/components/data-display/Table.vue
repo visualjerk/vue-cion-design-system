@@ -46,7 +46,7 @@
 <script>
 import { startCase } from 'lodash'
 /**
- * Used in combination with the table row and table col to create data tables.
+ * Used in combination with the table row to create data tables.
  * @version 1.0.0
  */
 export default {

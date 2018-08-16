@@ -16,6 +16,9 @@ export default {
     },
     {
       name: 'Data Display'
+    },
+    {
+      name: 'Navigation'
     }
   ]
 }
