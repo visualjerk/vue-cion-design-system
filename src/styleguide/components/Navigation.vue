@@ -4,6 +4,7 @@
     <ds-menu 
       :routes="routes"
       :url-parser="urlParser"
+      :name-parser="nameParser"
       :is-exact="isExact"
       inverse />
   </div>
@@ -23,6 +24,9 @@ export default {
     }
   },
   methods: {
+    nameParser(route) {
+      return this.$options.filters.componentName(route.name)
+    },
     urlParser(route) {
       return {
         name: route.name

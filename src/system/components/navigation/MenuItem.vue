@@ -8,7 +8,7 @@
       :exact="isExact"
       :is="linkTag">
       <slot>
-        {{ route.name }}
+        {{ name }}
       </slot>
     </component>
     <ul v-if="route.children && route.children.length">
@@ -72,6 +72,9 @@ export default {
   computed: {
     url() {
       return this.$parentMenu.urlParser(this.route, this.parents)
+    },
+    name() {
+      return this.$parentMenu.nameParser(this.route, this.parents)
     },
     isExact() {
       return this.$parentMenu.isExact(this.url)
