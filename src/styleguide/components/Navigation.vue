@@ -2,7 +2,9 @@
   <div class="navigation">
     <header>Design System</header>
     <ds-menu 
-      :routes="routes" 
+      :routes="routes"
+      :url-parser="urlParser"
+      :is-exact="isExact"
       inverse />
   </div>
 </template>
@@ -19,14 +21,24 @@ export default {
         return parent
       })
     }
+  },
+  methods: {
+    urlParser(route) {
+      return {
+        name: route.name
+      }
+    },
+    isExact(url) {
+      return url.name === 'Introduction'
+    }
   }
 }
 </script>
 
 <style lang="scss" scoped>
 .navigation {
-  background-color: $background-color-black;
-  padding: $space-base;
+  background-color: $background-color-darker;
+  padding: $space-base $space-x-small;
 
   @media #{$media-query-medium} {
     min-height: 100vh;

@@ -34,7 +34,7 @@ export default {
   },
   data() {
     return {
-      groups: ['textColor', 'backgroundColor', 'borderColor', 'color']
+      groups: ['color', 'textColor', 'backgroundColor', 'borderColor']
     }
   }
 }

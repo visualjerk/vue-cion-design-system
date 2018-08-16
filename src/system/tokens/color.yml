@@ -28,7 +28,9 @@ aliases:
 props:
   # Basic Colors
   - name: color-black
-    value: &color-black "hsla({!neutral}, 16%, 1)"
+    value: &color-black "hsla({!neutral}, 10%, 1)"
+  - name: color-dark
+    value: &color-dark "hsla({!neutral}, 16%, 1)"
 
   - name: color-neutral
     value: &color-neutral "hsla({!neutral}, 30%, 1)"
@@ -146,6 +148,10 @@ props:
 
   - name: background-color-dark
     value: *color-neutral
+    category: background-color
+
+  - name: background-color-darker
+    value: *color-dark
     category: background-color
 
   - name: background-color-black

@@ -3,7 +3,8 @@
     <router-link
       v-if="route"
       :class="`link level-${level}${$parentMenu.inverse ? ' inverse' : ''}`"
-      :to="to">
+      :to="url"
+      :exact="isExact">
       <slot>
         {{ route.name }}
       </slot>
@@ -13,6 +14,7 @@
         v-for="child in route.children"
         :key="child.name"
         :route="child"
+        :parents="[...parents, route]"
         :level="level + 1" />
     </ul>
   </li>
@@ -47,19 +49,25 @@ export default {
     level: {
       type: Number,
       default: 0
+    },
+    /**
+     * The parents of this route
+     */
+    parents: {
+      type: Array,
+      default() {
+        return []
+      }
     }
   },
   computed: {
-    to() {
-      if (this.route.path) {
-        return this.route.path
-      }
-      return {
-        name: this.route.name
-      }
+    url() {
+      return this.$parentMenu.urlParser(this.route, this.parents)
+    },
+    isExact() {
+      return this.$parentMenu.isExact(this.url)
     }
-  },
-  methods: {}
+  }
 }
 </script>
 
@@ -69,7 +77,11 @@ export default {
   display: block;
   color: $text-color-default;
   text-decoration: none;
-  padding: $space-x-small $space-x-small;
+  padding: $space-x-small $space-small;
+
+  &.router-link-active {
+    color: $text-color-link-active;
+  }
 
   &:hover,
   &.router-link-exact-active {
@@ -81,21 +93,24 @@ export default {
 .inverse {
   color: $text-color-lighter;
 
+  &.router-link-active {
+    color: $text-color-link-active;
+  }
+
   &:hover,
   &.router-link-exact-active {
-    color: $text-color-link-active;
-    background-color: transparent;
+    background-color: $background-color-black;
   }
 }
 
 .level-1 {
   font-size: $font-size-small;
-  padding-left: $space-x-small * 2;
+  padding-left: $space-x-small * 3;
 }
 
 .level-2 {
   font-size: $font-size-small;
-  padding-left: $space-x-small * 3;
+  padding-left: $space-x-small * 4;
 }
 
 ul {
