@@ -3,7 +3,7 @@
     <ds-flex
       gutter="large"
       :direction="{ lg: 'row-reverse' }">
-      <ds-col :width="{ base: '100%', lg: '250px' }">
+      <ds-flex-item :width="{ base: '100%', lg: '250px' }">
         <ds-heading tag="h4">Categories</ds-heading>
         <nav>
           <ul>
@@ -14,10 +14,10 @@
             </li>
           </ul>
         </nav>
-      </ds-col>
-      <ds-col>
+      </ds-flex-item>
+      <ds-flex-item>
         <color-tokens />
-      </ds-col>
+      </ds-flex-item>
     </ds-flex>
   </ds-space>
 </template>

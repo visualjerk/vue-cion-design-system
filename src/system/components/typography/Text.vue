@@ -2,7 +2,7 @@
   <component 
     :is="tag"
     class="text"
-    :class="`text-${color} ${size}${bold ? ' bold' : ''}`">
+    :class="`text-${color} font-size-${size}${bold ? ' bold' : ''}`">
     <slot />
   </component>
 </template>

@@ -2,7 +2,7 @@
   <component 
     :is="tag"
     :style="styles"
-    class="col">
+    class="flex-item">
     <slot />
   </component>
 </template>
@@ -15,7 +15,7 @@
  * @see DsFlex
  */
 export default {
-  name: 'DsCol',
+  name: 'DsFlexItem',
   inject: {
     $parentFlex: {
       default: null
@@ -23,7 +23,7 @@ export default {
   },
   props: {
     /**
-     * The width of the column.
+     * The width of the item.
      */
     width: {
       type: [String, Number, Object],
@@ -80,7 +80,7 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-.col {
+.flex-item {
   @include reset;
   @include layout-flex-fix;
 }

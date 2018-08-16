@@ -8,11 +8,14 @@
 </template>
 
 <script>
+import DsFlexItem from './FlexItem.vue'
+
 /**
  * Used in combination with the col component to create flexible layouts.
  * @version 1.0.0
  */
 export default {
+  components: { DsFlexItem },
   name: 'DsFlex',
   provide() {
     return {
@@ -90,60 +93,60 @@ export default {
 </style>
 
 <docs>
-  ## Column widths
+  ## Item widths
 
-  By default each column has the same width.
+  By default each item has the same width.
   ```
     <ds-flex>
-      <ds-col><ds-placeholder>same</ds-placeholder></ds-col>
-      <ds-col><ds-placeholder>same</ds-placeholder></ds-col>
+      <ds-flex-item><ds-placeholder>same</ds-placeholder></ds-flex-item>
+      <ds-flex-item><ds-placeholder>same</ds-placeholder></ds-flex-item>
     </ds-flex>
   ```
 
   You can set widths as parts of the whole.
   ```
     <ds-flex>
-      <ds-col><ds-placeholder>1</ds-placeholder></ds-col>
-      <ds-col width="2"><ds-placeholder>2</ds-placeholder></ds-col>
-      <ds-col width="3"><ds-placeholder>3</ds-placeholder></ds-col>
+      <ds-flex-item><ds-placeholder>1</ds-placeholder></ds-flex-item>
+      <ds-flex-item width="2"><ds-placeholder>2</ds-placeholder></ds-flex-item>
+      <ds-flex-item width="3"><ds-placeholder>3</ds-placeholder></ds-flex-item>
     </ds-flex>
   ```
 
   You can set widths as fix values.
   ```
     <ds-flex>
-      <ds-col width="200px"><ds-placeholder>200px</ds-placeholder></ds-col>
-      <ds-col><ds-placeholder>1</ds-placeholder></ds-col>
-      <ds-col width="30%"><ds-placeholder>30%</ds-placeholder></ds-col>
+      <ds-flex-item width="200px"><ds-placeholder>200px</ds-placeholder></ds-flex-item>
+      <ds-flex-item><ds-placeholder>1</ds-placeholder></ds-flex-item>
+      <ds-flex-item width="30%"><ds-placeholder>30%</ds-placeholder></ds-flex-item>
     </ds-flex>
   ```
 
-  You can set the default width for each column on the flex.
+  You can set a default width for each item on the flex component.
   ```
     <ds-flex width="50%">
-      <ds-col><ds-placeholder>item</ds-placeholder></ds-col>
-      <ds-col><ds-placeholder>item</ds-placeholder></ds-col>
-      <ds-col width="100%"><ds-placeholder>item</ds-placeholder></ds-col>
-      <ds-col><ds-placeholder>item</ds-placeholder></ds-col>
-      <ds-col><ds-placeholder>item</ds-placeholder></ds-col>
+      <ds-flex-item><ds-placeholder>item</ds-placeholder></ds-flex-item>
+      <ds-flex-item><ds-placeholder>item</ds-placeholder></ds-flex-item>
+      <ds-flex-item width="100%"><ds-placeholder>item</ds-placeholder></ds-flex-item>
+      <ds-flex-item><ds-placeholder>item</ds-placeholder></ds-flex-item>
+      <ds-flex-item><ds-placeholder>item</ds-placeholder></ds-flex-item>
     </ds-flex>
   ```
 
   ## Column Gutter
 
-  You can set a gutter for the columns as a flex prop.
+  You can set a gutter for the items as on the flex component.
   ```
     <ds-flex gutter="small">
-      <ds-col><ds-placeholder>same</ds-placeholder></ds-col>
-      <ds-col><ds-placeholder>same</ds-placeholder></ds-col>
+      <ds-flex-item><ds-placeholder>same</ds-placeholder></ds-flex-item>
+      <ds-flex-item><ds-placeholder>same</ds-placeholder></ds-flex-item>
     </ds-flex>
     <ds-flex gutter="base">
-      <ds-col><ds-placeholder>same</ds-placeholder></ds-col>
-      <ds-col><ds-placeholder>same</ds-placeholder></ds-col>
+      <ds-flex-item><ds-placeholder>same</ds-placeholder></ds-flex-item>
+      <ds-flex-item><ds-placeholder>same</ds-placeholder></ds-flex-item>
     </ds-flex>
     <ds-flex gutter="large">
-      <ds-col><ds-placeholder>same</ds-placeholder></ds-col>
-      <ds-col><ds-placeholder>same</ds-placeholder></ds-col>
+      <ds-flex-item><ds-placeholder>same</ds-placeholder></ds-flex-item>
+      <ds-flex-item><ds-placeholder>same</ds-placeholder></ds-flex-item>
     </ds-flex>
   ```
 
@@ -155,12 +158,12 @@ export default {
     <ds-flex
       :gutter="{ base: 'xx-small', md: 'small' }"
       :direction="{ md: 'row-reverse' }">
-      <ds-col :width="{ base: '100%', sm: 1, md: 1 }">
+      <ds-flex-item :width="{ base: '100%', sm: 1, md: 1 }">
         <ds-placeholder>1@md</ds-placeholder>
-      </ds-col>
-      <ds-col :width="{ base: '100%', sm: 1, md: 2 }">
+      </ds-flex-item>
+      <ds-flex-item :width="{ base: '100%', sm: 1, md: 2 }">
         <ds-placeholder>2@md</ds-placeholder>
-      </ds-col>
+      </ds-flex-item>
     </ds-flex>
   ```
 
@@ -169,12 +172,12 @@ export default {
   Fix sidebar flex
   ```
     <ds-flex>
-      <ds-col :width="{ base: '60px', md: '200px' }">
+      <ds-flex-item :width="{ base: '60px', md: '200px' }">
         <ds-placeholder>sidebar</ds-placeholder>
-      </ds-col>
-      <ds-col>
+      </ds-flex-item>
+      <ds-flex-item>
         <ds-placeholder>main content</ds-placeholder>
-      </ds-col>
+      </ds-flex-item>
     </ds-flex>
   ```
 
@@ -183,24 +186,24 @@ export default {
     <ds-flex
       :gutter="{ base: 'x-small', md: 'small' }"
       :width="{ base: '100%', sm: '50%', lg: '33.333332%' }">
-      <ds-col>
+      <ds-flex-item>
         <ds-placeholder>item</ds-placeholder>
-      </ds-col>
-      <ds-col>
+      </ds-flex-item>
+      <ds-flex-item>
         <ds-placeholder>item</ds-placeholder>
-      </ds-col>
-      <ds-col>
+      </ds-flex-item>
+      <ds-flex-item>
         <ds-placeholder>item</ds-placeholder>
-      </ds-col>
-      <ds-col>
+      </ds-flex-item>
+      <ds-flex-item>
         <ds-placeholder>item</ds-placeholder>
-      </ds-col>
-      <ds-col>
+      </ds-flex-item>
+      <ds-flex-item>
         <ds-placeholder>item</ds-placeholder>
-      </ds-col>
-      <ds-col>
+      </ds-flex-item>
+      <ds-flex-item>
         <ds-placeholder>item</ds-placeholder>
-      </ds-col>
+      </ds-flex-item>
     </ds-flex>
   ```
 </docs>
