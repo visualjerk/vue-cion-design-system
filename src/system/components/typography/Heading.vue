@@ -54,7 +54,7 @@ export default {
 <style lang="scss" scoped>
 .heading {
   @include reset;
-  @include stack-space($space-base, $space-large);
+  @include stack-space($space-base, $space-x-large);
   font-family: $font-family-heading;
   line-height: $line-height-heading;
 }

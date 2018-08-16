@@ -1,6 +1,8 @@
 <template>
   <li>
-    <router-link :to="{ name: route.name }">
+    <router-link
+      class="link"
+      :to="{ name: route.name }">
       {{ route.name | componentName }}
     </router-link>
     <ul v-if="route.children && route.children.length">
@@ -24,5 +26,19 @@ export default {
 }
 </script>
 
-<style>
+<style lang="scss" scoped>
+.link {
+  color: $text-color-lighter;
+  text-decoration: none;
+
+  &:hover,
+  &.router-link-exact-active {
+    color: $text-color-link-active;
+  }
+}
+
+ul {
+  list-style: none;
+  padding-left: $space-base;
+}
 </style>

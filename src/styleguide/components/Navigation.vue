@@ -35,9 +35,17 @@ export default {
 
 <style lang="scss" scoped>
 .navigation {
-  background-color: $background-color-lighter;
+  background-color: $background-color-black;
   padding: $space-base;
-  min-height: 100vh;
-  height: 100%;
+
+  @media #{$media-query-medium} {
+    min-height: 100vh;
+    height: 100%;
+  }
+}
+
+ul {
+  list-style: none;
+  padding-left: 0;
 }
 </style>

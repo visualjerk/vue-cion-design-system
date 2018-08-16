@@ -35,6 +35,14 @@ export default {
       default: 1
     },
     /**
+     * The direction of the items.
+     * `row, row-reverse, column, column-reverse`
+     */
+    direction: {
+      type: [String, Object],
+      default: null
+    },
+    /**
      * The html element name used for the wrapper.
      */
     tag: {
@@ -47,8 +55,12 @@ export default {
       const gutterStyle = this.gutter
         ? this.$getResponsiveStyles(this.gutter, this.parseGutter)
         : {}
+      const directionStyle = this.direction
+        ? this.$getResponsiveStyles(this.direction, this.parseDirection)
+        : {}
       return {
-        ...gutterStyle
+        ...gutterStyle,
+        ...directionStyle
       }
     }
   },
@@ -58,6 +70,11 @@ export default {
       return {
         marginLeft: `-${realGutter / 2}px`,
         marginRight: `-${realGutter / 2}px`
+      }
+    },
+    parseDirection(direction) {
+      return {
+        flexDirection: direction
       }
     }
   }
@@ -133,9 +150,11 @@ export default {
   ## Responsive Breakpoints
 
   Sometimes we need to adjust the layout for different screen sizes.
-  Therefore width and gutter can be set as an object of breakpoints `base, xs, sm, md, lg, xl`
+  Therefore width, gutter and direction can be set as an object of breakpoints `base, xs, sm, md, lg, xl`
   ```
-    <ds-flex :gutter="{ base: 'xx-small', md: 'small' }">
+    <ds-flex
+      :gutter="{ base: 'xx-small', md: 'small' }"
+      :direction="{ md: 'row-reverse' }">
       <ds-col :width="{ base: '100%', sm: 1, md: 1 }">
         <ds-placeholder>1@md</ds-placeholder>
       </ds-col>
