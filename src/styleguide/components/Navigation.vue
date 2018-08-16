@@ -36,6 +36,10 @@ export default {
 </script>
 
 <style lang="scss" scoped>
+header {
+  padding: $space-small;
+}
+
 .navigation {
   background-color: $background-color-darker;
   padding: $space-base $space-x-small;
