@@ -1,1 +1,1 @@
-Layout components are used to achieve consistent spacing for other components.
+Layout components are used to group related content together. The also provide consistent spacing for blocks of content.

@@ -2,7 +2,7 @@
   <component 
     :is="tag"
     class="heading"
-    :class="`text-${color}`">
+    :class="`text-${color}${ size ? ' font-size-' + size : ''}`">
     <slot />
   </component>
 </template>
@@ -35,6 +35,17 @@ export default {
       }
     },
     /**
+     * The size used for the heading.
+     * `base, large, x-large, xx-large, xxx-large, small`
+     */
+    size: {
+      type: String,
+      default: null,
+      validator: value => {
+        return value.match(/(base|large|x-large|xx-large|xxx-large|small)/)
+      }
+    },
+    /**
      * The color used for the heading.
      * `default, primary, inverse`
      */
@@ -54,44 +65,42 @@ export default {
 <style lang="scss" scoped>
 .heading {
   @include reset;
-  @include stack-space(0.6em, 1em);
+  @include stack-space($font-space-large, $font-space-xxxx-large);
   font-family: $font-family-heading;
   line-height: $line-height-heading;
+  letter-spacing: $letter-spacing-small;
+  font-weight: $font-weight-bold;
 }
 h1 {
-  letter-spacing: $letter-spacing-x-small;
   font-size: $font-size-xx-large;
-  font-weight: $font-weight-bold;
   @media #{$media-query-large} {
     font-size: $font-size-xxx-large;
   }
 }
 h2 {
-  letter-spacing: $letter-spacing-small;
   font-size: $font-size-xx-large;
-  font-weight: $font-weight-bold;
 }
 h3 {
   font-size: $font-size-x-large;
-  font-weight: $font-weight-bold;
 }
 h4 {
   font-size: $font-size-large;
-  font-weight: $font-weight-bold;
 }
 h5 {
   font-size: $font-size-base;
-  font-weight: $font-weight-regular;
 }
 h6 {
   font-size: $font-size-small;
-  font-weight: $font-weight-regular;
 }
 @include text-colors;
+@include font-sizes;
 </style>
 
 <docs>
-  ## Use different heading tags (defaults to h1)
+  ## Heading tag
+
+  Use different heading tags to create structure (defaults to h1).
+
   ```
     <ds-heading>The quick brown fox</ds-heading>
     <ds-heading tag="h2">The quick brown fox</ds-heading>
@@ -101,7 +110,23 @@ h6 {
     <ds-heading tag="h6">The quick brown fox</ds-heading>
   ```
 
-  ## Use colors to highlight or deemphasize
+  ## Heading sizes
+
+  In case you need a different size you can set it independently from the heading tag.
+
+  ```
+    <ds-heading size="xxx-large">The quick brown fox</ds-heading>
+    <ds-heading size="xx-large">The quick brown fox</ds-heading>
+    <ds-heading size="x-large">The quick brown fox</ds-heading>
+    <ds-heading size="large">The quick brown fox</ds-heading>
+    <ds-heading size="base">The quick brown fox</ds-heading>
+    <ds-heading size="small">The quick brown fox</ds-heading>
+  ```
+
+  ## Heading colors
+
+  Use colors to highlight or deemphasize the heading.
+
   ```
     <ds-heading color="primary">The quick brown fox</ds-heading>
     <ds-heading color="light">The quick brown fox</ds-heading>

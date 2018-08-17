@@ -80,7 +80,7 @@ export default {
 <style lang="scss" scoped>
 .text {
   @include reset;
-  @include stack-space(0.8em);
+  @include stack-space($font-space-x-large);
   font-family: $font-family-text;
   line-height: $line-height-base;
 }
@@ -93,7 +93,9 @@ export default {
 </style>
 
 <docs>
-  ## Use different sizes to create hierarchy
+  ## Text sizes
+
+  Use different sizes to create hierarchy.
 
   ```
     <ds-text size="x-large">The quick brown fox (x-large)</ds-text>
@@ -103,16 +105,21 @@ export default {
     <ds-text size="x-small">The quick brown fox (x-small)</ds-text>
   ```
 
-  ## Use colors to highlight or deemphasize
+  ## Text colors
+
+  Use colors to highlight or deemphasize.
+
   ```
     <ds-text>The quick brown fox</ds-text>
     <ds-text color="light">The quick brown fox</ds-text>
-    <ds-text color="primary">
-      The quick <ds-text bold>brown</ds-text> fox
-    </ds-text>
+    <ds-text color="primary">The quick brown fox
+</ds-text>
   ```
 
-  ## Nested text components use their parents format by default
+  ## Nesting styles
+
+  Nested text components use their parents format by default.
+
   ```
     <ds-text color="primary" size="large">
       The quick <ds-text bold>brown</ds-text> fox

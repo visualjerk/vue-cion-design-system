@@ -7,6 +7,7 @@ imports:
   - ./border-size.yml
   - ./border-radius.yml
   - ./font-size.yml
+  - ./font-spacing.yml
   - ./font.yml
   - ./line-height.yml
   - ./letter-spacing.yml

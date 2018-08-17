@@ -17,8 +17,8 @@ export default {
   name: 'DsTag',
   props: {
     /**
-     * The color used for the text.
-     * `default, dark, primary, success, warning, error`
+     * The background color used for the tag.
+     * `medium, default, dark, primary, success, warning, error`
      */
     color: {
       type: String,
@@ -69,7 +69,7 @@ export default {
   display: inline-block;
   font-family: $font-family-text;
   line-height: $line-height-base;
-  padding: 0 $space-x-small;
+  padding: 0 $font-space-base;
   border-radius: $border-radius-default;
   font-weight: $font-weight-bold;
   letter-spacing: $letter-spacing-large;
@@ -80,12 +80,15 @@ export default {
 @include font-sizes;
 
 .round {
-  border-radius: 20px;
+  border-radius: $border-radius-rounded;
 }
 </style>
 
 <docs>
-  ## Use different colors to emphasize or provide meaning
+  ## Tag colors
+
+  Use different colors to emphasize or provide meaning.
+
   ```
     <ds-tag>default</ds-tag>
     <ds-tag color="dark">dark</ds-tag>
@@ -95,16 +98,23 @@ export default {
     <ds-tag color="error">error</ds-tag>
   ```
 
-  ## Use different sizes to create hierarchy
+  ## Tag sizes
+
+  Use different sizes to create hierarchy (defaults to `x-small`).
+
   ```
+    <ds-tag size="xx-small">xx-small</ds-tag>
     <ds-tag size="x-small">x-small</ds-tag>
-    <ds-tag>small</ds-tag>
+    <ds-tag size="small">small</ds-tag>
     <ds-tag size="base">base</ds-tag>
     <ds-tag size="large">large</ds-tag>
     <ds-tag size="x-large">x-large</ds-tag>
   ```
 
-  ## Use a round tag to present small numbers
+  ## Variations
+
+  Use a round tag to present small numbers.
+
   ```
     <ds-tag color="primary" round>7</ds-tag>
     <ds-tag color="primary" round>42</ds-tag>

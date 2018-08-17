@@ -1,7 +1,17 @@
 <template>
-  <router-link :to="{ name: component.name }">
-    {{ component.name }}
-  </router-link>
+  <ds-flex-item>
+    <ds-card 
+      :header="name">
+      {{ component.description }}
+      <template slot="footer">
+        <ds-button
+          color="primary"
+          :path="{ name: component.name }">
+          {{ name }} Details
+        </ds-button>
+      </template>
+    </ds-card>
+  </ds-flex-item>
 </template>
 
 <script>
@@ -11,6 +21,11 @@ export default {
     component: {
       type: Object,
       required: true
+    }
+  },
+  computed: {
+    name() {
+      return this.$options.filters.componentName(this.component.name)
     }
   }
 }

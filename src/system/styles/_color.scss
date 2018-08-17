@@ -47,9 +47,6 @@
   .background-primary {
     background-color: $background-color-primary;
   }
-  .background-primary {
-    background-color: $background-color-primary;
-  }
   .background-success {
     background-color: $background-color-success;
   }
@@ -58,6 +55,27 @@
   }
   .background-error {
     background-color: $background-color-error;
+  }
+}
+
+@mixin background-hover-colors {
+  .background-medium:hover {
+    background-color: $background-color-medium-active;
+  }
+  .background-dark:hover {
+    background-color: $background-color-dark-active;
+  }
+  .background-primary:hover {
+    background-color: $background-color-primary-active;
+  }
+  .background-success:hover {
+    background-color: $background-color-success-active;
+  }
+  .background-warning:hover {
+    background-color: $background-color-warning-active;
+  }
+  .background-error:hover {
+    background-color: $background-color-error-active;
   }
 }
 

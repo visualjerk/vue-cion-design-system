@@ -8,11 +8,15 @@
           :components="requiredComponents"
           v-if="description"/>
       </ds-space>
-      <component-item
-        v-if="components" 
-        v-for="component in components"
-        :key="component.name"
-        :component="component" />
+      <ds-flex
+        gutter="base"
+        :width="{ base: '100%', sm: '50%' }">
+        <component-item
+          v-if="components"
+          v-for="component in components"
+          :key="component.name"
+          :component="component" />
+      </ds-flex>
     </ds-container>
   </div>
 </template>

@@ -6,6 +6,8 @@
 props:
   - name: border-radius-default
     value: "3px"
+  - name: border-radius-rounded
+    value: "2em"
   - name: border-radius-circle
     value: "50%"
 global:

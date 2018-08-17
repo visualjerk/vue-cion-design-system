@@ -146,8 +146,16 @@ props:
     value: *color-neutral-60
     category: background-color
 
+  - name: background-color-medium-active
+    value: *color-neutral-50
+    category: background-color
+
   - name: background-color-dark
     value: *color-neutral
+    category: background-color
+
+  - name: background-color-dark-active
+    value: *color-neutral-10
     category: background-color
 
   - name: background-color-darker
@@ -170,7 +178,7 @@ props:
     value: *color-green
     category: background-color
 
-  - name: background-color-success-hover
+  - name: background-color-success-active
     value: *color-green-light
     category: background-color
 

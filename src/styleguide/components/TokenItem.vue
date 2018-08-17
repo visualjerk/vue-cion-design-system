@@ -30,6 +30,7 @@ export default {
         'font-size',
         'font-family',
         'font-weight',
+        'font-spacing',
         'letter-spacing',
         'line-height'
       ],
@@ -54,6 +55,12 @@ export default {
           break
         case 'font-size':
           styles.fontSize = this.token.value
+          break
+        case 'font-spacing':
+          styles.paddingTop = this.token.value
+          styles.paddingBottom = this.token.value
+          styles.borderColor = this.$tokens.borderColorDefault
+          styles.height = 'auto'
           break
         case 'font-family':
           styles.fontFamily = this.token.value
@@ -105,6 +112,7 @@ export default {
   display: flex;
   align-items: center;
   border: $border-size-default solid transparent;
+  line-height: $line-height-base;
 }
 
 .hover {

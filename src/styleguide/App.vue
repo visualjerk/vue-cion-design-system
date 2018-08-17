@@ -4,7 +4,7 @@
       <ds-flex-item :width="{ base: '100%', md: 1 }">
         <router-view/>
       </ds-flex-item>
-      <ds-flex-item :width="{ base: '100%', md: '200px' }">
+      <ds-flex-item :width="{ base: '100%', md: '200px', lg: '240px' }">
         <navigation/>
       </ds-flex-item>
     </ds-flex>

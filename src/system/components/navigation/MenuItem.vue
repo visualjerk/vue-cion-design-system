@@ -36,7 +36,7 @@ export default {
   },
   props: {
     /**
-     * The routes to display
+     * The route to display
      */
     route: {
       type: Object,
