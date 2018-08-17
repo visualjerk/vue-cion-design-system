@@ -4,25 +4,25 @@
 #
 
 props:
-  font_size_xxxx_large:
+  - name: font-size-xxxx-large
     value: "3rem"
-  font_size_xxx_large:
+  - name: font-size-xxx-large
     value: "2.5rem"
-  font_size_xx_large:
+  - name: font-size-xx-large
     value: "2rem"
-  font_size_x_large:
+  - name: font-size-x-large
     value: "1.5rem"
-  font_size_large:
+  - name: font-size-large
     value: "1.25rem"
-  font_size_base:
+  - name: font-size-base
     value: "1rem"
-  font_size_body:
+  - name: font-size-body
     value: "16px"
-  font_size_small:
+  - name: font-size-small
     value: "0.8rem"
-  font_size_x_small:
+  - name: font-size-x-small
     value: "0.7rem"
-  font_size_xx_small:
+  - name: font-size-xx-small
     value: "0.6rem"
 global:
   type: number

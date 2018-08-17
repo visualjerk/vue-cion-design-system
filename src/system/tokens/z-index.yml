@@ -4,9 +4,9 @@
 #
 
 props:
-  z_index_modal:
+  - name: z-index-modal
     value: "9999"
-  z_index_sticky:
+  - name: z-index-sticky
     value: "100"
 global:
   type: number

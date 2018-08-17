@@ -4,19 +4,20 @@
 
 imports:
   - ./color.yml
-  - ./font-size.yml
-  - ./font.yml
-  - ./opacity.yml
-  - ./size.yml
-  - ./time.yml
-  - ./z-index.yml
-  - ./media-query.yml
-  - ./box-shadow.yml
-  - ./letter-spacing.yml
   - ./border-size.yml
   - ./border-radius.yml
-  - ./spacing.yml
+  - ./font-size.yml
+  - ./font.yml
   - ./line-height.yml
+  - ./letter-spacing.yml
+  - ./opacity.yml
+  - ./spacing.yml
+  - ./size.yml
+  - ./box-shadow.yml
+  - ./time.yml
+  - ./easing.yml
+  - ./z-index.yml
+  - ./media-query.yml
 global:
   type: global
   category: all

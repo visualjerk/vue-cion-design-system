@@ -8,19 +8,44 @@
         <ds-menu :routes="tokenMenu" />
       </ds-flex-item>
       <ds-flex-item>
-        <color-tokens />
+        <ds-space
+          v-for="(group, key) in $tokenMap"
+          :key="key">
+          <ds-heading
+            tag="h3"
+            :id="key">{{ key | startCase }}</ds-heading>
+          <ds-table
+            :data="group"
+            :fields="{token: { width: '50%' }, example: 'Example'}">
+            <template
+              slot="token"
+              slot-scope="data">
+              <ds-copy-field>
+                {{ data.row.scss }}
+              </ds-copy-field>
+              <ds-copy-field>
+                $tokens.{{ data.row.name | camelCase }}
+              </ds-copy-field>
+            </template>
+            <template
+              slot="example"
+              slot-scope="data">
+              <token-item :token="data.row" />
+            </template>
+          </ds-table>
+        </ds-space>
       </ds-flex-item>
     </ds-flex>
   </ds-space>
 </template>
 
 <script>
-import ColorTokens from './ColorTokens'
+import TokenItem from './TokenItem'
 
 export default {
   name: 'DesignTokens',
   components: {
-    ColorTokens
+    TokenItem
   },
   computed: {
     tokenMenu() {

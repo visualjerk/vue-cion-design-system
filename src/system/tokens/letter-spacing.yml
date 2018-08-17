@@ -4,16 +4,16 @@
 #
 
 props:
-  letter_spacing_x_large:
-    value: "2px"
-  letter_spacing_large:
-    value: "1px"
-  letter_spacing_base:
+  - name: letter-spacing-x-large
+    value: "0.1em"
+  - name: letter-spacing-large
+    value: "0.05em"
+  - name: letter-spacing-base
     value: "0"
-  letter_spacing_small:
-    value: "-0.5px"
-  letter_spacing_x_small:
-    value: "-1px"
+  - name: letter-spacing-small
+    value: "-0.01em"
+  - name: letter-spacing-x-small
+    value: "-0.015em"
 global:
   type: number
   category: letter-spacing

@@ -4,7 +4,7 @@
 #
 
 props:
-  opacity_disabled:
+  - name: opacity-disabled
     value: "0.5"
 global:
   type: number

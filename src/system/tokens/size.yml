@@ -4,16 +4,17 @@
 #
 
 props:
-  height_xlarge:
-    value: "60px"
-  height_large:
-    value: "50px"
-  height_base:
+  - name: size-height-base
     value: "42px"
-  height_footer:
-    value: "64px"
-  tappable_square:
+  - name: size-height-large
+    value: "50px"
+  - name: size-height-xlarge
+    value: "60px"
+
+  - name: size-tappable-square
     value: "44px"
+  - name: size-height-footer
+    value: "64px"
 global:
   type: number
   category: size

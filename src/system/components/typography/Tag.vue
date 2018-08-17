@@ -72,7 +72,7 @@ export default {
   padding: 0 $space-x-small;
   border-radius: $border-radius-default;
   font-weight: $font-weight-bold;
-  letter-spacing: 0.1;
+  letter-spacing: $letter-spacing-large;
   text-transform: uppercase;
 }
 @include text-colors;

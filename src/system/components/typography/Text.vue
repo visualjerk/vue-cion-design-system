@@ -80,7 +80,7 @@ export default {
 <style lang="scss" scoped>
 .text {
   @include reset;
-  @include stack-space($space-x-small);
+  @include stack-space(0.8em);
   font-family: $font-family-text;
   line-height: $line-height-base;
 }

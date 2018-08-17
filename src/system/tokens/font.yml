@@ -4,14 +4,19 @@
 #
 
 props:
-  font_family_heading:
+  - name: font-family-heading
     value: "'LatoWeb', sans-serif"
-  font_family_text:
+    category: "font-family"
+  - name: font-family-text
     value: "'LatoWeb', sans-serif"
-  font_weight_bold:
-    value: "600"
-  font_weight_regular:
+    category: "font-family"
+
+  - name: font-weight-regular
     value: "normal"
+    category: "font-weight"
+  - name: font-weight-bold
+    value: "600"
+    category: "font-weight"
 global:
   type: ...
   category: font
