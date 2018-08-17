@@ -3,13 +3,10 @@
 # Use these tokens to set a color.
 # For reference, see http://hslpicker.com/
 #
-# To make things a little simpler for your team,
-# utilize both global & local tokens for colors.
-#
 
 aliases:
   neutral:
-    value: "160, 6%"
+    value: "3, 2%"
   white:
     value: "0, 0%"
   green:
