@@ -25,16 +25,13 @@
         <ds-space>
           <markdown :content="part.description"/>
         </ds-space>
-        <vuep
-          :template="createTemplate(part.example)"
-          :options="{ theme: 'monokai' }"
+        <code-example
+          :code="part.example"
           v-if="part.example"/>
       </ds-space>
-
       <ds-space margin-bottom="xx-large">
         <component-options-doc :component="component" />
       </ds-space>
-
       <ds-space
         margin-bottom="xx-large"
         v-if="component.children"
@@ -46,8 +43,7 @@
 </template>
 
 <script>
-import Vuep from 'vuep'
-import 'vuep/dist/vuep.css'
+import CodeExample from './CodeExample'
 import ComponentOptionsDoc from './ComponentOptionsDoc'
 
 export default {
@@ -59,7 +55,7 @@ export default {
     }
   },
   components: {
-    Vuep,
+    CodeExample,
     ComponentOptionsDoc
   },
   data() {
@@ -136,45 +132,10 @@ export default {
         return `Child of ${tag.description}`
       }
       return `${tag.title} ${tag.description}`
-    },
-    createTemplate(example) {
-      if (example.match(/<template>/g)) {
-        return example
-      }
-      /* eslint-disable */
-      return `<template>
-<div>${example}</div>
-</template>
-<script><\/script>`
     }
   }
 }
 </script>
 
 <style lang="scss">
-.vuep {
-  display: flex;
-  height: auto;
-  font-family: inherit;
-  flex-direction: column-reverse;
-}
-
-.vuep-editor {
-  width: auto;
-  height: auto;
-  margin-right: 0;
-}
-
-.vuep-preview {
-  width: auto;
-  height: auto;
-  border-radius: 0;
-  border: $border-size-default solid $border-color-light;
-  padding: $space-base;
-  margin-bottom: $space-small;
-}
-
-.CodeMirror {
-  padding: $space-x-small 0;
-}
 </style>
