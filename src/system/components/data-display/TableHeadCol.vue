@@ -46,7 +46,7 @@ export default {
 .table-head-col {
   @include reset;
   border-bottom: $border-color-lighter solid $border-size-default;
-  padding: $space-small $space-x-small;
+  padding: $space-small $space-xx-small;
   text-align: left;
   font-weight: $font-weight-bold;
 }

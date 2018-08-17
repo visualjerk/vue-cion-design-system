@@ -13,9 +13,11 @@
     </div>
     <transition name="message">
       <div
-        v-if="showMessage"
+        v-show="showMessage"
         class="message">
-        <span>copied</span>
+        <div 
+          class="message-text" 
+          ref="messageText"/>
       </div>
     </transition>
   </component>
@@ -58,6 +60,7 @@ export default {
     copy() {
       const el = document.createElement('textarea')
       el.value = this.$refs.text.innerText
+      this.$refs.messageText.innerText = this.$refs.text.innerText
       document.body.appendChild(el)
       el.select()
       document.execCommand('copy')
@@ -104,48 +107,38 @@ export default {
 
 .message {
   position: absolute;
-  color: $text-color-link;
-  top: 50%;
+  overflow: hidden;
   left: 0;
   right: 0;
   top: 0;
   bottom: 0;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-size: $font-size-small;
   user-select: none;
   visibility: visible;
   opacity: 1;
-
-  span {
-    transition: all $duration-x-long $ease-out;
-    transform: scale(1);
-  }
-}
-
-.message-enter-active,
-.message-leave-active {
   transition: all $duration-x-long $ease-out;
 }
+
+.message-text {
+  padding: $space-x-small $space-small;
+  transition: all $duration-x-long $ease-out;
+  transform: scale(1);
+  transform-origin: 0 50%;
+}
+
 .message-enter,
 .message-leave-to {
   visibility: hidden;
   opacity: 0;
 
-  span {
+  .message-text {
     transform: scale(1.2);
   }
 }
 </style>
 
 <docs>
-  ## Use different sizes to create hierarchy
+  ## Basic usage
   ```
-    <ds-copy-field size="x-small">x-small</ds-copy-field>
-    <ds-copy-field>small</ds-copy-field>
-    <ds-copy-field size="base">base</ds-copy-field>
-    <ds-copy-field size="large">large</ds-copy-field>
-    <ds-copy-field size="x-large">x-large</ds-copy-field>
+    <ds-copy-field>Copy me please!</ds-copy-field>
   ```
 </docs>
