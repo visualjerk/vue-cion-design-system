@@ -154,7 +154,7 @@ export default {
           header="The header">
           Look ma! I'm in a card.
           <template slot="footer">
-            <button>Read more</button>
+            <ds-button color="primary">Read more</ds-button>
           </template>
         </ds-card>
       </ds-flex-item>
@@ -163,7 +163,7 @@ export default {
           header="The header">
           Look ma! I'm in a card.
           <template slot="footer">
-            <button>Read more</button>
+            <ds-button color="primary">Read more</ds-button>
           </template>
         </ds-card>
       </ds-flex-item>

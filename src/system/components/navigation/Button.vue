@@ -2,7 +2,7 @@
   <component
     @click.capture="handleClick"
     class="button"
-    :class="`text-${textColor} background-${color} font-size-${size}`"
+    :class="`text-${textColor} background-${color} font-size-${size}${hover ? ' hover' : ''}`"
     v-bind="bindings"
     :is="linkTag">
     <slot />
@@ -32,7 +32,7 @@ export default {
      */
     color: {
       type: String,
-      default: 'medium',
+      default: 'primary',
       validator: value => {
         return value.match(/(medium|dark|primary|success|warning|error)/)
       }
@@ -62,6 +62,14 @@ export default {
       validator: value => {
         return value.match(/(router-link|a|button)/)
       }
+    },
+    /**
+     * Toggle the hover state
+     * `true, false`
+     */
+    hover: {
+      type: Boolean,
+      default: false
     }
   },
   computed: {
@@ -97,6 +105,7 @@ export default {
   -webkit-appearance: none;
   border: 0;
   cursor: pointer;
+  user-select: none;
   font-family: $font-family-text;
   display: inline-flex;
   color: $text-color-inverse;
@@ -119,6 +128,12 @@ export default {
     border: 0;
     padding: 0;
   }
+
+  &:disabled {
+    opacity: 0.5;
+    cursor: default;
+    pointer-events: none;
+  }
 }
 
 @include text-colors;
@@ -133,9 +148,9 @@ export default {
 Use different colors to emphasize or provide meaning.
 
 ```
-  <ds-button>default</ds-button>
+  <ds-button color="medium">medium</ds-button>
   <ds-button color="dark">dark</ds-button>
-  <ds-button color="primary">primary</ds-button>
+  <ds-button>primary</ds-button>
   <ds-button color="success">success</ds-button>
   <ds-button color="warning">warning</ds-button>
   <ds-button color="error">error</ds-button>
@@ -153,16 +168,22 @@ Use different sizes to create hierarchy.
   <ds-button size="x-large">x-large</ds-button>
 ```
 
+## Button states
+
+A button can take different states.
+
+```
+  <ds-button>default state</ds-button>
+  <ds-button disabled>disabled state</ds-button>
+  <ds-button hover>hover state</ds-button>
+```
+
 ## Button as links
 
 Provide a path to the button. You can pass a url string or a Vue router path object.
 
 ```
-  <ds-button
-    color="primary"
-    path="/navigation">Click me</ds-button>
-  <ds-button
-    color="primary"
-    :path="{ name: 'Navigation' }">Click me</ds-button>
+  <ds-button path="/navigation">Click me</ds-button>
+  <ds-button :path="{ name: 'Navigation' }">Click me</ds-button>
 ```
 </docs>

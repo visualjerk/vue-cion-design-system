@@ -4,9 +4,7 @@
       :header="name">
       {{ component.description }}
       <template slot="footer">
-        <ds-button
-          color="primary"
-          :path="{ name: component.name }">
+        <ds-button :path="{ name: component.name }">
           {{ name }} Details
         </ds-button>
       </template>

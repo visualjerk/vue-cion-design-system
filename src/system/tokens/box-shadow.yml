@@ -11,7 +11,7 @@ props:
   - name: box-shadow-small
     value: "0px 8px 18px -2px rgba(0, 0, 0, .1)"
   - name: box-shadow-active
-    value: "0 0 6px 1px rgba($background-color-primary, 0.5)"
+    value: "0 0 6px 1px rgba(20, 100, 160, 0.5)"
   - name: box-shadow-small-inset
     value: "inset 0 0 0 1px rgba(0,0,0,.05)"
 global:

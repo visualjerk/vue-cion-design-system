@@ -59,23 +59,35 @@
 }
 
 @mixin background-hover-colors {
-  .background-medium:hover {
-    background-color: $background-color-medium-active;
+  .background-medium {
+    &:hover, &.hover {
+      background-color: $background-color-medium-active;
+    }
   }
-  .background-dark:hover {
-    background-color: $background-color-dark-active;
+  .background-dark {
+    &:hover, &.hover {
+      background-color: $background-color-dark-active;
+    }
   }
-  .background-primary:hover {
-    background-color: $background-color-primary-active;
+  .background-primary {
+    &:hover, &.hover {
+      background-color: $background-color-primary-active;
+    }
   }
-  .background-success:hover {
-    background-color: $background-color-success-active;
+  .background-success {
+    &:hover, &.hover {
+      background-color: $background-color-success-active;
+    }
   }
-  .background-warning:hover {
-    background-color: $background-color-warning-active;
+  .background-warning {
+    &:hover, &.hover {
+      background-color: $background-color-warning-active;
+    }
   }
-  .background-error:hover {
-    background-color: $background-color-error-active;
+  .background-error {
+    &:hover, &.hover {
+      background-color: $background-color-error-active;
+    }
   }
 }
 

@@ -9,7 +9,7 @@
 
 aliases:
   neutral:
-    value: "217, 6%"
+    value: "160, 6%"
   white:
     value: "0, 0%"
   green:
@@ -21,9 +21,11 @@ aliases:
   blue:
     value: "217, 71%"
   purple:
-    value: "271, 100%"
+    value: "271, 92%"
   red:
     value: "3, 65%"
+  teal:
+    value: "160, 81%"
 
 props:
   # Basic Colors
@@ -53,6 +55,11 @@ props:
 
   - name: color-white
     value: &color-white "hsla({!white}, 100%, 1)"
+
+  - name: color-primary
+    value: &color-primary "hsla({!teal}, 40%, 1)"
+  - name: color-primary-light
+    value: &color-primary-light "hsla({!teal}, 44%, 1)"
 
   - name: color-green
     value: &color-green "hsla({!green}, 40%, 1)"
@@ -106,15 +113,15 @@ props:
     category: text-color
 
   - name: text-color-link
-    value: *color-blue
+    value: *color-primary
     category: text-color
 
   - name: text-color-link-active
-    value: *color-blue-light
+    value: *color-primary-light
     category: text-color
 
   - name: text-color-primary
-    value: *color-blue
+    value: *color-primary
     category: text-color
 
   - name: text-color-success
@@ -167,11 +174,11 @@ props:
     category: background-color
 
   - name: background-color-primary
-    value: *color-blue
+    value: *color-primary
     category: background-color
 
   - name: background-color-primary-active
-    value: *color-blue-light
+    value: *color-primary-light
     category: background-color
 
   - name: background-color-success
@@ -212,11 +219,11 @@ props:
     category: border-color
 
   - name: border-color-active
-    value: *color-blue
+    value: *color-primary
     category: border-color
 
   - name: border-color-primary
-    value: *color-blue
+    value: *color-primary
     category: border-color
 
   - name: border-color-success
