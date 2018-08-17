@@ -35,6 +35,7 @@ export default {
 .table-col {
   @include reset;
   border-bottom: $border-color-lighter solid $border-size-default;
+  vertical-align: top;
   padding: $space-small $space-xx-small;
 
   &:last-child {

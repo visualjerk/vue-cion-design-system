@@ -89,7 +89,7 @@ export default {
           break
         case 'ease':
           styles.transitionTimingFunction = this.token.value
-          styles.transitionDuration = this.$tokens.durationSlowly
+          styles.transitionDuration = this.$tokens.durationLong
           styles.backgroundColor = this.$tokens.backgroundColorDark
           break
       }
