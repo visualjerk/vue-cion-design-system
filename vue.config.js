@@ -2,6 +2,7 @@ const path = require('path')
 
 // config at your vue.config.js
 module.exports = {
+  outputDir: path.resolve(__dirname, "./docs"),
   css: {
     loaderOptions: {
       sass: {

@@ -7,7 +7,7 @@
     "dev": "npm-run-all --parallel theo:onchange theo servedev",
     "servedev": "vue-cli-service serve --open",
     "build": "vue-cli-service build",
-    "serve": "http-server ./dist -o -s",
+    "serve": "http-server ./docs -o -s",
     "lint": "vue-cli-service lint",
     "theo": "theo ./src/system/tokens/tokens.yml --transform web --format map.scss,scss,raw.json,json --dest ./src/system/tokens/generated",
     "theo:onchange": "onchange \"./src/system/tokens/*.yml\" -- npm run theo"
