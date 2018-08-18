@@ -1,6 +1,6 @@
-## Vue Design System
+## CION - Vue Design System
 
-This Design System provides us with essential components and guidelines to achieve a consistent user experience accross our applications.
+This Design System provides our team with essential components and guidelines to achieve a consistent user experience accross our applications.
 
 ### How to use it
 
