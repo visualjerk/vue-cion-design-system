@@ -29,7 +29,7 @@ export default {
   props: {
     /**
      * The color used for the text.
-     * `default, light, lighter, primary, inverse, success, warning, error`
+     * `default, light, lighter, primary, inverse, success, warning, danger`
      */
     color: {
       type: String,
@@ -38,7 +38,7 @@ export default {
       },
       validator: value => {
         return value.match(
-          /(default|light|lighter|primary|inverse|success|warning|error)/
+          /(default|light|lighter|primary|inverse|success|warning|danger)/
         )
       }
     },

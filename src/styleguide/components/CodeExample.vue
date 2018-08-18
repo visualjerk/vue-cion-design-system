@@ -59,7 +59,7 @@ export default {
 
 // Codemirror Theme
 $codemirror-background: $background-color-lighter;
-$codemirror-primary: $color-blue;
+$codemirror-primary: $color-primary;
 
 .cm-s-vueds {
 	font-size: 1em;
@@ -104,7 +104,7 @@ $codemirror-primary: $color-blue;
     color: $text-color-warning;
   }
   .cm-keyword {
-    color: $text-color-error;
+    color: $text-color-danger;
   }
   .cm-string {
     color: $text-color-success;
@@ -113,13 +113,13 @@ $codemirror-primary: $color-blue;
     color: $text-color-warning;
   }
   .cm-variable-2 {
-    color: $text-color-error;
+    color: $text-color-danger;
   }
   .cm-atom {
     color: $text-color-success;
   }
   .cm-number {
-    color: $text-color-error;
+    color: $text-color-danger;
   }
   .cm-operator {
     color: $codemirror-primary;

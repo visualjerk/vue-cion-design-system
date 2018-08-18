@@ -10,7 +10,7 @@ When no component fits your case, either extend an existing one or create a new 
 
 ### Extending existing components
 
-When extending components, make sure to not break existing features. If you really need to, it might be better to create a new one and mark the existing component as `deprecated`
+When extending components, make sure not to break existing features. If you really need to, it might be better to create a new one and mark the existing component as `deprecated`
 
 ### Creating new components
 

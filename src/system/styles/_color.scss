@@ -23,8 +23,8 @@
   .text-warning {
     color: $text-color-warning;
   }
-  .text-error {
-    color: $text-color-error;
+  .text-danger {
+    color: $text-color-danger;
   }
 }
 
@@ -53,8 +53,8 @@
   .background-warning {
     background-color: $background-color-warning;
   }
-  .background-error {
-    background-color: $background-color-error;
+  .background-danger {
+    background-color: $background-color-danger;
   }
 }
 
@@ -84,9 +84,9 @@
       background-color: $background-color-warning-active;
     }
   }
-  .background-error {
+  .background-danger {
     &:hover, &.hover {
-      background-color: $background-color-error-active;
+      background-color: $background-color-danger-active;
     }
   }
 }
@@ -113,7 +113,7 @@
   .border-warning {
     border-color: $border-color-warning;
   }
-  .border-error {
-    border-color: $border-color-error;
+  .border-danger {
+    border-color: $border-color-danger;
   }
 }

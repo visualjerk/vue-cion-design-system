@@ -28,13 +28,13 @@ export default {
     },
     /**
      * The background color used for the tag.
-     * `medium, default, dark, primary, success, warning, error`
+     * `medium, default, dark, primary, success, warning, danger`
      */
     color: {
       type: String,
       default: 'primary',
       validator: value => {
-        return value.match(/(medium|dark|primary|success|warning|error)/)
+        return value.match(/(medium|dark|primary|success|warning|danger)/)
       }
     },
     /**
@@ -153,7 +153,7 @@ Use different colors to emphasize or provide meaning.
   <ds-button>primary</ds-button>
   <ds-button color="success">success</ds-button>
   <ds-button color="warning">warning</ds-button>
-  <ds-button color="error">error</ds-button>
+  <ds-button color="danger">danger</ds-button>
 ```
 
 ## Button sizes

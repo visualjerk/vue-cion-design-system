@@ -16,13 +16,11 @@ aliases:
   yellow:
     value: "48, 100%"
   blue:
-    value: "217, 71%"
+    value: "202, 97%"
   purple:
     value: "271, 92%"
   red:
     value: "3, 65%"
-  teal:
-    value: "160, 81%"
 
 props:
   # Basic Colors
@@ -54,34 +52,24 @@ props:
     value: &color-white "hsla({!white}, 100%, 1)"
 
   - name: color-primary
-    value: &color-primary "hsla({!teal}, 40%, 1)"
+    value: &color-primary "hsla({!blue}, 53%, 1)"
   - name: color-primary-light
-    value: &color-primary-light "hsla({!teal}, 44%, 1)"
+    value: &color-primary-light "hsla({!blue}, 59%, 1)"
 
-  - name: color-green
-    value: &color-green "hsla({!green}, 40%, 1)"
-  - name: color-green-light
-    value: &color-green-light "hsla({!green}, 46%, 1)"
+  - name: color-success
+    value: &color-success "hsla({!green}, 40%, 1)"
+  - name: color-success-light
+    value: &color-success-light "hsla({!green}, 45%, 1)"
 
-  - name: color-blue
-    value: &color-blue "hsla({!blue}, 46%, 1)"
-  - name: color-blue-light
-    value: &color-blue-light "hsla({!blue}, 54%, 1)"
+  - name: color-danger
+    value: &color-danger "hsla({!red}, 50%, 1)"
+  - name: color-danger-light
+    value: &color-danger-light "hsla({!red}, 56%, 1)"
 
-  - name: color-purple
-    value: &color-purple "hsla({!purple}, 50%, 1)"
-  - name: color-purple-light
-    value: &color-purple-light "hsla({!purple}, 56%, 1)"
-
-  - name: color-red
-    value: &color-red "hsla({!red}, 50%, 1)"
-  - name: color-red-light
-    value: &color-red-light "hsla({!red}, 56%, 1)"
-
-  - name: color-orange
-    value: &color-orange "hsla({!orange}, 50%, 1)"
-  - name: color-orange-light
-    value: &color-orange-light "hsla({!orange}, 56%, 1)"
+  - name: color-warning
+    value: &color-warning "hsla({!orange}, 50%, 1)"
+  - name: color-warning-light
+    value: &color-warning-light "hsla({!orange}, 56%, 1)"
 
   - name: color-yellow
     value: &color-yellow "hsla({!yellow}, 48%, 1)"
@@ -122,15 +110,15 @@ props:
     category: text-color
 
   - name: text-color-success
-    value: *color-green
+    value: *color-success
     category: text-color
 
   - name: text-color-warning
-    value: *color-orange
+    value: *color-warning
     category: text-color
 
-  - name: text-color-error
-    value: *color-red
+  - name: text-color-danger
+    value: *color-danger
     category: text-color
 
   # Background Colors
@@ -179,27 +167,27 @@ props:
     category: background-color
 
   - name: background-color-success
-    value: *color-green
+    value: *color-success
     category: background-color
 
   - name: background-color-success-active
-    value: *color-green-light
+    value: *color-success-light
     category: background-color
 
   - name: background-color-warning
-    value: *color-orange
+    value: *color-warning
     category: background-color
 
   - name: background-color-warning-active
-    value: *color-orange-light
+    value: *color-warning-light
     category: background-color
 
-  - name: background-color-error
-    value: *color-red
+  - name: background-color-danger
+    value: *color-danger
     category: background-color
 
-  - name: background-color-error-active
-    value: *color-red-light
+  - name: background-color-danger-active
+    value: *color-danger-light
     category: background-color
 
   # Border Colors
@@ -224,15 +212,15 @@ props:
     category: border-color
 
   - name: border-color-success
-    value: *color-green
+    value: *color-success
     category: border-color
 
   - name: border-color-warning
-    value: *color-orange
+    value: *color-warning
     category: border-color
 
-  - name: border-color-error
-    value: *color-red
+  - name: border-color-danger
+    value: *color-danger
     category: border-color
 
 global:

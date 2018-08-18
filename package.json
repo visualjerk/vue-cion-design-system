@@ -1,15 +1,16 @@
 {
-  "name": "vue-ds",
+  "name": "vue-cion-design-system",
   "version": "1.0.0",
+  "author": "visualjerk",
   "private": true,
   "scripts": {
-    "dev": "npm-run-all --parallel theo:onchange theo serve",
-    "serve": "vue-cli-service serve --open",
+    "dev": "npm-run-all --parallel theo:onchange theo servedev",
+    "servedev": "vue-cli-service serve --open",
     "build": "vue-cli-service build",
+    "serve": "http-server ./dist -o -s",
     "lint": "vue-cli-service lint",
     "theo": "theo ./src/system/tokens/tokens.yml --transform web --format map.scss,scss,raw.json,json --dest ./src/system/tokens/generated",
-    "theo:onchange": "onchange \"./src/system/tokens/*.yml\" -- npm run theo",
-    "html": "http-server ./dist -o -s"
+    "theo:onchange": "onchange \"./src/system/tokens/*.yml\" -- npm run theo"
   },
   "dependencies": {
     "vue": "^2.5.17",

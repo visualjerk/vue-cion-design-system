@@ -18,13 +18,13 @@ export default {
   props: {
     /**
      * The background color used for the tag.
-     * `medium, default, dark, primary, success, warning, error`
+     * `medium, default, dark, primary, success, warning, danger`
      */
     color: {
       type: String,
       default: 'medium',
       validator: value => {
-        return value.match(/(medium|dark|primary|success|warning|error)/)
+        return value.match(/(medium|dark|primary|success|warning|danger)/)
       }
     },
     /**
@@ -95,7 +95,7 @@ export default {
     <ds-tag color="primary">primary</ds-tag>
     <ds-tag color="success">success</ds-tag>
     <ds-tag color="warning">warning</ds-tag>
-    <ds-tag color="error">error</ds-tag>
+    <ds-tag color="danger">danger</ds-tag>
   ```
 
   ## Tag sizes
