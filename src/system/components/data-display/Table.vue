@@ -294,7 +294,10 @@ export default {
           {{ scope.row.name }} loves {{ scope.row.loves }}
         </template>
         <template slot="edit" slot-scope="scope">
-          <button @click="deleteRow(scope.row)">delete</button>
+          <ds-button
+            color="dark"
+            size="small"
+            @click="deleteRow(scope.row)">delete</ds-button>
         </template>
       </ds-table>
     </div>

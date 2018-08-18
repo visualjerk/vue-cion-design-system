@@ -1,6 +1,10 @@
 <template>
   <div class="navigation">
-    <header>Design System</header>
+    <header>
+      <router-link to="/">
+        <ds-logo inverse/>
+      </router-link>
+    </header>
     <ds-menu 
       :routes="routes"
       :url-parser="urlParser"
@@ -41,12 +45,14 @@ export default {
 
 <style lang="scss" scoped>
 header {
-  padding: $space-small;
+  padding: $space-x-large $space-small;
+  display: flex;
+  justify-content: center;
 }
 
 .navigation {
   background-color: $background-color-darker;
-  padding: $space-base $space-x-small;
+  padding: 0 $space-x-small;
 
   @media #{$media-query-medium} {
     min-height: 100vh;

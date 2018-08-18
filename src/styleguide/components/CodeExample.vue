@@ -59,11 +59,12 @@ export default {
 
 // Codemirror Theme
 $codemirror-background: $background-color-lighter;
+$codemirror-primary: $color-blue;
 
 .cm-s-vueds {
 	font-size: 1em;
 	line-height: 1.5em;
-	font-family: inconsolata, monospace;
+	font-family: $font-family-code;
 	letter-spacing: 0.3px;
 	word-spacing: 1px;
 	background: $codemirror-background;
@@ -87,17 +88,17 @@ $codemirror-background: $background-color-lighter;
   }
 
   .CodeMirror-activeline-background {
-    background: rgba($background-color-primary, 0.1);
+    background: rgba($codemirror-primary, 0.1);
   }
   .CodeMirror-selected {
-    background: rgba($background-color-primary, 0.1);
+    background: rgba($codemirror-primary, 0.1);
   }
   .cm-comment {
     font-style: italic;
     color: $text-color-lighter;
   }
   .cm-tag {
-    color: $text-color-primary;
+    color: $codemirror-primary;
   }
   .cm-attribute {
     color: $text-color-warning;
@@ -121,7 +122,7 @@ $codemirror-background: $background-color-lighter;
     color: $text-color-error;
   }
   .cm-operator {
-    color: $text-color-primary;
+    color: $codemirror-primary;
   }
   .CodeMirror-linenumber {
     color: $text-color-lighter;

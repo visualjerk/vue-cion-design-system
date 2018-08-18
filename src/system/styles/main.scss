@@ -17,3 +17,11 @@ html, body {
   margin: 0;
   padding: 0;
 }
+
+pre, code {
+  font-family: $font-family-code;
+}
+
+a {
+  text-decoration: none !important;
+}
