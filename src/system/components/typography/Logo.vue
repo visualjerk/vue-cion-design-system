@@ -37,7 +37,7 @@ $logo-color-inverse: $text-color-light;
   align-items: center;
 
   img {
-    width: 140px;
+    width: 130px;
     height: auto;
   }
 }

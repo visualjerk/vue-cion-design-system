@@ -1,16 +1,10 @@
 <template>
   <div class="navigation">
-    <header>
-      <router-link to="/">
-        <ds-logo inverse/>
-      </router-link>
-    </header>
     <ds-menu 
       :routes="routes"
       :url-parser="urlParser"
       :name-parser="nameParser"
-      :is-exact="isExact"
-      inverse />
+      :is-exact="isExact"/>
   </div>
 </template>
 
@@ -44,20 +38,8 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-header {
-  padding: $space-x-large $space-small;
-  display: flex;
-  justify-content: center;
-}
-
 .navigation {
-  background-color: $background-color-darker;
-  padding: 0 $space-x-small;
-
-  @media #{$media-query-medium} {
-    min-height: 100vh;
-    height: 100%;
-  }
+  padding: $space-base $space-x-small;
 }
 
 ul {

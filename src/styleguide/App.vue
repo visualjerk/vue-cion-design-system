@@ -1,13 +1,14 @@
 <template>
   <div id="app">
-    <ds-flex :direction="{ md: 'row-reverse' }">
-      <ds-flex-item :width="{ base: '100%', md: 1 }">
-        <router-view/>
-      </ds-flex-item>
-      <ds-flex-item :width="{ base: '100%', md: '200px', lg: '240px' }">
-        <navigation/>
-      </ds-flex-item>
-    </ds-flex>
+    <ds-page>
+      <template slot="brand">
+        <router-link to="/">
+          <ds-logo/>
+        </router-link>
+      </template>
+      <navigation slot="sidebar"/>
+      <router-view/>
+    </ds-page>
   </div>
 </template>
 
