@@ -8,7 +8,9 @@
         :key="icon">
         <ds-card>
           <div class="icon-preview">
-            <ds-icon :name="icon"/>
+            <ds-icon 
+              :name="icon" 
+              size="x-large"/>
           </div>
           <ds-copy-field>{{ icon }}</ds-copy-field>
         </ds-card>
@@ -32,7 +34,7 @@ export default {
 
 <style lang="scss" scoped>
 .icon-preview {
-  height: 40px;
+  height: 50px;
   text-align: center;
 }
 </style>
