@@ -58,14 +58,9 @@ export default {
   },
   methods: {
     copy() {
-      const el = document.createElement('textarea')
-      el.value = this.$refs.text.innerText
-      this.$refs.messageText.innerText = this.$refs.text.innerText
-      document.body.appendChild(el)
-      el.select()
-      document.execCommand('copy')
-      document.body.removeChild(el)
-      document.execCommand('copy')
+      const content = this.$refs.text.innerText
+      this.$refs.messageText.innerText = content
+      this.$copyToClipboard(content)
       this.showMessage = true
       this.$nextTick(() => {
         this.showMessage = false
