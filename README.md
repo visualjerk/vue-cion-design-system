@@ -4,7 +4,7 @@ CION is a Design System build primary for Vue applications. You can use it as a 
 
 The system utilizes design tokens, a living styleguide with integrated code playgrounds and reusable components for common UI tasks.
 
-Living styleguide demo: [https://cion.visualjerk.de]
+Living styleguide demo: https://cion.visualjerk.de
 
 ## Project setup
 ```
