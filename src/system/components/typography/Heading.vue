@@ -2,7 +2,7 @@
   <component 
     :is="tag"
     class="heading"
-    :class="`text-${color}${ size ? ' font-size-' + size : ''}`">
+    :class="`${color ? ' text-' + color : ''}${ size ? ' font-size-' + size : ''}`">
     <slot />
   </component>
 </template>
@@ -17,11 +17,6 @@
  */
 export default {
   name: 'DsHeading',
-  inject: {
-    $parentText: {
-      default: null
-    }
-  },
   props: {
     /**
      * The heading type used for the heading.
@@ -51,9 +46,7 @@ export default {
      */
     color: {
       type: String,
-      default() {
-        return this.$parentText ? this.$parentText.color : 'default'
-      },
+      default: null,
       validator: value => {
         return value.match(/(default|primary|inverse|light)/)
       }

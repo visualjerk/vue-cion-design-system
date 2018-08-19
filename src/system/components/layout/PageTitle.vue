@@ -2,7 +2,7 @@
   <component 
     :is="tag"
     class="page-title"
-    :class="`background-${backgroundColor}`">
+    :class="`text-${color} background-${backgroundColor}`">
     <ds-container>
       <ds-heading>
         {{ heading }}
@@ -19,11 +19,6 @@
  */
 export default {
   name: 'DsPageTitle',
-  provide() {
-    return {
-      $parentText: this
-    }
-  },
   props: {
     /**
      * The heading of the page.
@@ -70,6 +65,7 @@ export default {
   }
 }
 
+@include text-colors;
 @include background-colors;
 </style>
 

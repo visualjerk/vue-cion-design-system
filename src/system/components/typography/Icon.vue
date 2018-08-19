@@ -3,7 +3,7 @@
     :is="tag"
     :aria-label="ariaLabel"
     class="icon"
-    :class="`text-${color} font-size-${size}`"/>
+    :class="`${color ? ' text-' + color : ''}${size ? ' font-size-' + size : ''}`"/>
 </template>
 
 <script>
@@ -16,11 +16,6 @@ const cache = new Map()
  */
 export default {
   name: 'DsIcon',
-  inject: {
-    $parentText: {
-      default: null
-    }
-  },
   props: {
     /**
      * The name of the icon.
@@ -30,14 +25,12 @@ export default {
       required: true
     },
     /**
-     * The color used for the text.
+     * The color used for the icon.
      * `default, light, lighter, primary, inverse, success, warning, danger`
      */
     color: {
       type: String,
-      default() {
-        return this.$parentText ? this.$parentText.color : 'default'
-      },
+      default: null,
       validator: value => {
         return value.match(
           /(default|light|lighter|primary|inverse|success|warning|danger)/
@@ -45,14 +38,12 @@ export default {
       }
     },
     /**
-     * The size used for the text.
+     * The size used for the icon.
      * `base, large, x-large, small, x-small`
      */
     size: {
       type: String,
-      default() {
-        return this.$parentText ? this.$parentText.size : 'base'
-      },
+      default: null,
       validator: value => {
         return value.match(/(base|large|x-large|small|x-small)/)
       }

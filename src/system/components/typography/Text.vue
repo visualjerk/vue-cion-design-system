@@ -2,7 +2,7 @@
   <component 
     :is="tag"
     class="text"
-    :class="`text-${color} font-size-${size}${bold ? ' bold' : ''}`">
+    :class="`${color ? ' text-' + color : ''}${size ? ' font-size-' + size : ''}${bold ? ' bold' : ''}`">
     <slot />
   </component>
 </template>
@@ -33,9 +33,7 @@ export default {
      */
     color: {
       type: String,
-      default() {
-        return this.$parentText ? this.$parentText.color : 'default'
-      },
+      default: null,
       validator: value => {
         return value.match(
           /(default|light|lighter|primary|inverse|success|warning|danger)/
@@ -47,9 +45,7 @@ export default {
      */
     bold: {
       type: Boolean,
-      default() {
-        return this.$parentText ? this.$parentText.bold : false
-      }
+      default: null
     },
     /**
      * The size used for the text.
@@ -57,9 +53,7 @@ export default {
      */
     size: {
       type: String,
-      default() {
-        return this.$parentText ? this.$parentText.size : 'base'
-      },
+      default: null,
       validator: value => {
         return value.match(/(base|large|x-large|small|x-small)/)
       }
@@ -112,8 +106,7 @@ export default {
   ```
     <ds-text>The quick brown fox</ds-text>
     <ds-text color="light">The quick brown fox</ds-text>
-    <ds-text color="primary">The quick brown fox
-</ds-text>
+    <ds-text color="primary">The quick brown fox</ds-text>
   ```
 
   ## Nesting styles
