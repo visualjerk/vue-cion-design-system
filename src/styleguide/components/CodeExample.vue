@@ -35,12 +35,15 @@ export default {
   methods: {
     getCode() {
       const codeLines = this.code.split('\n')
-      if (codeLines[0] === 'iframe') {
+      if (codeLines[0].trim() === 'iframe') {
         this.iframe = true
         codeLines.shift()
       }
+      while (codeLines[0].trim() === '') {
+        codeLines.shift()
+      }
       const code = codeLines.join('\n')
-      if (codeLines[0] === '<template>') {
+      if (codeLines[0].trim() === '<template>') {
         return code
       }
       /* eslint-disable */
