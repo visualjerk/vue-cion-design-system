@@ -129,7 +129,6 @@ ul {
         </ds-menu>
       </ds-flex-item>
     </ds-flex>
-
   </template>
 
   <script>

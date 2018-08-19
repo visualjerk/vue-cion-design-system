@@ -1,7 +1,10 @@
 <template>
-  <vuep
-    :template="template"
-    :options="{ theme: 'vueds' }" />
+  <div :class="`${iframe ? 'vuep-iframe' : ''}`">
+    <vuep
+      :template="template"
+      :options="{ theme: 'vueds' }"
+      :iframe="iframe" />
+  </div>
 </template>
 
 <script>
@@ -10,6 +13,11 @@ import 'vuep/dist/vuep.css'
 
 export default {
   name: 'CodeExample',
+  data() {
+    return {
+      iframe: false
+    }
+  },
   props: {
     code: {
       type: String,
@@ -21,12 +29,24 @@ export default {
   },
   computed: {
     template() {
-      if (this.code.match(/<template>/g)) {
-        return this.code
+      return this.getCode()
+    }
+  },
+  methods: {
+    getCode() {
+      const codeLines = this.code.split('\n')
+      if (codeLines[0] === 'iframe') {
+        this.iframe = true
+        codeLines.shift()
+      }
+      const code = codeLines.join('\n')
+      if (codeLines[0] === '<template>') {
+        return code
       }
       /* eslint-disable */
       return `<template>
-<div>${this.code}</div>
+<div>
+${code}</div>
 </template>
 <script><\/script>`
     }
@@ -55,6 +75,11 @@ export default {
   border: $border-size-default solid $border-color-lighter;
   padding: $space-base;
   margin-bottom: $space-small;
+
+  .vuep-iframe & {
+    padding: 0;
+    min-height: 600px;
+  }
 }
 
 // Codemirror Theme
