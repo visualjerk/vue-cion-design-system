@@ -90,6 +90,7 @@ export default {
 @include font-sizes;
 
 .copy-link {
+  @include reset;
   position: absolute;
   right: $space-small;
   top: 50%;
@@ -106,6 +107,7 @@ export default {
 }
 
 .message {
+  @include reset;
   position: absolute;
   overflow: hidden;
   left: 0;
@@ -119,6 +121,7 @@ export default {
 }
 
 .message-text {
+  @include reset;
   padding: $space-x-small $space-small;
   transition: all $duration-x-long $ease-out;
   transform: scale(1);

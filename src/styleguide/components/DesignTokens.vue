@@ -4,8 +4,10 @@
       gutter="large"
       :direction="{ lg: 'row-reverse' }">
       <ds-flex-item :width="{ base: '100%', lg: '250px' }">
-        <ds-heading tag="h4">Categories</ds-heading>
-        <ds-menu :routes="tokenMenu" />
+        <div class="sticky">
+          <ds-heading tag="h4">Categories</ds-heading>
+          <ds-menu :routes="tokenMenu" />
+        </div>
       </ds-flex-item>
       <ds-flex-item>
         <ds-space
@@ -61,4 +63,8 @@ export default {
 </script>
 
 <style lang="scss" scoped>
+.sticky {
+  position: sticky;
+  top: 100px;
+}
 </style>

@@ -7,6 +7,7 @@
         </router-link>
       </template>
       <navigation slot="sidebar"/>
+      <navigation slot="drawer"/>
       <router-view/>
     </ds-page>
   </div>

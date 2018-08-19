@@ -1,8 +1,7 @@
 <template>
   <component 
     :is="tag"
-    class="logo"
-    :class="`${inverse ? ' inverse' : ''}`">
+    class="logo">
     <img src="@/system/assets/img/logo_cion.svg">
   </component>
 </template>
