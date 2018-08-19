@@ -44,6 +44,14 @@
   margin: 0;
 }
 
+@mixin clearfix {
+  &:before, &:after {
+    display: table;
+    content: '';
+    clear: both;
+  }
+}
+
 // Used to prevent text selection on an element
 @mixin prevent-user-select {
   -webkit-user-select: none;

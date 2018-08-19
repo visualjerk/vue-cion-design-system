@@ -1,19 +1,21 @@
 <template>
   <div
-    :class="`page${hasHeader ? ' has-header' : ' has-no-header'}${$slots.sidebar ? ' has-sidebar' : ''}${showDrawer ? ' show-drawer' : ''}`">
+    :class="`page${hasHeader ? ' has-header' : ' has-no-header'}${$slots.sidebar ? ' has-sidebar' : ''}${showDrawer ? ' show-drawer' : ''}${contained ? ' is-contained' : ''}`">
     <header
       class="page-header">
-      <div class="page-brand">
-        <slot name="brand"/>
-      </div>
-      <div class="page-navbar">
-        <slot name="navbar"/>
-      </div>
-      <div
-        v-if="$slots.drawer"
-        class="page-navigation-toggle"
-        @click="showDrawer = !showDrawer">
-        |||
+      <div class="page-header-container">
+        <div class="page-brand">
+          <slot name="brand"/>
+        </div>
+        <div class="page-navbar">
+          <slot name="navbar"/>
+        </div>
+        <div
+          v-if="$slots.drawer"
+          class="page-navigation-toggle"
+          @click="showDrawer = !showDrawer">
+          |||
+        </div>
       </div>
     </header>
     <aside
@@ -41,7 +43,16 @@
  */
 export default {
   name: 'DsPage',
-  props: {},
+  props: {
+    /**
+     * Whether the layout should have a maximum width
+     * `true, false`
+     */
+    contained: {
+      type: Boolean,
+      default: false
+    }
+  },
   data() {
     return {
       showDrawer: false
@@ -56,6 +67,7 @@ export default {
 </script>
 
 <style lang="scss" scoped>
+$contained-width: 1400px;
 $header-height: 54px;
 $sidebar-brand-height: 136px;
 $sidebar-width: 220px;
@@ -63,20 +75,47 @@ $sidebar-width-large: 260px;
 
 .page {
   @include reset;
+  @include clearfix;
+  background: $background-color-default;
+  min-height: 100vh;
+
+  &.is-contained {
+    max-width: $contained-width;
+    width: 100%;
+    margin: 0 auto;
+  }
 }
 
 .page-header {
   @include reset;
   position: fixed;
-  left: 0;
   top: 0;
+  left: 0;
   right: 0;
+  z-index: $z-index-page-header;
+
+  .has-no-header & {
+    @media #{$media-query-medium} {
+      right: auto;
+      width: $sidebar-width;
+    }
+    @media #{$media-query-large} {
+      width: $sidebar-width-large;
+    }
+  }
+}
+
+.page-header-container {
   height: $header-height;
   background: $background-color-darker;
   box-shadow: $box-shadow-base;
-  z-index: $z-index-page-header;
   display: flex;
   justify-content: space-between;
+
+  .is-contained & {
+    max-width: $contained-width;
+    margin: 0 auto;
+  }
 
   .has-no-header & {
     @media #{$media-query-medium} {
@@ -84,11 +123,6 @@ $sidebar-width-large: 260px;
       display: block;
       background: $background-color-default;
       box-shadow: none;
-      right: auto;
-      width: $sidebar-width;
-    }
-    @media #{$media-query-large} {
-      width: $sidebar-width-large;
     }
   }
 }
@@ -128,7 +162,6 @@ $sidebar-width-large: 260px;
 .page-sidebar {
   @include reset;
   position: fixed;
-  left: 0;
   top: $header-height;
   bottom: 0;
   width: $sidebar-width;
@@ -205,11 +238,11 @@ $sidebar-width-large: 260px;
 
   .has-sidebar & {
     @media #{$media-query-medium} {
-      margin-left: $sidebar-width;
+      padding-left: $sidebar-width;
     }
 
     @media #{$media-query-large} {
-      margin-left: $sidebar-width-large;
+      padding-left: $sidebar-width-large;
     }
   }
 }
