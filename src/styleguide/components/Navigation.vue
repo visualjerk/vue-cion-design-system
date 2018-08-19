@@ -13,7 +13,9 @@ export default {
   name: 'Navigation',
   computed: {
     routes() {
-      const routes = this.$router.options.routes
+      const routes = this.$router.options.routes.filter(route => {
+        return route.path !== '*'
+      })
       return routes.map(route => {
         const [parent, ...children] = [...route.children]
         parent.children = children

@@ -98,4 +98,12 @@ const router = new VueRouter({
   }
 })
 
+// Redirect for github pages
+router.beforeEach((to, from, next) => {
+  if (to.query && to.query.p) {
+    next({ path: to.query.p, query: null })
+  }
+  next()
+})
+
 export default router
