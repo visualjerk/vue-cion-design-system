@@ -7,6 +7,7 @@ node_modules
 .env.*.local
 
 /src/system/tokens/generated
+/src/system/icons/generated
 
 # Log files
 npm-debug.log*

@@ -18,16 +18,18 @@
         <template
           slot="default"
           slot-scope="scope">
-          <span v-if="scope.row.defaultValue.func">
-            Function()
-          </span>
-          <span v-else>
-            {{ scope.row.defaultValue.value }}
-          </span>
+          <template v-if="scope.row.defaultValue">
+            <span v-if="scope.row.defaultValue.func">
+              Function()
+            </span>
+            <span v-else>
+              {{ scope.row.defaultValue.value }}
+            </span>
+          </template>
         </template>
       </ds-table>
     </ds-space>
-    <ds-space v-if="componentSlots">
+    <ds-space v-if="componentSlots && componentSlots.length">
       <ds-heading tag="h2">{{ component.name | componentName }} Slots</ds-heading>
       <ds-table :data="componentSlots">
         <template slot-scope="scope">
