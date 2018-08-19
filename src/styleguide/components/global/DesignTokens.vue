@@ -60,6 +60,6 @@ export default {
 <style lang="scss" scoped>
 .sticky {
   position: sticky;
-  top: 100px;
+  top: 50px;
 }
 </style>

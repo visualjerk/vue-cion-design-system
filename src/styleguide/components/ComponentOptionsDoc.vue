@@ -29,7 +29,7 @@
         </template>
       </ds-table>
     </ds-space>
-    <ds-space v-if="componentSlots">
+    <ds-space v-if="componentSlots && componentSlots.length">
       <ds-heading tag="h2">{{ component.name | componentName }} Slots</ds-heading>
       <ds-table :data="componentSlots">
         <template slot-scope="scope">
