@@ -2,7 +2,7 @@
   <component 
     :is="tag"
     class="logo">
-    <img src="@/system/assets/img/logo_cion.svg">
+    <img src="@@/system/assets/img/logo_cion.svg">
   </component>
 </template>
 

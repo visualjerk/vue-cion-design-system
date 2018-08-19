@@ -42,13 +42,8 @@
 </template>
 
 <script>
-import TokenItem from './TokenItem'
-
 export default {
   name: 'DesignTokens',
-  components: {
-    TokenItem
-  },
   computed: {
     tokenMenu() {
       return Object.keys(this.$tokenMap).map(key => {

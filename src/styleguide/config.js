@@ -5,8 +5,7 @@ export default {
       path: '/'
     },
     {
-      name: 'Design Tokens',
-      requiredComponents: ['DesignTokens']
+      name: 'Design Tokens'
     },
     {
       name: 'Layout'
