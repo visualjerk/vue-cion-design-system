@@ -8,6 +8,8 @@
 </template>
 
 <script>
+import { getResponsiveStyles, getSpace } from '@@/system/utils'
+
 /**
  * Used in combination with the flex component to create flexible layouts.
  * @version 1.0.0
@@ -41,9 +43,9 @@ export default {
   },
   computed: {
     styles() {
-      const widthStyle = this.$getResponsiveStyles(this.width, this.parseWidth)
+      const widthStyle = getResponsiveStyles(this.width, this.parseWidth)
       const gutterStyle = this.$parentFlex
-        ? this.$getResponsiveStyles(this.$parentFlex.gutter, this.parseGutter)
+        ? getResponsiveStyles(this.$parentFlex.gutter, this.parseGutter)
         : {}
       return {
         ...widthStyle,
@@ -65,7 +67,7 @@ export default {
       return styles
     },
     parseGutter(gutter) {
-      const realGutter = this.$getSpace(gutter)
+      const realGutter = getSpace(gutter)
       if (realGutter === 0) {
         return {}
       }

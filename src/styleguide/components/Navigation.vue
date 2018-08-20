@@ -1,6 +1,7 @@
 <template>
   <div class="navigation">
-    <ds-menu 
+    <ds-menu
+      @navigate="$emit('navigate')"
       :routes="routes"
       :url-parser="urlParser"
       :name-parser="nameParser"

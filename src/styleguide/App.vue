@@ -1,13 +1,17 @@
 <template>
   <div id="app">
-    <ds-page>
+    <ds-page ref="page">
       <template slot="brand">
         <router-link to="/">
           <ds-logo/>
         </router-link>
       </template>
-      <navigation slot="sidebar"/>
-      <navigation slot="drawer"/>
+      <navigation
+        @navigate="$refs.page.closeDrawer()"
+        slot="sidebar"/>
+      <navigation
+        @navigate="$refs.page.closeDrawer()"
+        slot="drawer"/>
       <router-view/>
     </ds-page>
   </div>

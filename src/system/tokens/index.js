@@ -20,14 +20,3 @@ const { tokens, tokenMap } = Object.keys(raw.props).reduce(
 )
 
 export { tokens, tokenMap }
-
-export default {
-  install(Vue) {
-    Vue.mixin({
-      computed: {
-        $tokens: () => tokens,
-        $tokenMap: () => tokenMap
-      }
-    })
-  }
-}

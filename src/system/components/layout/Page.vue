@@ -65,16 +65,27 @@ export default {
     hasHeader() {
       return this.$slots.navbar
     }
+  },
+  methods: {
+    closeDrawer() {
+      this.showDrawer = false
+    }
   }
 }
 </script>
 
 <style lang="scss" scoped>
 $contained-width: 1400px;
+
 $header-height: 54px;
+$header-background-color: $background-color-darker;
+
 $sidebar-brand-height: 136px;
 $sidebar-width: 220px;
 $sidebar-width-large: 260px;
+$sidebar-background-color: $background-color-default;
+
+$drawer-background-color: $background-color-default;
 
 .page {
   @include reset;
@@ -110,7 +121,7 @@ $sidebar-width-large: 260px;
 
 .page-header-container {
   height: $header-height;
-  background: $background-color-darker;
+  background: $header-background-color;
   box-shadow: $box-shadow-base;
   display: flex;
   justify-content: space-between;
@@ -124,7 +135,7 @@ $sidebar-width-large: 260px;
     @media #{$media-query-medium} {
       height: $sidebar-brand-height;
       display: block;
-      background: $background-color-default;
+      background: $sidebar-background-color;
       box-shadow: none;
     }
   }
@@ -177,7 +188,7 @@ $sidebar-width-large: 260px;
   bottom: 0;
   width: $sidebar-width;
   z-index: $z-index-page-sidebar;
-  background-color: $background-color-default;
+  background-color: $sidebar-background-color;
   box-shadow: $box-shadow-base;
   display: none;
 
@@ -220,7 +231,7 @@ $sidebar-width-large: 260px;
   overflow-y: auto;
   width: 100%;
   z-index: $z-index-page-sidebar;
-  background-color: $background-color-default;
+  background-color: $drawer-background-color;
   transform: translateX(-100%);
   opacity: 0;
   transition: opacity $duration-long $ease-out-sharp,
@@ -273,9 +284,11 @@ You can layout a page in different ways. These are best described by example.
       <ds-logo></ds-logo>
     </template>
     <ds-menu
+      @navigate="$refs.page.closeDrawer()"
       slot="sidebar"
       :routes="routes"></ds-menu>
     <ds-menu
+      @navigate="$refs.page.closeDrawer()"
       slot="drawer"
       :routes="routes"></ds-menu>
     <ds-page-title heading="Sidebar only"></ds-page-title>
@@ -324,11 +337,13 @@ You can layout a page in different ways. These are best described by example.
       <ds-logo></ds-logo>
     </template>
     <ds-menu
+      @navigate="$refs.page.closeDrawer()"
       slot="navbar"
       :routes="routes"
       inverse
       navbar></ds-menu>
     <ds-menu
+      @navigate="$refs.page.closeDrawer()"
       slot="drawer"
       :routes="routes"></ds-menu>
     <ds-page-title heading="Navbar only"></ds-page-title>
@@ -372,19 +387,22 @@ You can layout a page in different ways. These are best described by example.
 
 ```iframe
 <template>
-  <ds-page>
+  <ds-page ref="page">
     <template slot="brand">
       <ds-logo></ds-logo>
     </template>
     <ds-menu
+      @navigate="$refs.page.closeDrawer()"
       slot="navbar"
       :routes="routes"
       inverse
       navbar></ds-menu>
     <ds-menu
+      @navigate="$refs.page.closeDrawer()"
       slot="sidebar"
       :routes="routes"></ds-menu>
     <ds-menu
+      @navigate="$refs.page.closeDrawer()"
       slot="drawer"
       :routes="routes"></ds-menu>
     <ds-page-title heading="Sidebar and Navbar"></ds-page-title>

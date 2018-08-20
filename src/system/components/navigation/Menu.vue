@@ -93,7 +93,12 @@ export default {
       }
     }
   },
-  computed: {}
+  computed: {},
+  methods: {
+    handleNavigate() {
+      this.$emit('navigate')
+    }
+  }
 }
 </script>
 

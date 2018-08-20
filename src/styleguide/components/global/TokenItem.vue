@@ -15,6 +15,8 @@
 </template>
 
 <script>
+import { tokens } from '@@/system/tokens'
+
 export default {
   name: 'TokenItem',
   props: {
@@ -51,7 +53,7 @@ export default {
         case 'color':
         case 'background-color':
           styles.backgroundColor = this.token.value
-          styles.borderColor = this.$tokens.borderColorLighter
+          styles.borderColor = tokens.borderColorLighter
           break
         case 'font-size':
           styles.fontSize = this.token.value
@@ -59,7 +61,7 @@ export default {
         case 'font-spacing':
           styles.paddingTop = this.token.value
           styles.paddingBottom = this.token.value
-          styles.borderColor = this.$tokens.borderColorDefault
+          styles.borderColor = tokens.borderColorDefault
           styles.height = 'auto'
           break
         case 'font-family':
@@ -70,34 +72,34 @@ export default {
           break
         case 'opacity':
           styles.opacity = this.token.value
-          styles.backgroundColor = this.$tokens.colorBlack
+          styles.backgroundColor = tokens.colorBlack
           break
         case 'size':
         case 'space':
           styles.height = this.token.value
-          styles.borderColor = this.$tokens.borderColorDefault
+          styles.borderColor = tokens.borderColorDefault
           break
         case 'border-size':
           styles.borderWidth = this.token.value
-          styles.borderColor = this.$tokens.borderColorDefault
+          styles.borderColor = tokens.borderColorDefault
           break
         case 'border-radius':
           styles.borderRadius = this.token.value
-          styles.width = this.$tokens.sizeHeightBase
-          styles.borderColor = this.$tokens.borderColorDefault
+          styles.width = tokens.sizeHeightBase
+          styles.borderColor = tokens.borderColorDefault
           break
         case 'box-shadow':
           styles.boxShadow = this.token.value
-          styles.marginBottom = this.$tokens.spaceBase
+          styles.marginBottom = tokens.spaceBase
           break
         case 'time':
           styles.transitionDuration = this.token.value
-          styles.backgroundColor = this.$tokens.backgroundColorDark
+          styles.backgroundColor = tokens.backgroundColorDark
           break
         case 'ease':
           styles.transitionTimingFunction = this.token.value
-          styles.transitionDuration = this.$tokens.durationLong
-          styles.backgroundColor = this.$tokens.backgroundColorDark
+          styles.transitionDuration = tokens.durationLong
+          styles.backgroundColor = tokens.backgroundColorDark
           break
       }
       return styles

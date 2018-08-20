@@ -3,6 +3,7 @@
     <component
       v-if="route"
       :class="`link level-${level}${$parentMenu.inverse ? ' inverse' : ''}`"
+      v-bind="bindings"
       :to="url"
       :href="url"
       :exact="isExact"
@@ -81,11 +82,22 @@ export default {
     },
     level() {
       return this.parents.length
+    },
+    bindings() {
+      const bindings = {}
+      if (this.linkTag === 'router-link') {
+        bindings.to = this.path
+      }
+      if (this.linkTag === 'a') {
+        bindings.href = this.path
+      }
+      return bindings
     }
   },
   methods: {
     handleClick(event) {
       this.$emit('click', event, this.route)
+      this.$parentMenu.handleNavigate()
     }
   }
 }

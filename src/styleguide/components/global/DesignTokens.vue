@@ -11,7 +11,7 @@
       </ds-flex-item>
       <ds-flex-item>
         <ds-space
-          v-for="(group, key) in $tokenMap"
+          v-for="(group, key) in tokenMap"
           :key="key">
           <ds-heading
             tag="h3"
@@ -26,7 +26,7 @@
                 {{ data.row.scss }}
               </ds-copy-field>
               <ds-copy-field>
-                $tokens.{{ data.row.name | camelCase }}
+                tokens.{{ data.row.name | camelCase }}
               </ds-copy-field>
             </template>
             <template
@@ -42,11 +42,16 @@
 </template>
 
 <script>
+import { tokenMap } from '@@/system/tokens'
+
 export default {
   name: 'DesignTokens',
   computed: {
+    tokenMap() {
+      return tokenMap
+    },
     tokenMenu() {
-      return Object.keys(this.$tokenMap).map(key => {
+      return Object.keys(this.tokenMap).map(key => {
         return {
           name: this.$options.filters.startCase(key),
           path: `#${key}`

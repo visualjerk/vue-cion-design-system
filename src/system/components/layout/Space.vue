@@ -8,6 +8,8 @@
 </template>
 
 <script>
+import { getResponsiveStyles, getSpace } from '@@/system/utils'
+
 /**
  * Use this component for grouping and separation.
  * @version 1.0.0
@@ -44,11 +46,11 @@ export default {
   },
   computed: {
     styles() {
-      const marginTopStyle = this.$getResponsiveStyles(
+      const marginTopStyle = getResponsiveStyles(
         this.marginTop,
         this.parseMargin('Top')
       )
-      const marginBottomStyle = this.$getResponsiveStyles(
+      const marginBottomStyle = getResponsiveStyles(
         this.marginBottom,
         this.parseMargin('Bottom')
       )
@@ -61,10 +63,9 @@ export default {
   },
   methods: {
     parseMargin(direction) {
-      const vm = this
       return margin => {
         const styles = {}
-        const realMargin = vm.$getSpace(margin)
+        const realMargin = getSpace(margin)
         if (realMargin !== 0) {
           styles[`margin${direction}`] = `${realMargin}px`
         }
