@@ -87,8 +87,11 @@ export default {
 
       // Replace p-tags
       $('p').each((i, item) => {
-        // Handle p-tags with html elements
-        if ($(item).children().length) {
+        // Handle component tags
+        if (
+          $(item).children().length &&
+          Array.from($(item).children()).some(c => c.name.indexOf('-') > -1)
+        ) {
           $(item).replaceWith($('<div>' + $(item).html() + '</div>'))
         } else {
           $(item).replaceWith(

@@ -24,4 +24,9 @@ pre, code {
 
 a {
   text-decoration: none !important;
+  color: $text-color-link;
+
+  &:hover,&:active {
+    color: $text-color-link-active;
+  }
 }
