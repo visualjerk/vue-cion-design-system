@@ -4,8 +4,6 @@
       v-if="route"
       :class="`link level-${level}${$parentMenu.inverse ? ' inverse' : ''}`"
       v-bind="bindings"
-      :to="url"
-      :href="url"
       :exact="isExact"
       :is="linkTag">
       <slot>
@@ -86,10 +84,10 @@ export default {
     bindings() {
       const bindings = {}
       if (this.linkTag === 'router-link') {
-        bindings.to = this.path
+        bindings.to = this.url
       }
       if (this.linkTag === 'a') {
-        bindings.href = this.path
+        bindings.href = this.url
       }
       return bindings
     }

@@ -2,7 +2,7 @@
 --------------------------------------------- */
 
 @mixin text-colors {
-  .text-default {
+  .text-default, .text-dark {
     color: $text-color-default;
   }
   .text-light {
@@ -59,6 +59,16 @@
 }
 
 @mixin background-hover-colors {
+  .background-lighter {
+    &:hover, &.hover {
+      background-color: $background-color-default;
+    }
+  }
+  .background-light {
+    &:hover, &.hover {
+      background-color: $background-color-lighter;
+    }
+  }
   .background-medium {
     &:hover, &.hover {
       background-color: $background-color-medium-active;

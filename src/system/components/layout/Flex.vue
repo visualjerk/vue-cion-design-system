@@ -135,7 +135,7 @@ export default {
 
   ## Column Gutter
 
-  You can set a gutter for the items as on the flex component.
+  You can set a gutter for each item on the flex component.
   ```
     <ds-flex gutter="small">
       <ds-flex-item><ds-placeholder>same</ds-placeholder></ds-flex-item>

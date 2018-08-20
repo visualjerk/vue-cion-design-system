@@ -7,9 +7,13 @@
       <slot />
     </div>
     <div
-      class="copy-link"
-      @click="copy">
-      copy
+      class="copy-link">
+      <ds-button
+        @click="copy"
+        icon="copy"
+        icon-set="line"
+        transparent
+        color="lighter"/>
     </div>
     <transition name="message">
       <div
@@ -87,18 +91,10 @@ export default {
 .copy-link {
   @include reset;
   position: absolute;
-  right: $space-small;
+  right: $space-xx-small;
   top: 50%;
   transform: translateY(-50%);
-  opacity: 0.5;
-  font-size: $font-size-small;
   user-select: none;
-
-  &:hover {
-    cursor: pointer;
-    opacity: 1;
-    color: $text-color-link;
-  }
 }
 
 .message {

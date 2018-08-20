@@ -90,8 +90,9 @@ export default {
     if (cache.has(currPath)) {
       this.$el.innerHTML = await cache.get(currPath)
       this.$el.children[0].style.color = 'inherit'
-      this.$el.children[0].style.width = 'inherit'
+      this.$el.children[0].style.width = 'auto'
       this.$el.children[0].style.height = 'inherit'
+      this.$el.children[0].style.lineHeight = 'inherit'
     }
   }
 }
@@ -100,8 +101,11 @@ export default {
 <style lang="scss" scoped>
 .icon {
   @include reset;
+  display: inline-flex;
+  align-items: center;
+  vertical-align: middle;
+  line-height: 1;
   height: 1em;
-  width: 1em;
   fill: currentColor;
 }
 

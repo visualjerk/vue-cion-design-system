@@ -2,10 +2,22 @@
   <component
     @click.capture="handleClick"
     class="button"
-    :class="`text-${textColor} background-${color} font-size-${size}${hover ? ' hover' : ''}`"
+    :class="`text-${textColor} background-${color} font-size-${size}${hover ? ' hover' : ''}${transparent ? ' transparent' : ''}${iconOnly ? ' icon-only' : ''}`"
     v-bind="bindings"
     :is="linkTag">
-    <slot />
+    <ds-icon 
+      v-if="icon" 
+      :name="icon"
+      :set="iconSet"/>
+    <span 
+      class="button-text"
+      v-if="$slots.default">
+      <slot />
+    </span>
+    <ds-icon 
+      v-if="iconRight" 
+      :name="iconRight"
+      :set="iconSetRight"/>
   </component>
 </template>
 
@@ -28,13 +40,15 @@ export default {
     },
     /**
      * The background color used for the tag.
-     * `medium, default, dark, primary, success, warning, danger`
+     * `lighter, light, medium, default, dark, primary, success, warning, danger`
      */
     color: {
       type: String,
       default: 'primary',
       validator: value => {
-        return value.match(/(medium|dark|primary|success|warning|danger)/)
+        return value.match(
+          /(lighter|light|medium|dark|primary|success|warning|danger)/
+        )
       }
     },
     /**
@@ -70,11 +84,50 @@ export default {
     hover: {
       type: Boolean,
       default: false
+    },
+    /**
+     * Make the buttons background transparent
+     * `true, false`
+     */
+    transparent: {
+      type: Boolean,
+      default: false
+    },
+    /**
+     * The name of the buttons icon.
+     */
+    icon: {
+      type: String,
+      default: null
+    },
+    /**
+     * The name of the buttons icon set.
+     */
+    iconSet: {
+      type: String,
+      default: 'default'
+    },
+    /**
+     * The name of the buttons right icon.
+     */
+    iconRight: {
+      type: String,
+      default: null
+    },
+    /**
+     * The name of the buttons right icon set.
+     */
+    iconSetRight: {
+      type: String,
+      default: 'default'
     }
   },
   computed: {
     textColor() {
-      return ['medium'].includes(this.color) ? 'default' : 'inverse'
+      if (this.transparent) {
+        return this.color
+      }
+      return ['light', 'lighter'].includes(this.color) ? 'default' : 'inverse'
     },
     bindings() {
       const bindings = {}
@@ -85,6 +138,9 @@ export default {
         bindings.href = this.path
       }
       return bindings
+    },
+    iconOnly() {
+      return !this.$slots.default && this.icon && !this.iconRight
     }
   },
   methods: {
@@ -107,13 +163,23 @@ export default {
   cursor: pointer;
   user-select: none;
   font-family: $font-family-text;
+  font-weight: $font-weight-bold;
   display: inline-flex;
+  vertical-align: middle;
+  align-items: center;
+  justify-content: center;
   color: $text-color-inverse;
-  line-height: $line-height-base;
+  line-height: 1;
   text-decoration: none;
-  padding: $font-space-small $font-space-xx-large;
+  padding: $font-space-large $font-space-xx-large;
   border-radius: $border-radius-rounded;
-  transition: background-color $duration-short $ease-out;
+  transition: color $duration-short $ease-out,
+    background-color $duration-short $ease-out;
+
+  &.icon-only {
+    width: 1em + 2 * $font-space-large;
+    padding: $font-space-large 0;
+  }
 
   &:active {
     opacity: 0.9;
@@ -136,10 +202,40 @@ export default {
   }
 }
 
+.button-text {
+  line-height: 1;
+  display: inline-block;
+  white-space: nowrap;
+  margin: 0 $font-space-small;
+
+  &:first-child {
+    margin-left: 0;
+  }
+
+  &:last-child {
+    margin-right: 0;
+  }
+}
+
 @include text-colors;
 @include background-colors;
 @include background-hover-colors;
 @include font-sizes;
+
+.transparent {
+  background-color: transparent;
+
+  &:hover,
+  &.hover {
+    background-color: $background-color-lighter;
+
+    &.text-lighter,
+    &.text-light,
+    &.text-dark {
+      color: $text-color-link-active;
+    }
+  }
+}
 </style>
 
 <docs>
@@ -148,12 +244,26 @@ export default {
 Use different colors to emphasize or provide meaning.
 
 ```
-  <ds-button color="medium">medium</ds-button>
+  <ds-button color="light">light</ds-button>
   <ds-button color="dark">dark</ds-button>
   <ds-button>primary</ds-button>
   <ds-button color="success">success</ds-button>
   <ds-button color="warning">warning</ds-button>
   <ds-button color="danger">danger</ds-button>
+```
+
+## Buttons with transparent background
+
+Use transparent buttons to make them more subtle.
+
+```
+  <ds-button color="lighter" transparent>lighter</ds-button>
+  <ds-button color="light" transparent>light</ds-button>
+  <ds-button color="dark" transparent>dark</ds-button>
+  <ds-button transparent>primary</ds-button>
+  <ds-button color="success" transparent>success</ds-button>
+  <ds-button color="warning" transparent>warning</ds-button>
+  <ds-button color="danger" transparent>danger</ds-button>
 ```
 
 ## Button sizes
@@ -176,6 +286,18 @@ A button can take different states.
   <ds-button>default state</ds-button>
   <ds-button disabled>disabled state</ds-button>
   <ds-button hover>hover state</ds-button>
+```
+
+## Icon buttons
+
+A button can have a icon and / or a right side icon.
+
+```
+  <ds-button>Click me</ds-button>
+  <ds-button icon="plus">Click me</ds-button>
+  <ds-button icon-right="plus">Click me</ds-button>
+  <ds-button icon="plus"></ds-button>
+  <ds-button icon="plus" transparent color="lighter"></ds-button>
 ```
 
 ## Button as links
