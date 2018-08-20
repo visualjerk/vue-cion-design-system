@@ -7,7 +7,7 @@
 </template>
 
 <script>
-const context = require.context('@@/system/icons/svg/', true, /\.svg$/)
+const context = require.context('@@/icons/svg/', true, /\.svg$/)
 const cache = new Map()
 
 /**

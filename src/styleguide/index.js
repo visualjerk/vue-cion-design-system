@@ -1,6 +1,6 @@
 import Vue from 'vue'
 
-import System from '@@/system'
+import System from '@@'
 import Components from './components/global'
 import App from './App.vue'
 import router from './router'

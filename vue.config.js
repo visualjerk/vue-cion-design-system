@@ -6,7 +6,7 @@ module.exports = {
   css: {
     loaderOptions: {
       sass: {
-        data: `@import "@@/system/styles/shared.scss";`
+        data: `@import "@@/styles/shared.scss";`
       }
     }
   },
@@ -17,14 +17,14 @@ module.exports = {
     resolve: {
       alias: {
         vue$: 'vue/dist/vue.common',
-        '@@': path.resolve(__dirname, './src')
+        '@@': path.resolve(__dirname, './src/system')
       }
     },
     module: {
       rules: [
         {
           resourceQuery: /blockType=docs/,
-          loader: require.resolve('./src/utils/docs-loader.js')
+          loader: require.resolve('./src/loader/docs-loader.js')
         }
       ]
     }

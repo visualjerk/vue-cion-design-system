@@ -42,7 +42,7 @@
 </template>
 
 <script>
-import { tokenMap } from '@@/system/tokens'
+import { tokenMap } from '@@/tokens'
 
 export default {
   name: 'DesignTokens',

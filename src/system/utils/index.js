@@ -1,6 +1,6 @@
 import Vue from 'vue'
 import { camelCase } from 'lodash'
-import { tokenMap } from '@@/system/tokens'
+import { tokenMap } from '@@/tokens'
 
 const bus = new Vue({
   data: {

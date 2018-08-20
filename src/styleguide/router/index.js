@@ -2,8 +2,7 @@ import Vue from 'vue'
 import VueRouter from 'vue-router'
 import { kebabCase } from 'lodash'
 
-import createUrl from '@@/utils/create-url'
-import { componentsMap } from '@@/system/components'
+import { componentsMap } from '@@/components'
 import config from '../config'
 import PageWrapper from '../components/PageWrapper'
 import SectionPage from '../components/SectionPage'
@@ -77,6 +76,17 @@ function createComponentPage(component) {
         }
       })
   }
+}
+
+function createUrl(name, root = true) {
+  const parts = Array.isArray(name) ? name : [name]
+  const url = root ? '/' : ''
+  return url + parts.map(sanitize).join('/')
+}
+
+function sanitize(name) {
+  const sanitized = name.toLowerCase().replace(' ', '-')
+  return encodeURIComponent(sanitized)
 }
 
 const routes = config.sections.map(createRoute)

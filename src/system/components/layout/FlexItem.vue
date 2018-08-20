@@ -8,7 +8,7 @@
 </template>
 
 <script>
-import { getResponsiveStyles, getSpace } from '@@/system/utils'
+import { getResponsiveStyles, getSpace } from '@@/utils'
 
 /**
  * Used in combination with the flex component to create flexible layouts.

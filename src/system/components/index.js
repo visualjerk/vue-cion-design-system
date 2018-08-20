@@ -2,7 +2,7 @@
 const context = require.context('.', true, /\.vue$/)
 // Get components meta info
 const contextMeta = require.context(
-  '!../../utils/jsdoc-loader?modules!.',
+  '!../../loader/jsdoc-loader?modules!.',
   true,
   /\.vue$/
 )

@@ -15,7 +15,7 @@
 </template>
 
 <script>
-import { tokens } from '@@/system/tokens'
+import { tokens } from '@@/tokens'
 
 export default {
   name: 'TokenItem',

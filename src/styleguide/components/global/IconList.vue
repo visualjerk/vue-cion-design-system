@@ -38,7 +38,7 @@
 </template>
 
 <script>
-import iconSets from '@@/system/icons'
+import iconSets from '@@/icons'
 
 export default {
   name: 'IconList',
