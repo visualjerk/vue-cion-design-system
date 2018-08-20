@@ -279,7 +279,7 @@ You can layout a page in different ways. These are best described by example.
 
 ```iframe
 <template>
-  <ds-page>
+  <ds-page ref="page">
     <template slot="brand">
       <ds-logo></ds-logo>
     </template>
@@ -332,7 +332,7 @@ You can layout a page in different ways. These are best described by example.
 
 ```iframe
 <template>
-  <ds-page>
+  <ds-page ref="page">
     <template slot="brand">
       <ds-logo></ds-logo>
     </template>
