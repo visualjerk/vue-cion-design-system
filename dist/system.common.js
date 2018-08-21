@@ -2088,15 +2088,26 @@ function getWindowSize() {
   bus.windowSize.height = window.clientHeight || document.documentElement.clientHeight || document.body.clientHeight;
 }
 
-if (window && typeof window !== 'undefined') {
-  window.addEventListener('resize', getWindowSize);
-  getWindowSize();
+var init = false;
+
+function initListener() {
+  if (init) {
+    return;
+  }
+
+  if (window && typeof window !== 'undefined') {
+    window.addEventListener('resize', getWindowSize);
+    getWindowSize();
+    init = true;
+  }
 }
 
 var windowSize = function windowSize() {
   return bus.windowSize;
 };
 var getResponsiveStyles = function getResponsiveStyles(prop, parser) {
+  initListener();
+
   if (prop === null) {
     return {};
   }

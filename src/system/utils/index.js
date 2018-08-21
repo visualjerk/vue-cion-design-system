@@ -23,9 +23,17 @@ function getWindowSize() {
     document.body.clientHeight
 }
 
-if (window && typeof window !== 'undefined') {
-  window.addEventListener('resize', getWindowSize)
-  getWindowSize()
+let init = false
+
+function initListener() {
+  if (init) {
+    return
+  }
+  if (window && typeof window !== 'undefined') {
+    window.addEventListener('resize', getWindowSize)
+    getWindowSize()
+    init = true
+  }
 }
 
 export const windowSize = () => {
@@ -33,6 +41,7 @@ export const windowSize = () => {
 }
 
 export const getResponsiveStyles = (prop, parser) => {
+  initListener()
   if (prop === null) {
     return {}
   }

@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "author": "visualjerk",
   "private": true,
-  "main": "./dist/system.umd.js",
+  "main": "./dist/system.umd.min.js",
   "files": [
     "dist/*",
     "src/*",
