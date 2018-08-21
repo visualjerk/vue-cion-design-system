@@ -29,13 +29,6 @@ export default {
       required: true
     },
     /**
-     * The name of the icon set.
-     */
-    set: {
-      type: String,
-      default: 'default'
-    },
-    /**
      * The color used for the icon.
      * `default, light, lighter, primary, inverse, success, warning, danger`
      */
@@ -81,7 +74,7 @@ export default {
   },
   async mounted() {
     let svgIcon = false
-    let svgName = this.set + this.name
+    let svgName = this.name
 
     // Load from cache
     if (this.$options.components[svgName]) {
@@ -91,7 +84,7 @@ export default {
 
     // Load into cache
     try {
-      svgIcon = context(`./${this.set}/${this.name}.svg`)
+      svgIcon = context(`./${svgName}.svg`)
     } catch (e) {
       console.error('icon not found', e)
     }
@@ -160,16 +153,6 @@ export default {
     <ds-icon name="car" color="success"></ds-icon>
     <ds-icon name="car" color="warning"></ds-icon>
     <ds-icon name="car" color="danger"></ds-icon>
-  ```
-
-  ## Icon sets
-
-  Icons that share similar style or meaning are grouped by sets. By default this component uses the set `default`.
-
-  ```
-    <ds-icon name="folder-open"></ds-icon>
-    <ds-icon name="folder-open" set="line"></ds-icon>
-    <ds-icon name="github" set="brands"></ds-icon>
   ```
 
   ## Icon list

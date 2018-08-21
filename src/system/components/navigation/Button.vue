@@ -7,8 +7,7 @@
     :is="linkTag">
     <ds-icon 
       v-if="icon" 
-      :name="icon"
-      :set="iconSet"/>
+      :name="icon"/>
     <span 
       class="button-text"
       v-if="$slots.default">
@@ -16,8 +15,7 @@
     </span>
     <ds-icon 
       v-if="iconRight" 
-      :name="iconRight"
-      :set="iconSetRight"/>
+      :name="iconRight"/>
   </component>
 </template>
 
@@ -102,25 +100,11 @@ export default {
       default: null
     },
     /**
-     * The name of the buttons icon set.
-     */
-    iconSet: {
-      type: String,
-      default: 'default'
-    },
-    /**
      * The name of the buttons right icon.
      */
     iconRight: {
       type: String,
       default: null
-    },
-    /**
-     * The name of the buttons right icon set.
-     */
-    iconSetRight: {
-      type: String,
-      default: 'default'
     }
   },
   computed: {
