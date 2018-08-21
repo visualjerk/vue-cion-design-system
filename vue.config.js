@@ -2,7 +2,9 @@ const path = require('path')
 
 // config at your vue.config.js
 module.exports = {
-  outputDir: path.resolve(__dirname, "./docs"),
+  outputDir: process.env.NODE_ENV === 'library'
+    ? path.resolve(__dirname, "./dist")
+    : path.resolve(__dirname, "./docs"),
   css: {
     loaderOptions: {
       sass: {
