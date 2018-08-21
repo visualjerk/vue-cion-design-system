@@ -1,8 +1,9 @@
 const path = require('path')
+const MergeIntoSingleFilePlugin = require('webpack-merge-and-include-globally');
 
 // config at your vue.config.js
 module.exports = {
-  outputDir: process.env.NODE_ENV === 'library'
+  outputDir: process.env.BUILD === 'library'
     ? path.resolve(__dirname, "./dist")
     : path.resolve(__dirname, "./docs"),
   css: {
@@ -29,7 +30,23 @@ module.exports = {
           loader: require.resolve('./src/loader/docs-loader.js')
         }
       ]
-    }
+    },
+    plugins: process.env.BUILD === 'library'
+      ? [
+        new MergeIntoSingleFilePlugin({
+          files: {
+            "shared.scss": [
+              path.resolve(__dirname, './src/system/tokens/generated/tokens.scss'),
+              path.resolve(__dirname, './src/system/styles/_functions.scss'),
+              path.resolve(__dirname, './src/system/styles/_mixins.scss'),
+              path.resolve(__dirname, './src/system/styles/_color.scss'),
+              path.resolve(__dirname, './src/system/styles/_font.scss'),
+              path.resolve(__dirname, './src/system/styles/_spacing.scss')
+            ]
+          }
+        })
+      ]
+      : []
   },
   chainWebpack: config => {
     config.module
@@ -38,5 +55,11 @@ module.exports = {
       .options({
         fix: true
       })
+
+    const svgRule = config.module.rule('svg')
+    svgRule.uses.clear()
+    svgRule
+      .use('vue-svg-loader')
+      .loader('vue-svg-loader')
   }
 }

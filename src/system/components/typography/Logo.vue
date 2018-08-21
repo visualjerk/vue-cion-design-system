@@ -2,17 +2,21 @@
   <component 
     :is="tag"
     class="logo">
-    <img src="@@/assets/img/logo_cion.svg">
+    <svg-logo />
   </component>
 </template>
 
 <script>
+import svgLogo from '@@/assets/img/logo_cion.svg'
 /**
  * This component displays the brands logo.
  * @version 1.0.0
  */
 export default {
   name: 'DsLogo',
+  components: {
+    svgLogo
+  },
   props: {
     /**
      * The html element name used for the logo.
@@ -35,7 +39,7 @@ $logo-color-inverse: $text-color-light;
   justify-content: center;
   align-items: center;
 
-  img {
+  svg {
     width: 130px;
     height: auto;
   }

@@ -1,0 +1,587 @@
+
+$color-black: rgb(26, 25, 25);
+$color-dark: rgb(42, 40, 40);
+$color-neutral: rgb(78, 75, 75);
+$color-neutral-10: rgb(117, 113, 112);
+$color-neutral-20: rgb(155, 151, 151);
+$color-neutral-30: rgb(180, 177, 177);
+$color-neutral-40: rgb(205, 203, 203);
+$color-neutral-50: rgb(230, 229, 229);
+$color-neutral-60: rgb(240, 239, 239);
+$color-neutral-70: rgb(245, 245, 245);
+$color-neutral-80: rgb(250, 250, 250);
+$color-white: rgb(255, 255, 255);
+$color-primary: rgb(19, 166, 251);
+$color-primary-light: rgb(49, 177, 252);
+$color-success: rgb(79, 172, 32);
+$color-success-light: rgb(88, 194, 36);
+$color-danger: rgb(210, 53, 45);
+$color-danger-light: rgb(216, 77, 70);
+$color-warning: rgb(230, 121, 25);
+$color-warning-light: rgb(233, 137, 53);
+$color-yellow: rgb(245, 196, 0);
+$color-yellow-light: rgb(255, 206, 10);
+$text-color-default: rgb(78, 75, 75);
+$text-color-light: rgb(117, 113, 112);
+$text-color-lighter: rgb(180, 177, 177);
+$text-color-disabled: rgb(180, 177, 177);
+$text-color-inverse: rgb(250, 250, 250);
+$text-color-link: rgb(19, 166, 251);
+$text-color-link-active: rgb(49, 177, 252);
+$text-color-primary: rgb(19, 166, 251);
+$text-color-success: rgb(79, 172, 32);
+$text-color-warning: rgb(230, 121, 25);
+$text-color-danger: rgb(210, 53, 45);
+$background-color-default: rgb(255, 255, 255);
+$background-color-light: rgb(245, 245, 245);
+$background-color-lighter: rgb(250, 250, 250);
+$background-color-medium: rgb(240, 239, 239);
+$background-color-medium-active: rgb(230, 229, 229);
+$background-color-dark: rgb(78, 75, 75);
+$background-color-dark-active: rgb(117, 113, 112);
+$background-color-darker: rgb(42, 40, 40);
+$background-color-black: rgb(26, 25, 25);
+$background-color-primary: rgb(19, 166, 251);
+$background-color-primary-active: rgb(49, 177, 252);
+$background-color-success: rgb(79, 172, 32);
+$background-color-success-active: rgb(88, 194, 36);
+$background-color-warning: rgb(230, 121, 25);
+$background-color-warning-active: rgb(233, 137, 53);
+$background-color-danger: rgb(210, 53, 45);
+$background-color-danger-active: rgb(216, 77, 70);
+$border-color-default: rgb(180, 177, 177);
+$border-color-light: rgb(205, 203, 203);
+$border-color-lighter: rgb(230, 229, 229);
+$border-color-active: rgb(19, 166, 251);
+$border-color-primary: rgb(19, 166, 251);
+$border-color-success: rgb(79, 172, 32);
+$border-color-warning: rgb(230, 121, 25);
+$border-color-danger: rgb(210, 53, 45);
+$border-size-default: 1px;
+$border-size-large: 3px;
+$border-size-x-large: 6px;
+$border-radius-default: 3px;
+$border-radius-rounded: 2em;
+$border-radius-circle: 50%;
+$font-size-xxxx-large: 3rem;
+$font-size-xxx-large: 2.5rem;
+$font-size-xx-large: 2rem;
+$font-size-x-large: 1.5rem;
+$font-size-large: 1.25rem;
+$font-size-base: 1rem;
+$font-size-body: 16px;
+$font-size-small: 0.8rem;
+$font-size-x-small: 0.7rem;
+$font-size-xx-small: 0.6rem;
+$font-space-xxxx-large: 2em;
+$font-space-xxx-large: 1.5em;
+$font-space-xx-large: 1.2em;
+$font-space-x-large: 1em;
+$font-space-large: 0.6em;
+$font-space-base: 0.5em;
+$font-space-small: 0.4em;
+$font-space-x-small: 0.3em;
+$font-space-xx-small: 0.2em;
+$font-family-heading: 'LatoWeb', sans-serif;
+$font-family-text: 'LatoWeb', sans-serif;
+$font-family-code: inconsolata, monospace;
+$font-weight-regular: normal;
+$font-weight-bold: 600;
+$line-height-base: 1.6;
+$line-height-small: 1.3;
+$line-height-heading: 1;
+$letter-spacing-x-large: 0.1em;
+$letter-spacing-large: 0.05em;
+$letter-spacing-base: 0;
+$letter-spacing-small: -0.01em;
+$letter-spacing-x-small: -0.015em;
+$opacity-disabled: 0.5;
+$xxx-large: 128;
+$xx-large: 64;
+$x-large: 48;
+$large: 32;
+$base: 24;
+$small: 16;
+$x-small: 8;
+$xx-small: 4;
+$xxx-small: 2;
+$space-xxx-large: 128px;
+$space-xx-large: 64px;
+$space-x-large: 48px;
+$space-large: 32px;
+$space-base: 24px;
+$space-small: 16px;
+$space-x-small: 8px;
+$space-xx-small: 4px;
+$space-xxx-small: 2px;
+$size-height-base: 42px;
+$size-height-large: 50px;
+$size-height-xlarge: 60px;
+$size-tappable-square: 44px;
+$size-height-footer: 64px;
+$box-shadow-large: 0 20px 60px 0 rgba(0, 0, 0, .15);
+$box-shadow-base: 0px 12px 26px -4px rgba(0, 0, 0, .1);
+$box-shadow-small: 0px 8px 18px -2px rgba(0, 0, 0, .1);
+$box-shadow-active: 0 0 6px 1px rgba(20, 100, 160, 0.5);
+$box-shadow-small-inset: inset 0 0 0 1px rgba(0,0,0,.05);
+$duration-short: 0.08s;
+$duration-base: 0.5s;
+$duration-long: 0.75s;
+$duration-x-long: 1s;
+$duration-xx-long: 2s;
+$ease-out: cubic-bezier(0.25, 0.46, 0.45, 0.94);
+$ease-out-sharp: cubic-bezier(0.165, 0.84, 0.44, 1);
+$ease-out-bounce: cubic-bezier(.87,-.41,.19,1.44);
+$ease-in: cubic-bezier(0.55, 0.085, 0.68, 0.53);
+$ease-in-sharp: cubic-bezier(0.895, 0.03, 0.685, 0.22);
+$z-index-modal: 9999;
+$z-index-page-header: 2000;
+$z-index-page-sidebar: 1500;
+$z-index-sticky: 100;
+$xs: 480;
+$sm: 600;
+$md: 768;
+$lg: 1024;
+$xl: 1024;
+$media-query-x-small: (min-width: 480px);
+$media-query-small: (min-width: 600px);
+$media-query-medium: (min-width: 768px);
+$media-query-large: (min-width: 1024px);
+$media-query-x-large: (min-width: 1200px);
+
+/* GLOBAL FUNCTIONS
+--------------------------------------------- */
+
+// Create a tint
+//
+// @param  {Color}  $color to tint
+// @param  {Number} $percentage of `$color` in returned color
+// @return {Color}
+@function tint($color, $percentage) {
+  @return mix(white, $color, $percentage);
+}
+
+// Create a shade
+//
+// @param  {Color}  $color to shade
+// @param  {Number} $percentage of `$color` in returned color
+// @return {Color}
+@function shade($color, $percentage) {
+  @return mix(black, $color, $percentage);
+}
+
+// Calculate color difference
+// See https://www.w3.org/TR/AERT/#color-contrast for algorithm
+//
+// @param  {Color} $color of foreground
+// @param  {Color} $color of background
+// @return {Boolean}
+@function color-difference($foreground, $background) {
+  $r: (max(red($foreground), red($background))) - (min(red($foreground), red($background)));
+  $g: (max(green($foreground), green($background))) - (min(green($foreground), green($background)));
+  $b: (max(blue($foreground), blue($background))) - (min(blue($foreground), blue($background)));
+  $sum-rgb: $r + $g + $b;
+
+  @if $sum-rgb < 350 {
+    @return "false";
+  } @else {
+    @return "true";
+  }
+}
+
+// Set text color based on contrast
+//
+// @param  {Color}  $color to set
+// @param  {Color}  $background color to test
+// @param  {Color}  $fallback color to set in case contrast check fails
+@function set-text-color($color, $background, $fallback: null) {
+  @if $fallback == null {
+    $fallback: #000;
+  }
+  @if (color-difference($color, $background) == "false") {
+    @return $fallback;
+  } @else {
+    @return $color;
+  }
+}
+
+/// Darkens the foreground color by the background color. This is the same as the
+/// “multiply” filter in graphics apps.
+///
+/// @param {Color} $foreground - The color to darken.
+/// @param {Color} $background - The background to base darkening on.
+/// @return {Color} The modified color.
+@function color-multiply($foreground, $background: null) {
+  @if $background == null {
+    $background: #ffffff;
+  }
+
+  @return $foreground * $background / 255;
+}
+
+/// Returns the value in rem for a given pixel value.
+/// @param {Number} $value - The pixel value to be converted.
+/// @return {Number} The converted value in rem.
+@function rem($value) {
+  $unit: unit($value);
+
+  @if $unit == "rem" {
+    @return $value;
+  } @else if $unit == "px" {
+    @return $value / $font-size-base * 1rem;
+  } @else if $unit == "em" {
+    @return $unit / 1em * 1rem;
+  } @else {
+    @error "Value must be in px, em, or rem.";
+  }
+}
+
+/// Returns the value in pixels for a given rem value.
+/// @param {Number} $value - The rem value to be converted.
+/// @return {Number} The converted value in pixels.
+@function px($value) {
+  $unit: unit($value);
+
+  @if $unit == "px" {
+    @return $value;
+  } @else if $unit == "em" {
+    @return ($value / 1em) * $font-size-base;
+  } @else if $unit == "rem" {
+    @return ($value / 1rem) * $font-size-base;
+  } @else {
+    @error "Value must be in rem, em, or px.";
+  }
+}
+
+/// Returns the list of available names in a given map.
+/// @param {Map} $map - The map of data to list the names from.
+/// @param {Number} $map - The level of depth to get names from.
+/// @return {String} The list of names in the map.
+@function available-names($map, $level: 1) {
+  @if type-of($map) != "map" {
+    @return null;
+  }
+
+  $output: "";
+  $newline: "\A ";
+
+  @if $level == 1 {
+    @each $key, $value in $map {
+      $output: $output + "#{$newline}- #{$key} #{available-names($value, $level + 1)}";
+    }
+  } @else {
+    $output: "(";
+    $i: 1;
+
+    @each $key, $value in $map {
+      $sep: if($i < length($map), ", ", "");
+      $output: $output + "#{$key}#{$sep}#{available-names($value, $level + 1)}";
+      $i: $i + 1;
+    }
+
+    $output: $output + ")";
+  }
+
+  @return $output;
+}
+
+/* GLOBAL MIXINS
+--------------------------------------------- */
+
+/* AUTO SCALING FOR TYPE WITH MIN/MAX SIZES
+
+  @param {Number}  $responsive  - Viewport-based size
+  @param {Number}  $min         - Minimum font size (px)
+  @param {Number}  $max         - Maximum font size (px) (optional)
+
+  @param {Number}  $fallback    - Fallback for viewport-based units (optional)
+
+  @example SCSS - 5vw size, 35px min & 150px max size + 50px fallback:
+
+  @include responsive-font(5vw, 35px, 150px, 50px);
+*/
+@mixin responsive-font($responsive, $min, $max: false, $fallback: false) {
+  $responsive-unitless: $responsive / ($responsive - $responsive + 1);
+  $dimension: if(unit($responsive) == "vh", "height", "width");
+  $min-breakpoint: $min / $responsive-unitless * 100;
+
+  @media (max-#{$dimension}: #{$min-breakpoint}) {
+    font-size: $min;
+  }
+
+  @if $max {
+    $max-breakpoint: $max / $responsive-unitless * 100;
+
+    @media (min-#{$dimension}: #{$max-breakpoint}) {
+      font-size: $max;
+    }
+  }
+
+  @if $fallback {
+    font-size: $fallback;
+  }
+
+  font-size: $responsive;
+}
+
+// Reset
+@mixin reset {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+@mixin clearfix {
+  &:before, &:after {
+    display: table;
+    content: '';
+    clear: both;
+  }
+}
+
+// Used to prevent text selection on an element
+@mixin prevent-user-select {
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  user-select: none;
+}
+
+/// Used to hide an element visually, but keeping it accessible for
+/// accessibility tools.
+@mixin visually-hidden {
+  // Need to make sure we override any existing styles.
+  position: absolute !important;
+  top: 0;
+  clip: rect(1px, 1px, 1px, 1px) !important;
+  overflow: hidden !important;
+  height: 1px !important;
+  width: 1px !important;
+  padding: 0 !important;
+  border: 0 !important;
+}
+
+/// To be used on flex items. Resolves some common layout issues, such as
+/// text truncation not respecting padding or breaking out of container.
+/// https://css-tricks.com/flexbox-truncated-text/
+@mixin layout-flex-fix {
+  min-width: 0;
+  max-width: 100%;
+}
+
+/* COLOR MIXINS
+--------------------------------------------- */
+
+@mixin text-colors {
+  .text-default, .text-dark {
+    color: $text-color-default;
+  }
+  .text-light {
+    color: $text-color-light;
+  }
+  .text-lighter {
+    color: $text-color-lighter;
+  }
+  .text-primary {
+    color: $text-color-primary;
+  }
+  .text-inverse {
+    color: $text-color-inverse;
+  }
+  .text-success {
+    color: $text-color-success;
+  }
+  .text-warning {
+    color: $text-color-warning;
+  }
+  .text-danger {
+    color: $text-color-danger;
+  }
+}
+
+@mixin background-colors {
+  .background-default {
+    background-color: $background-color-default;
+  }
+  .background-light {
+    background-color: $background-color-light;
+  }
+  .background-lighter {
+    background-color: $background-color-lighter;
+  }
+  .background-medium {
+    background-color: $background-color-medium;
+  }
+  .background-dark {
+    background-color: $background-color-dark;
+  }
+  .background-primary {
+    background-color: $background-color-primary;
+  }
+  .background-success {
+    background-color: $background-color-success;
+  }
+  .background-warning {
+    background-color: $background-color-warning;
+  }
+  .background-danger {
+    background-color: $background-color-danger;
+  }
+}
+
+@mixin background-hover-colors {
+  .background-lighter {
+    &:hover, &.hover {
+      background-color: $background-color-default;
+    }
+  }
+  .background-light {
+    &:hover, &.hover {
+      background-color: $background-color-lighter;
+    }
+  }
+  .background-medium {
+    &:hover, &.hover {
+      background-color: $background-color-medium-active;
+    }
+  }
+  .background-dark {
+    &:hover, &.hover {
+      background-color: $background-color-dark-active;
+    }
+  }
+  .background-primary {
+    &:hover, &.hover {
+      background-color: $background-color-primary-active;
+    }
+  }
+  .background-success {
+    &:hover, &.hover {
+      background-color: $background-color-success-active;
+    }
+  }
+  .background-warning {
+    &:hover, &.hover {
+      background-color: $background-color-warning-active;
+    }
+  }
+  .background-danger {
+    &:hover, &.hover {
+      background-color: $background-color-danger-active;
+    }
+  }
+}
+
+@mixin border-colors {
+  .border-default {
+    border-color: $border-color-default;
+  }
+  .border-light {
+    border-color: $border-color-light;
+  }
+  .border-lighter {
+    border-color: $border-color-lighter;
+  }
+  .border-active {
+    border-color: $border-color-active;
+  }
+  .border-primary {
+    border-color: $border-color-primary;
+  }
+  .border-success {
+    border-color: $border-color-success;
+  }
+  .border-warning {
+    border-color: $border-color-warning;
+  }
+  .border-danger {
+    border-color: $border-color-danger;
+  }
+}
+
+/* COLOR MIXINS
+--------------------------------------------- */
+
+@mixin font-sizes {
+  .font-size-base {
+    font-size: $font-size-base;
+  }
+  .font-size-large {
+    font-size: $font-size-large;
+  }
+  .font-size-x-large {
+    font-size: $font-size-x-large;
+  }
+  .font-size-xx-large {
+    font-size: $font-size-xx-large;
+  }
+  .font-size-xxx-large {
+    font-size: $font-size-xxx-large;
+  }
+  .font-size-xxxx-large {
+    font-size: $font-size-xxxx-large;
+  }
+  .font-size-small {
+    font-size: $font-size-small;
+  }
+  .font-size-x-small {
+    font-size: $font-size-x-small;
+  }
+  .font-size-xx-small {
+    font-size: $font-size-xx-small;
+  }
+}
+
+/* VUE DESIGN SYSTEM SPACING HELPERS
+--------------------------------------------- */
+
+$spacing-ratio: 1.618;
+
+/*
+  INSET-SPACE: For interface containers.
+  INSET-SQUISH-SPACE: For buttons, form elements, cells.
+  STACK-SPACE: For vertically stacked content.
+  INLINE-SPACE: For things displayed inline.
+*/
+
+// Create inset-space
+//
+// @param  {Number} inset-space to set
+@mixin inset-space($value) {
+  padding: $value;
+}
+
+// Create inset-squish-space
+//
+// @param  {Number} inset-squish-space to set
+@mixin inset-squish-space($value) {
+  padding: round($value / $spacing-ratio) $value;
+}
+
+// Create stack-space
+//
+// @param  {bottom} margin-bottom to set
+// @param  {top} margin-top to set
+@mixin stack-space($bottom, $top: 0) {
+  @if $bottom != 0 {
+    margin-bottom: $bottom;
+    &:last-child {
+      margin-bottom: 0;
+    }
+  }
+  @if $top != 0 {
+    margin-top: $top;
+    &:first-child {
+      margin-top: 0;
+    }
+  }
+}
+
+// Create inline-space
+//
+// @param  {Number} inline-space to set
+@mixin inline-space($value) {
+  margin-right: $value;
+  &:last-child {
+    margin-right: 0;
+  }
+}

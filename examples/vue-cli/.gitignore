@@ -1,12 +1,10 @@
 .DS_Store
 node_modules
+/dist
 
 # local env files
 .env.local
 .env.*.local
-
-/src/system/tokens/generated
-/src/system/icons/generated
 
 # Log files
 npm-debug.log*

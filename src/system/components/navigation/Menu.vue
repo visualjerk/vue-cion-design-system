@@ -55,7 +55,9 @@ export default {
      */
     linkTag: {
       type: String,
-      default: 'router-link',
+      default() {
+        return this.$router ? 'router-link' : 'a'
+      },
       validator: value => {
         return value.match(/(router-link|a)/)
       }

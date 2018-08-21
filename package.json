@@ -3,19 +3,27 @@
   "version": "1.0.0",
   "author": "visualjerk",
   "private": true,
+  "main": "./dist/system.umd.js",
+  "files": [
+    "dist/*",
+    "src/*",
+    "public/*",
+    "*.json",
+    "*.js"
+  ],
+  "license": "MIT",
   "scripts": {
     "dev": "npm-run-all --parallel theo:onchange theo servedev",
     "servedev": "vue-cli-service serve --open",
     "build": "vue-cli-service build",
-    "build:lib": "NODE_ENV=library vue-cli-service build --target lib --name system ./src/system/index.js",
+    "build:lib": "BUILD=library vue-cli-service build --target lib --name system ./src/system/index.js",
     "serve": "http-server ./docs -o -s",
     "lint": "vue-cli-service lint",
     "theo": "theo ./src/system/tokens/tokens.yml --transform web --format map.scss,scss,raw.json,json --dest ./src/system/tokens/generated",
     "theo:onchange": "onchange \"./src/system/tokens/*.yml\" -- npm run theo"
   },
   "dependencies": {
-    "vue": "^2.5.17",
-    "vue-router": "^3.0.1"
+    "vue": "^2.5.17"
   },
   "devDependencies": {
     "@babel/standalone": "^7.0.0-beta.56",
@@ -44,7 +52,10 @@
     "sass-loader": "^7.1.0",
     "theo": "^8.0.0-beta.2",
     "vue-docgen-api": "^2.3.13",
+    "vue-router": "^3.0.1",
+    "vue-svg-loader": "^0.8.0",
     "vue-template-compiler": "^2.5.17",
-    "vuep": "git://github.com/visualjerk/vuep.git#iframe-preview"
+    "vuep": "git://github.com/visualjerk/vuep.git#iframe-preview",
+    "webpack-merge-and-include-globally": "^2.0.11"
   }
 }

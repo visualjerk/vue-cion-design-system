@@ -3,12 +3,16 @@
     :is="tag"
     :aria-label="ariaLabel"
     class="icon"
-    :class="`${color ? ' text-' + color : ''}${size ? ' font-size-' + size : ''}`"/>
+    :class="`${color ? ' text-' + color : ''}${size ? ' font-size-' + size : ''}`">
+    <component
+      class="svg-icon"
+      v-if="svgName"
+      :is="svgName" />
+  </component>
 </template>
 
 <script>
 const context = require.context('@@/icons/svg/', true, /\.svg$/)
-const cache = new Map()
 
 /**
  * Icons are used to add meaning and improve accessibility.
@@ -70,30 +74,33 @@ export default {
       default: 'span'
     }
   },
+  data() {
+    return {
+      svgName: false
+    }
+  },
   async mounted() {
-    let currPath = ''
+    let svgIcon = false
+    let svgName = this.set + this.name
+
+    // Load from cache
+    if (this.$options.components[svgName]) {
+      this.svgName = svgName
+      return
+    }
+
+    // Load into cache
     try {
-      currPath = context(`./${this.set}/${this.name}.svg`)
+      svgIcon = context(`./${this.set}/${this.name}.svg`)
     } catch (e) {
       console.error('icon not found', e)
     }
-    if (!currPath) {
+    if (!svgIcon) {
       return
     }
-    if (!cache.has(currPath)) {
-      try {
-        cache.set(currPath, fetch(currPath).then(r => r.text()))
-      } catch (e) {
-        cache.delete(currPath)
-      }
-    }
-    if (cache.has(currPath)) {
-      this.$el.innerHTML = await cache.get(currPath)
-      this.$el.children[0].style.color = 'inherit'
-      this.$el.children[0].style.width = 'auto'
-      this.$el.children[0].style.height = 'inherit'
-      this.$el.children[0].style.lineHeight = 'inherit'
-    }
+
+    this.$options.components[svgName] = svgIcon
+    this.svgName = svgName
   }
 }
 </script>
@@ -104,6 +111,9 @@ export default {
   display: inline-flex;
   align-items: center;
   vertical-align: middle;
+}
+
+.svg-icon {
   line-height: 1;
   height: 1em;
   fill: currentColor;
