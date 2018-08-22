@@ -10,8 +10,7 @@
       class="copy-link">
       <ds-button
         @click="copy"
-        icon="copy"
-        icon-set="line"
+        icon="paperclip"
         transparent
         color="lighter"/>
     </div>

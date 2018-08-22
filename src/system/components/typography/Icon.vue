@@ -74,7 +74,7 @@ export default {
   },
   async mounted() {
     let svgIcon = false
-    let svgName = this.name
+    let svgName = 'icon-' + this.name
 
     // Load from cache
     if (this.$options.components[svgName]) {
@@ -84,7 +84,7 @@ export default {
 
     // Load into cache
     try {
-      svgIcon = context(`./${svgName}.svg`)
+      svgIcon = context(`./${this.name}.svg`)
     } catch (e) {
       console.error('icon not found', e)
     }
@@ -104,12 +104,20 @@ export default {
   display: inline-flex;
   align-items: center;
   vertical-align: middle;
+  height: 1em;
 }
 
 .svg-icon {
   line-height: 1;
   height: 1em;
-  fill: currentColor;
+  // Use this if the icons are build with strokes
+  stroke: currentColor;
+  stroke-width: 2.5px;
+  stroke-linejoin: miter;
+  stroke-linecap: miter;
+  overflow: visible;
+  // Use this if the icons are build with solids
+  //fill: currentColor
 }
 
 @include text-colors;
@@ -124,7 +132,7 @@ export default {
   ```
     <ds-icon name="plus"></ds-icon>
     <ds-icon name="user"></ds-icon>
-    <ds-icon name="comment"></ds-icon>
+    <ds-icon name="message"></ds-icon>
     <ds-icon name="ban"></ds-icon>
   ```
 
@@ -133,12 +141,12 @@ export default {
   Use different sizes to create hierarchy.
 
   ```
-    <ds-icon name="car" size="small"></ds-icon>
-    <ds-icon name="car"></ds-icon>
-    <ds-icon name="car" size="large"></ds-icon>
-    <ds-icon name="car" size="x-large"></ds-icon>
-    <ds-icon name="car" size="xx-large"></ds-icon>
-    <ds-icon name="car" size="xxx-large"></ds-icon>
+    <ds-icon name="photo" size="small"></ds-icon>
+    <ds-icon name="photo"></ds-icon>
+    <ds-icon name="photo" size="large"></ds-icon>
+    <ds-icon name="photo" size="x-large"></ds-icon>
+    <ds-icon name="photo" size="xx-large"></ds-icon>
+    <ds-icon name="photo" size="xxx-large"></ds-icon>
   ```
 
   ## Icon colors
@@ -146,16 +154,20 @@ export default {
   Use different colors to provide meaning.
 
   ```
-    <ds-icon name="car" color="lighter"></ds-icon>
-    <ds-icon name="car" color="light"></ds-icon>
-    <ds-icon name="car"></ds-icon>
-    <ds-icon name="car" color="primary"></ds-icon>
-    <ds-icon name="car" color="success"></ds-icon>
-    <ds-icon name="car" color="warning"></ds-icon>
-    <ds-icon name="car" color="danger"></ds-icon>
+    <ds-icon name="photo" color="lighter"></ds-icon>
+    <ds-icon name="photo" color="light"></ds-icon>
+    <ds-icon name="photo"></ds-icon>
+    <ds-icon name="photo" color="primary"></ds-icon>
+    <ds-icon name="photo" color="success"></ds-icon>
+    <ds-icon name="photo" color="warning"></ds-icon>
+    <ds-icon name="photo" color="danger"></ds-icon>
   ```
 
   ## Icon list
+
+  We use this icons set: https://github.com/danklammer/bytesize-icons
+
+  In order to change the appearance of the whole set, edit the icon component `icon.vue`.
 
   Below is a list of all available icons right. If you want to change these icons or want to add new ones, put them in `system/icons/svg`.
 

@@ -14,7 +14,7 @@
           v-if="$slots.drawer"
           class="page-navigation-toggle"
           @click="showDrawer = !showDrawer">
-          <ds-icon name="bars"/>
+          <ds-icon name="menu"/>
         </div>
       </div>
     </header>
