@@ -1,17 +1,17 @@
 <template>
   <ds-page ref="page">
     <template slot="brand">
-      <ds-logo></ds-logo>
+      <ds-logo/>
     </template>
     <ds-menu
       @navigate="$refs.page.closeDrawer()"
       slot="sidebar"
-      :routes="routes"></ds-menu>
+      :routes="routes"/>
     <ds-menu
       @navigate="$refs.page.closeDrawer()"
       slot="drawer"
-      :routes="routes"></ds-menu>
-    <ds-page-title heading="Sidebar only"></ds-page-title>
+      :routes="routes"/>
+    <ds-page-title heading="Sidebar only"/>
     <ds-container>
       <ds-space margin-top="large">
         <ds-text>
@@ -22,7 +22,9 @@
         </ds-text>
         <ds-button icon="user">User Settings</ds-button>
       </ds-space>
-      <ds-flex gutter="base" :width="{ base: '100%', sm: 1 }">
+      <ds-flex 
+        gutter="base" 
+        :width="{ base: '100%', sm: 1 }">
         <ds-flex-item>
           <ds-card
             header="The header"
@@ -43,23 +45,23 @@
 </template>
 
 <script>
-  export default {
-    data() {
-      return {
-        routes: [
-          { name: 'Introduction' },
-          {
-            name: 'Layout',
-            children: [
-              { name: 'Container' },
-              { name: 'Page' },
-              { name: 'Page Title' }
-            ]
-          },
-          { name: 'Typography' },
-          { name: 'Navigation' }
-        ]
-      }
+export default {
+  data() {
+    return {
+      routes: [
+        { name: 'Introduction' },
+        {
+          name: 'Layout',
+          children: [
+            { name: 'Container' },
+            { name: 'Page' },
+            { name: 'Page Title' }
+          ]
+        },
+        { name: 'Typography' },
+        { name: 'Navigation' }
+      ]
     }
   }
+}
 </script>

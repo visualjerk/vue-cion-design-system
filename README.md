@@ -11,17 +11,36 @@ Living styleguide demo: https://cion.visualjerk.de
 yarn install
 ```
 
-### Compiles and hot-reloads for development
+## Developing
+
+Compiles and hot-reloads living styleguide
+
 ```
 yarn dev
 ```
 
-### Compiles and minifies for production
+## Building
+
+### Living styleguide
+
+
+Compiles living styleguide to `./docs`
+
 ```
 yarn build
 ```
 
-### Serve build locally
+### Library
+
+Compiles design system as a library to `./dist`
+
+```
+yarn build:lib
+```
+
+## Helper
+
+### Serve living styleguide locally
 ```
 yarn serve
 ```

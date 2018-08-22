@@ -8,7 +8,7 @@
 </template>
 
 <script>
-import { getResponsiveStyles, getSpace } from '@@/utils'
+import { windowObserver, getSpace } from '@@/utils'
 
 /**
  * Use this component for grouping and separation.
@@ -44,27 +44,26 @@ export default {
       default: 'div'
     }
   },
-  computed: {
-    styles() {
-      const marginTopStyle = getResponsiveStyles(
-        this.marginTop,
-        this.parseMargin('Top')
-      )
-      const marginBottomStyle = getResponsiveStyles(
-        this.marginBottom,
-        this.parseMargin('Bottom')
-      )
-
-      return {
-        ...marginTopStyle,
-        ...marginBottomStyle
-      }
+  data() {
+    return {
+      styles: {}
     }
   },
   methods: {
+    updateStyles(marginTop, marginBottom) {
+      const marginTopStyle = this.parseMargin('Top')(marginTop)
+      const marginBottomStyle = this.parseMargin('Bottom')(marginBottom)
+      this.styles = {
+        ...marginTopStyle,
+        ...marginBottomStyle
+      }
+    },
     parseMargin(direction) {
       return margin => {
         const styles = {}
+        if (!margin) {
+          return styles
+        }
         const realMargin = getSpace(margin)
         if (realMargin !== 0) {
           styles[`margin${direction}`] = `${realMargin}px`
@@ -72,6 +71,15 @@ export default {
         return styles
       }
     }
+  },
+  created() {
+    windowObserver.subscribe(this.updateStyles, [
+      this.marginTop,
+      this.marginBottom
+    ])
+  },
+  beforeDestroy() {
+    windowObserver.unsubscribe(this.updateStyles)
   }
 }
 </script>

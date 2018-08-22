@@ -21,6 +21,8 @@ function getWindowSize() {
     window.clientHeight ||
     document.documentElement.clientHeight ||
     document.body.clientHeight
+
+  notify()
 }
 
 let init = false
@@ -34,6 +36,42 @@ function initListener() {
     getWindowSize()
     init = true
   }
+}
+
+const deps = new Map()
+
+const notify = () => {
+  deps.forEach((args, func) => {
+    func(...args.map(getResponsiveArg))
+  })
+}
+
+export const windowObserver = {
+  subscribe(func, args) {
+    initListener()
+    deps.set(func, args)
+    func(...args.map(getResponsiveArg))
+  },
+  unsubscribe(func) {
+    deps.delete(func)
+  }
+}
+
+const getResponsiveArg = arg => {
+  if (arg === null || typeof arg !== 'object') {
+    return arg
+  }
+  let result = arg.base
+  Object.keys(tokenMap.mediaSize)
+    .reverse()
+    .some(key => {
+      const width = tokenMap.mediaSize[key].value
+      if (width <= bus.windowSize.width && arg[key]) {
+        result = arg[key]
+        return true
+      }
+    })
+  return result
 }
 
 export const windowSize = () => {
@@ -64,4 +102,11 @@ export const getResponsiveStyles = (prop, parser) => {
 export const getSpace = space => {
   const spaceName = camelCase(space)
   return tokenMap.spaceSize[spaceName] ? tokenMap.spaceSize[spaceName].value : 0
+}
+
+export default {
+  windowSize,
+  getResponsiveStyles,
+  getSpace,
+  windowObserver
 }

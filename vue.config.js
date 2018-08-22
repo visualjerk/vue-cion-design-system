@@ -2,7 +2,6 @@ const path = require('path')
 const MergeIntoSingleFilePlugin = require('webpack-merge-and-include-globally');
 const BundleAnalyzerPlugin = require('webpack-bundle-analyzer').BundleAnalyzerPlugin;
 
-// config at your vue.config.js
 module.exports = {
   outputDir: process.env.BUILD === 'library'
     ? path.resolve(__dirname, "./dist")
@@ -37,7 +36,8 @@ module.exports = {
     plugins: process.env.BUILD === 'library'
       ? [
         new BundleAnalyzerPlugin({
-          analyzerMode: 'static'
+          analyzerMode: 'static',
+          openAnalyzer: false
         }),
         new MergeIntoSingleFilePlugin({
           files: {

@@ -8,12 +8,10 @@
 </template>
 
 <script>
-import { getResponsiveStyles, getSpace } from '@@/utils'
+import { windowObserver, getSpace } from '@@/utils'
 
 /**
- * Used in combination with the flex component to create flexible layouts.
  * @version 1.0.0
- * @deprecated
  * @see DsFlex
  */
 export default {
@@ -41,19 +39,25 @@ export default {
       default: 'div'
     }
   },
+  data() {
+    return {
+      styles: {}
+    }
+  },
   computed: {
-    styles() {
-      const widthStyle = getResponsiveStyles(this.width, this.parseWidth)
-      const gutterStyle = this.$parentFlex
-        ? getResponsiveStyles(this.$parentFlex.gutter, this.parseGutter)
-        : {}
-      return {
-        ...widthStyle,
-        ...gutterStyle
-      }
+    gutter() {
+      return this.$parentFlex ? this.$parentFlex.gutter : 0
     }
   },
   methods: {
+    updateStyles(width, gutter) {
+      const widthStyle = this.parseWidth(width)
+      const gutterStyle = this.parseGutter(gutter)
+      this.styles = {
+        ...widthStyle,
+        ...gutterStyle
+      }
+    },
     parseWidth(width) {
       const styles = {}
       if (isNaN(width)) {
@@ -77,6 +81,12 @@ export default {
         marginBottom: `${realGutter}px`
       }
     }
+  },
+  created() {
+    windowObserver.subscribe(this.updateStyles, [this.width, this.gutter])
+  },
+  beforeDestroy() {
+    windowObserver.unsubscribe(this.updateStyles)
   }
 }
 </script>
