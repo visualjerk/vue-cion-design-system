@@ -169,7 +169,7 @@ export default {
 
   In order to change the appearance of the whole set, edit the icon component `icon.vue`.
 
-  Below is a list of all available icons right. If you want to change these icons or want to add new ones, put them in `system/icons/svg`.
+  Below is a list of all available icons. If you want to change these icons or want to add new ones, put them in `system/icons/svg`.
 
   <icon-list></icon-list>
 </docs>

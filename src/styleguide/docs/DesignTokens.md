@@ -2,7 +2,7 @@ Design tokens are the visual design atoms of the design system — specifically,
 
 You can use tokens as SCSS variables or import them in your JS:
 ```
-import { tokens } from '@@/tokens'
+import { tokens } from 'system'
 ```
 
 <design-tokens />
