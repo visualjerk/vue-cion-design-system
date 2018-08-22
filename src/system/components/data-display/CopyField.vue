@@ -10,9 +10,9 @@
       class="copy-link">
       <ds-button
         @click="copy"
-        icon="paperclip"
+        icon="clipboard"
         transparent
-        color="lighter"/>
+        color="light"/>
     </div>
     <transition name="message">
       <div

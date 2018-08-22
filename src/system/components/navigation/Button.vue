@@ -2,7 +2,7 @@
   <component
     @click.capture="handleClick"
     class="button"
-    :class="`text-${textColor} background-${color} font-size-${size}${hover ? ' hover' : ''}${transparent ? ' transparent' : ''}${iconOnly ? ' icon-only' : ''}`"
+    :class="`text-${textColor} background-${color} size-${size}${hover ? ' hover' : ''}${transparent ? ' transparent' : ''}${iconOnly ? ' icon-only' : ''}`"
     v-bind="bindings"
     :is="linkTag">
     <ds-icon 
@@ -38,20 +38,18 @@ export default {
     },
     /**
      * The background color used for the tag.
-     * `lighter, light, medium, default, dark, primary, success, warning, danger`
+     * `light, primary, success, danger`
      */
     color: {
       type: String,
       default: 'primary',
       validator: value => {
-        return value.match(
-          /(lighter|light|medium|dark|primary|success|warning|danger)/
-        )
+        return value.match(/(light|primary|success|danger)/)
       }
     },
     /**
      * The size used for the text.
-     * `base, large, x-large, small, x-small`
+     * `small, base, large`
      */
     size: {
       type: String,
@@ -59,7 +57,7 @@ export default {
         return this.$parentText ? this.$parentText.size : 'base'
       },
       validator: value => {
-        return value.match(/(base|large|x-large|small|x-small)/)
+        return value.match(/(small|base|large)/)
       }
     },
     /**
@@ -147,6 +145,7 @@ export default {
   border: 0;
   cursor: pointer;
   user-select: none;
+  font-size: $font-size-base;
   font-family: $font-family-text;
   font-weight: $font-weight-bold;
   display: inline-flex;
@@ -161,9 +160,27 @@ export default {
   transition: color $duration-short $ease-out,
     background-color $duration-short $ease-out;
 
+  &.size-small {
+    padding: $font-space-x-small $font-space-large;
+  }
+
+  &.size-large {
+    padding: $font-space-x-large $font-space-xxx-large;
+  }
+
   &.icon-only {
     width: 1em + 2 * $font-space-large;
     padding: $font-space-large 0;
+
+    &.size-small {
+      width: 1em + 2 * $font-space-x-small;
+      padding: $font-space-x-small 0;
+    }
+
+    &.size-large {
+      width: 1em + 2 * $font-space-x-large;
+      padding: $font-space-x-large 0;
+    }
   }
 
   &:active {
@@ -205,7 +222,6 @@ export default {
 @include text-colors;
 @include background-colors;
 @include background-hover-colors;
-@include font-sizes;
 
 .transparent {
   background-color: transparent;
@@ -230,10 +246,7 @@ Use different colors to emphasize or provide meaning.
 
 ```
   <ds-button color="light">light</ds-button>
-  <ds-button color="dark">dark</ds-button>
   <ds-button>primary</ds-button>
-  <ds-button color="success">success</ds-button>
-  <ds-button color="warning">warning</ds-button>
   <ds-button color="danger">danger</ds-button>
 ```
 
@@ -242,12 +255,8 @@ Use different colors to emphasize or provide meaning.
 Use transparent buttons to make them more subtle.
 
 ```
-  <ds-button color="lighter" transparent>lighter</ds-button>
   <ds-button color="light" transparent>light</ds-button>
-  <ds-button color="dark" transparent>dark</ds-button>
   <ds-button transparent>primary</ds-button>
-  <ds-button color="success" transparent>success</ds-button>
-  <ds-button color="warning" transparent>warning</ds-button>
   <ds-button color="danger" transparent>danger</ds-button>
 ```
 
@@ -256,11 +265,9 @@ Use transparent buttons to make them more subtle.
 Use different sizes to create hierarchy.
 
 ```
-  <ds-button size="x-small">x-small</ds-button>
   <ds-button size="small">small</ds-button>
   <ds-button>base</ds-button>
   <ds-button size="large">large</ds-button>
-  <ds-button size="x-large">x-large</ds-button>
 ```
 
 ## Button states

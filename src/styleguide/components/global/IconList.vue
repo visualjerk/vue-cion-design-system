@@ -21,8 +21,7 @@
             <ds-copy-field>{{ icon }}</ds-copy-field>
           </ds-text>
           <ds-button
-            @click="copy(icon)"
-            size="small">Copy Code</ds-button>
+            @click="copy(icon)">Copy Code</ds-button>
         </ds-card>
       </ds-flex-item>
     </ds-flex>
