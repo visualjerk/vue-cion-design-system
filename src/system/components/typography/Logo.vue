@@ -38,10 +38,12 @@ $logo-color-inverse: $text-color-light;
   display: inline-flex;
   justify-content: center;
   align-items: center;
+  color: $logo-color-default;
 
   svg {
     width: 130px;
     height: auto;
+    fill: currentColor;
   }
 }
 </style>
