@@ -1,4 +1,4 @@
-import { camelCase } from 'lodash'
+import camelCase from 'lodash/camelCase'
 import raw from './generated/tokens.raw.json'
 
 const { tokens, tokenMap } = Object.keys(raw.props).reduce(

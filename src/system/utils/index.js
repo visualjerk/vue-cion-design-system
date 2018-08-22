@@ -1,5 +1,5 @@
 import Vue from 'vue'
-import { camelCase } from 'lodash'
+import camelCase from 'lodash/camelCase'
 import { tokenMap } from '@@/tokens'
 
 const bus = new Vue({

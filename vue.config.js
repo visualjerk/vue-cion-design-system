@@ -1,5 +1,6 @@
 const path = require('path')
 const MergeIntoSingleFilePlugin = require('webpack-merge-and-include-globally');
+const BundleAnalyzerPlugin = require('webpack-bundle-analyzer').BundleAnalyzerPlugin;
 
 // config at your vue.config.js
 module.exports = {
@@ -27,21 +28,22 @@ module.exports = {
       rules: [
         {
           resourceQuery: /blockType=docs/,
-          loader: require.resolve('./src/loader/docs-loader.js')
+          loader: process.env.BUILD === 'library'
+            ? require.resolve('./src/loader/docs-trim-loader.js')
+            : require.resolve('./src/loader/docs-loader.js')
         }
       ]
     },
     plugins: process.env.BUILD === 'library'
       ? [
+        new BundleAnalyzerPlugin({
+          analyzerMode: 'static'
+        }),
         new MergeIntoSingleFilePlugin({
           files: {
             "shared.scss": [
               path.resolve(__dirname, './src/system/tokens/generated/tokens.scss'),
-              path.resolve(__dirname, './src/system/styles/_functions.scss'),
-              path.resolve(__dirname, './src/system/styles/_mixins.scss'),
-              path.resolve(__dirname, './src/system/styles/_color.scss'),
-              path.resolve(__dirname, './src/system/styles/_font.scss'),
-              path.resolve(__dirname, './src/system/styles/_spacing.scss')
+              path.resolve(__dirname, './src/system/styles/shared/**/*.scss')
             ]
           }
         })

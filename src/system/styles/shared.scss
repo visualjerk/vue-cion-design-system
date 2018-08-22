@@ -7,8 +7,8 @@
 --------------------------------------------- */
 
 @import "../tokens/generated/tokens";
-@import "./functions";
-@import "./mixins";
-@import "./color";
-@import "./font";
-@import "./spacing";
+@import "./shared/functions";
+@import "./shared/mixins";
+@import "./shared/color";
+@import "./shared/font";
+@import "./shared/spacing";

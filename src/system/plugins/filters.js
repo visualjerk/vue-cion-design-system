@@ -1,4 +1,6 @@
-import { startCase, camelCase, kebabCase } from 'lodash'
+import startCase from 'lodash/startCase'
+import camelCase from 'lodash/camelCase'
+import kebabCase from 'lodash/kebabCase'
 
 export default {
   install(Vue) {

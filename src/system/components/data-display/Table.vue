@@ -44,7 +44,8 @@
 </template>
 
 <script>
-import { startCase } from 'lodash'
+import startCase from 'lodash/startCase'
+
 /**
  * Used in combination with the table row to create data tables.
  * @version 1.0.0

@@ -4,7 +4,7 @@ import System from '@@'
 import Components from './components/global'
 import App from './App.vue'
 import router from './router'
-import { startCase } from 'lodash'
+import startCase from 'lodash/startCase'
 
 Vue.config.productionTip = false
 

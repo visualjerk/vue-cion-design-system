@@ -1,6 +1,6 @@
 import Vue from 'vue'
 import VueRouter from 'vue-router'
-import { kebabCase } from 'lodash'
+import kebabCase from 'lodash/kebabCase'
 
 import { componentsMap } from '@@/components'
 import config from '../config'
