@@ -10,14 +10,12 @@
 <script>
 import { getSpace } from '@@/utils'
 import { mediaQuery } from '@@/mixins'
-import DsFlexItem from './FlexItem.vue'
 
 /**
  * Used in combination with the col component to create flexible layouts.
  * @version 1.0.0
  */
 export default {
-  components: { DsFlexItem },
   name: 'DsFlex',
   mixins: [mediaQuery],
   provide() {

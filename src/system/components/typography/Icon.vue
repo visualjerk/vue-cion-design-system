@@ -86,6 +86,7 @@ export default {
     try {
       svgIcon = context(`./${this.name}.svg`)
     } catch (e) {
+      // eslint-disable-next-line
       console.error('icon not found', e)
     }
     if (!svgIcon) {
