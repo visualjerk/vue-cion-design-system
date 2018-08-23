@@ -1,8 +1,14 @@
 <template>
   <component 
     :is="tag"
-    class="tag"
-    :class="`text-${textColor} font-size-${size} background-${color}${round ? ' round' : ''}`">
+    class="ds-tag"
+    :class="[
+      `ds-text-color-${textColor}`,
+      size && `ds-tag-size-${size}`,
+      color && `ds-background-color-${color}`,
+      round && 'ds-tag-round'
+    ]"
+  >
     <slot />
   </component>
 </template>
@@ -29,13 +35,13 @@ export default {
     },
     /**
      * The size used for the text.
-     * `base, large, x-large, small, x-small, xx-small`
+     * `base, large, small`
      */
     size: {
       type: String,
-      default: 'x-small',
+      default: 'base',
       validator: value => {
-        return value.match(/(base|large|x-large|small|x-small|xx-small)/)
+        return value.match(/(base|large|small)/)
       }
     },
     /**
@@ -62,8 +68,8 @@ export default {
 }
 </script>
 
-<style lang="scss" scoped>
-.tag {
+<style lang="scss">
+.ds-tag {
   @include reset;
   @include stack-space($space-xx-small);
   display: inline-block;
@@ -75,12 +81,21 @@ export default {
   letter-spacing: $letter-spacing-large;
   text-transform: uppercase;
 }
-@include text-colors;
-@include background-colors;
-@include font-sizes;
 
-.round {
+.ds-tag-round {
   border-radius: $border-radius-rounded;
+}
+
+.ds-tag-size-base {
+  font-size: $font-size-x-small;
+}
+
+.ds-tag-size-small {
+  font-size: $font-size-xx-small;
+}
+
+.ds-tag-size-large {
+  font-size: $font-size-small;
 }
 </style>
 
@@ -100,15 +115,12 @@ export default {
 
   ## Tag sizes
 
-  Use different sizes to create hierarchy (defaults to `x-small`).
+  Use different sizes to create hierarchy (defaults to `base`).
 
   ```
-    <ds-tag size="xx-small">xx-small</ds-tag>
-    <ds-tag size="x-small">x-small</ds-tag>
     <ds-tag size="small">small</ds-tag>
     <ds-tag size="base">base</ds-tag>
     <ds-tag size="large">large</ds-tag>
-    <ds-tag size="x-large">x-large</ds-tag>
   ```
 
   ## Variations

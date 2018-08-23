@@ -1,0 +1,11 @@
+/* GLOBAL COLOR STYLES
+--------------------------------------------- */
+
+// Text Colors
+@include map-token(color, 'text-color')
+
+// Background Colors
+@include map-token(background-color, 'background-color')
+
+// Border Colors
+@include map-token(border-color, 'border-color')

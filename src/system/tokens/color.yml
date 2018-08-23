@@ -31,6 +31,8 @@ props:
 
   - name: color-neutral
     value: &color-neutral "hsla({!neutral}, 30%, 1)"
+  - name: color-neutral-5
+    value: &color-neutral-5 "hsla({!neutral}, 40%, 1)"
   - name: color-neutral-10
     value: &color-neutral-10 "hsla({!neutral}, 45%, 1)"
   - name: color-neutral-20
@@ -139,7 +141,7 @@ props:
     category: background-color
 
   - name: background-color-medium-active
-    value: *color-neutral-50
+    value: *color-neutral-70
     category: background-color
 
   - name: background-color-dark
@@ -147,7 +149,7 @@ props:
     category: background-color
 
   - name: background-color-dark-active
-    value: *color-neutral-10
+    value: *color-neutral-5
     category: background-color
 
   - name: background-color-darker

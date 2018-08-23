@@ -2,7 +2,7 @@
   <component 
     :is="tag"
     :style="styles"
-    class="flex">
+    class="ds-flex">
     <slot />
   </component>
 </template>
@@ -83,8 +83,8 @@ export default {
 }
 </script>
 
-<style lang="scss" scoped>
-.flex {
+<style lang="scss">
+.ds-flex {
   @include reset;
   display: flex;
   flex-wrap: wrap;

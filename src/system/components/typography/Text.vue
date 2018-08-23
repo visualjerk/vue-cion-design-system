@@ -1,8 +1,13 @@
 <template>
   <component 
     :is="tag"
-    class="text"
-    :class="`${color ? ' text-' + color : ''}${size ? ' font-size-' + size : ''}${bold ? ' bold' : ''}`">
+    class="ds-text"
+    :class="[
+      size && `ds-font-size-${size}`,
+      color && `ds-text-color-${color}`,
+      bold && `ds-text-bold`
+    ]"
+  >
     <slot />
   </component>
 </template>
@@ -71,17 +76,15 @@ export default {
 }
 </script>
 
-<style lang="scss" scoped>
-.text {
+<style lang="scss">
+.ds-text {
   @include reset;
   @include stack-space($font-space-x-large);
   font-family: $font-family-text;
   line-height: $line-height-base;
 }
-@include text-colors;
-@include font-sizes;
 
-.bold {
+.ds-text-bold {
   font-weight: $font-weight-bold;
 }
 </style>
@@ -107,6 +110,9 @@ export default {
     <ds-text>The quick brown fox</ds-text>
     <ds-text color="light">The quick brown fox</ds-text>
     <ds-text color="primary">The quick brown fox</ds-text>
+    <ds-text color="success">The quick brown fox</ds-text>
+    <ds-text color="danger">The quick brown fox</ds-text>
+    <ds-text color="warning">The quick brown fox</ds-text>
   ```
 
   ## Nesting styles

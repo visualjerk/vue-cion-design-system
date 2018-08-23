@@ -1,5 +1,5 @@
 <template>
-  <td class="table-col">
+  <td class="ds-table-col">
     <slot/>
   </td>
 </template>
@@ -31,8 +31,8 @@ export default {
 }
 </script>
 
-<style lang="scss" scoped>
-.table-col {
+<style lang="scss">
+.ds-table-col {
   @include reset;
   border-bottom: $border-color-lighter solid $border-size-default;
   vertical-align: top;

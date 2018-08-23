@@ -1,7 +1,7 @@
 <template>
   <component 
     :is="tag"
-    class="container">
+    class="ds-container">
     <slot />
   </component>
 </template>
@@ -25,8 +25,8 @@ export default {
 }
 </script>
 
-<style lang="scss" scoped>
-.container {
+<style lang="scss">
+.ds-container {
   @include reset;
   max-width: 1200px;
   padding: 0 $space-small;

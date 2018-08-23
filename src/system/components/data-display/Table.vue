@@ -1,11 +1,11 @@
 <template>
   <div
-    class="table-wrap"
+    class="ds-table-wrap"
     v-if="dataArray">
     <table
       cellpadding="0"
       cellspacing="0"
-      class="table">
+      class="ds-table">
       <colgroup>
         <col
           v-for="header in headers"
@@ -141,8 +141,8 @@ export default {
 }
 </script>
 
-<style lang="scss" scoped>
-.table {
+<style lang="scss">
+.ds-table {
   @include reset;
   width: 100%;
 }

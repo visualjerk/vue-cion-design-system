@@ -1,15 +1,22 @@
 <template>
   <component
     @click.capture="handleClick"
-    class="button"
-    :class="`text-${textColor} background-${color} size-${size}${hover ? ' hover' : ''}${transparent ? ' transparent' : ''}${iconOnly ? ' icon-only' : ''}`"
+    class="ds-button"
+    :class="[
+      size && `ds-button-size-${size}`,
+      primary && `ds-button-primary`,
+      danger && `ds-button-danger`,
+      ghost && `ds-button-ghost`,
+      iconOnly && `ds-button-icon-only`,
+      hover && `ds-button-hover`
+    ]"
     v-bind="bindings"
     :is="linkTag">
     <ds-icon 
       v-if="icon" 
       :name="icon"/>
     <span 
-      class="button-text"
+      class="ds-button-text"
       v-if="$slots.default">
       <slot />
     </span>
@@ -37,25 +44,12 @@ export default {
       }
     },
     /**
-     * The background color used for the tag.
-     * `light, primary, success, danger`
-     */
-    color: {
-      type: String,
-      default: 'primary',
-      validator: value => {
-        return value.match(/(light|primary|success|danger)/)
-      }
-    },
-    /**
      * The size used for the text.
      * `small, base, large`
      */
     size: {
       type: String,
-      default() {
-        return this.$parentText ? this.$parentText.size : 'base'
-      },
+      default: null,
       validator: value => {
         return value.match(/(small|base|large)/)
       }
@@ -75,6 +69,22 @@ export default {
       }
     },
     /**
+     * Primary style
+     * `true, false`
+     */
+    primary: {
+      type: Boolean,
+      default: false
+    },
+    /**
+     * Danger style
+     * `true, false`
+     */
+    danger: {
+      type: Boolean,
+      default: false
+    },
+    /**
      * Toggle the hover state
      * `true, false`
      */
@@ -86,7 +96,7 @@ export default {
      * Make the buttons background transparent
      * `true, false`
      */
-    transparent: {
+    ghost: {
       type: Boolean,
       default: false
     },
@@ -107,7 +117,7 @@ export default {
   },
   computed: {
     textColor() {
-      if (this.transparent) {
+      if (this.ghost) {
         return this.color
       }
       return ['light', 'lighter'].includes(this.color) ? 'default' : 'inverse'
@@ -134,8 +144,8 @@ export default {
 }
 </script>
 
-<style lang="scss" scoped>
-.button {
+<style lang="scss">
+.ds-button {
   @include reset;
   width: auto;
   overflow: visible;
@@ -148,47 +158,24 @@ export default {
   font-size: $font-size-base;
   font-family: $font-family-text;
   font-weight: $font-weight-bold;
+  letter-spacing: $letter-spacing-large;
   display: inline-flex;
   vertical-align: middle;
   align-items: center;
   justify-content: center;
-  color: $text-color-inverse;
   line-height: 1;
   text-decoration: none;
   padding: $font-space-large $font-space-xx-large;
   border-radius: $border-radius-rounded;
+  box-shadow: $box-shadow-small-inset, $box-shadow-x-small;
   transition: color $duration-short $ease-out,
     background-color $duration-short $ease-out;
 
-  &.size-small {
-    padding: $font-space-x-small $font-space-large;
-  }
-
-  &.size-large {
-    padding: $font-space-x-large $font-space-xxx-large;
-  }
-
-  &.icon-only {
-    width: 1em + 2 * $font-space-large;
-    padding: $font-space-large 0;
-
-    &.size-small {
-      width: 1em + 2 * $font-space-x-small;
-      padding: $font-space-x-small 0;
-    }
-
-    &.size-large {
-      width: 1em + 2 * $font-space-x-large;
-      padding: $font-space-x-large 0;
-    }
-  }
-
   &:active {
-    opacity: 0.9;
+    box-shadow: $box-shadow-small-inset, $box-shadow-inset, $box-shadow-x-small;
   }
 
   &:focus {
-    box-shadow: $box-shadow-active;
     outline: none;
   }
 
@@ -202,9 +189,88 @@ export default {
     cursor: default;
     pointer-events: none;
   }
+
+  // Default colors
+  color: $text-color-default;
+  background-color: $background-color-medium;
+
+  &:hover,
+  &.ds-button-hover {
+    color: $text-color-default;
+    background-color: $background-color-medium-active;
+  }
 }
 
-.button-text {
+.ds-button-primary {
+  color: $text-color-inverse;
+  background-color: $background-color-primary;
+
+  &:hover,
+  &.ds-button-hover {
+    color: $text-color-inverse;
+    background-color: $background-color-primary-active;
+  }
+}
+
+.ds-button-danger {
+  color: $text-color-inverse;
+  background-color: $background-color-danger;
+
+  &:hover,
+  &.ds-button-hover {
+    color: $text-color-inverse;
+    background-color: $background-color-danger-active;
+  }
+}
+
+.ds-button-ghost {
+  color: $text-color-default;
+  background-color: transparent;
+  box-shadow: none;
+
+  &:focus {
+    box-shadow: none;
+  }
+
+  &:hover,
+  &.ds-hover {
+    color: $text-color-default;
+    background-color: $background-color-lighter;
+  }
+
+  &.ds-button-primary {
+    color: $text-color-primary;
+  }
+
+  &.ds-button-danger {
+    color: $text-color-danger;
+  }
+}
+
+.ds-button-size-small {
+  padding: $font-space-x-small $font-space-large;
+}
+
+.ds-button-size-large {
+  padding: $font-space-x-large $font-space-xxx-large;
+}
+
+.ds-button-icon-only {
+  width: 1em + 2 * $font-space-large;
+  padding: $font-space-large 0;
+
+  &.ds-button-size-small {
+    width: 1em + 2 * $font-space-x-small;
+    padding: $font-space-x-small 0;
+  }
+
+  &.ds-button-size-large {
+    width: 1em + 2 * $font-space-x-large;
+    padding: $font-space-x-large 0;
+  }
+}
+
+.ds-button-text {
   line-height: 1;
   display: inline-block;
   white-space: nowrap;
@@ -218,25 +284,6 @@ export default {
     margin-right: 0;
   }
 }
-
-@include text-colors;
-@include background-colors;
-@include background-hover-colors;
-
-.transparent {
-  background-color: transparent;
-
-  &:hover,
-  &.hover {
-    background-color: $background-color-lighter;
-
-    &.text-lighter,
-    &.text-light,
-    &.text-dark {
-      color: $text-color-link-active;
-    }
-  }
-}
 </style>
 
 <docs>
@@ -245,19 +292,19 @@ export default {
 Use different colors to emphasize or provide meaning.
 
 ```
-  <ds-button color="light">light</ds-button>
-  <ds-button>primary</ds-button>
-  <ds-button color="danger">danger</ds-button>
+  <ds-button>default</ds-button>
+  <ds-button primary>primary</ds-button>
+  <ds-button danger>danger</ds-button>
 ```
 
-## Buttons with transparent background
+## Buttons with ghost background
 
-Use transparent buttons to make them more subtle.
+Use ghost buttons to make them more subtle.
 
 ```
-  <ds-button color="light" transparent>light</ds-button>
-  <ds-button transparent>primary</ds-button>
-  <ds-button color="danger" transparent>danger</ds-button>
+  <ds-button ghost>default</ds-button>
+  <ds-button ghost primary>primary</ds-button>
+  <ds-button ghost danger>danger</ds-button>
 ```
 
 ## Button sizes
@@ -285,11 +332,10 @@ A button can take different states.
 A button can have a icon and / or a right side icon.
 
 ```
-  <ds-button>Click me</ds-button>
-  <ds-button icon="plus">Click me</ds-button>
+  <ds-button icon="plus" primary>Click me</ds-button>
   <ds-button icon-right="plus">Click me</ds-button>
-  <ds-button icon="plus"></ds-button>
-  <ds-button icon="plus" transparent color="lighter"></ds-button>
+  <ds-button icon="plus" primary></ds-button>
+  <ds-button icon="plus" ghost></ds-button>
 ```
 
 ## Button as links

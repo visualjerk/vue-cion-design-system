@@ -1,8 +1,14 @@
 <template>
-  <li @click.capture="handleClick">
+  <li
+    class="ds-menu-item"
+    @click.capture="handleClick">
     <component
       v-if="route"
-      :class="`link level-${level}${$parentMenu.inverse ? ' inverse' : ''}`"
+      class="ds-menu-item-link"
+      :class="[
+        `ds-menu-item-level-${level}`,
+        $parentMenu.inverse && 'ds-menu-item-inverse'
+      ]"
       v-bind="bindings"
       :exact="isExact"
       :is="linkTag">
@@ -10,7 +16,9 @@
         {{ name }}
       </slot>
     </component>
-    <ul v-if="route.children && route.children.length">
+    <ul
+      class="ds-menu-item-list"
+      v-if="route.children && route.children.length">
       <ds-menu-item
         v-for="child in route.children"
         :key="child.name"
@@ -101,8 +109,8 @@ export default {
 }
 </script>
 
-<style lang="scss" scoped>
-.link {
+<style lang="scss">
+.ds-menu-item-link {
   @include reset;
   display: block;
   color: $text-color-default;
@@ -120,7 +128,7 @@ export default {
   }
 }
 
-.inverse {
+.ds-menu-item-inverse {
   color: $text-color-lighter;
 
   &.router-link-active {
@@ -133,17 +141,17 @@ export default {
   }
 }
 
-.level-1 {
+.ds-menu-item-level-1 {
   font-size: $font-size-small;
   padding-left: $space-x-small * 3;
 }
 
-.level-2 {
+.ds-menu-item-level-2 {
   font-size: $font-size-small;
   padding-left: $space-x-small * 4;
 }
 
-ul {
+ul.ds-menu-item-list {
   @include reset;
   list-style: none;
   padding-left: 0;

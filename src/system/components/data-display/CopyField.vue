@@ -1,25 +1,25 @@
 <template>
   <component 
     :is="tag"
-    class="copy-field"
-    :class="`font-size-${size}`">
+    class="ds-copy-field"
+    :class="`ds-font-size-${size}`">
     <div ref="text">
       <slot />
     </div>
     <div
-      class="copy-link">
+      class="ds-copy-field-link">
       <ds-button
         @click="copy"
         icon="clipboard"
-        transparent
-        color="light"/>
+        color="light"
+        ghost/>
     </div>
-    <transition name="message">
+    <transition name="ds-copy-field-message">
       <div
         v-show="showMessage"
-        class="message">
+        class="ds-copy-field-message">
         <div 
-          class="message-text" 
+          class="ds-copy-field-message-text"
           ref="messageText"/>
       </div>
     </transition>
@@ -73,8 +73,8 @@ export default {
 }
 </script>
 
-<style lang="scss" scoped>
-.copy-field {
+<style lang="scss">
+.ds-copy-field {
   @include reset;
   @include stack-space($space-xx-small);
   position: relative;
@@ -85,9 +85,8 @@ export default {
   letter-spacing: $letter-spacing-small;
   background-color: $background-color-light;
 }
-@include font-sizes;
 
-.copy-link {
+.ds-copy-field-link {
   @include reset;
   position: absolute;
   right: $space-xx-small;
@@ -96,7 +95,7 @@ export default {
   user-select: none;
 }
 
-.message {
+.ds-copy-field-message {
   @include reset;
   position: absolute;
   overflow: hidden;
@@ -110,7 +109,7 @@ export default {
   transition: all $duration-x-long $ease-out;
 }
 
-.message-text {
+.ds-copy-field-message-text {
   @include reset;
   padding: $space-x-small $space-small;
   transition: all $duration-x-long $ease-out;
@@ -118,12 +117,12 @@ export default {
   transform-origin: 0 50%;
 }
 
-.message-enter,
-.message-leave-to {
+.ds-copy-field-message-enter,
+.ds-copy-field-message-leave-to {
   visibility: hidden;
   opacity: 0;
 
-  .message-text {
+  .ds-copy-field-message-text {
     transform: scale(1.2);
   }
 }

@@ -1,18 +1,25 @@
 <template>
   <div
-    :class="`page${hasHeader ? ' has-header' : ' has-no-header'}${$slots.sidebar ? ' has-sidebar' : ''}${showDrawer ? ' show-drawer' : ''}${contained ? ' is-contained' : ''}`">
+    class="ds-page"
+    :class="[
+      hasHeader ? 'ds-page-has-header' : 'ds-page-has-no-header',
+      $slots.sidebar && 'ds-page-has-sidebar',
+      showDrawer && 'ds-page-show-drawer',
+      contained && 'ds-page-is-contained'
+    ]"
+  >
     <header
-      class="page-header">
-      <div class="page-header-container">
-        <div class="page-brand">
+      class="ds-page-header">
+      <div class="ds-page-header-container">
+        <div class="ds-page-brand">
           <slot name="brand"/>
         </div>
-        <div class="page-navbar">
+        <div class="ds-page-navbar">
           <slot name="navbar"/>
         </div>
         <div
           v-if="$slots.drawer"
-          class="page-navigation-toggle"
+          class="ds-page-navigation-toggle"
           @click="showDrawer = !showDrawer">
           <ds-icon name="menu"/>
         </div>
@@ -20,17 +27,17 @@
     </header>
     <aside
       v-if="$slots.sidebar"
-      class="page-sidebar">
-      <div class="page-sidebar-content">
+      class="ds-page-sidebar">
+      <div class="ds-page-sidebar-content">
         <slot name="sidebar" />
       </div>
     </aside>
     <aside
       v-if="$slots.drawer"
-      class="page-drawer">
+      class="ds-page-drawer">
       <slot name="drawer" />
     </aside>
-    <main class="page-content">
+    <main class="ds-page-content">
       <slot />
     </main>
   </div>
@@ -74,7 +81,7 @@ export default {
 }
 </script>
 
-<style lang="scss" scoped>
+<style lang="scss">
 $contained-width: 1400px;
 
 $header-height: 54px;
@@ -87,20 +94,20 @@ $sidebar-background-color: $background-color-default;
 
 $drawer-background-color: $background-color-default;
 
-.page {
+.ds-page {
   @include reset;
   @include clearfix;
   background: $background-color-default;
   min-height: 100vh;
 
-  &.is-contained {
+  &.ds-page-is-contained {
     max-width: $contained-width;
     width: 100%;
     margin: 0 auto;
   }
 }
 
-.page-header {
+.ds-page-header {
   @include reset;
   position: fixed;
   top: 0;
@@ -108,7 +115,7 @@ $drawer-background-color: $background-color-default;
   right: 0;
   z-index: $z-index-page-header;
 
-  .has-no-header & {
+  .ds-page-has-no-header & {
     @media #{$media-query-medium} {
       right: auto;
       width: $sidebar-width;
@@ -119,19 +126,19 @@ $drawer-background-color: $background-color-default;
   }
 }
 
-.page-header-container {
+.ds-page-header-container {
   height: $header-height;
   background: $header-background-color;
   box-shadow: $box-shadow-base;
   display: flex;
   justify-content: space-between;
 
-  .is-contained & {
+  .ds-page-is-contained & {
     max-width: $contained-width;
     margin: 0 auto;
   }
 
-  .has-no-header & {
+  .ds-page-has-no-header & {
     @media #{$media-query-medium} {
       height: $sidebar-brand-height;
       display: block;
@@ -141,14 +148,14 @@ $drawer-background-color: $background-color-default;
   }
 }
 
-.page-brand {
+.ds-page-brand {
   @include reset;
   height: 100%;
   display: flex;
   align-items: center;
   padding: 0 $space-small;
 
-  .has-no-header & {
+  .ds-page-has-no-header & {
     @media #{$media-query-medium} {
       height: 100%;
       justify-content: center;
@@ -156,7 +163,7 @@ $drawer-background-color: $background-color-default;
   }
 }
 
-.page-navbar {
+.ds-page-navbar {
   display: none;
 
   @media #{$media-query-medium} {
@@ -164,7 +171,7 @@ $drawer-background-color: $background-color-default;
   }
 }
 
-.page-navigation-toggle {
+.ds-page-navigation-toggle {
   height: 100%;
   display: flex;
   align-items: center;
@@ -181,7 +188,7 @@ $drawer-background-color: $background-color-default;
   }
 }
 
-.page-sidebar {
+.ds-page-sidebar {
   @include reset;
   position: fixed;
   top: $header-height;
@@ -200,14 +207,14 @@ $drawer-background-color: $background-color-default;
     width: $sidebar-width-large;
   }
 
-  .has-no-header & {
+  .ds-page-has-no-header & {
     @media #{$media-query-medium} {
       top: 0;
     }
   }
 }
 
-.page-sidebar-content {
+.ds-page-sidebar-content {
   position: absolute;
   top: 0;
   left: 0;
@@ -215,14 +222,14 @@ $drawer-background-color: $background-color-default;
   bottom: 0;
   overflow-y: auto;
 
-  .has-no-header & {
+  .ds-page-has-no-header & {
     @media #{$media-query-medium} {
       top: $sidebar-brand-height;
     }
   }
 }
 
-.page-drawer {
+.ds-page-drawer {
   @include reset;
   position: fixed;
   left: 0;
@@ -237,7 +244,7 @@ $drawer-background-color: $background-color-default;
   transition: opacity $duration-long $ease-out-sharp,
     transform $duration-long $ease-out-sharp;
 
-  .show-drawer & {
+  .ds-page-show-drawer & {
     opacity: 1;
     transform: translateX(0);
   }
@@ -247,18 +254,18 @@ $drawer-background-color: $background-color-default;
   }
 }
 
-.page-content {
+.ds-page-content {
   @include reset;
 
   margin-top: $header-height;
 
-  .has-no-header & {
+  .ds-page-has-no-header & {
     @media #{$media-query-medium} {
       margin-top: 0;
     }
   }
 
-  .has-sidebar & {
+  .ds-page-has-sidebar & {
     @media #{$media-query-medium} {
       padding-left: $sidebar-width;
     }

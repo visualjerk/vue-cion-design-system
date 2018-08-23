@@ -1,7 +1,8 @@
 <template>
   <nav
-    :class="`menu${inverse ? ' inverse' : ''}`">
-    <ul>
+    class="ds-menu"
+    :class="inverse && 'ds-menu-inverse'">
+    <ul class="ds-menu-list">
       <slot>
         <slot
           v-for="(route, index) in routes"
@@ -104,16 +105,16 @@ export default {
 }
 </script>
 
-<style lang="scss" scoped>
-.menu {
+<style lang="scss">
+.ds-menu {
   @include reset;
 }
 
-.inverse {
+.ds-menu-inverse {
   background-color: $background-color-darker;
 }
 
-ul {
+ul.ds-menu-list {
   @include reset;
   list-style: none;
   padding-left: 0;

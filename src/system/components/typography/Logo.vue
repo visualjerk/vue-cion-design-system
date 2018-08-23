@@ -1,15 +1,15 @@
 <template>
   <component 
     :is="tag"
-    class="logo">
-    <svg-logo />
+    class="ds-logo">
+    <svg-logo class="ds-logo-svg" />
   </component>
 </template>
 
 <script>
 import svgLogo from '@@/assets/img/logo_cion.svg'
 /**
- * This component displays the brands logo.
+ * This component displays the brand's logo.
  * @version 1.0.0
  */
 export default {
@@ -29,30 +29,25 @@ export default {
 }
 </script>
 
-<style lang="scss" scoped>
+<style lang="scss">
 $logo-color-default: $text-color-primary;
-$logo-color-inverse: $text-color-light;
 
-.logo {
+.ds-logo {
   @include reset;
   display: inline-flex;
   justify-content: center;
   align-items: center;
   color: $logo-color-default;
+}
 
-  svg {
-    width: 130px;
-    height: auto;
-    fill: currentColor;
-  }
+.ds-logo-svg {
+  width: 130px;
+  height: auto;
+  fill: currentColor;
 }
 </style>
 
 <docs>
-  ## Basic usage
-
-  Use it on light or dark background.
-
   ```
     <ds-logo></ds-logo>
   ```

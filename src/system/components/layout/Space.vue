@@ -2,7 +2,7 @@
   <component 
     :is="tag"
     :style="styles"
-    class="space">
+    class="ds-space">
     <slot />
   </component>
 </template>
@@ -76,8 +76,8 @@ export default {
 }
 </script>
 
-<style lang="scss" scoped>
-.space {
+<style lang="scss">
+.ds-space {
   @include reset;
 }
 </style>

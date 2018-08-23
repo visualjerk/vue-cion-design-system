@@ -1,5 +1,5 @@
 <template>
-  <th class="table-head-col">
+  <th class="ds-table-head-col">
     <slot>
       {{ label }}
     </slot>
@@ -42,8 +42,8 @@ export default {
 }
 </script>
 
-<style lang="scss" scoped>
-.table-head-col {
+<style lang="scss">
+.ds-table-head-col {
   @include reset;
   border-bottom: $border-color-lighter solid $border-size-default;
   padding: $space-small $space-xx-small;

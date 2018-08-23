@@ -1,7 +1,12 @@
 <template>
-  <component 
+  <component
     :is="tag"
-    :class="classes">
+    class="ds-heading"
+    :class="[
+      size && `ds-font-size-${size}`,
+      color && `ds-text-color-${color}`
+    ]"
+  >
     <slot />
   </component>
 </template>
@@ -49,18 +54,6 @@ export default {
       validator: value => {
         return value.match(/(default|primary|inverse|light)/)
       }
-    }
-  },
-  computed: {
-    classes() {
-      const classes = ['ds-heading']
-      if (this.size) {
-        classes.push(`ds-font-size-${this.size}`)
-      }
-      if (this.color) {
-        classes.push(`ds-text-color-${this.color}`)
-      }
-      return classes.join(' ')
     }
   }
 }

@@ -1,16 +1,16 @@
 <template>
   <component
     :is="tag"
-    class="card">
+    class="ds-card">
     <div
-      class="card-image"
+      class="ds-card-image"
       v-if="image || $slots.image">
       <slot name="image">
         <img :src="image" >
       </slot>
     </div>
     <header
-      class="card-header"
+      class="ds-card-header"
       v-if="header || $slots.header">
       <slot name="header">
         <ds-heading 
@@ -18,11 +18,11 @@
           size="large">{{ header }}</ds-heading>
       </slot>
     </header>
-    <div class="card-content">
+    <div class="ds-card-content">
       <slot />
     </div>
     <footer
-      class="card-footer"
+      class="ds-card-footer"
       v-if="$slots.footer">
       <slot name="footer"/>
     </footer>
@@ -73,19 +73,18 @@ export default {
 }
 </script>
 
-<style lang="scss" scoped>
-.card {
+<style lang="scss">
+.ds-card {
   @include reset;
   display: flex;
   flex-direction: column;
   background-color: $background-color-default;
-  border: $border-size-default solid $border-color-lighter;
   border-radius: $border-radius-default;
-  box-shadow: $box-shadow-base;
+  box-shadow: $box-shadow-x-small, $box-shadow-base;
   height: 100%;
 }
 
-.card-image {
+.ds-card-image {
   overflow: hidden;
   border-top-left-radius: $border-radius-default;
   border-top-right-radius: $border-radius-default;
@@ -96,13 +95,13 @@ export default {
   }
 }
 
-.card-header {
+.ds-card-header {
   @include reset;
   background-color: $background-color-lighter;
   padding: $space-small;
 }
 
-.card-content {
+.ds-card-content {
   @include reset;
   padding: $space-small;
   flex: 1 1 0;
@@ -112,7 +111,7 @@ export default {
   }
 }
 
-.card-footer {
+.ds-card-footer {
   @include reset;
   padding: $space-small;
   border-top: $border-size-default solid $border-color-lighter;
@@ -154,7 +153,7 @@ export default {
           header="The header">
           Look ma! I'm in a card.
           <template slot="footer">
-            <ds-button color="primary">Read more</ds-button>
+            <ds-button primary>Read more</ds-button>
           </template>
         </ds-card>
       </ds-flex-item>
@@ -163,7 +162,7 @@ export default {
           header="The header">
           Look ma! I'm in a card.
           <template slot="footer">
-            <ds-button color="primary">Read more</ds-button>
+            <ds-button primary>Read more</ds-button>
           </template>
         </ds-card>
       </ds-flex-item>

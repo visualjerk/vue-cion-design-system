@@ -1,13 +1,17 @@
 <template>
-  <component 
+  <component
     :is="tag"
     :aria-label="ariaLabel"
-    class="icon"
-    :class="`${color ? ' text-' + color : ''}${size ? ' font-size-' + size : ''}`">
+    class="ds-icon"
+    :class="[
+      size && `ds-font-size-${size}`,
+      color && `ds-text-color-${color}`
+    ]"
+  >
     <component
-      class="svg-icon"
-      v-if="svgName"
-      :is="svgName" />
+      :is="svgName"
+      class="ds-icon-svg"
+      v-if="svgName"/>
   </component>
 </template>
 
@@ -99,8 +103,8 @@ export default {
 }
 </script>
 
-<style lang="scss" scoped>
-.icon {
+<style lang="scss">
+.ds-icon {
   @include reset;
   display: inline-flex;
   align-items: center;
@@ -108,7 +112,7 @@ export default {
   height: 1em;
 }
 
-.svg-icon {
+.ds-icon-svg {
   line-height: 1;
   height: 1em;
   // Use this if the icons are build with strokes
@@ -120,9 +124,6 @@ export default {
   // Use this if the icons are build with solids
   //fill: currentColor
 }
-
-@include text-colors;
-@include font-sizes;
 </style>
 
 <docs>

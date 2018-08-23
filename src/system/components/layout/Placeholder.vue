@@ -1,8 +1,8 @@
 <template>
   <component 
     :is="tag"
-    class="placeholder">
-    <div class="placeholder-content">
+    class="ds-placeholder">
+    <div class="ds-placeholder-content">
       <slot />
     </div>
   </component>
@@ -27,8 +27,8 @@ export default {
 }
 </script>
 
-<style lang="scss" scoped>
-.placeholder {
+<style lang="scss">
+.ds-placeholder {
   @include reset;
   padding: $space-base;
   display: flex;

@@ -1,8 +1,12 @@
 <template>
   <component 
     :is="tag"
-    class="page-title"
-    :class="`text-${color} background-${backgroundColor}`">
+    class="ds-page-title"
+    :class="[
+      `ds-text-color-${color}`,
+      `ds-background-color-${backgroundColor}`
+    ]"
+  >
     <ds-container>
       <ds-heading>
         {{ heading }}
@@ -55,8 +59,8 @@ export default {
 }
 </script>
 
-<style lang="scss" scoped>
-.page-title {
+<style lang="scss">
+.ds-page-title {
   @include reset;
   padding: $space-base 0;
 
@@ -64,9 +68,6 @@ export default {
     padding: $space-x-large 0;
   }
 }
-
-@include text-colors;
-@include background-colors;
 </style>
 
 <docs>

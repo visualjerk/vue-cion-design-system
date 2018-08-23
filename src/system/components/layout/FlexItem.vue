@@ -2,7 +2,7 @@
   <component 
     :is="tag"
     :style="styles"
-    class="flex-item">
+    class="ds-flex-item">
     <slot />
   </component>
 </template>
@@ -84,8 +84,8 @@ export default {
 }
 </script>
 
-<style lang="scss" scoped>
-.flex-item {
+<style lang="scss">
+.ds-flex-item {
   @include reset;
   @include layout-flex-fix;
 }
