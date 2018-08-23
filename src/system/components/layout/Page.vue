@@ -85,7 +85,7 @@ export default {
 $contained-width: 1400px;
 
 $header-height: 54px;
-$header-background-color: $background-color-darker;
+$header-background-color: $background-color-lighter;
 
 $sidebar-brand-height: 136px;
 $sidebar-width: 220px;
@@ -129,7 +129,7 @@ $drawer-background-color: $background-color-default;
 .ds-page-header-container {
   height: $header-height;
   background: $header-background-color;
-  box-shadow: $box-shadow-base;
+  box-shadow: $box-shadow-small;
   display: flex;
   justify-content: space-between;
 
@@ -347,7 +347,6 @@ You can layout a page in different ways. These are best described by example.
       @navigate="$refs.page.closeDrawer()"
       slot="navbar"
       :routes="routes"
-      inverse
       navbar></ds-menu>
     <ds-menu
       @navigate="$refs.page.closeDrawer()"
@@ -402,7 +401,6 @@ You can layout a page in different ways. These are best described by example.
       @navigate="$refs.page.closeDrawer()"
       slot="navbar"
       :routes="routes"
-      inverse
       navbar></ds-menu>
     <ds-menu
       @navigate="$refs.page.closeDrawer()"
