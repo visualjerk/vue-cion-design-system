@@ -8,7 +8,7 @@
 </template>
 
 <script>
-import { windowObserver, getSpace } from '@@/utils'
+import { mediaQuery, getSpace } from '@@/utils'
 import DsFlexItem from './FlexItem.vue'
 
 /**
@@ -54,20 +54,19 @@ export default {
       default: 'div'
     }
   },
-  data() {
-    return {
-      styles: {}
-    }
-  },
-  methods: {
-    updateStyles(gutter, direction) {
+  computed: {
+    styles() {
+      const gutter = mediaQuery(this.gutter)
+      const direction = mediaQuery(this.direction)
       const gutterStyle = gutter ? this.parseGutter(gutter) : {}
       const directionStyle = direction ? this.parseDirection(direction) : {}
-      this.styles = {
+      return {
         ...gutterStyle,
         ...directionStyle
       }
-    },
+    }
+  },
+  methods: {
     parseGutter(gutter) {
       const realGutter = getSpace(gutter)
       return {
@@ -80,12 +79,6 @@ export default {
         flexDirection: direction
       }
     }
-  },
-  created() {
-    windowObserver.subscribe(this.updateStyles, [this.gutter, this.direction])
-  },
-  beforeDestroy() {
-    windowObserver.unsubscribe(this.updateStyles)
   }
 }
 </script>

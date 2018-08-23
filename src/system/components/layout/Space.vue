@@ -8,7 +8,7 @@
 </template>
 
 <script>
-import { windowObserver, getSpace } from '@@/utils'
+import { mediaQuery, getSpace } from '@@/utils'
 
 /**
  * Use this component for grouping and separation.
@@ -44,20 +44,19 @@ export default {
       default: 'div'
     }
   },
-  data() {
-    return {
-      styles: {}
-    }
-  },
-  methods: {
-    updateStyles(marginTop, marginBottom) {
+  computed: {
+    styles() {
+      const marginTop = mediaQuery(this.marginTop)
+      const marginBottom = mediaQuery(this.marginBottom)
       const marginTopStyle = this.parseMargin('Top')(marginTop)
       const marginBottomStyle = this.parseMargin('Bottom')(marginBottom)
-      this.styles = {
+      return {
         ...marginTopStyle,
         ...marginBottomStyle
       }
-    },
+    }
+  },
+  methods: {
     parseMargin(direction) {
       return margin => {
         const styles = {}
@@ -71,15 +70,6 @@ export default {
         return styles
       }
     }
-  },
-  created() {
-    windowObserver.subscribe(this.updateStyles, [
-      this.marginTop,
-      this.marginBottom
-    ])
-  },
-  beforeDestroy() {
-    windowObserver.unsubscribe(this.updateStyles)
   }
 }
 </script>

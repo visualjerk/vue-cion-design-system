@@ -8,7 +8,7 @@
 </template>
 
 <script>
-import { windowObserver, getSpace } from '@@/utils'
+import { mediaQuery, getSpace } from '@@/utils'
 
 /**
  * @version 1.0.0
@@ -39,25 +39,22 @@ export default {
       default: 'div'
     }
   },
-  data() {
-    return {
-      styles: {}
-    }
-  },
   computed: {
     gutter() {
       return this.$parentFlex ? this.$parentFlex.gutter : 0
-    }
-  },
-  methods: {
-    updateStyles(width, gutter) {
+    },
+    styles() {
+      const width = mediaQuery(this.width)
+      const gutter = mediaQuery(this.gutter)
       const widthStyle = this.parseWidth(width)
       const gutterStyle = this.parseGutter(gutter)
-      this.styles = {
+      return {
         ...widthStyle,
         ...gutterStyle
       }
-    },
+    }
+  },
+  methods: {
     parseWidth(width) {
       const styles = {}
       if (isNaN(width)) {
@@ -81,12 +78,6 @@ export default {
         marginBottom: `${realGutter}px`
       }
     }
-  },
-  created() {
-    windowObserver.subscribe(this.updateStyles, [this.width, this.gutter])
-  },
-  beforeDestroy() {
-    windowObserver.unsubscribe(this.updateStyles)
   }
 }
 </script>

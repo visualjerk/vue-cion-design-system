@@ -8,8 +8,29 @@ const bus = new Vue({
       width: null,
       height: null
     }
+  },
+  filters: {
+    mediaQuery(arg) {
+      initListener()
+      if (arg === null || typeof arg !== 'object') {
+        return arg
+      }
+      let result = arg.base
+      Object.keys(tokenMap.mediaSize)
+        .reverse()
+        .some(key => {
+          const width = tokenMap.mediaSize[key].value
+          if (width <= bus.windowSize.width && arg[key]) {
+            result = arg[key]
+            return true
+          }
+        })
+      return result
+    }
   }
 })
+
+export const mediaQuery = bus.$options.filters.mediaQuery
 
 function getWindowSize() {
   bus.windowSize.width =
