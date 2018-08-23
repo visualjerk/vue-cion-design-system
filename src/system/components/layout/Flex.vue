@@ -8,7 +8,8 @@
 </template>
 
 <script>
-import { mediaQuery, getSpace } from '@@/utils'
+import { getSpace } from '@@/utils'
+import { mediaQuery } from '@@/mixins'
 import DsFlexItem from './FlexItem.vue'
 
 /**
@@ -18,6 +19,7 @@ import DsFlexItem from './FlexItem.vue'
 export default {
   components: { DsFlexItem },
   name: 'DsFlex',
+  mixins: [mediaQuery],
   provide() {
     return {
       $parentFlex: this
@@ -56,8 +58,8 @@ export default {
   },
   computed: {
     styles() {
-      const gutter = mediaQuery(this.gutter)
-      const direction = mediaQuery(this.direction)
+      const gutter = this.mediaQuery(this.gutter)
+      const direction = this.mediaQuery(this.direction)
       const gutterStyle = gutter ? this.parseGutter(gutter) : {}
       const directionStyle = direction ? this.parseDirection(direction) : {}
       return {

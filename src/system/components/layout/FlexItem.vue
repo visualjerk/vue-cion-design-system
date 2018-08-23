@@ -8,7 +8,8 @@
 </template>
 
 <script>
-import { mediaQuery, getSpace } from '@@/utils'
+import { getSpace } from '@@/utils'
+import { mediaQuery } from '@@/mixins'
 
 /**
  * @version 1.0.0
@@ -16,6 +17,7 @@ import { mediaQuery, getSpace } from '@@/utils'
  */
 export default {
   name: 'DsFlexItem',
+  mixins: [mediaQuery],
   inject: {
     $parentFlex: {
       default: null
@@ -44,8 +46,8 @@ export default {
       return this.$parentFlex ? this.$parentFlex.gutter : 0
     },
     styles() {
-      const width = mediaQuery(this.width)
-      const gutter = mediaQuery(this.gutter)
+      const width = this.mediaQuery(this.width)
+      const gutter = this.mediaQuery(this.gutter)
       const widthStyle = this.parseWidth(width)
       const gutterStyle = this.parseGutter(gutter)
       return {

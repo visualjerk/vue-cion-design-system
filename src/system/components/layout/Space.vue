@@ -8,7 +8,8 @@
 </template>
 
 <script>
-import { mediaQuery, getSpace } from '@@/utils'
+import { getSpace } from '@@/utils'
+import { mediaQuery } from '@@/mixins'
 
 /**
  * Use this component for grouping and separation.
@@ -16,6 +17,7 @@ import { mediaQuery, getSpace } from '@@/utils'
  */
 export default {
   name: 'DsSpace',
+  mixins: [mediaQuery],
   inject: {
     $parentRow: {
       default: null
@@ -46,8 +48,8 @@ export default {
   },
   computed: {
     styles() {
-      const marginTop = mediaQuery(this.marginTop)
-      const marginBottom = mediaQuery(this.marginBottom)
+      const marginTop = this.mediaQuery(this.marginTop)
+      const marginBottom = this.mediaQuery(this.marginBottom)
       const marginTopStyle = this.parseMargin('Top')(marginTop)
       const marginBottomStyle = this.parseMargin('Bottom')(marginBottom)
       return {
