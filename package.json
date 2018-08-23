@@ -51,6 +51,7 @@
     "raw-loader": "^0.5.1",
     "sass-loader": "^7.1.0",
     "theo": "^8.0.0-beta.2",
+    "vue-click-outside": "^1.0.7",
     "vue-docgen-api": "^2.3.13",
     "vue-router": "^3.0.1",
     "vue-svg-loader": "^0.8.0",

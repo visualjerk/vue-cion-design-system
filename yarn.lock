@@ -8381,6 +8381,10 @@ vm-browserify@0.0.4:
   dependencies:
     indexof "0.0.1"
 
+vue-click-outside@^1.0.7:
+  version "1.0.7"
+  resolved "https://registry.yarnpkg.com/vue-click-outside/-/vue-click-outside-1.0.7.tgz#cdd2b1605e3c4944784e1794eae4a12a0f700bd6"
+
 vue-docgen-api@^2.3.13:
   version "2.3.13"
   resolved "https://registry.yarnpkg.com/vue-docgen-api/-/vue-docgen-api-2.3.13.tgz#1a591ec3623092f20cd2f3e870b51b2fb68ae755"

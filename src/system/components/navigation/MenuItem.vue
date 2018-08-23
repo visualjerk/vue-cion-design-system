@@ -1,24 +1,28 @@
 <template>
   <li
     class="ds-menu-item"
-    @click.capture="handleClick">
+    :class="[
+      `ds-menu-item-level-${level}`,
+      $parentMenu.inverse && 'ds-menu-item-inverse',
+      $parentMenu.navbar && 'ds-menu-item-navbar',
+      showSubmenu && 'ds-menu-item-show-submenu'
+    ]"
+    @click.capture="handleClick"
+    v-click-outside="handleClickOutside">
     <component
       v-if="route"
       class="ds-menu-item-link"
-      :class="[
-        `ds-menu-item-level-${level}`,
-        $parentMenu.inverse && 'ds-menu-item-inverse'
-      ]"
       v-bind="bindings"
       :exact="isExact"
-      :is="linkTag">
+      :is="linkTag"
+      ref="link">
       <slot>
         {{ name }}
       </slot>
     </component>
     <ul
-      class="ds-menu-item-list"
-      v-if="route.children && route.children.length">
+      class="ds-menu-item-submenu"
+      v-if="hasSubmenu">
       <ds-menu-item
         v-for="child in route.children"
         :key="child.name"
@@ -29,6 +33,7 @@
 </template>
 
 <script>
+import ClickOutside from 'vue-click-outside'
 /**
  * Used in combination with the menu item to help the user navigate.
  * @version 1.0.0
@@ -40,6 +45,9 @@ export default {
     $parentMenu: {
       default: null
     }
+  },
+  directives: {
+    ClickOutside
   },
   props: {
     /**
@@ -76,7 +84,15 @@ export default {
       }
     }
   },
+  data() {
+    return {
+      showSubmenu: false
+    }
+  },
   computed: {
+    hasSubmenu() {
+      return this.route.children && this.route.children.length
+    },
     url() {
       return this.$parentMenu.urlParser(this.route, this.parents)
     },
@@ -102,14 +118,33 @@ export default {
   },
   methods: {
     handleClick(event) {
+      const clickedLink = event.target === this.$refs.link.$el
+      if (
+        clickedLink &&
+        this.$parentMenu.navbar &&
+        this.hasSubmenu &&
+        !this.showSubmenu
+      ) {
+        this.showSubmenu = true
+        event.preventDefault()
+        event.stopPropagation()
+        return
+      }
       this.$emit('click', event, this.route)
       this.$parentMenu.handleNavigate()
+    },
+    handleClickOutside() {
+      this.showSubmenu = false
     }
   }
 }
 </script>
 
 <style lang="scss">
+.ds-menu-item {
+  position: relative;
+}
+
 .ds-menu-item-link {
   @include reset;
   display: block;
@@ -126,35 +161,64 @@ export default {
     color: $text-color-link-active;
     background-color: $background-color-light;
   }
-}
 
-.ds-menu-item-inverse {
-  color: $text-color-lighter;
+  .ds-menu-item-inverse & {
+    color: $text-color-lighter;
 
-  &.router-link-active {
-    color: $text-color-link-active;
+    &.router-link-active {
+      color: $text-color-link-active;
+    }
+
+    &:hover,
+    &.router-link-exact-active {
+      background-color: $background-color-black;
+    }
   }
 
-  &:hover,
-  &.router-link-exact-active {
-    background-color: $background-color-black;
+  .ds-menu-item-level-1 & {
+    font-size: $font-size-small;
+    padding-left: $space-x-small * 3;
+  }
+
+  .ds-menu-item-level-2 & {
+    font-size: $font-size-small;
+    padding-left: $space-x-small * 4;
+  }
+
+  .ds-menu-item-navbar & {
+    padding: $space-small $space-small;
   }
 }
 
-.ds-menu-item-level-1 {
-  font-size: $font-size-small;
-  padding-left: $space-x-small * 3;
-}
-
-.ds-menu-item-level-2 {
-  font-size: $font-size-small;
-  padding-left: $space-x-small * 4;
-}
-
-ul.ds-menu-item-list {
+ul.ds-menu-item-submenu {
   @include reset;
   list-style: none;
   padding-left: 0;
+
+  .ds-menu-item-navbar & {
+    position: absolute;
+    left: 0;
+    top: 100%;
+    min-width: 150px;
+    z-index: $z-index-page-submenu;
+    background-color: $background-color-default;
+    box-shadow: $box-shadow-base;
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY($space-x-small);
+    transition: all $duration-short $ease-in;
+  }
+
+  .ds-menu-item-navbar.ds-menu-item-inverse & {
+    background-color: $background-color-darker;
+  }
+
+  .ds-menu-item-navbar.ds-menu-item-show-submenu & {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+    transition: all $duration-short $ease-out;
+  }
 }
 </style>
 

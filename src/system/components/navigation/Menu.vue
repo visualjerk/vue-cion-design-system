@@ -1,7 +1,11 @@
 <template>
   <nav
     class="ds-menu"
-    :class="inverse && 'ds-menu-inverse'">
+    :class="[
+      inverse && 'ds-menu-inverse',
+      navbar && 'ds-menu-navbar'
+    ]"
+  >
     <ul class="ds-menu-list">
       <slot>
         <slot
@@ -47,6 +51,13 @@ export default {
      * Set to true, if you use it on dark background
      */
     inverse: {
+      type: Boolean,
+      default: false
+    },
+    /**
+     * Display menu as a navbar
+     */
+    navbar: {
       type: Boolean,
       default: false
     },
@@ -118,6 +129,10 @@ ul.ds-menu-list {
   @include reset;
   list-style: none;
   padding-left: 0;
+
+  .ds-menu-navbar & {
+    display: flex;
+  }
 }
 </style>
 
@@ -137,6 +152,61 @@ ul.ds-menu-list {
         </ds-menu>
       </ds-flex-item>
     </ds-flex>
+  </template>
+
+  <script>
+    export default {
+      data() {
+        return {
+          routes: [
+            {
+              name: 'Introduction',
+              path: '/'
+            },
+            {
+              name: 'Navigation',
+              path: '/navigation',
+              children: [
+                {
+                  name: 'Menu',
+                  path: '/navigation/dsmenu'
+                },
+                {
+                  name: 'Breadcrumb',
+                  path: '/navigation/dsbreadcrumb'
+                }
+              ]
+            },
+            {
+              name: 'Typography',
+              path: '/typography'
+            },
+            {
+              name: 'Layout',
+              path: '/layout'
+            }
+          ]
+        }
+      }
+    }
+  </script>
+  ```
+
+  ## Navbar
+
+  Display the menu as a navbar
+  ```
+  <template>
+    <div>
+      <ds-space>
+        <ds-menu :routes="routes" navbar>
+        </ds-menu>
+      </ds-space>
+      <ds-space margin-bottom="xxx-large">
+        <ds-menu :routes="routes" navbar inverse>
+        </ds-menu>
+      </ds-space>
+    </div>
   </template>
 
   <script>
