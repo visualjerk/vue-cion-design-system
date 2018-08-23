@@ -80,3 +80,25 @@
   min-width: 0;
   max-width: 100%;
 }
+
+/**
+ * Maps all tokens with a given prefix (ex. 'font-size')
+ * to classes with the name of the token that contain an
+ * attribute with the value of the token
+ *
+ * Example usage: @include map-token(color, 'text-color')
+ * Example output:
+ *
+ * .text-color-default { color: #4e4b4b; }
+ * .text-color-primary { color: #13a6fb; }
+ * .text-color-dager { color: #d2352d; }
+ */
+@mixin map-token($attribute, $token-prefix) {
+  @each $name, $value in $tokens-map {
+    @if (str-index($name, $token-prefix)) {
+      .#{$namespace}-#{$name} {
+        #{$attribute}: $value;
+      }
+    }
+  }
+}

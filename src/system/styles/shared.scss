@@ -7,6 +7,8 @@
 --------------------------------------------- */
 
 @import "../tokens/generated/tokens";
+@import "../tokens/generated/tokens.map";
+@import "./shared/settings";
 @import "./shared/functions";
 @import "./shared/mixins";
 @import "./shared/color";

@@ -1,8 +1,7 @@
 <template>
   <component 
     :is="tag"
-    class="heading"
-    :class="`${color ? ' text-' + color : ''}${ size ? ' font-size-' + size : ''}`">
+    :class="classes">
     <slot />
   </component>
 </template>
@@ -42,7 +41,7 @@ export default {
     },
     /**
      * The color used for the heading.
-     * `default, primary, inverse`
+     * `default, primary, inverse, light`
      */
     color: {
       type: String,
@@ -51,12 +50,24 @@ export default {
         return value.match(/(default|primary|inverse|light)/)
       }
     }
+  },
+  computed: {
+    classes() {
+      const classes = ['ds-heading']
+      if (this.size) {
+        classes.push(`ds-font-size-${this.size}`)
+      }
+      if (this.color) {
+        classes.push(`ds-text-color-${this.color}`)
+      }
+      return classes.join(' ')
+    }
   }
 }
 </script>
 
-<style lang="scss" scoped>
-.heading {
+<style lang="scss">
+.ds-heading {
   @include reset;
   @include stack-space($font-space-large, $font-space-xxxx-large);
   font-family: $font-family-heading;
@@ -85,8 +96,6 @@ h5 {
 h6 {
   font-size: $font-size-small;
 }
-@include text-colors;
-@include font-sizes;
 </style>
 
 <docs>
