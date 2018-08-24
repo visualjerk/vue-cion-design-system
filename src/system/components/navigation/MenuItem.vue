@@ -176,9 +176,12 @@ export default {
 
 <style lang="scss">
 .ds-menu-item {
+}
+
+.ds-menu-item-navbar {
   position: relative;
 
-  &.ds-menu-item-navbar.ds-menu-item-level-0 {
+  &.ds-menu-item-level-0 {
     margin-right: $space-x-small;
     height: 100%;
 
@@ -244,7 +247,7 @@ export default {
     padding: $space-small $space-small;
   }
 
-  .ds-menu-item-level-0.ds-menu-item-navbar > & {
+  .ds-menu-item-navbar.ds-menu-item-level-0 > & {
     position: relative;
     height: 100%;
     display: inline-flex;
@@ -276,7 +279,7 @@ export default {
     }
   }
 
-  .ds-menu-item-show-submenu.ds-menu-item-level-0.ds-menu-item-navbar > & {
+  .ds-menu-item-navbar.ds-menu-item-show-submenu.ds-menu-item-level-0 > & {
     color: $text-color-link-active;
     &:before {
       opacity: 1;
