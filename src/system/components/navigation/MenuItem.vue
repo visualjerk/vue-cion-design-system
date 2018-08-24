@@ -234,6 +234,7 @@ export default {
   }
 
   .ds-menu-item-navbar & {
+    font-size: $font-size-base;
     padding: $space-small $space-small;
   }
 
