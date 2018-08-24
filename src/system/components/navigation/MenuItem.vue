@@ -10,7 +10,6 @@
     @mouseover="handleMouseOver"
     @mouseout="handleMouseOut"
     @click.capture="handleClick"
-    @touchstart.capture="handleClick"
     v-click-outside="handleClickOutside">
     <component
       v-if="route"
