@@ -1,6 +1,9 @@
 import dotProp from 'dot-prop'
 import Schema from 'async-validator'
 
+/**
+ * @mixin
+ */
 export default {
   inject: {
     $parentForm: {
@@ -12,31 +15,45 @@ export default {
       $parentInput: this
     }
   },
-  model: {
-    prop: 'modelValue',
-    event: 'input'
-  },
   props: {
-    modelValue: {
+    /**
+     * The value of the input. Can be passed via v-model.
+     */
+    value: {
       type: [String, Object, Number],
       default: null
     },
+    /**
+     * The model name when used within a form component. Uses dot notation.
+     */
     model: {
       type: String,
       default: null
     },
+    /**
+     * The label of the input.
+     */
     label: {
       type: String,
       default: null
     },
+    /**
+     * The id of the input.
+     */
     id: {
       type: String,
       default: null
     },
+    /**
+     * Whether the input is disabled or not.
+     */
     disabled: {
       type: Boolean,
       default: false
     },
+    /**
+     * The async-validator schema used for the input.
+     */
     schema: {
       type: Object,
       default: () => ({})
@@ -44,7 +61,7 @@ export default {
   },
   data() {
     return {
-      value: null,
+      innerValue: null,
       error: null
     }
   },
@@ -57,9 +74,9 @@ export default {
     }
   },
   watch: {
-    modelValue: {
+    value: {
       handler(value) {
-        this.value = value
+        this.innerValue = value
       },
       deep: true,
       immediate: true
@@ -70,12 +87,18 @@ export default {
       if (this.$parentForm) {
         this.$parentForm.update(this.model, event.target.value)
       } else {
+        /**
+         * Fires after user input.
+         * Receives the value as the only argument.
+         *
+         * @event input
+         */
         this.$emit('input', event.target.value)
         this.validate(event.target.value)
       }
     },
     handleFormUpdate(data, errors) {
-      this.value = dotProp.get(data, this.model)
+      this.innerValue = dotProp.get(data, this.model)
       this.error = errors ? errors[this.model] : null
     },
     validate(value) {

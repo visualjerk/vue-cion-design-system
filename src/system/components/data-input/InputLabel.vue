@@ -21,7 +21,7 @@ export default {
 
 <style lang="scss">
 .ds-input-label {
-  margin-bottom: $space-xx-small;
+  padding-bottom: $space-xx-small;
   color: $text-color-light;
   font-size: $font-size-base;
   display: block;

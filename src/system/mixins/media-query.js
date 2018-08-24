@@ -30,6 +30,9 @@ function initListener() {
   }
 }
 
+/**
+ * @mixin
+ */
 export default {
   data() {
     return {

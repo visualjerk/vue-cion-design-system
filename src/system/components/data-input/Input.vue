@@ -4,7 +4,7 @@
       :id="id"
       :name="model"
       :type="type"
-      :value="value"
+      :value="innerValue"
       @input="input"
       :placeholder="placeholder"
       :disabled="disabled">
@@ -14,19 +14,29 @@
 <script>
 import inputMixin from './input-mixin'
 
+/**
+ * Used for handling basic user input.
+ * @version 1.0.0
+ */
 export default {
   name: 'DsInput',
   mixins: [inputMixin],
   props: {
+    /**
+     * The type of this input `url, text, password, email, search`.
+     */
     type: {
       type: String,
       default: 'text',
       validator: val =>
         ['url', 'text', 'password', 'email', 'search'].indexOf(val) !== -1
     },
+    /**
+     * The placeholder shown when value is empty.
+     */
     placeholder: {
       type: String,
-      default: ''
+      default: null
     }
   }
 }
@@ -55,6 +65,8 @@ input {
   ```
 
   ## Bind to a value
+
+  Use v-model to bind a value to the input.
 
   ```
   <template>

@@ -161,7 +161,6 @@ export default {
        * event, route object
        *
        * @event click
-       * @type {object}
        */
       this.$emit('click', event, this.route)
       this.$parentMenu.handleNavigate()
