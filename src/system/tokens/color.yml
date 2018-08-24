@@ -4,6 +4,8 @@
 # For reference, see http://hslpicker.com/
 #
 
+# Some color choices to get you started
+
 aliases:
   neutral:
     value: "3, 2%"
@@ -16,9 +18,11 @@ aliases:
   yellow:
     value: "48, 100%"
   blue:
-    value: "202, 97%"
+    value: "200, 100%"
   purple:
     value: "271, 88%"
+  pink:
+    value: "330, 86%"
   teal:
     value: "170, 88%"
   red:
@@ -56,9 +60,9 @@ props:
     value: &color-white "hsla({!white}, 100%, 1)"
 
   - name: color-primary
-    value: &color-primary "hsla({!blue}, 43%, 1)"
+    value: &color-primary "hsla({!blue}, 45%, 1)"
   - name: color-primary-light
-    value: &color-primary-light "hsla({!blue}, 45%, 1)"
+    value: &color-primary-light "hsla({!blue}, 48%, 1)"
 
   - name: color-success
     value: &color-success "hsla({!green}, 40%, 1)"
