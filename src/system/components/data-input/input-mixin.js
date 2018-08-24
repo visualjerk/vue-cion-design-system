@@ -77,6 +77,7 @@ export default {
     value: {
       handler(value) {
         this.innerValue = value
+        this.$forceUpdate()
       },
       deep: true,
       immediate: true
