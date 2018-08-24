@@ -53,7 +53,7 @@ export default {
       return this.highlight ? 'inverse' : 'primary'
     },
     backgroundColor() {
-      return this.highlight ? 'primary' : 'light'
+      return this.highlight ? 'primary' : 'lighter'
     }
   }
 }

@@ -44,9 +44,4 @@ export default {
 .navigation {
   padding: $space-base $space-x-small;
 }
-
-ul {
-  list-style: none;
-  padding-left: 0;
-}
 </style>

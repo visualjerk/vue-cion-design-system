@@ -130,6 +130,10 @@ export default {
   background-color: $background-color-darker;
 }
 
+.ds-menu-navbar {
+  height: 100%;
+}
+
 ul.ds-menu-list {
   @include reset;
   list-style: none;
@@ -137,6 +141,7 @@ ul.ds-menu-list {
 
   .ds-menu-navbar & {
     display: flex;
+    height: 100%;
   }
 }
 </style>

@@ -90,7 +90,8 @@ export default {
   data() {
     return {
       showSubmenu: false,
-      hideMenuTimeout: null
+      openMenuTimeout: null,
+      closeMenuTimeout: null
     }
   },
   computed: {
@@ -122,19 +123,24 @@ export default {
   },
   methods: {
     handleMouseOver() {
-      if (this.hideMenuTimeout) {
-        clearTimeout(this.hideMenuTimeout)
+      if (this.closeMenuTimeout) {
+        clearTimeout(this.closeMenuTimeout)
       }
-      if (this.$parentMenu.navbar && this.hasSubmenu && !this.showSubmenu) {
-        this.showSubmenu = true
-      }
+      this.openMenuTimeout = setTimeout(() => {
+        if (this.$parentMenu.navbar && this.hasSubmenu && !this.showSubmenu) {
+          this.showSubmenu = true
+        }
+      }, 150)
     },
     handleMouseOut() {
-      this.hideMenuTimeout = setTimeout(() => {
+      if (this.openMenuTimeout) {
+        clearTimeout(this.openMenuTimeout)
+      }
+      this.closeMenuTimeout = setTimeout(() => {
         if (this.$parentMenu.navbar && this.hasSubmenu && this.showSubmenu) {
           this.showSubmenu = false
         }
-      }, 200)
+      }, 150)
     },
     handleClick(event) {
       const clickedLink = event.target === this.$refs.link.$el
@@ -267,6 +273,13 @@ export default {
       &:before {
         opacity: 1;
       }
+    }
+  }
+
+  .ds-menu-item-show-submenu.ds-menu-item-level-0.ds-menu-item-navbar > & {
+    color: $text-color-link-active;
+    &:before {
+      opacity: 1;
     }
   }
 }
