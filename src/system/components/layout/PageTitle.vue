@@ -62,7 +62,7 @@ export default {
 <style lang="scss">
 .ds-page-title {
   @include reset;
-  padding: $space-base 0;
+  padding: $space-large 0;
 
   @media #{$media-query-medium} {
     padding: $space-x-large 0;

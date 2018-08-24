@@ -206,7 +206,7 @@ export default {
 
   &.router-link-exact-active {
     color: $text-color-link-active;
-    background-color: rgba($text-color-link-active, 0.1);
+    background-color: $background-color-lighter;
   }
 
   .ds-menu-item-inverse & {
