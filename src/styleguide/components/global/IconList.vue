@@ -20,8 +20,11 @@
             size="small">Icon Name
             <ds-copy-field>{{ icon }}</ds-copy-field>
           </ds-text>
-          <ds-button
-            @click="copy(icon)">Copy Code</ds-button>
+          <template slot="footer">
+            <ds-button
+              @click="copy(icon)"
+              primary>Copy Code</ds-button>
+          </template>
         </ds-card>
       </ds-flex-item>
     </ds-flex>

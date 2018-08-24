@@ -31,16 +31,15 @@
     </ds-space>
     <ds-space v-if="componentSlots && componentSlots.length">
       <ds-heading tag="h2">{{ component.name | componentName }} Slots</ds-heading>
-      <ds-table :data="componentSlots">
-        <template slot-scope="scope">
-          <ds-table-col label="Slot Name">
-            {{ scope.row.name }}
-          </ds-table-col>
-          <ds-table-col label="Description">
-            {{ scope.row.description }}
-          </ds-table-col>
-        </template>
-      </ds-table>
+      <ds-table
+        :data="componentSlots"
+        :fields="slotFields"/>
+    </ds-space>
+    <ds-space v-if="componentEvents && componentEvents.length">
+      <ds-heading tag="h2">{{ component.name | componentName }} Events</ds-heading>
+      <ds-table
+        :data="componentEvents"
+        :fields="eventFields"/>
     </ds-space>
   </div>
 </template>
@@ -58,7 +57,7 @@ export default {
     return {
       propFields: {
         name: {
-          label: 'Prop Name',
+          label: 'Name',
           width: '20%'
         },
         type: {
@@ -67,6 +66,20 @@ export default {
         },
         default: {
           label: 'Default',
+          width: '20%'
+        },
+        description: 'Description'
+      },
+      slotFields: {
+        name: {
+          label: 'Name',
+          width: '20%'
+        },
+        description: 'Description'
+      },
+      eventFields: {
+        name: {
+          label: 'Name',
           width: '20%'
         },
         description: 'Description'
@@ -87,6 +100,14 @@ export default {
         return {
           name,
           ...this.component.slots[name]
+        }
+      })
+    },
+    componentEvents() {
+      return Object.keys(this.component.events).map(name => {
+        return {
+          name,
+          ...this.component.events[name]
         }
       })
     }

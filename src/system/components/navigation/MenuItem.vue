@@ -130,6 +130,15 @@ export default {
         event.stopPropagation()
         return
       }
+
+      /**
+       * Handles click on menu item.
+       * Receives two arguments:
+       * event, route object
+       *
+       * @event click
+       * @type {object}
+       */
       this.$emit('click', event, this.route)
       this.$parentMenu.handleNavigate()
     },

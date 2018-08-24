@@ -138,6 +138,13 @@ export default {
   },
   methods: {
     handleClick(event) {
+      /**
+       * Click on button.
+       * Receives two arguments:
+       * event, route object
+       *
+       * @event click
+       */
       this.$emit('click', event, this.route)
     }
   }

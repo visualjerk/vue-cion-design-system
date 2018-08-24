@@ -110,6 +110,11 @@ export default {
   computed: {},
   methods: {
     handleNavigate() {
+      /**
+       * Menu navigates to route.
+       *
+       * @event navigate
+       */
       this.$emit('navigate')
     }
   }
