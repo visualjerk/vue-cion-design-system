@@ -90,6 +90,7 @@ export default {
   border-top-right-radius: $border-radius-default;
 
   img {
+    display: block;
     width: 100%;
     max-width: 100%;
   }
