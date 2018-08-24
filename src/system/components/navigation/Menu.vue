@@ -199,7 +199,7 @@ ul.ds-menu-list {
 
   ## Navbar
 
-  Display the menu as a navbar
+  Display the menu as a navbar. A navbar's height depends on it's nearest parent with a fixed height.
   ```
   <template>
     <div>
