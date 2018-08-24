@@ -157,7 +157,8 @@ export default {
   }
 
   &:hover,
-  &.router-link-exact-active {
+  &.router-link-exact-active,
+  .ds-menu-item-show-submenu > & {
     color: $text-color-link-active;
     background-color: $background-color-light;
   }
@@ -175,6 +176,11 @@ export default {
     }
   }
 
+  .ds-menu-item-inverse.ds-menu-item-show-submenu > & {
+    color: $text-color-link-active;
+    background-color: $background-color-black;
+  }
+
   .ds-menu-item-level-1 & {
     font-size: $font-size-small;
     padding-left: $space-x-small * 3;
@@ -187,6 +193,16 @@ export default {
 
   .ds-menu-item-navbar & {
     padding: $space-small $space-small;
+  }
+
+  .ds-menu-item-level-0.ds-menu-item-navbar > & {
+    font-weight: $font-weight-bold;
+
+    &,
+    &:hover,
+    &.router-link-exact-active {
+      background-color: transparent;
+    }
   }
 }
 
@@ -213,7 +229,7 @@ ul.ds-menu-item-submenu {
     background-color: $background-color-darker;
   }
 
-  .ds-menu-item-navbar.ds-menu-item-show-submenu & {
+  .ds-menu-item-navbar.ds-menu-item-show-submenu > & {
     opacity: 1;
     visibility: visible;
     transform: translateY(0);
