@@ -154,6 +154,7 @@ export default {
 <style lang="scss">
 .ds-button {
   @include reset;
+  position: relative;
   width: auto;
   overflow: visible;
   -webkit-font-smoothing: inherit;
@@ -173,17 +174,33 @@ export default {
   line-height: 1;
   text-decoration: none;
   padding: $font-space-large $font-space-xx-large;
-  border-radius: $border-radius-rounded;
+  border-radius: $border-radius-default;
   box-shadow: $box-shadow-small-inset, $box-shadow-x-small;
   transition: color $duration-short $ease-out,
     background-color $duration-short $ease-out;
 
-  &:active {
-    box-shadow: $box-shadow-small-inset, $box-shadow-inset, $box-shadow-x-small;
+  &:before {
+    position: absolute;
+    content: '';
+    top: $space-xxx-small;
+    left: $space-xxx-small;
+    right: $space-xxx-small;
+    bottom: $space-xxx-small;
+    border-radius: $border-radius-default;
+    box-shadow: $box-shadow-inset;
+    opacity: 0;
+    visiblity: hidden;
+    pointer-events: none;
   }
 
   &:focus {
     outline: none;
+  }
+
+  &:active {
+    &:before {
+      opacity: 0.6;
+    }
   }
 
   &::-moz-focus-inner {
@@ -217,6 +234,12 @@ export default {
     color: $text-color-inverse;
     background-color: $background-color-primary-active;
   }
+
+  &:active {
+    &:before {
+      opacity: 1;
+    }
+  }
 }
 
 .ds-button-danger {
@@ -227,6 +250,12 @@ export default {
   &.ds-button-hover {
     color: $text-color-inverse;
     background-color: $background-color-danger-active;
+  }
+
+  &:active {
+    &:before {
+      opacity: 1;
+    }
   }
 }
 
@@ -243,6 +272,12 @@ export default {
   &.ds-hover {
     color: $text-color-default;
     background-color: $background-color-lighter;
+  }
+
+  &:active {
+    &:before {
+      opacity: 0.6;
+    }
   }
 
   &.ds-button-primary {
@@ -265,6 +300,11 @@ export default {
 .ds-button-icon-only {
   width: 1em + 2 * $font-space-large;
   padding: $font-space-large 0;
+  border-radius: $border-radius-rounded;
+
+  &:before {
+    border-radius: $border-radius-rounded;
+  }
 
   &.ds-button-size-small {
     width: 1em + 2 * $font-space-x-small;
@@ -294,24 +334,26 @@ export default {
 </style>
 
 <docs>
-## Button colors
+## Button types
 
-Use different colors to emphasize or provide meaning.
+Use a primary button to draw the users attention to important actions. Use default buttons for less important actions.
 
-```
-  <ds-button>default</ds-button>
-  <ds-button primary>primary</ds-button>
-  <ds-button danger>danger</ds-button>
-```
-
-## Buttons with ghost background
-
-Use ghost buttons to make them more subtle.
+A danger button should be used only for destructive actions.
 
 ```
-  <ds-button ghost>default</ds-button>
-  <ds-button ghost primary>primary</ds-button>
-  <ds-button ghost danger>danger</ds-button>
+  <ds-button>Default</ds-button>
+  <ds-button primary>Primary</ds-button>
+  <ds-button danger>Danger</ds-button>
+```
+
+## Ghost buttons
+
+Use a ghost button for secondary actions.
+
+```
+  <ds-button ghost>Default</ds-button>
+  <ds-button ghost primary>Primary</ds-button>
+  <ds-button ghost danger>Danger</ds-button>
 ```
 
 ## Button sizes
@@ -319,9 +361,9 @@ Use ghost buttons to make them more subtle.
 Use different sizes to create hierarchy.
 
 ```
-  <ds-button size="small">small</ds-button>
-  <ds-button>base</ds-button>
-  <ds-button size="large">large</ds-button>
+  <ds-button size="small">Small</ds-button>
+  <ds-button>Base</ds-button>
+  <ds-button size="large">Large</ds-button>
 ```
 
 ## Button states
@@ -329,14 +371,14 @@ Use different sizes to create hierarchy.
 A button can take different states.
 
 ```
-  <ds-button>default state</ds-button>
-  <ds-button disabled>disabled state</ds-button>
-  <ds-button hover>hover state</ds-button>
+  <ds-button>Default state</ds-button>
+  <ds-button disabled>Disabled state</ds-button>
+  <ds-button hover>Hover state</ds-button>
 ```
 
 ## Icon buttons
 
-A button can have a icon and / or a right side icon.
+Add an icon to a button to help the user identify the button's action.
 
 ```
   <ds-button icon="plus" primary>Click me</ds-button>
