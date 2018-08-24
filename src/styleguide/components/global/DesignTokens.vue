@@ -18,7 +18,7 @@
             :id="key">{{ key | startCase }}</ds-heading>
           <ds-table
             :data="group"
-            :fields="{token: { width: '50%' }, example: 'Example'}">
+            :fields="{token: { width: '300px' }, example: 'Example'}">
             <template
               slot="token"
               slot-scope="data">

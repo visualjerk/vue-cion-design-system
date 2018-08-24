@@ -1,0 +1,37 @@
+/* FORM MIXINS
+--------------------------------------------- */
+
+$input-height: $size-height-base;
+
+@mixin input {
+  box-sizing: border-box;
+  font-size: $font-size-base;
+  font-family: $font-family-text;
+  width: 100%;
+  height: $input-height;
+  padding: 0 $space-x-small;
+  color: $text-color-default;
+  background: $background-color-default;
+  border: $border-size-default solid $border-color-default;
+  border-radius: $border-radius-default;
+  outline: none;
+  transition: all $duration-short $ease-out;
+
+  &::placeholder {
+    color: $text-color-disabled;
+  }
+
+  &:focus {
+    border-color: $border-color-active;
+    background: $background-color-default;
+  }
+
+  .is-disabled &, &:disabled {
+    color: $text-color-disabled;
+    cursor: not-allowed;
+  }
+
+  .has-error & {
+    border-color: $border-color-danger;
+  }
+}

@@ -97,12 +97,12 @@ h6 {
   Use different heading tags to create structure (defaults to h1).
 
   ```
-    <ds-heading>The quick brown fox</ds-heading>
-    <ds-heading tag="h2">The quick brown fox</ds-heading>
-    <ds-heading tag="h3">The quick brown fox</ds-heading>
-    <ds-heading tag="h4">The quick brown fox</ds-heading>
-    <ds-heading tag="h5">The quick brown fox</ds-heading>
-    <ds-heading tag="h6">The quick brown fox</ds-heading>
+  <ds-heading>The quick brown fox</ds-heading>
+  <ds-heading tag="h2">The quick brown fox</ds-heading>
+  <ds-heading tag="h3">The quick brown fox</ds-heading>
+  <ds-heading tag="h4">The quick brown fox</ds-heading>
+  <ds-heading tag="h5">The quick brown fox</ds-heading>
+  <ds-heading tag="h6">The quick brown fox</ds-heading>
   ```
 
   ## Heading sizes
@@ -110,12 +110,12 @@ h6 {
   In case you need a different size you can set it independently from the heading tag.
 
   ```
-    <ds-heading size="xxx-large">The quick brown fox</ds-heading>
-    <ds-heading size="xx-large">The quick brown fox</ds-heading>
-    <ds-heading size="x-large">The quick brown fox</ds-heading>
-    <ds-heading size="large">The quick brown fox</ds-heading>
-    <ds-heading size="base">The quick brown fox</ds-heading>
-    <ds-heading size="small">The quick brown fox</ds-heading>
+  <ds-heading size="xxx-large">The quick brown fox</ds-heading>
+  <ds-heading size="xx-large">The quick brown fox</ds-heading>
+  <ds-heading size="x-large">The quick brown fox</ds-heading>
+  <ds-heading size="large">The quick brown fox</ds-heading>
+  <ds-heading size="base">The quick brown fox</ds-heading>
+  <ds-heading size="small">The quick brown fox</ds-heading>
   ```
 
   ## Heading colors
@@ -123,7 +123,7 @@ h6 {
   Use colors to highlight or deemphasize the heading.
 
   ```
-    <ds-heading color="primary">The quick brown fox</ds-heading>
-    <ds-heading color="light">The quick brown fox</ds-heading>
+  <ds-heading color="primary">The quick brown fox</ds-heading>
+  <ds-heading color="light">The quick brown fox</ds-heading>
   ```
 </docs>

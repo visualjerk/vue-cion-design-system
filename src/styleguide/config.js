@@ -14,6 +14,9 @@ export default {
       name: 'Typography'
     },
     {
+      name: 'Data Input'
+    },
+    {
       name: 'Data Display'
     },
     {
