@@ -26,12 +26,13 @@ $input-height: $size-height-base;
     background: $background-color-default;
   }
 
-  .is-disabled &, &:disabled {
+  .ds-input-is-disabled &, &:disabled {
     color: $text-color-disabled;
+    opacity: $opacity-disabled;
     cursor: not-allowed;
   }
 
-  .has-error & {
+  .ds-input-has-error & {
     border-color: $border-color-danger;
   }
 }

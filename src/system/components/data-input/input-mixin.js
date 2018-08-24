@@ -68,8 +68,8 @@ export default {
   computed: {
     stateClasses() {
       return {
-        'is-disabled': this.disabled,
-        'has-error': !!this.error
+        'ds-input-is-disabled': this.disabled,
+        'ds-input-has-error': !!this.error
       }
     }
   },
