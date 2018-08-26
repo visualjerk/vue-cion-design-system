@@ -24,7 +24,8 @@
         @focus="handleFocus"
         @blur="handleBlur">
         <option
-          v-for="option in options">
+          v-for="option in options"
+          :key="option.label || option">
           {{ option.label || option }}
         </option>
       </select>
@@ -95,7 +96,9 @@ export default {
      */
     options: {
       type: Array,
-      default: []
+      default() {
+        return []
+      }
     }
   },
   computed: {

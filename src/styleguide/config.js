@@ -5,6 +5,9 @@ export default {
       path: '/'
     },
     {
+      name: 'Goals'
+    },
+    {
       name: 'Design Tokens'
     },
     {
