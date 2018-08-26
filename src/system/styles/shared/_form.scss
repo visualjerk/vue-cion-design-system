@@ -8,9 +8,9 @@ $input-height: calc(
 );
 $input-padding-vertical-small: $space-xx-small;
 $input-height-small: calc(
-  #{$font-size-base * $line-height-base} + #{($input-padding-vertical-small + $input-border-size) * 2}
+  #{$font-size-small * $line-height-base} + #{($input-padding-vertical-small + $input-border-size) * 2}
 );
-$input-padding-vertical-large: $space-small;
+$input-padding-vertical-large: $space-x-small;
 $input-height-large: calc(
-  #{$font-size-base * $line-height-base} + #{($input-padding-vertical-large + $input-border-size) * 2}
+  #{$font-size-large * $line-height-base} + #{($input-padding-vertical-large + $input-border-size) * 2}
 );

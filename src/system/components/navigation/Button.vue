@@ -292,11 +292,13 @@ export default {
 }
 
 .ds-button-size-small {
+  font-size: $font-size-small;
   padding: $input-padding-vertical-small $space-x-small;
   height: $input-height-small;
 }
 
 .ds-button-size-large {
+  font-size: $font-size-large;
   padding: $input-padding-vertical-large $space-base;
   height: $input-height-large;
 }
