@@ -305,7 +305,7 @@ export default {
 
 .ds-button-icon-only {
   width: $input-height;
-  padding: $font-space-large 0;
+  padding: 0;
   border-radius: $border-radius-rounded;
 
   &:before {
@@ -314,12 +314,10 @@ export default {
 
   &.ds-button-size-small {
     width: $input-height-small;
-    padding: $font-space-x-small 0;
   }
 
   &.ds-button-size-large {
     width: $input-height-large;
-    padding: $font-space-x-large 0;
   }
 }
 

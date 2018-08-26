@@ -1,22 +1,37 @@
 <template>
   <ds-form-item>
-    <component
-      class="ds-input"
-      :class="[
-        size && `ds-input-size-${size}`
-      ]"
-      :id="id"
-      :name="model"
-      :type="type"
-      :autofocus="autofocus"
-      :placeholder="placeholder"
-      :disabled="disabled"
-      :readonly="readonly"
-      :is="tag"
-      :value.prop="innerValue"
-      @input="input"
-      :rows="type === 'textarea' ? rows : null"
-      v-html="type === 'textarea' ? innerValue : null"/>
+    <div class="ds-input-wrap">
+      <div
+        v-if="icon"
+        class="ds-input-icon">
+        <ds-icon :name="icon"/>
+      </div>
+      <component
+        class="ds-input"
+        :class="[
+          icon && `ds-input-has-icon`,
+          iconRight && `ds-input-has-icon-right`
+        ]"
+        :id="id"
+        :name="model"
+        :type="type"
+        :autofocus="autofocus"
+        :placeholder="placeholder"
+        :disabled="disabled"
+        :readonly="readonly"
+        :is="tag"
+        :value.prop="innerValue"
+        @input="input"
+        @focus="handleFocus"
+        @blur="handleBlur"
+        :rows="type === 'textarea' ? rows : null"
+        v-html="type === 'textarea' ? innerValue : null"/>
+      <div
+        v-if="iconRight"
+        class="ds-input-icon-right">
+        <ds-icon :name="iconRight"/>
+      </div>
+    </div>
   </ds-form-item>
 </template>
 
@@ -70,15 +85,18 @@ export default {
       default: 1
     },
     /**
-     * The input's size.
-     * `small, base, large`
+     * The name of the input's icon.
      */
-    size: {
+    icon: {
       type: String,
-      default: null,
-      validator: value => {
-        return value.match(/(small|base|large)/)
-      }
+      default: null
+    },
+    /**
+     * The name of the input's right icon.
+     */
+    iconRight: {
+      type: String,
+      default: null
     }
   },
   computed: {
@@ -93,6 +111,10 @@ export default {
 </script>
 
 <style lang="scss">
+.ds-input-wrap {
+  position: relative;
+}
+
 .ds-input {
   box-sizing: border-box;
   font-size: $font-size-base;
@@ -133,14 +155,61 @@ export default {
 
 .ds-input-size-small {
   font-size: $font-size-small;
-  height: $input-height-small;
-  padding: $input-padding-vertical-small $space-x-small;
+
+  .ds-input {
+    height: $input-height-small;
+    padding: $input-padding-vertical-small $space-x-small;
+  }
 }
 
 .ds-input-size-large {
   font-size: $font-size-large;
-  height: $input-height-large;
-  padding: $input-padding-vertical-large $space-x-small;
+
+  .ds-input {
+    height: $input-height-large;
+    padding: $input-padding-vertical-large $space-x-small;
+  }
+}
+
+.ds-input-icon,
+.ds-input-icon-right {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: $input-height;
+  color: $text-color-lighter;
+  transition: color $duration-short $ease-out;
+
+  .ds-input-has-focus & {
+    color: $text-color-default;
+  }
+}
+
+.ds-input-icon-right {
+  right: 0;
+  left: auto;
+}
+
+.ds-input-has-icon {
+  padding-left: $input-height;
+
+  .ds-input-size-small &,
+  .ds-input-size-large & {
+    padding-left: $input-height;
+  }
+}
+
+.ds-input-has-icon-right {
+  padding-right: $input-height;
+
+  .ds-input-size-small &,
+  .ds-input-size-large & {
+    padding-right: $input-height;
+  }
 }
 
 textarea.ds-input {
@@ -253,5 +322,17 @@ textarea.ds-input-size-large {
   <ds-input placeholder="Small ..." size="small"></ds-input>
   <ds-input placeholder="Base ..."></ds-input>
   <ds-input placeholder="Large ..." size="large"></ds-input>
+  ```
+
+  ## Input icons
+
+  Add an icon to help the user identify the input type.
+
+  ```
+  <ds-input placeholder="Search ..." icon="search"></ds-input>
+  <ds-input placeholder="Time ..." icon="clock"></ds-input>
+  <ds-input placeholder="Search ..." icon-right="search"></ds-input>
+  <ds-input placeholder="Search ..." icon="search" size="small"></ds-input>
+  <ds-input placeholder="Search ..." icon="search" size="large"></ds-input>
   ```
 </docs>

@@ -57,20 +57,34 @@ export default {
     schema: {
       type: Object,
       default: () => ({})
+    },
+    /**
+     * The input's size.
+     * `small, base, large`
+     */
+    size: {
+      type: String,
+      default: null,
+      validator: value => {
+        return value.match(/(small|base|large)/)
+      }
     }
   },
   data() {
     return {
       innerValue: null,
-      error: null
+      error: null,
+      focus: false
     }
   },
   computed: {
     stateClasses() {
-      return {
-        'ds-input-is-disabled': this.disabled,
-        'ds-input-has-error': !!this.error
-      }
+      return [
+        this.size && `ds-input-size-${this.size}`,
+        this.disabled && 'ds-input-is-disabled',
+        this.error && 'ds-input-has-error',
+        this.focus && 'ds-input-has-focus'
+      ]
     }
   },
   watch: {
@@ -127,6 +141,12 @@ export default {
         // eslint-disable-next-line
         console.warn = warn;
       })
+    },
+    handleFocus() {
+      this.focus = true
+    },
+    handleBlur() {
+      this.focus = false
     }
   }
 }

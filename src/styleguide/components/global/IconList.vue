@@ -3,6 +3,7 @@
     <ds-space>
       <ds-input
         v-model="searchString"
+        icon="search"
         placeholder="Search icon ..."/>
     </ds-space>
     <ds-flex
