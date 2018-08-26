@@ -82,6 +82,16 @@ export default {
       immediate: true
     }
   },
+  created() {
+    if (this.$parentForm) {
+      this.$parentForm.subscribe(this.handleFormUpdate)
+    }
+  },
+  beforeDestroy() {
+    if (this.$parentForm) {
+      this.$parentForm.unsubscribe(this.handleFormUpdate)
+    }
+  },
   methods: {
     input(event) {
       if (this.$parentForm) {
@@ -117,16 +127,6 @@ export default {
         // eslint-disable-next-line
         console.warn = warn;
       })
-    }
-  },
-  created() {
-    if (this.$parentForm) {
-      this.$parentForm.subscribe(this.handleFormUpdate)
-    }
-  },
-  beforeDestroy() {
-    if (this.$parentForm) {
-      this.$parentForm.unsubscribe(this.handleFormUpdate)
     }
   }
 }

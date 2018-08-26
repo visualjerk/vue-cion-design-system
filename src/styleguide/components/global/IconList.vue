@@ -1,8 +1,10 @@
 <template>
   <ds-space margin-top="x-large">
-    <input 
-      v-model="searchString" 
-      placeholder="Search icon ...">
+    <ds-space>
+      <ds-input
+        v-model="searchString"
+        placeholder="Search icon ..."/>
+    </ds-space>
     <ds-flex
       gutter="large"
       :width="{ base: '100%', xs: '50%', lg: '33.3332%'}">

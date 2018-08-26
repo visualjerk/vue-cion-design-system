@@ -164,6 +164,7 @@ export default {
   cursor: pointer;
   user-select: none;
   font-size: $font-size-base;
+  line-height: $line-height-base;
   font-family: $font-family-text;
   font-weight: $font-weight-bold;
   letter-spacing: $letter-spacing-large;
@@ -171,11 +172,12 @@ export default {
   vertical-align: middle;
   align-items: center;
   justify-content: center;
-  line-height: 1;
   text-decoration: none;
-  padding: $font-space-large $font-space-xx-large;
+  padding: $input-padding-vertical $space-small;
+  height: $input-height;
   border-radius: $border-radius-default;
   box-shadow: $box-shadow-small-inset, $box-shadow-x-small;
+  border: $input-border-size solid transparent;
   transition: color $duration-short $ease-out,
     background-color $duration-short $ease-out;
 
@@ -290,15 +292,17 @@ export default {
 }
 
 .ds-button-size-small {
-  padding: $font-space-x-small $font-space-large;
+  padding: $input-padding-vertical-small $space-x-small;
+  height: $input-height-small;
 }
 
 .ds-button-size-large {
-  padding: $font-space-x-large $font-space-xxx-large;
+  padding: $input-padding-vertical-large $space-base;
+  height: $input-height-large;
 }
 
 .ds-button-icon-only {
-  width: 1em + 2 * $font-space-large;
+  width: $input-height;
   padding: $font-space-large 0;
   border-radius: $border-radius-rounded;
 
@@ -307,18 +311,18 @@ export default {
   }
 
   &.ds-button-size-small {
-    width: 1em + 2 * $font-space-x-small;
+    width: $input-height-small;
     padding: $font-space-x-small 0;
   }
 
   &.ds-button-size-large {
-    width: 1em + 2 * $font-space-x-large;
+    width: $input-height-large;
     padding: $font-space-x-large 0;
   }
 }
 
 .ds-button-text {
-  line-height: 1;
+  line-height: inherit;
   display: inline-block;
   white-space: nowrap;
   margin: 0 $font-space-small;

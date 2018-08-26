@@ -2,15 +2,20 @@
   <ds-form-item>
     <component
       class="ds-input"
+      :class="[
+        size && `ds-input-size-${size}`
+      ]"
       :id="id"
       :name="model"
       :type="type"
-      :value="innerValue"
-      @input="input"
+      :autofocus="autofocus"
       :placeholder="placeholder"
       :disabled="disabled"
+      :readonly="readonly"
       :is="tag"
-      :rows="type === 'textarea' ? 3 : null"
+      :value.prop="innerValue"
+      @input="input"
+      :rows="type === 'textarea' ? rows : null"
       v-html="type === 'textarea' ? innerValue : null"/>
   </ds-form-item>
 </template>
@@ -42,6 +47,38 @@ export default {
     placeholder: {
       type: String,
       default: null
+    },
+    /**
+     * Whether the input should be automatically focused
+     */
+    autofocus: {
+      type: Boolean,
+      default: false
+    },
+    /**
+     * Whether the input should be read-only
+     */
+    readonly: {
+      type: Boolean,
+      default: false
+    },
+    /**
+     * How many rows this input should have (only for type="textarea")
+     */
+    rows: {
+      type: [String, Number],
+      default: 1
+    },
+    /**
+     * The input's size.
+     * `small, base, large`
+     */
+    size: {
+      type: String,
+      default: null,
+      validator: value => {
+        return value.match(/(small|base|large)/)
+      }
     }
   },
   computed: {
@@ -56,18 +93,19 @@ export default {
 </script>
 
 <style lang="scss">
-$input-height: $size-height-base;
-
 .ds-input {
   box-sizing: border-box;
   font-size: $font-size-base;
+  line-height: $line-height-base;
   font-family: $font-family-text;
   width: 100%;
+  padding: $input-padding-vertical $space-x-small;
   height: $input-height;
-  padding: 0 $space-x-small;
+
   color: $text-color-default;
   background: $background-color-default;
-  border: $border-size-default solid $border-color-default;
+
+  border: $input-border-size solid $border-color-default;
   border-radius: $border-radius-default;
   outline: none;
   transition: all $duration-short $ease-out;
@@ -93,11 +131,30 @@ $input-height: $size-height-base;
   }
 }
 
+.ds-input-size-small {
+  font-size: $font-size-small;
+  height: $input-height-small;
+  padding: $input-padding-vertical-small $space-x-small;
+}
+
+.ds-input-size-large {
+  font-size: $font-size-large;
+  height: $input-height-large;
+  padding: $input-padding-vertical-large $space-x-small;
+}
+
 textarea.ds-input {
   height: auto;
   min-height: $input-height;
-  padding: $space-x-small $space-x-small;
   resize: none;
+}
+
+textarea.ds-input-size-small {
+  min-height: $input-height-small;
+}
+
+textarea.ds-input-size-large {
+  min-height: $input-height-large;
 }
 </style>
 
@@ -119,14 +176,14 @@ textarea.ds-input {
 
   ## Input types
 
-  You can use an input for different types.
+  You can use an input for different types of input.
 
   ```
   <template>
     <div>
       <ds-input v-model="text"></ds-input>
       <ds-input v-model="text" type="password"></ds-input>
-      <ds-input v-model="text" type="textarea"></ds-input>
+      <ds-input v-model="text" type="textarea" rows="2"></ds-input>
     </div>
   </template>
   <script>
@@ -188,5 +245,13 @@ textarea.ds-input {
       }
     }
   </script>
+  ```
+
+  ## Input sizes
+
+  ```
+  <ds-input placeholder="Small ..." size="small"></ds-input>
+  <ds-input placeholder="Base ..."></ds-input>
+  <ds-input placeholder="Large ..." size="large"></ds-input>
   ```
 </docs>
