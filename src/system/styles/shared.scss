@@ -6,9 +6,15 @@
  *
 --------------------------------------------- */
 
+// Design Tokens
 @import "../tokens/generated/tokens";
 @import "../tokens/generated/tokens.map";
-@import "./shared/settings";
+
+// Variables
+// Map Design Tokens to
+@import "./shared/variables";
+
+// Mixins
 @import "./shared/functions";
 @import "./shared/mixins";
 @import "./shared/color";

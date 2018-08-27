@@ -8,7 +8,7 @@
 @import "./fonts/lato";
 
 html, body {
-  font-size: $font-size-body-mobile;
+  font-size: $font-size-body;
   line-height: $line-height-base;
   font-family: $font-family-text;
   font-variant-ligatures: none;
@@ -17,10 +17,6 @@ html, body {
   color: $text-color-default;
   margin: 0;
   padding: 0;
-
-  @media #{$media-query-medium} {
-    font-size: $font-size-body;
-  }
 }
 
 pre, code {

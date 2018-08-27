@@ -1,0 +1,55 @@
+.ds-tag {
+  @include reset;
+  @include stack-space($space-xx-small);
+  display: inline-block;
+  font-family: $font-family-text;
+  line-height: $line-height-base;
+  padding: 0 $font-space-base;
+  border-radius: $border-radius-default;
+  font-weight: $font-weight-bold;
+  letter-spacing: $letter-spacing-large;
+  text-transform: uppercase;
+  color: $text-color-default;
+  background-color: $background-color-medium;
+}
+
+.ds-tag-dark {
+  color: $text-color-inverse;
+  background-color: $background-color-dark;
+}
+
+.ds-tag-primary {
+  color: $text-color-primary-inverse;
+  background-color: $background-color-primary;
+}
+
+.ds-tag-success {
+  color: $text-color-success-inverse;
+  background-color: $background-color-success;
+}
+
+.ds-tag-warning {
+  color: $text-color-warning-inverse;
+  background-color: $background-color-warning;
+}
+
+.ds-tag-danger {
+  color: $text-color-danger-inverse;
+  background-color: $background-color-danger;
+}
+
+.ds-tag-round {
+  border-radius: $border-radius-rounded;
+}
+
+.ds-tag-size-base {
+  font-size: $font-size-x-small;
+}
+
+.ds-tag-size-small {
+  font-size: $font-size-xx-small;
+}
+
+.ds-tag-size-large {
+  font-size: $font-size-small;
+}

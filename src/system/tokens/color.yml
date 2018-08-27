@@ -70,26 +70,36 @@ props:
     value: &color-primary "hsla({!blue}, 45%, 1)"
   - name: color-primary-light
     value: &color-primary-light "hsla({!blue}, 48%, 1)"
+  - name: color-primary-inverse
+    value: &color-primary-inverse "hsla({!blue}, 97%, 1)"
 
   - name: color-success
     value: &color-success "hsla({!green}, 40%, 1)"
   - name: color-success-light
     value: &color-success-light "hsla({!green}, 45%, 1)"
+  - name: color-success-inverse
+    value: &color-success-inverse "hsla({!green}, 97%, 1)"
 
   - name: color-danger
     value: &color-danger "hsla({!red}, 50%, 1)"
   - name: color-danger-light
     value: &color-danger-light "hsla({!red}, 56%, 1)"
+  - name: color-danger-inverse
+    value: &color-danger-inverse "hsla({!red}, 97%, 1)"
 
   - name: color-warning
     value: &color-warning "hsla({!orange}, 50%, 1)"
   - name: color-warning-light
     value: &color-warning-light "hsla({!orange}, 56%, 1)"
+  - name: color-warning-inverse
+    value: &color-warning-inverse "hsla({!orange}, 97%, 1)"
 
   - name: color-yellow
     value: &color-yellow "hsla({!yellow}, 48%, 1)"
   - name: color-yellow-light
     value: &color-yellow-light "hsla({!yellow}, 52%, 1)"
+  - name: color-yellow-inverse
+    value: &color-yellow-inverse "hsla({!yellow}, 97%, 1)"
 
   # Text Colors
   - name: text-color-default
@@ -124,16 +134,32 @@ props:
     value: *color-primary
     category: text-color
 
+  - name: text-color-primary-inverse
+    value: *color-primary-inverse
+    category: text-color
+
   - name: text-color-success
     value: *color-success
+    category: text-color
+
+  - name: text-color-success-inverse
+    value: *color-success-inverse
     category: text-color
 
   - name: text-color-warning
     value: *color-warning
     category: text-color
 
+  - name: text-color-warning-inverse
+    value: *color-warning-inverse
+    category: text-color
+
   - name: text-color-danger
     value: *color-danger
+    category: text-color
+
+  - name: text-color-danger-inverse
+    value: *color-danger-inverse
     category: text-color
 
   # Background Colors
@@ -181,12 +207,20 @@ props:
     value: *color-primary-light
     category: background-color
 
+  - name: background-color-primary-inverse
+    value: *color-primary-inverse
+    category: background-color
+
   - name: background-color-success
     value: *color-success
     category: background-color
 
   - name: background-color-success-active
     value: *color-success-light
+    category: background-color
+
+  - name: background-color-success-inverse
+    value: *color-success-inverse
     category: background-color
 
   - name: background-color-warning
@@ -197,12 +231,20 @@ props:
     value: *color-warning-light
     category: background-color
 
+  - name: background-color-warning-inverse
+    value: *color-warning-inverse
+    category: background-color
+
   - name: background-color-danger
     value: *color-danger
     category: background-color
 
   - name: background-color-danger-active
     value: *color-danger-light
+    category: background-color
+
+  - name: background-color-danger-inverse
+    value: *color-danger-inverse
     category: background-color
 
   # Border Colors

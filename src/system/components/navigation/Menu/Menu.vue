@@ -23,14 +23,11 @@
 </template>
 
 <script>
-import DsFlexItem from '../layout/FlexItem.vue'
-
 /**
  * Used in combination with the menu item to help the user navigate.
  * @version 1.0.0
  */
 export default {
-  components: { DsFlexItem },
   name: 'DsMenu',
   provide() {
     return {
@@ -122,28 +119,7 @@ export default {
 </script>
 
 <style lang="scss">
-.ds-menu {
-  @include reset;
-}
-
-.ds-menu-inverse {
-  background-color: $background-color-darker;
-}
-
-.ds-menu-navbar {
-  height: 100%;
-}
-
-ul.ds-menu-list {
-  @include reset;
-  list-style: none;
-  padding-left: 0;
-
-  .ds-menu-navbar & {
-    display: flex;
-    height: 100%;
-  }
-}
+@import 'style';
 </style>
 
 <docs>

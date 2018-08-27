@@ -3,8 +3,8 @@
     :is="tag"
     class="ds-text"
     :class="[
-      size && `ds-font-size-${size}`,
-      color && `ds-text-color-${color}`,
+      size && `ds-text-size-${size}`,
+      color && `ds-text-${color}`,
       bold && `ds-text-bold`
     ]"
   >
@@ -54,13 +54,13 @@ export default {
     },
     /**
      * The size used for the text.
-     * `base, large, x-large, small, x-small`
+     * `small, base, large, x-large`
      */
     size: {
       type: String,
       default: null,
       validator: value => {
-        return value.match(/(base|large|x-large|small|x-small)/)
+        return value.match(/(small|base|large|x-large)/)
       }
     },
     /**
@@ -77,16 +77,7 @@ export default {
 </script>
 
 <style lang="scss">
-.ds-text {
-  @include reset;
-  @include stack-space($font-space-x-large);
-  font-family: $font-family-text;
-  line-height: $line-height-base;
-}
-
-.ds-text-bold {
-  font-weight: $font-weight-bold;
-}
+@import 'style';
 </style>
 
 <docs>
@@ -95,11 +86,10 @@ export default {
   Use different sizes to create hierarchy.
 
   ```
-    <ds-text size="x-large">The quick brown fox (x-large)</ds-text>
-    <ds-text size="large">The quick brown fox (large)</ds-text>
-    <ds-text size="base">The quick brown fox (base)</ds-text>
-    <ds-text size="small">The quick brown fox (small)</ds-text>
-    <ds-text size="x-small">The quick brown fox (x-small)</ds-text>
+  <ds-text size="x-large">The quick brown fox (x-large)</ds-text>
+  <ds-text size="large">The quick brown fox (large)</ds-text>
+  <ds-text size="base">The quick brown fox (base)</ds-text>
+  <ds-text size="small">The quick brown fox (small)</ds-text>
   ```
 
   ## Text colors
@@ -107,12 +97,12 @@ export default {
   Use colors to highlight or deemphasize.
 
   ```
-    <ds-text>The quick brown fox</ds-text>
-    <ds-text color="light">The quick brown fox</ds-text>
-    <ds-text color="primary">The quick brown fox</ds-text>
-    <ds-text color="success">The quick brown fox</ds-text>
-    <ds-text color="danger">The quick brown fox</ds-text>
-    <ds-text color="warning">The quick brown fox</ds-text>
+  <ds-text>The quick brown fox</ds-text>
+  <ds-text color="light">The quick brown fox</ds-text>
+  <ds-text color="primary">The quick brown fox</ds-text>
+  <ds-text color="success">The quick brown fox</ds-text>
+  <ds-text color="danger">The quick brown fox</ds-text>
+  <ds-text color="warning">The quick brown fox</ds-text>
   ```
 
   ## Nesting styles
@@ -120,8 +110,8 @@ export default {
   Nested text components use their parents format by default.
 
   ```
-    <ds-text color="primary" size="large">
-      The quick <ds-text bold>brown</ds-text> fox
-    </ds-text>
+  <ds-text color="primary" size="large">
+    The quick <ds-text bold>brown</ds-text> fox
+  </ds-text>
   ```
 </docs>

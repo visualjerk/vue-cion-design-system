@@ -18,8 +18,6 @@ props:
     value: "1rem"
   - name: font-size-body
     value: "16px"
-  - name: font-size-body-mobile
-    value: "16px"
   - name: font-size-small
     value: "0.8rem"
   - name: font-size-x-small

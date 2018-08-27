@@ -30,21 +30,7 @@ export default {
 </script>
 
 <style lang="scss">
-$logo-color-default: $text-color-primary;
-
-.ds-logo {
-  @include reset;
-  display: inline-flex;
-  justify-content: center;
-  align-items: center;
-  color: $logo-color-default;
-}
-
-.ds-logo-svg {
-  width: 130px;
-  height: auto;
-  fill: currentColor;
-}
+@import 'style';
 </style>
 
 <docs>

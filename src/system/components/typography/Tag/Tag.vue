@@ -3,9 +3,8 @@
     :is="tag"
     class="ds-tag"
     :class="[
-      `ds-text-color-${textColor}`,
       size && `ds-tag-size-${size}`,
-      color && `ds-background-color-${color}`,
+      color && `ds-tag-${color}`,
       round && 'ds-tag-round'
     ]"
   >
@@ -28,9 +27,9 @@ export default {
      */
     color: {
       type: String,
-      default: 'medium',
+      default: null,
       validator: value => {
-        return value.match(/(medium|dark|primary|success|warning|danger)/)
+        return value.match(/(dark|primary|success|warning|danger)/)
       }
     },
     /**
@@ -69,34 +68,7 @@ export default {
 </script>
 
 <style lang="scss">
-.ds-tag {
-  @include reset;
-  @include stack-space($space-xx-small);
-  display: inline-block;
-  font-family: $font-family-text;
-  line-height: $line-height-base;
-  padding: 0 $font-space-base;
-  border-radius: $border-radius-default;
-  font-weight: $font-weight-bold;
-  letter-spacing: $letter-spacing-large;
-  text-transform: uppercase;
-}
-
-.ds-tag-round {
-  border-radius: $border-radius-rounded;
-}
-
-.ds-tag-size-base {
-  font-size: $font-size-x-small;
-}
-
-.ds-tag-size-small {
-  font-size: $font-size-xx-small;
-}
-
-.ds-tag-size-large {
-  font-size: $font-size-small;
-}
+@import 'style';
 </style>
 
 <docs>
@@ -105,12 +77,12 @@ export default {
   Use different colors to emphasize or provide meaning.
 
   ```
-    <ds-tag>default</ds-tag>
-    <ds-tag color="dark">dark</ds-tag>
-    <ds-tag color="primary">primary</ds-tag>
-    <ds-tag color="success">success</ds-tag>
-    <ds-tag color="warning">warning</ds-tag>
-    <ds-tag color="danger">danger</ds-tag>
+  <ds-tag>default</ds-tag>
+  <ds-tag color="dark">dark</ds-tag>
+  <ds-tag color="primary">primary</ds-tag>
+  <ds-tag color="success">success</ds-tag>
+  <ds-tag color="warning">warning</ds-tag>
+  <ds-tag color="danger">danger</ds-tag>
   ```
 
   ## Tag sizes
@@ -118,9 +90,9 @@ export default {
   Use different sizes to create hierarchy (defaults to `base`).
 
   ```
-    <ds-tag size="small">small</ds-tag>
-    <ds-tag size="base">base</ds-tag>
-    <ds-tag size="large">large</ds-tag>
+  <ds-tag size="small">small</ds-tag>
+  <ds-tag size="base">base</ds-tag>
+  <ds-tag size="large">large</ds-tag>
   ```
 
   ## Variations
@@ -128,7 +100,7 @@ export default {
   Use a round tag to present small numbers.
 
   ```
-    <ds-tag color="primary" round>7</ds-tag>
-    <ds-tag color="primary" round>42</ds-tag>
+  <ds-tag color="primary" round>7</ds-tag>
+  <ds-tag color="primary" round>42</ds-tag>
   ```
 </docs>
