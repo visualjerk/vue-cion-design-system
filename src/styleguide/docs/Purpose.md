@@ -2,7 +2,7 @@
 
 We empower developers to deliver a delightful UI experience to their users.
 
-Therefore we aim for the system to be:
+Therefore we aim for the design system to be:
 
 ### Adoptable
 

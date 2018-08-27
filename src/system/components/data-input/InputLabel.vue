@@ -7,6 +7,10 @@
 </template>
 
 <script>
+/**
+ * @version 1.0.0
+ * @private
+ */
 export default {
   name: 'DsInputLabel',
   props: {
