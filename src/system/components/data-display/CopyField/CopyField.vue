@@ -73,13 +73,7 @@ export default {
 }
 </script>
 
-<style lang="scss">
-@import 'style';
+<style lang="scss" src="./style.scss">
 </style>
 
-<docs>
-  ## Basic usage
-  ```
-    <ds-copy-field>Copy me please!</ds-copy-field>
-  ```
-</docs>
+<docs src="./demo.md"></docs>

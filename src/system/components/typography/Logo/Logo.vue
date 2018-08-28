@@ -29,12 +29,7 @@ export default {
 }
 </script>
 
-<style lang="scss">
-@import 'style';
+<style lang="scss" src="./style.scss">
 </style>
 
-<docs>
-  ```
-    <ds-logo></ds-logo>
-  ```
-</docs>
+<docs src="./demo.md"></docs>

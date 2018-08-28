@@ -24,6 +24,3 @@ export default {
 <style lang="scss">
 @import 'style';
 </style>
-
-<docs>
-</docs>

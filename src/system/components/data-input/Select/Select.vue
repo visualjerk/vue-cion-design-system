@@ -103,14 +103,7 @@ export default {
 }
 </script>
 
-<style lang="scss">
-@import 'style';
+<style lang="scss" src="./style.scss">
 </style>
 
-<docs>
-  ## Basic usage
-
-  ```
-  <ds-select :options="['blue', 'red', 'green']" />
-  ```
-</docs>
+<docs src="./demo.md"></docs>

@@ -25,14 +25,7 @@ export default {
 }
 </script>
 
-<style lang="scss">
-@import 'style';
+<style lang="scss" src="./style.scss">
 </style>
 
-<docs>
-  ```
-    <ds-container>
-      <ds-placeholder>I am contained</ds-placeholder>
-    </ds-container>
-  ```
-</docs>
+<docs src="./demo.md"></docs>

@@ -27,14 +27,7 @@ export default {
 }
 </script>
 
-<style lang="scss">
-@import 'style';
+<style lang="scss" src="./style.scss">
 </style>
 
-<docs>
-  ```
-    <ds-placeholder>
-      Holding my ground
-    </ds-placeholder>
-  ```
-</docs>
+<docs src="./demo.md"></docs>
