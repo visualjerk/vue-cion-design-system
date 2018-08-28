@@ -74,49 +74,7 @@ export default {
 </script>
 
 <style lang="scss">
-.ds-card {
-  @include reset;
-  display: flex;
-  flex-direction: column;
-  background-color: $background-color-default;
-  border-radius: $border-radius-default;
-  box-shadow: $box-shadow-x-small, $box-shadow-base;
-  height: 100%;
-}
-
-.ds-card-image {
-  overflow: hidden;
-  border-top-left-radius: $border-radius-default;
-  border-top-right-radius: $border-radius-default;
-
-  img {
-    display: block;
-    width: 100%;
-    max-width: 100%;
-  }
-}
-
-.ds-card-header {
-  @include reset;
-  background-color: $background-color-lighter;
-  padding: $space-small;
-}
-
-.ds-card-content {
-  @include reset;
-  padding: $space-small;
-  flex: 1 1 0;
-
-  &:last-child:not(:only-child) {
-    padding-bottom: $space-large;
-  }
-}
-
-.ds-card-footer {
-  @include reset;
-  padding: $space-small;
-  border-top: $border-size-default solid $border-color-lighter;
-}
+@import 'style';
 </style>
 
 <docs>

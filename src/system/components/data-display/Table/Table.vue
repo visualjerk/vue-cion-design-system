@@ -142,16 +142,7 @@ export default {
 </script>
 
 <style lang="scss">
-.ds-table-wrap {
-  @include reset;
-  width: 100%;
-  overflow: auto;
-}
-
-.ds-table {
-  @include reset;
-  width: 100%;
-}
+@import 'style';
 </style>
 
 <docs>

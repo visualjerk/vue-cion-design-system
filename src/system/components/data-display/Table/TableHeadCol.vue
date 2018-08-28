@@ -41,16 +41,3 @@ export default {
   computed: {}
 }
 </script>
-
-<style lang="scss">
-.ds-table-head-col {
-  @include reset;
-  border-bottom: $border-color-lighter solid $border-size-default;
-  padding: $space-small $space-xx-small;
-  text-align: left;
-  font-weight: $font-weight-bold;
-}
-</style>
-
-<docs>
-</docs>

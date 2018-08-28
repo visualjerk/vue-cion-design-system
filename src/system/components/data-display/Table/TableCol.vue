@@ -30,19 +30,3 @@ export default {
   computed: {}
 }
 </script>
-
-<style lang="scss">
-.ds-table-col {
-  @include reset;
-  border-bottom: $border-color-lighter solid $border-size-default;
-  vertical-align: top;
-  padding: $space-small $space-xx-small;
-
-  &:last-child {
-    padding-right: 0;
-  }
-}
-</style>
-
-<docs>
-</docs>

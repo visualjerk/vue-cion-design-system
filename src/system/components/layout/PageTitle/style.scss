@@ -1,0 +1,8 @@
+.ds-page-title {
+  @include reset;
+  padding: $space-large 0;
+
+  @media #{$media-query-medium} {
+    padding: $space-x-large 0;
+  }
+}

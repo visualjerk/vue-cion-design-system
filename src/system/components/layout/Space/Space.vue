@@ -77,9 +77,7 @@ export default {
 </script>
 
 <style lang="scss">
-.ds-space {
-  @include reset;
-}
+@import 'style';
 </style>
 
 <docs>

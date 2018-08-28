@@ -84,11 +84,7 @@ export default {
 </script>
 
 <style lang="scss">
-.ds-flex {
-  @include reset;
-  display: flex;
-  flex-wrap: wrap;
-}
+@import 'style';
 </style>
 
 <docs>

@@ -83,13 +83,3 @@ export default {
   }
 }
 </script>
-
-<style lang="scss">
-.ds-flex-item {
-  @include reset;
-  @include layout-flex-fix;
-}
-</style>
-
-<docs>
-</docs>

@@ -60,14 +60,7 @@ export default {
 </script>
 
 <style lang="scss">
-.ds-page-title {
-  @include reset;
-  padding: $space-large 0;
-
-  @media #{$media-query-medium} {
-    padding: $space-x-large 0;
-  }
-}
+@import 'style';
 </style>
 
 <docs>

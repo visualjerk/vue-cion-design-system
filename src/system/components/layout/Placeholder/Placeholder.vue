@@ -28,19 +28,7 @@ export default {
 </script>
 
 <style lang="scss">
-.ds-placeholder {
-  @include reset;
-  padding: $space-base;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  background-color: $background-color-light;
-  border: $border-size-default dashed $border-color-default;
-
-  @media #{$media-query-medium} {
-    padding: $space-x-large 0;
-  }
-}
+@import 'style';
 </style>
 
 <docs>

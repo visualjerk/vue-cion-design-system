@@ -22,10 +22,7 @@ export default {
 </script>
 
 <style lang="scss">
-.ds-form-item {
-  position: relative;
-  @include stack-space($space-small);
-}
+@import 'style';
 </style>
 
 <docs>

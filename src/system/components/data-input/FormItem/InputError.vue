@@ -24,23 +24,3 @@ export default {
   }
 }
 </script>
-
-<style lang="scss">
-.ds-input-error {
-  color: $color-danger;
-  font-size: $font-size-x-small;
-  position: absolute;
-  top: 100%;
-}
-
-.ds-input-error-enter-active {
-  transition: opacity $duration-base $ease-out,
-    transform $duration-base $ease-out;
-}
-
-.ds-input-error-enter,
-.ds-input-error-leave-to {
-  opacity: 0;
-  transform: translateY(-2px);
-}
-</style>

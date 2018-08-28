@@ -26,20 +26,7 @@ export default {
 </script>
 
 <style lang="scss">
-.ds-container {
-  @include reset;
-  max-width: 1200px;
-  padding: 0 $space-small;
-  margin: 0 auto;
-
-  @media #{$media-query-medium} {
-    padding: 0 $space-base;
-  }
-
-  @media #{$media-query-large} {
-    padding: 0 $space-x-large;
-  }
-}
+@import 'style';
 </style>
 
 <docs>
