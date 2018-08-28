@@ -1,11 +1,11 @@
-$logo-color-default: $text-color-primary;
+$logo-color-base: $text-color-primary;
 
 .ds-logo {
   @include reset;
   display: inline-flex;
   justify-content: center;
   align-items: center;
-  color: $logo-color-default;
+  color: $logo-color-base;
 }
 
 .ds-logo-svg {

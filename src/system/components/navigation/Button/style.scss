@@ -21,7 +21,7 @@
   text-decoration: none;
   padding: $input-padding-vertical $space-small;
   height: $input-height;
-  border-radius: $border-radius-default;
+  border-radius: $border-radius-base;
   box-shadow: $box-shadow-small-inset, $box-shadow-x-small;
   border: $input-border-size solid transparent;
   transition: color $duration-short $ease-out,
@@ -34,7 +34,7 @@
     left: $space-xxx-small;
     right: $space-xxx-small;
     bottom: $space-xxx-small;
-    border-radius: $border-radius-default;
+    border-radius: $border-radius-base;
     box-shadow: $box-shadow-inset;
     opacity: 0;
     visiblity: hidden;
@@ -63,23 +63,23 @@
   }
 
   // Default colors
-  color: $text-color-default;
-  background-color: $background-color-medium;
+  color: $text-color-base;
+  background-color: $background-color-softest;
 
   &:hover,
   &.ds-button-hover {
-    color: $text-color-default;
-    background-color: $background-color-medium-active;
+    color: $text-color-base;
+    background-color: $background-color-softest-active;
   }
 }
 
 .ds-button-primary {
-  color: $text-color-inverse;
+  color: $text-color-primary-inverse;
   background-color: $background-color-primary;
 
   &:hover,
   &.ds-button-hover {
-    color: $text-color-inverse;
+    color: $text-color-primary-inverse;
     background-color: $background-color-primary-active;
   }
 
@@ -91,12 +91,12 @@
 }
 
 .ds-button-danger {
-  color: $text-color-inverse;
+  color: $text-color-danger-inverse;
   background-color: $background-color-danger;
 
   &:hover,
   &.ds-button-hover {
-    color: $text-color-inverse;
+    color: $text-color-danger-inverse;
     background-color: $background-color-danger-active;
   }
 
@@ -108,7 +108,7 @@
 }
 
 .ds-button-ghost {
-  color: $text-color-default;
+  color: $text-color-base;
   background-color: transparent;
   box-shadow: none;
 
@@ -118,8 +118,8 @@
 
   &:hover,
   &.ds-hover {
-    color: $text-color-default;
-    background-color: $background-color-lighter;
+    color: $text-color-base;
+    background-color: $background-color-soft;
   }
 
   &:active {

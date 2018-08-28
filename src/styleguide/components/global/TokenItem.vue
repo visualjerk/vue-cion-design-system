@@ -53,7 +53,7 @@ export default {
         case 'color':
         case 'background-color':
           styles.backgroundColor = this.token.value
-          styles.borderColor = tokens.borderColorLighter
+          styles.borderColor = tokens.borderColorSofter
           break
         case 'font-size':
           styles.fontSize = this.token.value
@@ -61,7 +61,7 @@ export default {
         case 'font-spacing':
           styles.paddingTop = this.token.value
           styles.paddingBottom = this.token.value
-          styles.borderColor = tokens.borderColorDefault
+          styles.borderColor = tokens.borderColorBase
           styles.height = 'auto'
           break
         case 'font-family':
@@ -77,16 +77,16 @@ export default {
         case 'size':
         case 'space':
           styles.height = this.token.value
-          styles.borderColor = tokens.borderColorDefault
+          styles.borderColor = tokens.borderColorBase
           break
         case 'border-size':
           styles.borderWidth = this.token.value
-          styles.borderColor = tokens.borderColorDefault
+          styles.borderColor = tokens.borderColorBase
           break
         case 'border-radius':
           styles.borderRadius = this.token.value
           styles.width = tokens.sizeHeightBase
-          styles.borderColor = tokens.borderColorDefault
+          styles.borderColor = tokens.borderColorBase
           break
         case 'box-shadow':
           styles.boxShadow = this.token.value
@@ -94,12 +94,12 @@ export default {
           break
         case 'time':
           styles.transitionDuration = this.token.value
-          styles.backgroundColor = tokens.backgroundColorDark
+          styles.backgroundColor = tokens.backgroundColorInverseSofter
           break
         case 'ease':
           styles.transitionTimingFunction = this.token.value
           styles.transitionDuration = tokens.durationLong
-          styles.backgroundColor = tokens.backgroundColorDark
+          styles.backgroundColor = tokens.backgroundColorInverseSofter
           break
       }
       return styles
@@ -113,7 +113,7 @@ export default {
   height: $size-height-base;
   display: flex;
   align-items: center;
-  border: $border-size-default solid transparent;
+  border: $border-size-base solid transparent;
   line-height: $line-height-base;
 }
 

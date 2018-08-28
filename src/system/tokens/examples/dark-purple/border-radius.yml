@@ -4,7 +4,7 @@
 #
 
 props:
-  - name: border-radius-default
+  - name: border-radius-base
     value: "6px"
   - name: border-radius-rounded
     value: "2em"

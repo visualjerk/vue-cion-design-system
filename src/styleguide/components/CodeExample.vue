@@ -75,7 +75,7 @@ ${code}</div>
   width: auto;
   height: auto;
   border-radius: 0;
-  border: $border-size-default solid $border-color-lighter;
+  border: $border-size-base solid $border-color-softer;
   padding: $space-base;
   margin-bottom: $space-small;
 
@@ -86,7 +86,7 @@ ${code}</div>
 }
 
 // Codemirror Theme
-$codemirror-background: $background-color-lighter;
+$codemirror-background: $background-color-soft;
 $codemirror-primary: $color-primary;
 
 .cm-s-vueds {
@@ -96,8 +96,8 @@ $codemirror-primary: $color-primary;
 	letter-spacing: 0.3px;
 	word-spacing: 1px;
 	background: $codemirror-background;
-	color: $text-color-light;
-	border: $border-size-default solid $border-color-lighter;
+	color: $text-color-soft;
+	border: $border-size-base solid $border-color-softer;
 	
 	.CodeMirror-lines {
     padding: 8px 0;
@@ -106,13 +106,13 @@ $codemirror-primary: $color-primary;
   .CodeMirror-gutters {
     background-color: $codemirror-background;
     border: none;
-    border-right: $border-size-default solid $border-color-lighter;
+    border-right: $border-size-base solid $border-color-softer;
     padding-right: $space-x-small;
     z-index: 3;
   }
 
   div.CodeMirror-cursor {
-    border-left: 2px solid $text-color-default;
+    border-left: 2px solid $text-color-base;
   }
 
   .CodeMirror-activeline-background {
@@ -123,7 +123,7 @@ $codemirror-primary: $color-primary;
   }
   .cm-comment {
     font-style: italic;
-    color: $text-color-lighter;
+    color: $text-color-softer;
   }
   .cm-tag {
     color: $codemirror-primary;
@@ -153,7 +153,7 @@ $codemirror-primary: $color-primary;
     color: $codemirror-primary;
   }
   .CodeMirror-linenumber {
-    color: $text-color-lighter;
+    color: $text-color-softer;
   }
 }
 </style>

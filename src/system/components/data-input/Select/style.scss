@@ -11,11 +11,11 @@
   padding: $input-padding-vertical $space-x-small;
   height: $input-height;
 
-  color: $text-color-default;
-  background: $background-color-default;
+  color: $text-color-base;
+  background: $background-color-base;
 
-  border: $input-border-size solid $border-color-default;
-  border-radius: $border-radius-default;
+  border: $input-border-size solid $border-color-base;
+  border-radius: $border-radius-base;
   outline: none;
   transition: all $duration-short $ease-out;
 
@@ -25,7 +25,7 @@
 
   &:focus {
     border-color: $border-color-active;
-    background: $background-color-default;
+    background: $background-color-base;
   }
 
   .ds-input-is-disabled &,
@@ -68,11 +68,11 @@
   align-items: center;
   justify-content: center;
   width: $input-height;
-  color: $text-color-lighter;
+  color: $text-color-softer;
   transition: color $duration-short $ease-out;
 
   .ds-input-has-focus & {
-    color: $text-color-default;
+    color: $text-color-base;
   }
 }
 

@@ -2,7 +2,7 @@
   @include reset;
   padding: $space-large 0;
   color: $text-color-primary;
-  @include pattern($background-color-lighter, $background-color-medium);
+  @include pattern($background-color-soft, $background-color-softest);
 
   @media #{$media-query-medium} {
     padding: $space-x-large 0;

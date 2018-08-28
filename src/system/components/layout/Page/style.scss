@@ -1,19 +1,19 @@
 $contained-width: 1400px;
 
 $header-height: 54px;
-$header-background-color: $background-color-lighter;
+$header-background-color: $background-color-soft;
 
 $sidebar-brand-height: 136px;
 $sidebar-width: 220px;
 $sidebar-width-large: 260px;
-$sidebar-background-color: $background-color-default;
+$sidebar-background-color: $background-color-base;
 
-$drawer-background-color: $background-color-default;
+$drawer-background-color: $background-color-base;
 
 .ds-page {
   @include reset;
   @include clearfix;
-  background: $background-color-default;
+  background: $background-color-base;
   min-height: 100vh;
 
   &.ds-page-is-contained {

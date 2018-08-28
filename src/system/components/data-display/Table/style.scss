@@ -11,7 +11,7 @@
 
 .ds-table-col {
   @include reset;
-  border-bottom: $border-color-lighter solid $border-size-default;
+  border-bottom: $border-color-softer solid $border-size-base;
   vertical-align: top;
   padding: $space-small $space-xx-small;
 
@@ -22,7 +22,7 @@
 
 .ds-table-head-col {
   @include reset;
-  border-bottom: $border-color-lighter solid $border-size-default;
+  border-bottom: $border-color-softer solid $border-size-base;
   padding: $space-small $space-xx-small;
   text-align: left;
   font-weight: $font-weight-bold;

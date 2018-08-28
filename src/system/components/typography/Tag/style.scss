@@ -5,17 +5,17 @@
   font-family: $font-family-text;
   line-height: $line-height-base;
   padding: 0 $font-space-base;
-  border-radius: $border-radius-default;
+  border-radius: $border-radius-base;
   font-weight: $font-weight-bold;
   letter-spacing: $letter-spacing-large;
   text-transform: uppercase;
-  color: $text-color-default;
-  background-color: $background-color-medium;
+  color: $text-color-base;
+  background-color: $background-color-softest;
 }
 
 .ds-tag-dark {
   color: $text-color-inverse;
-  background-color: $background-color-dark;
+  background-color: $background-color-inverse-softer;
 }
 
 .ds-tag-primary {

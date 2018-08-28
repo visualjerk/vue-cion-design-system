@@ -68,49 +68,49 @@ props:
 
   - name: color-primary
     value: &color-primary "hsla({!teal}, 38%, 1)"
-  - name: color-primary-light
-    value: &color-primary-light "hsla({!teal}, 34%, 1)"
+  - name: color-primary-active
+    value: &color-primary-active "hsla({!teal}, 34%, 1)"
   - name: color-primary-inverse
     value: &color-primary-inverse "hsla({!teal}, 97%, 1)"
 
   - name: color-success
     value: &color-success "hsla({!green}, 40%, 1)"
-  - name: color-success-light
-    value: &color-success-light "hsla({!green}, 45%, 1)"
+  - name: color-success-active
+    value: &color-success-active "hsla({!green}, 45%, 1)"
   - name: color-success-inverse
     value: &color-success-inverse "hsla({!green}, 97%, 1)"
 
   - name: color-danger
     value: &color-danger "hsla({!red}, 50%, 1)"
-  - name: color-danger-light
-    value: &color-danger-light "hsla({!red}, 56%, 1)"
+  - name: color-danger-active
+    value: &color-danger-active "hsla({!red}, 56%, 1)"
   - name: color-danger-inverse
     value: &color-danger-inverse "hsla({!red}, 97%, 1)"
 
   - name: color-warning
     value: &color-warning "hsla({!orange}, 50%, 1)"
-  - name: color-warning-light
-    value: &color-warning-light "hsla({!orange}, 56%, 1)"
+  - name: color-warning-active
+    value: &color-warning-active "hsla({!orange}, 56%, 1)"
   - name: color-warning-inverse
     value: &color-warning-inverse "hsla({!orange}, 97%, 1)"
 
   - name: color-yellow
     value: &color-yellow "hsla({!yellow}, 48%, 1)"
-  - name: color-yellow-light
-    value: &color-yellow-light "hsla({!yellow}, 52%, 1)"
+  - name: color-yellow-active
+    value: &color-yellow-active "hsla({!yellow}, 52%, 1)"
   - name: color-yellow-inverse
     value: &color-yellow-inverse "hsla({!yellow}, 97%, 1)"
 
   # Text Colors
-  - name: text-color-default
+  - name: text-color-base
     value: *color-neutral-20
     category: text-color
 
-  - name: text-color-light
+  - name: text-color-soft
     value: *color-neutral-40
     category: text-color
 
-  - name: text-color-lighter
+  - name: text-color-softer
     value: *color-neutral-60
     category: text-color
 
@@ -127,7 +127,7 @@ props:
     category: text-color
 
   - name: text-color-link-active
-    value: *color-primary-light
+    value: *color-primary-active
     category: text-color
 
   - name: text-color-primary
@@ -163,39 +163,39 @@ props:
     category: text-color
 
   # Background Colors
-  - name: background-color-default
+  - name: background-color-base
     value: *color-neutral-100
     category: background-color
 
-  - name: background-color-light
+  - name: background-color-softer
     value: *color-neutral-90
     category: background-color
 
-  - name: background-color-lighter
+  - name: background-color-soft
     value: *color-neutral-95
     category: background-color
 
-  - name: background-color-medium
+  - name: background-color-softest
     value: *color-neutral-85
     category: background-color
 
-  - name: background-color-medium-active
+  - name: background-color-softest-active
     value: *color-neutral-90
     category: background-color
 
-  - name: background-color-dark
+  - name: background-color-inverse-softer
     value: *color-neutral-20
     category: background-color
 
-  - name: background-color-dark-active
+  - name: background-color-inverse-softer-active
     value: *color-neutral-30
     category: background-color
 
-  - name: background-color-darker
+  - name: background-color-inverse-soft
     value: *color-neutral-10
     category: background-color
 
-  - name: background-color-black
+  - name: background-color-inverse
     value: *color-neutral-0
     category: background-color
 
@@ -204,7 +204,7 @@ props:
     category: background-color
 
   - name: background-color-primary-active
-    value: *color-primary-light
+    value: *color-primary-active
     category: background-color
 
   - name: background-color-primary-inverse
@@ -216,7 +216,7 @@ props:
     category: background-color
 
   - name: background-color-success-active
-    value: *color-success-light
+    value: *color-success-active
     category: background-color
 
   - name: background-color-success-inverse
@@ -228,7 +228,7 @@ props:
     category: background-color
 
   - name: background-color-warning-active
-    value: *color-warning-light
+    value: *color-warning-active
     category: background-color
 
   - name: background-color-warning-inverse
@@ -240,7 +240,7 @@ props:
     category: background-color
 
   - name: background-color-danger-active
-    value: *color-danger-light
+    value: *color-danger-active
     category: background-color
 
   - name: background-color-danger-inverse
@@ -248,15 +248,15 @@ props:
     category: background-color
 
   # Border Colors
-  - name: border-color-default
+  - name: border-color-base
     value: *color-neutral-60
     category: border-color
 
-  - name: border-color-light
+  - name: border-color-soft
     value: *color-neutral-70
     category: border-color
 
-  - name: border-color-lighter
+  - name: border-color-softer
     value: *color-neutral-80
     category: border-color
 

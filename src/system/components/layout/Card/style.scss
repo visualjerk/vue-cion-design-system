@@ -2,16 +2,16 @@
   @include reset;
   display: flex;
   flex-direction: column;
-  background-color: $background-color-default;
-  border-radius: $border-radius-default;
+  background-color: $background-color-base;
+  border-radius: $border-radius-base;
   box-shadow: $box-shadow-x-small, $box-shadow-base;
   height: 100%;
 }
 
 .ds-card-image {
   overflow: hidden;
-  border-top-left-radius: $border-radius-default;
-  border-top-right-radius: $border-radius-default;
+  border-top-left-radius: $border-radius-base;
+  border-top-right-radius: $border-radius-base;
 
   img {
     display: block;
@@ -22,7 +22,7 @@
 
 .ds-card-header {
   @include reset;
-  background-color: $background-color-lighter;
+  background-color: $background-color-soft;
   padding: $space-small;
 }
 
@@ -39,5 +39,5 @@
 .ds-card-footer {
   @include reset;
   padding: $space-small;
-  border-top: $border-size-default solid $border-color-lighter;
+  border-top: $border-size-base solid $border-color-softer;
 }

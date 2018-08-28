@@ -4,8 +4,8 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  background-color: $background-color-light;
-  border: $border-size-default dashed $border-color-default;
+  background-color: $background-color-softer;
+  border: $border-size-base dashed $border-color-base;
 
   @media #{$media-query-medium} {
     padding: $space-x-large 0;

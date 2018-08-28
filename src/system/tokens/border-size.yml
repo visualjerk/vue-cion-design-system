@@ -4,7 +4,7 @@
 #
 
 props:
-  - name: border-size-default
+  - name: border-size-base
     value: "1px"
   - name: border-size-large
     value: "3px"
