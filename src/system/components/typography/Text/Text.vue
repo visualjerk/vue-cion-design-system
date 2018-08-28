@@ -34,14 +34,14 @@ export default {
   props: {
     /**
      * The color used for the text.
-     * `default, light, lighter, primary, inverse, success, warning, danger`
+     * `default, soft, softer, primary, inverse, success, warning, danger`
      */
     color: {
       type: String,
       default: null,
       validator: value => {
         return value.match(
-          /(default|light|lighter|primary|inverse|success|warning|danger)/
+          /(default|soft|softer|primary|inverse|success|warning|danger)/
         )
       }
     },
@@ -98,7 +98,8 @@ export default {
 
   ```
   <ds-text>The quick brown fox</ds-text>
-  <ds-text color="light">The quick brown fox</ds-text>
+  <ds-text color="soft">The quick brown fox</ds-text>
+  <ds-text color="softer">The quick brown fox</ds-text>
   <ds-text color="primary">The quick brown fox</ds-text>
   <ds-text color="success">The quick brown fox</ds-text>
   <ds-text color="danger">The quick brown fox</ds-text>

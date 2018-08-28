@@ -293,7 +293,6 @@ Via scoped slots you have access to the columns `row`, `index` and `col`.
       </template>
       <template slot="edit" slot-scope="scope">
         <ds-button
-          color="dark"
           size="small"
           @click="deleteRow(scope.row)">delete</ds-button>
       </template>

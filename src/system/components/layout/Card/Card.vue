@@ -15,7 +15,7 @@
       <slot name="header">
         <ds-heading 
           :tag="headerTag"
-          size="large">{{ header }}</ds-heading>
+          size="h3">{{ header }}</ds-heading>
       </slot>
     </header>
     <div class="ds-card-content">

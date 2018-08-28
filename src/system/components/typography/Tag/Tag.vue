@@ -3,8 +3,8 @@
     :is="tag"
     class="ds-tag"
     :class="[
-      size && `ds-tag-size-${size}`,
-      color && `ds-tag-${color}`,
+      `ds-tag-size-${size}`,
+      `ds-tag-${color}`,
       round && 'ds-tag-round'
     ]"
   >
@@ -23,13 +23,13 @@ export default {
   props: {
     /**
      * The background color used for the tag.
-     * `medium, default, dark, primary, success, warning, danger`
+     * `medium, inverse, primary, success, warning, danger`
      */
     color: {
       type: String,
-      default: null,
+      default: 'medium',
       validator: value => {
-        return value.match(/(dark|primary|success|warning|danger)/)
+        return value.match(/(medium|inverse|primary|success|warning|danger)/)
       }
     },
     /**
@@ -58,11 +58,6 @@ export default {
       type: String,
       default: 'span'
     }
-  },
-  computed: {
-    textColor() {
-      return ['medium'].includes(this.color) ? 'default' : 'inverse'
-    }
   }
 }
 </script>
@@ -77,8 +72,8 @@ export default {
   Use different colors to emphasize or provide meaning.
 
   ```
-  <ds-tag>default</ds-tag>
-  <ds-tag color="dark">dark</ds-tag>
+  <ds-tag>medium</ds-tag>
+  <ds-tag color="inverse">inverse</ds-tag>
   <ds-tag color="primary">primary</ds-tag>
   <ds-tag color="success">success</ds-tag>
   <ds-tag color="warning">warning</ds-tag>

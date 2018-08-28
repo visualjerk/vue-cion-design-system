@@ -122,7 +122,7 @@ export default {
       if (tag.title === 'see') {
         return 'primary'
       }
-      return 'dark'
+      return 'inverse'
     },
     tagDescription(tag) {
       if (tag.description === true) {

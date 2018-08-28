@@ -1,20 +1,19 @@
 <template>
   <ds-form-item>
-    <div class="ds-input-wrap">
+    <div class="ds-select-wrap">
       <div
         v-if="icon"
-        class="ds-input-icon">
+        class="ds-select-icon">
         <ds-icon :name="icon"/>
       </div>
       <select
-        class="ds-input"
+        class="ds-select"
         :class="[
-          icon && `ds-input-has-icon`,
-          iconRight && `ds-input-has-icon-right`
+          icon && `ds-select-has-icon`,
+          iconRight && `ds-select-has-icon-right`
         ]"
         :id="id"
         :name="model"
-        :type="type"
         :autofocus="autofocus"
         :placeholder="placeholder"
         :disabled="disabled"
@@ -31,7 +30,7 @@
       </select>
       <div
         v-if="iconRight"
-        class="ds-input-icon-right">
+        class="ds-select-icon-right">
         <ds-icon :name="iconRight"/>
       </div>
     </div>
@@ -39,7 +38,7 @@
 </template>
 
 <script>
-import inputMixin from '../mixins/input-mixin'
+import inputMixin from '../mixins/input'
 
 /**
  * Used for handling basic user input.
@@ -99,14 +98,6 @@ export default {
       default() {
         return []
       }
-    }
-  },
-  computed: {
-    tag() {
-      if (this.type === 'textarea') {
-        return 'textarea'
-      }
-      return 'input'
     }
   }
 }

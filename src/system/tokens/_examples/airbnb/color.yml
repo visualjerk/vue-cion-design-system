@@ -77,8 +77,8 @@ props:
 
   - name: color-secondary
     value: &color-secondary "hsla({!teal}, 42%, 1)"
-  - name: color-secondary-light
-    value: &color-secondary-light "hsla({!teal}, 38%, 1)"
+  - name: color-secondary-active
+    value: &color-secondary-active "hsla({!teal}, 38%, 1)"
   - name: color-secondary-inverse
     value: &color-secondary-inverse "hsla({!teal}, 98%, 1)"
 
@@ -136,7 +136,7 @@ props:
     category: text-color
 
   - name: text-color-link-active
-    value: *color-secondary-light
+    value: *color-secondary-active
     category: text-color
 
   - name: text-color-primary

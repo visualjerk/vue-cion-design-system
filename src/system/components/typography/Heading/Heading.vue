@@ -5,7 +5,7 @@
     :class="[
       `ds-heading-${size || tag}`,
       primary && `ds-heading-primary`,
-      muted && `ds-heading-muted`
+      soft && `ds-heading-soft`
     ]"
   >
     <slot />
@@ -56,7 +56,7 @@ export default {
      * Muted style
      * `true, false`
      */
-    muted: {
+    soft: {
       type: Boolean,
       default: false
     }
@@ -97,10 +97,10 @@ export default {
 
   ## Heading variants
 
-  Use primary headings for important headlines, like a page title. Use muted headings for less important headlines.
+  Use primary headings for important headlines, like a page title. Use soft headings for less important headlines.
 
   ```
   <ds-heading primary>The quick brown fox</ds-heading>
-  <ds-heading muted>The quick brown fox</ds-heading>
+  <ds-heading soft>The quick brown fox</ds-heading>
   ```
 </docs>

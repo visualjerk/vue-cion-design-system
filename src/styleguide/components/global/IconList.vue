@@ -14,15 +14,11 @@
         :key="icon">
         <ds-card>
           <div class="icon-preview">
-            <ds-icon
-              :name="icon"
-              size="x-large"/>
+            <ds-text size="x-large">
+              <ds-icon :name="icon"/>
+            </ds-text>
           </div>
-          <ds-text
-            color="light"
-            size="small">Icon Name
-            <ds-copy-field>{{ icon }}</ds-copy-field>
-          </ds-text>
+          <ds-copy-field>{{ icon }}</ds-copy-field>
           <template slot="footer">
             <ds-button
               @click="copy(icon)"
