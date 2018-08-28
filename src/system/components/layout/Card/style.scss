@@ -1,17 +1,16 @@
 .ds-card {
   @include reset;
+  @include border-radius($border-radius-base);
   display: flex;
   flex-direction: column;
   background-color: $background-color-base;
-  border-radius: $border-radius-base;
   box-shadow: $box-shadow-x-small, $box-shadow-base;
   height: 100%;
 }
 
 .ds-card-image {
+  @include border-radius($border-radius-base, 'top');
   overflow: hidden;
-  border-top-left-radius: $border-radius-base;
-  border-top-right-radius: $border-radius-base;
 
   img {
     display: block;
@@ -22,8 +21,13 @@
 
 .ds-card-header {
   @include reset;
+  @include border-radius($border-radius-base, 'top');
   background-color: $background-color-soft;
   padding: $space-small;
+
+  .ds-card-has-image & {
+    @include border-radius(0, 'top');
+  }
 }
 
 .ds-card-content {

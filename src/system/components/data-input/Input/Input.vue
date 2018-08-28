@@ -36,7 +36,7 @@
 </template>
 
 <script>
-import inputMixin from '../mixins/input'
+import inputMixin from '../shared/input'
 
 /**
  * Used for handling basic user input.

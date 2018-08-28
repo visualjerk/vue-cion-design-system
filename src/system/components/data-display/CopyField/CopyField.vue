@@ -2,7 +2,7 @@
   <component 
     :is="tag"
     class="ds-copy-field"
-    :class="`ds-font-size-${size}`">
+    :class="`ds-copy-field-${size}`">
     <div ref="text">
       <slot />
     </div>
@@ -11,7 +11,7 @@
       <ds-button
         @click="copy"
         icon="clipboard"
-        color="light"
+        color="soft"
         ghost/>
     </div>
     <transition name="ds-copy-field-message">
@@ -37,13 +37,13 @@ export default {
   props: {
     /**
      * The size used for the text.
-     * `base, large, x-large, small, x-small, xx-small`
+     * `small, base, large`
      */
     size: {
       type: String,
       default: 'base',
       validator: value => {
-        return value.match(/(base|large|x-large|small|x-small|xx-small)/)
+        return value.match(/(small|base|large)/)
       }
     },
     /**

@@ -1,7 +1,10 @@
 <template>
   <component
     :is="tag"
-    class="ds-card">
+    class="ds-card"
+    :class="[
+      $slots.image && 'ds-card-has-image'
+  ]">
     <div
       class="ds-card-image"
       v-if="image || $slots.image">

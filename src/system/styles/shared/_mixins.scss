@@ -81,24 +81,27 @@
   max-width: 100%;
 }
 
-/**
- * Maps all tokens with a given prefix (ex. 'font-size')
- * to classes with the name of the token that contain an
- * attribute with the value of the token
- *
- * Example usage: @include map-token(color, 'text-color')
- * Example output:
- *
- * .text-color-base { color: #4e4b4b; }
- * .text-color-primary { color: #13a6fb; }
- * .text-color-danger { color: #d2352d; }
- */
-@mixin map-token($attribute, $token-prefix) {
-  @each $name, $value in $tokens-map {
-    @if (str-index($name, $token-prefix)) {
-      .ds-#{$name} {
-        #{$attribute}: $value;
-      }
-    }
+@mixin border-radius($size, $side: false) {
+  @if ($side = 'top') {
+    border-top-left-radius: $size;
+    border-top-right-radius: $size;
+  }
+  @else if ($side = 'bottom') {
+    border-bottom-left-radius: $size;
+    border-bottom-right-radius: $size;
+  }
+  @else if ($side = 'left') {
+    border-top-left-radius: $size;
+    border-bottom-left-radius: $size;
+  }
+  @else if ($side = 'right') {
+    border-top-right-radius: $size;
+    border-bottom-right-radius: $size;
+  }
+  @else {
+    border-top-left-radius: $size;
+    border-top-right-radius: $size;
+    border-bottom-left-radius: $size;
+    border-bottom-right-radius: $size;
   }
 }

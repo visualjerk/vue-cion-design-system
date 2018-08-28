@@ -116,12 +116,6 @@ export default {
     }
   },
   computed: {
-    textColor() {
-      if (this.ghost) {
-        return this.color
-      }
-      return ['light', 'lighter'].includes(this.color) ? 'default' : 'inverse'
-    },
     bindings() {
       const bindings = {}
       if (this.path && this.linkTag === 'router-link') {

@@ -19,6 +19,10 @@ html, body {
   padding: 0;
 }
 
+::selection {
+  background-color: rgba($background-color-primary, 0.1);
+}
+
 pre, code {
   font-family: $font-family-code;
 }
@@ -31,6 +35,3 @@ a {
     color: $text-color-link-active;
   }
 }
-
-@import "./font";
-@import "./color";

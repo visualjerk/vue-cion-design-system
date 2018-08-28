@@ -10,6 +10,14 @@
   background-color: $background-color-softer;
 }
 
+.ds-copy-field-small {
+  font-size: $font-size-small;
+}
+
+.ds-copy-field-large {
+  font-size: $font-size-large;
+}
+
 .ds-copy-field-link {
   @include reset;
   position: absolute;
