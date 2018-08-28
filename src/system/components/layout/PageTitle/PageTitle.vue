@@ -3,8 +3,7 @@
     :is="tag"
     class="ds-page-title"
     :class="[
-      `ds-text-color-${color}`,
-      `ds-background-color-${backgroundColor}`
+      highlight && `ds-page-title-highlight`
     ]"
   >
     <ds-container>
@@ -46,14 +45,6 @@ export default {
     tag: {
       type: String,
       default: 'header'
-    }
-  },
-  computed: {
-    color() {
-      return this.highlight ? 'inverse' : 'primary'
-    },
-    backgroundColor() {
-      return this.highlight ? 'primary' : 'lighter'
     }
   }
 }
