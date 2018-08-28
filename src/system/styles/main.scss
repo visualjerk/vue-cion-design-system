@@ -6,32 +6,4 @@
 
 @import "./shared";
 @import "./fonts/lato";
-
-html, body {
-  font-size: $font-size-body;
-  line-height: $line-height-base;
-  font-family: $font-family-text;
-  font-variant-ligatures: none;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  color: $text-color-base;
-  margin: 0;
-  padding: 0;
-}
-
-::selection {
-  background-color: rgba($background-color-primary, 0.1);
-}
-
-pre, code {
-  font-family: $font-family-code;
-}
-
-a {
-  text-decoration: none !important;
-  color: $text-color-link;
-
-  &:hover,&:active {
-    color: $text-color-link-active;
-  }
-}
+@import "./core/reset";

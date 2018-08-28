@@ -29,7 +29,7 @@
 <script>
 /**
  * A copy field is used to present text that can easily
- * be copied to the users clipboard by clicking on it
+ * be copied to the users clipboard by clicking on it.
  * @version 1.0.0
  */
 export default {
