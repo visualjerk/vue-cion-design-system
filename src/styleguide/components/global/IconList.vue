@@ -31,7 +31,7 @@
 </template>
 
 <script>
-import icons from '@@/icons'
+import { iconNames } from '@@/icons'
 
 export default {
   name: 'IconList',
@@ -42,7 +42,7 @@ export default {
   },
   computed: {
     icons() {
-      return icons
+      return iconNames
     },
     filteredIcons() {
       if (!this.searchString) {

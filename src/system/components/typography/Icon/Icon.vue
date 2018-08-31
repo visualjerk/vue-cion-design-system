@@ -5,14 +5,14 @@
     class="ds-icon"
   >
     <component
-      :is="svgName"
-      class="ds-icon-svg"
-      v-if="svgName"/>
+      v-if="componentName"
+      :is="componentName"
+      class="ds-icon-svg"/>
   </component>
 </template>
 
 <script>
-const context = require.context('@@/icons/svg/', true, /\.svg$/)
+import Vue from 'vue'
 
 /**
  * Icons are used to add meaning and improve accessibility.
@@ -43,34 +43,14 @@ export default {
       default: 'span'
     }
   },
-  data() {
-    return {
-      svgName: false
+  computed: {
+    componentName() {
+      const name = `svg-icon-${this.name}`
+      if (Vue.options.components[name]) {
+        return name
+      }
+      return null
     }
-  },
-  async mounted() {
-    let svgIcon = false
-    let svgName = 'icon-' + this.name
-
-    // Load from cache
-    if (this.$options.components[svgName]) {
-      this.svgName = svgName
-      return
-    }
-
-    // Load into cache
-    try {
-      svgIcon = context(`./${this.name}.svg`)
-    } catch (e) {
-      // eslint-disable-next-line
-      console.error('icon not found', e)
-    }
-    if (!svgIcon) {
-      return
-    }
-
-    this.$options.components[svgName] = svgIcon
-    this.svgName = svgName
   }
 }
 </script>
