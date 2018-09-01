@@ -12,8 +12,6 @@
 </template>
 
 <script>
-import Vue from 'vue'
-
 /**
  * Icons are used to add meaning and improve accessibility.
  * @version 1.0.0
@@ -46,7 +44,7 @@ export default {
   computed: {
     componentName() {
       const name = `svg-icon-${this.name}`
-      if (Vue.options.components[name]) {
+      if (this.$root.$options.components[name]) {
         return name
       }
       return null

@@ -9,7 +9,7 @@ import startCase from 'lodash/startCase'
 
 Vue.config.productionTip = false
 
-icons.forEach(System.addIcon)
+icons.forEach(System.useIcon)
 Vue.use(System)
 Vue.use(Components)
 

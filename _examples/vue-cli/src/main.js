@@ -5,10 +5,8 @@ import App from './App.vue'
 
 Vue.config.productionTip = false
 
-icons.forEach(DesignSystem.addIcon)
+icons.forEach(DesignSystem.useIcon)
 Vue.use(DesignSystem)
-
-console.log(Vue.options.components)
 
 new Vue({
   render: h => h(App)

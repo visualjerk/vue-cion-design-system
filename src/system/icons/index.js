@@ -14,6 +14,16 @@ context.keys().forEach(key => {
   iconNames.push(name)
 })
 
-export { iconNames }
+const iconMap = []
+const useIcon = icon => {
+  iconMap.push(icon)
+}
+const iconPlugin = {
+  install(Vue) {
+    iconMap.forEach(c => Vue.component(`svg-icon-${c.name}`, c.svg))
+  }
+}
+
+export { iconNames, useIcon, iconPlugin }
 
 export default icons
