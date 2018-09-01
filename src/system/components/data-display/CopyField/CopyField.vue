@@ -10,7 +10,7 @@
       class="ds-copy-field-link">
       <ds-button
         @click="copy"
-        icon="clipboard"
+        icon="copy"
         color="soft"
         ghost/>
     </div>

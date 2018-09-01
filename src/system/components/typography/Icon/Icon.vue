@@ -5,13 +5,14 @@
     class="ds-icon"
   >
     <component
-      v-if="componentName"
-      :is="componentName"
+      v-if="svgComponent"
+      :is="svgComponent"
       class="ds-icon-svg"/>
   </component>
 </template>
 
 <script>
+import icons from '@@/icons'
 /**
  * Icons are used to add meaning and improve accessibility.
  * @version 1.0.0
@@ -42,12 +43,8 @@ export default {
     }
   },
   computed: {
-    componentName() {
-      const name = `svg-icon-${this.name}`
-      if (this.$root.$options.components[name]) {
-        return name
-      }
-      return null
+    svgComponent() {
+      return icons[this.name]
     }
   }
 }
