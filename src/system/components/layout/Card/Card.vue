@@ -8,6 +8,7 @@
     <div
       class="ds-card-image"
       v-if="image || $slots.image">
+      <!-- @slot Content of the card's image -->
       <slot name="image">
         <img :src="image" >
       </slot>
@@ -15,6 +16,7 @@
     <header
       class="ds-card-header"
       v-if="header || $slots.header">
+      <!-- @slot Content of the card's header -->
       <slot name="header">
         <ds-heading 
           :tag="headerTag"
@@ -27,6 +29,7 @@
     <footer
       class="ds-card-footer"
       v-if="$slots.footer">
+      <!-- @slot Content of the card's footer -->
       <slot name="footer"/>
     </footer>
   </component>

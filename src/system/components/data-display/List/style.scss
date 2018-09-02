@@ -37,6 +37,10 @@ ol.ds-list {
   color: $text-color-primary;
 }
 
+.ds-list-content {
+  flex: 1 1 0;
+}
+
 ol > .ds-list-item > .ds-list-item-prefix:before, .ds-list-item-icon {
   display: flex;
   transform: translateY(0.2em);

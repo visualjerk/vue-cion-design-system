@@ -12,9 +12,11 @@
       class="ds-page-header">
       <div class="ds-page-header-container">
         <div class="ds-page-brand">
+          <!-- @slot Content of the page's brand -->
           <slot name="brand"/>
         </div>
         <div class="ds-page-navbar">
+          <!-- @slot Content of the navbar -->
           <slot name="navbar"/>
         </div>
         <div
@@ -29,12 +31,14 @@
       v-if="$slots.sidebar"
       class="ds-page-sidebar">
       <div class="ds-page-sidebar-content">
+        <!-- @slot Content of the sidebar -->
         <slot name="sidebar" />
       </div>
     </aside>
     <aside
       v-if="$slots.drawer"
       class="ds-page-drawer">
+      <!-- @slot Content of the drawer (mobile navigation) -->
       <slot name="drawer" />
     </aside>
     <main class="ds-page-content">

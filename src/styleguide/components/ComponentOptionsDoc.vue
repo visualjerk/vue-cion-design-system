@@ -104,7 +104,7 @@ export default {
       }
       return Object.keys(this.component.slots).map(name => {
         return {
-          name,
+          name: (name.match(/[^/"\\]+/g) || []).join(''),
           ...this.component.slots[name]
         }
       })
