@@ -509,6 +509,125 @@ module.exports = { render: render };
 
 /***/ }),
 
+/***/ "05dc":
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+
+// CONCATENATED MODULE: ./node_modules/cache-loader/dist/cjs.js?{"cacheDirectory":"node_modules/.cache/vue-loader","cacheIdentifier":"1a0aef18-vue-loader-template"}!./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/cache-loader/dist/cjs.js??ref--0-0!./node_modules/vue-loader/lib??vue-loader-options!./src/system/components/data-display/List/List.vue?vue&type=template&id=054f5460&
+var render = function () {var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;return _c(_vm.ordered ? 'ol' : 'ul',{tag:"component",staticClass:"ds-list",class:[
+    _vm.size && ("ds-list-size-" + _vm.size)
+]},[_vm._t("default")],2)}
+var staticRenderFns = []
+
+
+// CONCATENATED MODULE: ./src/system/components/data-display/List/List.vue?vue&type=template&id=054f5460&
+
+// EXTERNAL MODULE: ./node_modules/core-js/modules/es6.regexp.match.js
+var es6_regexp_match = __webpack_require__("4917");
+
+// CONCATENATED MODULE: ./node_modules/cache-loader/dist/cjs.js??ref--12-0!./node_modules/thread-loader/dist/cjs.js!./node_modules/babel-loader/lib!./node_modules/vue-loader/lib??vue-loader-options!./src/system/components/data-display/List/List.vue?vue&type=script&lang=js&
+
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+
+/**
+ * Used in combination with the list item component to display lists of data.
+ * @version 1.0.0
+ */
+/* harmony default export */ var Listvue_type_script_lang_js_ = ({
+  name: 'DsList',
+  provide: function provide() {
+    return {
+      $parentList: this
+    };
+  },
+  inject: {
+    $parentList: {
+      default: null
+    }
+  },
+  props: {
+    /**
+     * Whether or not the list is ordered.
+     */
+    ordered: {
+      type: Boolean,
+      default: false
+    },
+
+    /**
+     * The size used for the list.
+     * `small, base, large, x-large`
+     */
+    size: {
+      type: String,
+      default: null,
+      validator: function validator(value) {
+        return value.match(/(small|base|large|x-large)/);
+      }
+    },
+
+    /**
+     * The name of the list icon.
+     */
+    icon: {
+      type: String,
+      default: 'angle-right'
+    }
+  }
+});
+// CONCATENATED MODULE: ./src/system/components/data-display/List/List.vue?vue&type=script&lang=js&
+ /* harmony default export */ var List_Listvue_type_script_lang_js_ = (Listvue_type_script_lang_js_); 
+// EXTERNAL MODULE: ./src/system/components/data-display/List/style.scss?vue&type=style&index=0&lang=scss&
+var stylevue_type_style_index_0_lang_scss_ = __webpack_require__("366c");
+
+// EXTERNAL MODULE: ./node_modules/vue-loader/lib/runtime/componentNormalizer.js
+var componentNormalizer = __webpack_require__("2877");
+
+// CONCATENATED MODULE: ./src/loader/docs-trim-loader.js!./src/system/components/data-display/List/demo.md?vue&type=custom&index=0&blockType=docs&issuerPath=%2FDevelopment%2Fcion%2Fsrc%2Fsystem%2Fcomponents%2Fdata-display%2FList%2FList.vue
+/* harmony default export */ var demovue_type_custom_index_0_blockType_docs_issuerPath_2FDevelopment_2Fcion_2Fsrc_2Fsystem_2Fcomponents_2Fdata_display_2FList_2FList = (function () {});
+// CONCATENATED MODULE: ./src/system/components/data-display/List/demo.md?vue&type=custom&index=0&blockType=docs&issuerPath=%2FDevelopment%2Fcion%2Fsrc%2Fsystem%2Fcomponents%2Fdata-display%2FList%2FList.vue
+ /* harmony default export */ var List_demovue_type_custom_index_0_blockType_docs_issuerPath_2FDevelopment_2Fcion_2Fsrc_2Fsystem_2Fcomponents_2Fdata_display_2FList_2FList = (demovue_type_custom_index_0_blockType_docs_issuerPath_2FDevelopment_2Fcion_2Fsrc_2Fsystem_2Fcomponents_2Fdata_display_2FList_2FList); 
+// CONCATENATED MODULE: ./src/system/components/data-display/List/List.vue
+
+
+
+
+
+
+/* normalize component */
+
+var component = Object(componentNormalizer["a" /* default */])(
+  List_Listvue_type_script_lang_js_,
+  render,
+  staticRenderFns,
+  false,
+  null,
+  null,
+  null
+  
+)
+
+/* custom blocks */
+
+if (typeof List_demovue_type_custom_index_0_blockType_docs_issuerPath_2FDevelopment_2Fcion_2Fsrc_2Fsystem_2Fcomponents_2Fdata_display_2FList_2FList === 'function') List_demovue_type_custom_index_0_blockType_docs_issuerPath_2FDevelopment_2Fcion_2Fsrc_2Fsystem_2Fcomponents_2Fdata_display_2FList_2FList(component)
+
+component.options.__file = "List.vue"
+/* harmony default export */ var List = __webpack_exports__["default"] = (component.exports);
+
+/***/ }),
+
 /***/ "06c5":
 /***/ (function(module, exports) {
 
@@ -752,6 +871,13 @@ module.exports = __webpack_require__("9e1e") ? Object.defineProperties : functio
   return O;
 };
 
+
+/***/ }),
+
+/***/ "163c":
+/***/ (function(module, exports) {
+
+module.exports = {"description":"Used in combination with the list item component to display lists of data.","methods":[],"displayName":"DsList","props":{"ordered":{"type":{"name":"boolean"},"required":"","defaultValue":{"value":"false","func":false},"tags":{},"comment":"/**\n     * Whether or not the list is ordered.\n     */","description":"Whether or not the list is ordered."},"size":{"type":{"name":"string"},"required":"","defaultValue":{"value":"null","func":false},"tags":{},"comment":"/**\n     * The size used for the list.\n     * `small, base, large, x-large`\n     */","description":"The size used for the list.\n`small, base, large, x-large`"},"icon":{"type":{"name":"string"},"required":"","defaultValue":{"value":"\"angle-right\"","func":false},"tags":{},"comment":"/**\n     * The name of the list icon.\n     */","description":"The name of the list icon."}},"comment":"/**\n * Used in combination with the list item component to display lists of data.\n * @version 1.0.0\n */","tags":{"version":[{"title":"version","description":"1.0.0"}]},"events":{},"slots":{"default":{"description":""}}}
 
 /***/ }),
 
@@ -1348,20 +1474,23 @@ module.exports = { render: render };
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 
-// CONCATENATED MODULE: ./node_modules/cache-loader/dist/cjs.js?{"cacheDirectory":"node_modules/.cache/vue-loader","cacheIdentifier":"1a0aef18-vue-loader-template"}!./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/cache-loader/dist/cjs.js??ref--0-0!./node_modules/vue-loader/lib??vue-loader-options!./src/system/components/layout/Card/Card.vue?vue&type=template&id=56fb9582&
+// CONCATENATED MODULE: ./node_modules/cache-loader/dist/cjs.js?{"cacheDirectory":"node_modules/.cache/vue-loader","cacheIdentifier":"1a0aef18-vue-loader-template"}!./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/cache-loader/dist/cjs.js??ref--0-0!./node_modules/vue-loader/lib??vue-loader-options!./src/system/components/layout/Card/Card.vue?vue&type=template&id=38673a94&
 var render = function () {var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;return _c(_vm.tag,{tag:"component",staticClass:"ds-card",class:[
     _vm.$slots.image && 'ds-card-has-image'
 ]},[(_vm.image || _vm.$slots.image)?_c('div',{staticClass:"ds-card-image"},[_vm._t("image",[_c('img',{attrs:{"src":_vm.image}})])],2):_vm._e(),(_vm.header || _vm.$slots.header)?_c('header',{staticClass:"ds-card-header"},[_vm._t("header",[_c('ds-heading',{attrs:{"tag":_vm.headerTag,"size":"h3"}},[_vm._v(_vm._s(_vm.header))])])],2):_vm._e(),_c('div',{staticClass:"ds-card-content"},[_vm._t("default")],2),(_vm.$slots.footer)?_c('footer',{staticClass:"ds-card-footer"},[_vm._t("footer")],2):_vm._e()])}
 var staticRenderFns = []
 
 
-// CONCATENATED MODULE: ./src/system/components/layout/Card/Card.vue?vue&type=template&id=56fb9582&
+// CONCATENATED MODULE: ./src/system/components/layout/Card/Card.vue?vue&type=template&id=38673a94&
 
 // EXTERNAL MODULE: ./node_modules/core-js/modules/es6.regexp.match.js
 var es6_regexp_match = __webpack_require__("4917");
 
 // CONCATENATED MODULE: ./node_modules/cache-loader/dist/cjs.js??ref--12-0!./node_modules/thread-loader/dist/cjs.js!./node_modules/babel-loader/lib!./node_modules/vue-loader/lib??vue-loader-options!./src/system/components/layout/Card/Card.vue?vue&type=script&lang=js&
 
+//
+//
+//
 //
 //
 //
@@ -3748,6 +3877,17 @@ module.exports = {"description":"Used to provide actions or navigation.","method
 
 /***/ }),
 
+/***/ "366c":
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony import */ var _node_modules_mini_css_extract_plugin_dist_loader_js_node_modules_css_loader_index_js_ref_8_oneOf_1_1_node_modules_vue_loader_lib_loaders_stylePostLoader_js_node_modules_postcss_loader_lib_index_js_ref_8_oneOf_1_2_node_modules_sass_loader_lib_loader_js_ref_8_oneOf_1_3_style_scss_vue_type_style_index_0_lang_scss___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__("8c7f");
+/* harmony import */ var _node_modules_mini_css_extract_plugin_dist_loader_js_node_modules_css_loader_index_js_ref_8_oneOf_1_1_node_modules_vue_loader_lib_loaders_stylePostLoader_js_node_modules_postcss_loader_lib_index_js_ref_8_oneOf_1_2_node_modules_sass_loader_lib_loader_js_ref_8_oneOf_1_3_style_scss_vue_type_style_index_0_lang_scss___WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_node_modules_mini_css_extract_plugin_dist_loader_js_node_modules_css_loader_index_js_ref_8_oneOf_1_1_node_modules_vue_loader_lib_loaders_stylePostLoader_js_node_modules_postcss_loader_lib_index_js_ref_8_oneOf_1_2_node_modules_sass_loader_lib_loader_js_ref_8_oneOf_1_3_style_scss_vue_type_style_index_0_lang_scss___WEBPACK_IMPORTED_MODULE_0__);
+/* unused harmony reexport * */
+ /* unused harmony default export */ var _unused_webpack_default_export = (_node_modules_mini_css_extract_plugin_dist_loader_js_node_modules_css_loader_index_js_ref_8_oneOf_1_1_node_modules_vue_loader_lib_loaders_stylePostLoader_js_node_modules_postcss_loader_lib_index_js_ref_8_oneOf_1_2_node_modules_sass_loader_lib_loader_js_ref_8_oneOf_1_3_style_scss_vue_type_style_index_0_lang_scss___WEBPACK_IMPORTED_MODULE_0___default.a); 
+
+/***/ }),
+
 /***/ "36aa":
 /***/ (function(module, exports) {
 
@@ -3972,7 +4112,7 @@ module.exports = { render: render };
 /***/ "3eba":
 /***/ (function(module, exports) {
 
-module.exports = {"description":"This component is used to group content together in an appealing way.","methods":[],"displayName":"DsCard","props":{"tag":{"type":{"name":"string"},"required":"","defaultValue":{"value":"\"article\"","func":false},"tags":{},"comment":"/**\n     * The html element name used for the card.\n     */","description":"The html element name used for the card."},"header":{"type":{"name":"string"},"required":"","defaultValue":{"value":"null","func":false},"tags":{},"comment":"/**\n     * The header for the card.\n     */","description":"The header for the card."},"headerTag":{"type":{"name":"string"},"required":"","defaultValue":{"value":"\"h3\"","func":false},"tags":{},"comment":"/**\n     * The heading type used for the header.\n     * `h1, h2, h3, h4, h5, h6`\n     */","description":"The heading type used for the header.\n`h1, h2, h3, h4, h5, h6`"},"image":{"type":{"name":"string"},"required":"","defaultValue":{"value":"null","func":false},"tags":{},"comment":"/**\n     * The image for the card.\n     */","description":"The image for the card."}},"comment":"/**\n * This component is used to group content together in an appealing way.\n * @version 1.0.0\n */","tags":{"version":[{"title":"version","description":"1.0.0"}]},"events":{},"slots":{"\\\"image\\\"":{"description":""},"\\\"header\\\"":{"description":""},"default":{"description":""},"\\\"footer\\\"/":{"description":""}}}
+module.exports = {"description":"This component is used to group content together in an appealing way.","methods":[],"displayName":"DsCard","props":{"tag":{"type":{"name":"string"},"required":"","defaultValue":{"value":"\"article\"","func":false},"tags":{},"comment":"/**\n     * The html element name used for the card.\n     */","description":"The html element name used for the card."},"header":{"type":{"name":"string"},"required":"","defaultValue":{"value":"null","func":false},"tags":{},"comment":"/**\n     * The header for the card.\n     */","description":"The header for the card."},"headerTag":{"type":{"name":"string"},"required":"","defaultValue":{"value":"\"h3\"","func":false},"tags":{},"comment":"/**\n     * The heading type used for the header.\n     * `h1, h2, h3, h4, h5, h6`\n     */","description":"The heading type used for the header.\n`h1, h2, h3, h4, h5, h6`"},"image":{"type":{"name":"string"},"required":"","defaultValue":{"value":"null","func":false},"tags":{},"comment":"/**\n     * The image for the card.\n     */","description":"The image for the card."}},"comment":"/**\n * This component is used to group content together in an appealing way.\n * @version 1.0.0\n */","tags":{"version":[{"title":"version","description":"1.0.0"}]},"events":{},"slots":{"\\\"image\\\"":{"description":"Content of the card's image"},"\\\"header\\\"":{"description":"Content of the card's header"},"default":{"description":""},"\\\"footer\\\"/":{"description":"Content of the card's footer"}}}
 
 /***/ }),
 
@@ -4627,7 +4767,7 @@ module.exports = deburr;
 /***/ "5073":
 /***/ (function(module, exports) {
 
-module.exports = {"description":"This component is used to layout a page.","methods":[],"displayName":"DsPage","props":{"contained":{"type":{"name":"boolean"},"required":"","defaultValue":{"value":"false","func":false},"tags":{},"comment":"/**\n     * Whether the layout should have a maximum width\n     * `true, false`\n     */","description":"Whether the layout should have a maximum width\n`true, false`"}},"comment":"/**\n * This component is used to layout a page.\n * @version 1.0.0\n */","tags":{"version":[{"title":"version","description":"1.0.0"}]},"events":{},"slots":{"\\\"brand\\\"/":{"description":""},"\\\"navbar\\\"/":{"description":""},"\\\"sidebar\\\"":{"description":""},"\\\"drawer\\\"":{"description":""},"default":{"description":""}}}
+module.exports = {"description":"This component is used to layout a page.","methods":[],"displayName":"DsPage","props":{"contained":{"type":{"name":"boolean"},"required":"","defaultValue":{"value":"false","func":false},"tags":{},"comment":"/**\n     * Whether the layout should have a maximum width\n     * `true, false`\n     */","description":"Whether the layout should have a maximum width\n`true, false`"}},"comment":"/**\n * This component is used to layout a page.\n * @version 1.0.0\n */","tags":{"version":[{"title":"version","description":"1.0.0"}]},"events":{},"slots":{"\\\"brand\\\"/":{"description":"Content of the page's brand"},"\\\"navbar\\\"/":{"description":"Content of the navbar"},"\\\"sidebar\\\"":{"description":"Content of the sidebar"},"\\\"drawer\\\"":{"description":"Content of the drawer (mobile navigation)"},"default":{"description":""}}}
 
 /***/ }),
 
@@ -6125,12 +6265,12 @@ module.exports = { render: render };
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 
-// CONCATENATED MODULE: ./node_modules/cache-loader/dist/cjs.js?{"cacheDirectory":"node_modules/.cache/vue-loader","cacheIdentifier":"1a0aef18-vue-loader-template"}!./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/cache-loader/dist/cjs.js??ref--0-0!./node_modules/vue-loader/lib??vue-loader-options!./src/system/components/layout/Flex/Flex.vue?vue&type=template&id=462cbeb6&
+// CONCATENATED MODULE: ./node_modules/cache-loader/dist/cjs.js?{"cacheDirectory":"node_modules/.cache/vue-loader","cacheIdentifier":"1a0aef18-vue-loader-template"}!./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/cache-loader/dist/cjs.js??ref--0-0!./node_modules/vue-loader/lib??vue-loader-options!./src/system/components/layout/Flex/Flex.vue?vue&type=template&id=4393ced0&
 var render = function () {var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;return _c(_vm.tag,{tag:"component",staticClass:"ds-flex",style:(_vm.styles)},[_vm._t("default")],2)}
 var staticRenderFns = []
 
 
-// CONCATENATED MODULE: ./src/system/components/layout/Flex/Flex.vue?vue&type=template&id=462cbeb6&
+// CONCATENATED MODULE: ./src/system/components/layout/Flex/Flex.vue?vue&type=template&id=4393ced0&
 
 // EXTERNAL MODULE: ./node_modules/@babel/runtime/helpers/builtin/es6/objectSpread.js + 1 modules
 var objectSpread = __webpack_require__("c93e");
@@ -6159,7 +6299,7 @@ var mixins = __webpack_require__("cabe");
 
 
 /**
- * Used in combination with the col component to create flexible layouts.
+ * Used in combination with the flex item component to create flexible layouts.
  * @version 1.0.0
  */
 
@@ -6768,7 +6908,7 @@ if (typeof __g == 'number') __g = global; // eslint-disable-line no-undef
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 
-// CONCATENATED MODULE: ./node_modules/cache-loader/dist/cjs.js?{"cacheDirectory":"node_modules/.cache/vue-loader","cacheIdentifier":"1a0aef18-vue-loader-template"}!./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/cache-loader/dist/cjs.js??ref--0-0!./node_modules/vue-loader/lib??vue-loader-options!./src/system/components/layout/Page/Page.vue?vue&type=template&id=ce434c08&
+// CONCATENATED MODULE: ./node_modules/cache-loader/dist/cjs.js?{"cacheDirectory":"node_modules/.cache/vue-loader","cacheIdentifier":"1a0aef18-vue-loader-template"}!./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/cache-loader/dist/cjs.js??ref--0-0!./node_modules/vue-loader/lib??vue-loader-options!./src/system/components/layout/Page/Page.vue?vue&type=template&id=60449170&
 var render = function () {var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;return _c('div',{staticClass:"ds-page",class:[
     _vm.hasHeader ? 'ds-page-has-header' : 'ds-page-has-no-header',
     _vm.$slots.sidebar && 'ds-page-has-sidebar',
@@ -6778,9 +6918,13 @@ var render = function () {var _vm=this;var _h=_vm.$createElement;var _c=_vm._sel
 var staticRenderFns = []
 
 
-// CONCATENATED MODULE: ./src/system/components/layout/Page/Page.vue?vue&type=template&id=ce434c08&
+// CONCATENATED MODULE: ./src/system/components/layout/Page/Page.vue?vue&type=template&id=60449170&
 
 // CONCATENATED MODULE: ./node_modules/cache-loader/dist/cjs.js??ref--12-0!./node_modules/thread-loader/dist/cjs.js!./node_modules/babel-loader/lib!./node_modules/vue-loader/lib??vue-loader-options!./src/system/components/layout/Page/Page.vue?vue&type=script&lang=js&
+//
+//
+//
+//
 //
 //
 //
@@ -7782,6 +7926,13 @@ module.exports = { render: render };
 
 var render = function () { var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;return _c('svg',{attrs:{"xmlns":"http://www.w3.org/2000/svg","viewBox":"0 0 32 32"}},[_c('path',{attrs:{"d":"M5 3h20v26H5V3zm2 2v22h16V5H7zm8 4.719l5.25 1.313-.5 1.938-2.75-.688v6.719c0 1.645-1.355 3-3 3s-3-1.355-3-3 1.355-3 3-3c.353 0 .684.073 1 .188V9.72zM14 18c-.564 0-1 .436-1 1s.436 1 1 1 1-.436 1-1-.436-1-1-1z"}})]) };
 module.exports = { render: render };
+
+/***/ }),
+
+/***/ "8c7f":
+/***/ (function(module, exports, __webpack_require__) {
+
+// extracted by mini-css-extract-plugin
 
 /***/ }),
 
@@ -9345,6 +9496,8 @@ module.exports = { render: render };
 
 var map = {
 	"./data-display/CopyField/CopyField.vue": "e5e4",
+	"./data-display/List/List.vue": "163c",
+	"./data-display/List/ListItem.vue": "fb53",
 	"./data-display/Table/Table.vue": "9e05",
 	"./data-display/Table/TableCol.vue": "aa20",
 	"./data-display/Table/TableHeadCol.vue": "cb29",
@@ -9888,6 +10041,88 @@ if (!$Number(' 0o1') || !$Number('0b1') || $Number('+0x1')) {
   __webpack_require__("2aba")(global, NUMBER, $Number);
 }
 
+
+/***/ }),
+
+/***/ "c666":
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+
+// CONCATENATED MODULE: ./node_modules/cache-loader/dist/cjs.js?{"cacheDirectory":"node_modules/.cache/vue-loader","cacheIdentifier":"1a0aef18-vue-loader-template"}!./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/cache-loader/dist/cjs.js??ref--0-0!./node_modules/vue-loader/lib??vue-loader-options!./src/system/components/data-display/List/ListItem.vue?vue&type=template&id=b069abe2&
+var render = function () {var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;return _c('li',{staticClass:"ds-list-item"},[_c('span',{staticClass:"ds-list-item-prefix"},[(!_vm.$parentList.ordered)?_c('span',{staticClass:"ds-list-item-icon"},[_c('ds-icon',{attrs:{"name":_vm.icon}})],1):_vm._e()]),_c('span',{staticClass:"ds-list-item-content"},[_vm._t("default")],2)])}
+var staticRenderFns = []
+
+
+// CONCATENATED MODULE: ./src/system/components/data-display/List/ListItem.vue?vue&type=template&id=b069abe2&
+
+// CONCATENATED MODULE: ./node_modules/cache-loader/dist/cjs.js??ref--12-0!./node_modules/thread-loader/dist/cjs.js!./node_modules/babel-loader/lib!./node_modules/vue-loader/lib??vue-loader-options!./src/system/components/data-display/List/ListItem.vue?vue&type=script&lang=js&
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+
+/**
+ * @version 1.0.0
+ * @see DsList
+ */
+/* harmony default export */ var ListItemvue_type_script_lang_js_ = ({
+  name: 'DsListItem',
+  inject: {
+    $parentList: {
+      default: null
+    }
+  },
+  props: {
+    /**
+     * The name of the list icon.
+     */
+    icon: {
+      type: String,
+      default: function _default() {
+        return this.$parentList ? this.$parentList.icon : 'angle-right';
+      }
+    }
+  }
+});
+// CONCATENATED MODULE: ./src/system/components/data-display/List/ListItem.vue?vue&type=script&lang=js&
+ /* harmony default export */ var List_ListItemvue_type_script_lang_js_ = (ListItemvue_type_script_lang_js_); 
+// EXTERNAL MODULE: ./node_modules/vue-loader/lib/runtime/componentNormalizer.js
+var componentNormalizer = __webpack_require__("2877");
+
+// CONCATENATED MODULE: ./src/system/components/data-display/List/ListItem.vue
+
+
+
+
+
+/* normalize component */
+
+var component = Object(componentNormalizer["a" /* default */])(
+  List_ListItemvue_type_script_lang_js_,
+  render,
+  staticRenderFns,
+  false,
+  null,
+  null,
+  null
+  
+)
+
+component.options.__file = "ListItem.vue"
+/* harmony default export */ var ListItem = __webpack_exports__["default"] = (component.exports);
 
 /***/ }),
 
@@ -10566,6 +10801,8 @@ module.exports = function (done, value) {
 
 var map = {
 	"./data-display/CopyField/CopyField.vue": "27c7",
+	"./data-display/List/List.vue": "05dc",
+	"./data-display/List/ListItem.vue": "c666",
 	"./data-display/Table/Table.vue": "70e2",
 	"./data-display/Table/TableCol.vue": "7401",
 	"./data-display/Table/TableHeadCol.vue": "3f30",
@@ -10919,7 +11156,7 @@ module.exports = { render: render };
 /***/ "de06":
 /***/ (function(module, exports) {
 
-module.exports = {"description":"Used in combination with the col component to create flexible layouts.","methods":[],"displayName":"DsFlex","props":{"gutter":{"type":{"name":"string|object"},"required":"","defaultValue":{"value":"null","func":false},"tags":{},"comment":"/**\n     * The default gutter size for the columns.\n     */","description":"The default gutter size for the columns."},"width":{"type":{"name":"string|number|object"},"required":"","defaultValue":{"value":"1","func":false},"tags":{},"comment":"/**\n     * The default width for the columns.\n     */","description":"The default width for the columns."},"direction":{"type":{"name":"string|object"},"required":"","defaultValue":{"value":"null","func":false},"tags":{},"comment":"/**\n     * The direction of the items.\n     * `row, row-reverse, column, column-reverse`\n     */","description":"The direction of the items.\n`row, row-reverse, column, column-reverse`"},"tag":{"type":{"name":"string"},"required":"","defaultValue":{"value":"\"div\"","func":false},"tags":{},"comment":"/**\n     * The html element name used for the wrapper.\n     */","description":"The html element name used for the wrapper."}},"comment":"/**\n * Used in combination with the col component to create flexible layouts.\n * @version 1.0.0\n */","tags":{"version":[{"title":"version","description":"1.0.0"}]},"events":{},"slots":{"default":{"description":""}}}
+module.exports = {"description":"Used in combination with the flex item component to create flexible layouts.","methods":[],"displayName":"DsFlex","props":{"gutter":{"type":{"name":"string|object"},"required":"","defaultValue":{"value":"null","func":false},"tags":{},"comment":"/**\n     * The default gutter size for the columns.\n     */","description":"The default gutter size for the columns."},"width":{"type":{"name":"string|number|object"},"required":"","defaultValue":{"value":"1","func":false},"tags":{},"comment":"/**\n     * The default width for the columns.\n     */","description":"The default width for the columns."},"direction":{"type":{"name":"string|object"},"required":"","defaultValue":{"value":"null","func":false},"tags":{},"comment":"/**\n     * The direction of the items.\n     * `row, row-reverse, column, column-reverse`\n     */","description":"The direction of the items.\n`row, row-reverse, column, column-reverse`"},"tag":{"type":{"name":"string"},"required":"","defaultValue":{"value":"\"div\"","func":false},"tags":{},"comment":"/**\n     * The html element name used for the wrapper.\n     */","description":"The html element name used for the wrapper."}},"comment":"/**\n * Used in combination with the flex item component to create flexible layouts.\n * @version 1.0.0\n */","tags":{"version":[{"title":"version","description":"1.0.0"}]},"events":{},"slots":{"default":{"description":""}}}
 
 /***/ }),
 
@@ -12124,6 +12361,13 @@ var mixins = __webpack_require__("cabe");
 /* harmony default export */ var entry_lib = __webpack_exports__["default"] = (library);
 
 
+
+/***/ }),
+
+/***/ "fb53":
+/***/ (function(module, exports) {
+
+module.exports = {"description":"","methods":[],"displayName":"DsListItem","props":{"icon":{"type":{"name":"string"},"required":"","defaultValue":{"value":"default() { return this.$parentList ? this.$parentList.icon : 'angle-right'; }","func":true},"tags":{},"comment":"/**\n     * The name of the list icon.\n     */","description":"The name of the list icon."}},"comment":"/**\n * @version 1.0.0\n * @see DsList\n */","tags":{"see":[{"title":"see","description":"DsList"}],"version":[{"title":"version","description":"1.0.0"}]},"events":{},"slots":{"default":{"description":""}}}
 
 /***/ }),
 
