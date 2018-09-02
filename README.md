@@ -8,7 +8,7 @@ Living styleguide demo: https://cion.visualjerk.de
 
 Integrate it in your application: [Quick Start](https://github.com/visualjerk/vue-cion-design-system/wiki/Quick-Start)
 
-[![Screenshot](./preview/customize.png)](/raw/master/preview/customize.png)
+[![Screenshot](./preview/customize.png)](https://github.com/visualjerk/vue-cion-design-system/raw/master/preview/customize.png)
 
 ## Project setup
 ```
