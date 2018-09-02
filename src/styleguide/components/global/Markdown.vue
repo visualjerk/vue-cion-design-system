@@ -100,6 +100,27 @@ export default {
         }
       })
 
+      // Replace ul-tags
+      $('ul').each((i, item) => {
+        $(item).replaceWith(
+          $('<ds-list size="large">' + $(item).html() + '</ds-list>')
+        )
+      })
+
+      // Replace ol-tags
+      $('ol').each((i, item) => {
+        $(item).replaceWith(
+          $('<ds-list size="large" ordered>' + $(item).html() + '</ds-list>')
+        )
+      })
+
+      // Replace ol-tags
+      $('li').each((i, item) => {
+        $(item).replaceWith(
+          $('<ds-list-item>' + $(item).html() + '</ds-list-item>')
+        )
+      })
+
       const componentHtml = $('body').html()
       const template = `<div>${componentHtml}</div>`
       const component = Vue.compile(template)

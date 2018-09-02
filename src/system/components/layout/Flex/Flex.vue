@@ -12,7 +12,7 @@ import { getSpace } from '@@/utils'
 import { mediaQuery } from '@@/mixins'
 
 /**
- * Used in combination with the col component to create flexible layouts.
+ * Used in combination with the flex item component to create flexible layouts.
  * @version 1.0.0
  */
 export default {

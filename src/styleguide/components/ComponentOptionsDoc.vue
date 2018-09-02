@@ -88,6 +88,9 @@ export default {
   },
   computed: {
     componentProps() {
+      if (!this.component.props) {
+        return null
+      }
       return Object.keys(this.component.props).map(name => {
         return {
           name,
@@ -96,6 +99,9 @@ export default {
       })
     },
     componentSlots() {
+      if (!this.component.slots) {
+        return null
+      }
       return Object.keys(this.component.slots).map(name => {
         return {
           name,
@@ -104,6 +110,9 @@ export default {
       })
     },
     componentEvents() {
+      if (!this.component.events) {
+        return null
+      }
       return Object.keys(this.component.events).map(name => {
         return {
           name,
