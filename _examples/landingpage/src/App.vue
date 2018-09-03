@@ -9,9 +9,11 @@
       </ds-space>
       <ds-heading>Vue Design System<br>Boilerplate</ds-heading>
       <ds-space margin-bottom="xxx-large">
-        <ds-button 
+        <ds-button
+          path="https://cion.visualjerk.de"
           icon="desktop">Styleguide Demo</ds-button>
         <ds-button
+          path="https://github.com/visualjerk/vue-cion-design-system"
           icon="github">GitHub</ds-button>
       </ds-space>
       <ds-space>
