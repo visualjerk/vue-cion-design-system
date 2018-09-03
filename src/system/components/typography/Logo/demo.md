@@ -9,7 +9,7 @@
 # Inverse Logo
 
 ```
-<ds-section highlight>
+<ds-section secondary>
   <ds-logo inverse></ds-logo>
 </ds-section>
 ```
