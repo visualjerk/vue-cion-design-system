@@ -47,3 +47,34 @@ Most commonly the footer will contain some actions connected to the content.
   </ds-flex-item>
 </ds-flex>
 ```
+
+## Color variants
+
+Use color variants to highlight content.
+
+```
+<ds-flex gutter="base" :width="{ base: '100%', sm: 1 }">
+  <ds-flex-item>
+    <ds-card
+      header="The header"
+      primary
+      centered>
+      Look ma! I'm in a card.
+      <template slot="footer">
+        <ds-button>Read more</ds-button>
+      </template>
+    </ds-card>
+  </ds-flex-item>
+  <ds-flex-item>
+    <ds-card
+      header="The header"
+      secondary
+      centered>
+      Look ma! I'm in a card.
+      <template slot="footer">
+        <ds-button primary>Read more</ds-button>
+      </template>
+    </ds-card>
+  </ds-flex-item>
+</ds-flex>
+```

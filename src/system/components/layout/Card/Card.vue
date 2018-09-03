@@ -3,7 +3,10 @@
     :is="tag"
     class="ds-card"
     :class="[
-      $slots.image && 'ds-card-has-image'
+      $slots.image && 'ds-card-has-image',
+      primary && `ds-card-primary`,
+      secondary && `ds-card-secondary`,
+      centered && `ds-card-centered`
   ]">
     <div
       class="ds-card-image"
@@ -74,6 +77,30 @@ export default {
     image: {
       type: String,
       default: null
+    },
+    /**
+     * Highlight with primary color
+     * `true, false`
+     */
+    primary: {
+      type: Boolean,
+      default: false
+    },
+    /**
+     * Highlight with secondary color
+     * `true, false`
+     */
+    secondary: {
+      type: Boolean,
+      default: false
+    },
+    /**
+     * Center the content
+     * `true, false`
+     */
+    centered: {
+      type: Boolean,
+      default: false
     }
   }
 }

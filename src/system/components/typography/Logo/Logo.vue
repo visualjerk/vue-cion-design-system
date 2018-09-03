@@ -1,7 +1,10 @@
 <template>
   <component 
     :is="tag"
-    class="ds-logo">
+    class="ds-logo"
+    :class="[
+      inverse && `ds-logo-inverse`
+  ]">
     <svg-logo class="ds-logo-svg" />
   </component>
 </template>
@@ -18,6 +21,14 @@ export default {
     svgLogo
   },
   props: {
+    /**
+     * Inverse the logo
+     * `true, false`
+     */
+    inverse: {
+      type: Boolean,
+      default: false
+    },
     /**
      * The html element name used for the logo.
      */

@@ -4,8 +4,23 @@
   display: flex;
   flex-direction: column;
   background-color: $background-color-base;
+  color: $text-color-base;
   box-shadow: $box-shadow-x-small, $box-shadow-base;
   height: 100%;
+}
+
+.ds-card-primary {
+  background-color: $background-color-primary;
+  color: $text-color-primary-inverse;
+}
+
+.ds-card-secondary {
+  background-color: $background-color-secondary;
+  color: $text-color-secondary-inverse;
+}
+
+.ds-card-centered {
+  text-align: center;
 }
 
 .ds-card-image {
@@ -22,8 +37,7 @@
 .ds-card-header {
   @include reset;
   @include border-radius($border-radius-base, 'top');
-  background-color: $background-color-soft;
-  padding: $space-small;
+  padding: $space-base $space-small $space-small $space-small;
 
   .ds-card-has-image & {
     @include border-radius(0, 'top');
@@ -43,5 +57,4 @@
 .ds-card-footer {
   @include reset;
   padding: $space-small;
-  border-top: $border-size-base solid $border-color-softer;
 }

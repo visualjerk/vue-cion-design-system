@@ -12,7 +12,7 @@
 #
 aliases:
   neutral:
-    value: "3, 2%"
+    value: "264, 10%"
   green:
     value: "100, 69%"
   orange:
@@ -22,11 +22,11 @@ aliases:
   blue:
     value: "200, 100%"
   purple:
-    value: "271, 88%"
+    value: "264, 88%"
   pink:
     value: "330, 86%"
   teal:
-    value: "170, 88%"
+    value: "170, 84%"
   red:
     value: "3, 65%"
 
@@ -67,11 +67,18 @@ props:
     value: &color-neutral-100 "hsla({!neutral}, 100%, 1)"
 
   - name: color-primary
-    value: &color-primary "hsla({!blue}, 45%, 1)"
+    value: &color-primary "hsla({!teal}, 41%, 1)"
   - name: color-primary-active
-    value: &color-primary-active "hsla({!blue}, 48%, 1)"
+    value: &color-primary-active "hsla({!teal}, 44%, 1)"
   - name: color-primary-inverse
-    value: &color-primary-inverse "hsla({!blue}, 97%, 1)"
+    value: &color-primary-inverse "hsla({!teal}, 97%, 1)"
+
+  - name: color-secondary
+    value: &color-secondary "hsla({!purple}, 45%, 1)"
+  - name: color-secondary-active
+    value: &color-secondary-active "hsla({!purple}, 52%, 1)"
+  - name: color-secondary-inverse
+    value: &color-secondary-inverse "hsla({!purple}, 97%, 1)"
 
   - name: color-success
     value: &color-success "hsla({!green}, 40%, 1)"
@@ -136,6 +143,14 @@ props:
 
   - name: text-color-primary-inverse
     value: *color-primary-inverse
+    category: text-color
+
+  - name: text-color-secondary
+    value: *color-secondary
+    category: text-color
+
+  - name: text-color-secondary-inverse
+    value: *color-secondary-inverse
     category: text-color
 
   - name: text-color-success
@@ -209,6 +224,18 @@ props:
 
   - name: background-color-primary-inverse
     value: *color-primary-inverse
+    category: background-color
+
+  - name: background-color-secondary
+    value: *color-secondary
+    category: background-color
+
+  - name: background-color-secondary-active
+    value: *color-secondary-active
+    category: background-color
+
+  - name: background-color-secondary-inverse
+    value: *color-secondary-inverse
     category: background-color
 
   - name: background-color-success
