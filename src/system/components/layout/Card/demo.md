@@ -56,6 +56,7 @@ Use color variants to highlight content.
 <ds-flex gutter="base" :width="{ base: '100%', sm: 1 }">
   <ds-flex-item>
     <ds-card
+      icon="cubes"
       header="The header"
       primary
       centered>
@@ -67,6 +68,7 @@ Use color variants to highlight content.
   </ds-flex-item>
   <ds-flex-item>
     <ds-card
+      icon="book"
       header="The header"
       secondary
       centered>

@@ -64,12 +64,12 @@
 
   // Default colors
   color: $text-color-base;
-  background-color: $background-color-softest;
+  background-color: $background-color-softer;
 
   &:hover,
   &.ds-button-hover {
     color: $text-color-base;
-    background-color: $background-color-softest-active;
+    background-color: $background-color-softer-active;
   }
 }
 
@@ -81,6 +81,23 @@
   &.ds-button-hover {
     color: $text-color-primary-inverse;
     background-color: $background-color-primary-active;
+  }
+
+  &:active {
+    &:before {
+      opacity: 1;
+    }
+  }
+}
+
+.ds-button-secondary {
+  color: $text-color-secondary-inverse;
+  background-color: $background-color-secondary;
+
+  &:hover,
+  &.ds-button-hover {
+    color: $text-color-secondary-inverse;
+    background-color: $background-color-secondary-active;
   }
 
   &:active {
@@ -130,6 +147,10 @@
 
   &.ds-button-primary {
     color: $text-color-primary;
+  }
+
+  &.ds-button-secondary {
+    color: $text-color-secondary;
   }
 
   &.ds-button-danger {

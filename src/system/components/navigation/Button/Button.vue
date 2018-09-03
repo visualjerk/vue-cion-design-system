@@ -5,6 +5,7 @@
     :class="[
       size && `ds-button-size-${size}`,
       primary && `ds-button-primary`,
+      secondary && `ds-button-secondary`,
       danger && `ds-button-danger`,
       ghost && `ds-button-ghost`,
       iconOnly && `ds-button-icon-only`,
@@ -73,6 +74,14 @@ export default {
      * `true, false`
      */
     primary: {
+      type: Boolean,
+      default: false
+    },
+    /**
+     * Secondary style
+     * `true, false`
+     */
+    secondary: {
       type: Boolean,
       default: false
     },

@@ -34,6 +34,12 @@
   }
 }
 
+.ds-card-icon {
+  padding-top: $space-base;
+  font-size: $font-size-xxxx-large;
+  opacity: $opacity-soft;
+}
+
 .ds-card-header {
   @include reset;
   @include border-radius($border-radius-base, 'top');

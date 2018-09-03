@@ -4,6 +4,8 @@
 #
 
 props:
+  - name: opacity-soft
+    value: "0.65"
   - name: opacity-disabled
     value: "0.5"
 global:

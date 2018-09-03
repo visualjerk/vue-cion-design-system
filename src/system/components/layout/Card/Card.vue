@@ -16,6 +16,11 @@
         <img :src="image" >
       </slot>
     </div>
+    <div
+      class="ds-card-icon"
+      v-if="icon">
+      <ds-icon :name="icon"/>
+    </div>
     <header
       class="ds-card-header"
       v-if="header || $slots.header">
@@ -75,6 +80,13 @@ export default {
      * The image for the card.
      */
     image: {
+      type: String,
+      default: null
+    },
+    /**
+     * The icon for the card.
+     */
+    icon: {
       type: String,
       default: null
     },

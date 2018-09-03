@@ -7,6 +7,7 @@ A danger button should be used only for destructive actions.
 ```
 <ds-button>Default</ds-button>
 <ds-button primary>Primary</ds-button>
+<ds-button secondary>Secondary</ds-button>
 <ds-button danger>Danger</ds-button>
 ```
 
@@ -17,6 +18,7 @@ Use a ghost button for secondary actions.
 ```
 <ds-button ghost>Default</ds-button>
 <ds-button ghost primary>Primary</ds-button>
+<ds-button ghost secondary>Secondary</ds-button>
 <ds-button ghost danger>Danger</ds-button>
 ```
 

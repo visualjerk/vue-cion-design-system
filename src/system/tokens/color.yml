@@ -190,6 +190,10 @@ props:
     value: *color-neutral-90
     category: background-color
 
+  - name: background-color-softer-active
+    value: *color-neutral-95
+    category: background-color
+
   - name: background-color-softest
     value: *color-neutral-85
     category: background-color

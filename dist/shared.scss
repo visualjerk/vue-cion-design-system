@@ -50,6 +50,7 @@ $text-color-danger-inverse: rgb(252, 243, 242);
 $background-color-base: rgb(255, 255, 255);
 $background-color-soft: rgb(250, 249, 250);
 $background-color-softer: rgb(245, 244, 246);
+$background-color-softer-active: rgb(250, 249, 250);
 $background-color-softest: rgb(239, 238, 241);
 $background-color-softest-active: rgb(245, 244, 246);
 $background-color-inverse: rgb(25, 23, 28);
@@ -117,6 +118,7 @@ $letter-spacing-large: 0.05em;
 $letter-spacing-base: 0;
 $letter-spacing-small: -0.01em;
 $letter-spacing-x-small: -0.015em;
+$opacity-soft: 0.65;
 $opacity-disabled: 0.5;
 $xxx-large: 128;
 $xx-large: 64;
@@ -431,19 +433,19 @@ $input-height-large: calc(
 }
 
 @mixin border-radius($size, $side: false) {
-  @if ($side = 'top') {
+  @if ($side == 'top') {
     border-top-left-radius: $size;
     border-top-right-radius: $size;
   }
-  @else if ($side = 'bottom') {
+  @else if ($side == 'bottom') {
     border-bottom-left-radius: $size;
     border-bottom-right-radius: $size;
   }
-  @else if ($side = 'left') {
+  @else if ($side == 'left') {
     border-top-left-radius: $size;
     border-bottom-left-radius: $size;
   }
-  @else if ($side = 'right') {
+  @else if ($side == 'right') {
     border-top-right-radius: $size;
     border-bottom-right-radius: $size;
   }
