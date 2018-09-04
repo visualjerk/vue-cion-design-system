@@ -38,7 +38,8 @@ ol.ds-list {
   color: $text-color-primary;
 }
 
-.ds-list-content {
+.ds-list-item-content {
+  @include layout-flex-fix;
   flex: 1 1 0;
 }
 

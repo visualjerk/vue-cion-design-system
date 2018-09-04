@@ -1,19 +1,7 @@
 ## Basic usage
 
-Display lines of color formatted code.
-
 ```
-<ds-code>new Vue({
-  el: '#unicorn',
-  data() {
-    name: 'Gipsy'
-  },
-  methods: {
-    ride() {
-      console.log(`${this.name} is riding down the rainbow ...`)
-    }
-  }
-})</ds-code>
+<ds-code>cd your-system-name && yarn install</ds-code>
 ```
 
 ## Inline Code
