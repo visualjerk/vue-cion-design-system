@@ -19,7 +19,7 @@
 
 <script>
 /**
- * This component is used to separate bigger parts of content.
+ * A section is used to group bigger chunks of related content.
  * @version 1.0.0
  */
 export default {

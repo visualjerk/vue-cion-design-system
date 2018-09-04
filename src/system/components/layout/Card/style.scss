@@ -35,7 +35,7 @@
 }
 
 .ds-card-icon {
-  padding-top: $space-base;
+  padding: $space-base $space-small 0 $space-small;
   font-size: $font-size-xxxx-large;
   opacity: $opacity-soft;
 }

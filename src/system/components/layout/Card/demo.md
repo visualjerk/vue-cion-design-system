@@ -48,6 +48,66 @@ Most commonly the footer will contain some actions connected to the content.
 </ds-flex>
 ```
 
+## Centered content
+
+Center the content if it is short and its purpose is to draw attention rather than to share information.
+
+```
+<ds-flex gutter="base" :width="{ base: '100%', sm: 1 }">
+  <ds-flex-item>
+    <ds-card
+      centered
+      header="The header">
+      Look ma! I'm in a card.
+      <template slot="footer">
+        <ds-button primary>Read more</ds-button>
+      </template>
+    </ds-card>
+  </ds-flex-item>
+  <ds-flex-item>
+    <ds-card
+      centered
+      header="The header">
+      Look ma! I'm in a card.
+      <template slot="footer">
+        <ds-button primary>Read more</ds-button>
+      </template>
+    </ds-card>
+  </ds-flex-item>
+</ds-flex>
+```
+
+## Icon card
+
+A card can contain an icon to emphasize its message.
+
+```
+<ds-flex gutter="base" :width="{ base: '100%', sm: 1 }">
+  <ds-flex-item>
+    <ds-card
+      centered
+      icon="map"
+      header="The header">
+      Look ma! I'm in a card.
+      <template slot="footer">
+        <ds-button primary>Read more</ds-button>
+      </template>
+    </ds-card>
+  </ds-flex-item>
+  <ds-flex-item>
+    <ds-card
+      centered
+      icon="users"
+      header="The header">
+      Look ma! I'm in a card.
+      <template slot="footer">
+        <ds-button primary>Read more</ds-button>
+      </template>
+    </ds-card>
+  </ds-flex-item>
+</ds-flex>
+```
+
 ## Color variants
 
 Use color variants to highlight content.

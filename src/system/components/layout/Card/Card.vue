@@ -45,7 +45,7 @@
 
 <script>
 /**
- * This component is used to group content together in an appealing way.
+ * A card is used to group content in an appealing way.
  * @version 1.0.0
  */
 export default {

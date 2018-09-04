@@ -1,6 +1,6 @@
 ## Default
 
-A default section
+A default section.
 ```
 <ds-section>
   <ds-heading>Give a little respect</ds-heading>
@@ -8,20 +8,14 @@ A default section
 </ds-section>
 ```
 
-## Primary
+## Variants
 
-You can highlight the section with primary color
+Use color variants to catch the users attention.
 ```
 <ds-section primary>
   <ds-heading>Give a little respect</ds-heading>
   <ds-text>A default section is used to separate content.</ds-text>
 </ds-section>
-```
-
-## Secondary
-
-You can highlight the section with secondary color
-```
 <ds-section secondary>
   <ds-heading>Give a little respect</ds-heading>
   <ds-text>A default section is used to separate content.</ds-text>
@@ -30,7 +24,7 @@ You can highlight the section with secondary color
 
 ## Fullheight
 
-A section can fill the viewport height
+A fullheight section is useful to draw additional attention to its content.
 ```
 <ds-section secondary fullheight centered>
   <ds-heading>Give a little respect</ds-heading>
