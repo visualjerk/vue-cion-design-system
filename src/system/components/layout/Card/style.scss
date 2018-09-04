@@ -9,18 +9,21 @@
   height: 100%;
 }
 
-.ds-card-primary {
-  background-color: $background-color-primary;
-  color: $text-color-primary-inverse;
-}
-
-.ds-card-secondary {
-  background-color: $background-color-secondary;
-  color: $text-color-secondary-inverse;
-}
-
 .ds-card-centered {
   text-align: center;
+}
+
+.ds-card-hover {
+  transform: translateY(0);
+  transition:
+    transform $duration-base $ease-out,
+    background $duration-base $ease-out,
+    box-shadow $duration-base $ease-out;
+
+  &:hover {
+    transform: translateY(-$space-x-small);
+    box-shadow: $box-shadow-x-small, $box-shadow-large;
+  }
 }
 
 .ds-card-image {
@@ -63,4 +66,23 @@
 .ds-card-footer {
   @include reset;
   padding: $space-small;
+}
+
+// Color variants
+.ds-card-primary {
+  background-color: $background-color-primary;
+  color: $text-color-primary-inverse;
+
+  &.ds-card-hover:hover {
+    background-color: $background-color-primary-active;
+  }
+}
+
+.ds-card-secondary {
+  background-color: $background-color-secondary;
+  color: $text-color-secondary-inverse;
+
+  &.ds-card-hover:hover {
+    background-color: $background-color-secondary-active;
+  }
 }

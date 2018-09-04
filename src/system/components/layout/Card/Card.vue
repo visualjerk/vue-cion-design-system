@@ -6,7 +6,8 @@
       $slots.image && 'ds-card-has-image',
       primary && `ds-card-primary`,
       secondary && `ds-card-secondary`,
-      centered && `ds-card-centered`
+      centered && `ds-card-centered`,
+      hover && `ds-card-hover`
   ]">
     <div
       class="ds-card-image"
@@ -111,6 +112,14 @@ export default {
      * `true, false`
      */
     centered: {
+      type: Boolean,
+      default: false
+    },
+    /**
+     * Make the card hoverable
+     * `true, false`
+     */
+    hover: {
       type: Boolean,
       default: false
     }
