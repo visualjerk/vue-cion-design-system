@@ -29,7 +29,7 @@ props:
     value: *lg
     category: media-size
   - name: xl
-    value: *lg
+    value: *xl
     category: media-size
 
   - name: media-query-x-small

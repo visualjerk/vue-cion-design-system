@@ -1,7 +1,10 @@
 <template>
   <component 
     :is="tag"
-    class="ds-container">
+    class="ds-container"
+    :class="[
+      `ds-container-${width}`
+  ]">
     <slot />
   </component>
 </template>
@@ -20,6 +23,18 @@ export default {
     tag: {
       type: String,
       default: 'div'
+    },
+    /**
+     * The maximum width the container will take.
+     * The widths correspond to the different media breakpoints.
+     * `x-small, small, medium, large, x-large`
+     */
+    width: {
+      type: String,
+      default: 'x-large',
+      validator: value => {
+        return value.match(/(x-small|small|medium|large|x-large)/)
+      }
     }
   }
 }
