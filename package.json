@@ -1,26 +1,17 @@
 {
   "name": "vue-cion-design-system",
   "version": "1.0.0",
-  "author": "visualjerk",
   "private": true,
-  "main": "./dist/system.umd.min.js",
-  "files": [
-    "dist/*",
-    "src/*",
-    "public/*",
-    "*.json",
-    "*.js"
-  ],
-  "license": "MIT",
   "scripts": {
+    "serve": "http-server ./docs -o -s",
+    "build": "yarn theo && vue-cli-service build",
+    "lint": "vue-cli-service lint",
     "dev": "npm-run-all --parallel theo:onchange theo servedev",
     "servedev": "vue-cli-service serve --open",
-    "build": "yarn theo && vue-cli-service build",
     "build:lib": "yarn theo && BUILD=library vue-cli-service build --target lib --name system ./src/library.js",
-    "serve": "http-server ./docs -o -s",
-    "lint": "vue-cli-service lint",
     "theo": "theo ./src/system/tokens/tokens.yml --transform web --format map.scss,scss,raw.json,json --dest ./src/system/tokens/generated",
-    "theo:onchange": "onchange \"./src/system/tokens/*.yml\" -- npm run theo"
+    "theo:onchange": "onchange \"./src/system/tokens/*.yml\" -- npm run theo",
+    "test:unit": "vue-cli-service test:unit"
   },
   "dependencies": {
     "vue": "^2.5.17"
@@ -30,9 +21,13 @@
     "@babel/standalone": "^7.0.0-beta.56",
     "@vue/cli-plugin-babel": "^3.0.0-rc.12",
     "@vue/cli-plugin-eslint": "^3.0.0-rc.12",
+    "@vue/cli-plugin-unit-jest": "^3.0.1",
     "@vue/cli-service": "^3.0.0-rc.12",
     "@vue/eslint-config-prettier": "^3.0.0-rc.12",
+    "@vue/test-utils": "^1.0.0-beta.20",
     "async-validator": "^1.8.5",
+    "babel-core": "7.0.0-bridge.0",
+    "babel-jest": "^23.0.1",
     "cheerio": "^1.0.0-rc.2",
     "clone-deep": "^4.0.0",
     "codemirror": "^5.39.2",
@@ -63,5 +58,15 @@
     "vuep": "git://github.com/visualjerk/vuep.git#iframe-preview",
     "webpack-bundle-analyzer": "^2.13.1",
     "webpack-merge-and-include-globally": "^2.0.11"
-  }
+  },
+  "author": "visualjerk",
+  "main": "./dist/system.umd.min.js",
+  "files": [
+    "dist/*",
+    "src/*",
+    "public/*",
+    "*.json",
+    "*.js"
+  ],
+  "license": "MIT"
 }
