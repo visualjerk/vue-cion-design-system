@@ -27,6 +27,7 @@
 </template>
 
 <script>
+import DsButton from '@@/components/navigation/Button/Button'
 /**
  * A copy field is used to present text that can easily
  * be copied to the users clipboard by clicking on it.
@@ -34,6 +35,9 @@
  */
 export default {
   name: 'DsCopyField',
+  components: {
+    DsButton
+  },
   props: {
     /**
      * The size used for the text.
