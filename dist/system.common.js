@@ -1723,15 +1723,18 @@ module.exports = { render: render };
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 
-// CONCATENATED MODULE: ./node_modules/cache-loader/dist/cjs.js?{"cacheDirectory":"node_modules/.cache/vue-loader","cacheIdentifier":"41dfbe64-vue-loader-template"}!./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/cache-loader/dist/cjs.js??ref--0-0!./node_modules/vue-loader/lib??vue-loader-options!./src/system/components/data-display/CopyField/CopyField.vue?vue&type=template&id=0413fc5a&
+// CONCATENATED MODULE: ./node_modules/cache-loader/dist/cjs.js?{"cacheDirectory":"node_modules/.cache/vue-loader","cacheIdentifier":"41dfbe64-vue-loader-template"}!./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/cache-loader/dist/cjs.js??ref--0-0!./node_modules/vue-loader/lib??vue-loader-options!./src/system/components/data-display/CopyField/CopyField.vue?vue&type=template&id=2ee9d19a&
 var render = function () {var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;return _c(_vm.tag,{tag:"component",staticClass:"ds-copy-field",class:("ds-copy-field-" + _vm.size)},[_c('div',{ref:"text"},[_vm._t("default")],2),_c('div',{staticClass:"ds-copy-field-link"},[_c('ds-button',{attrs:{"icon":"copy","color":"soft","ghost":""},on:{"click":_vm.copy}})],1),_c('transition',{attrs:{"name":"ds-copy-field-message"}},[_c('div',{directives:[{name:"show",rawName:"v-show",value:(_vm.showMessage),expression:"showMessage"}],staticClass:"ds-copy-field-message"},[_c('div',{ref:"messageText",staticClass:"ds-copy-field-message-text"})])])],1)}
 var staticRenderFns = []
 
 
-// CONCATENATED MODULE: ./src/system/components/data-display/CopyField/CopyField.vue?vue&type=template&id=0413fc5a&
+// CONCATENATED MODULE: ./src/system/components/data-display/CopyField/CopyField.vue?vue&type=template&id=2ee9d19a&
 
 // EXTERNAL MODULE: ./node_modules/core-js/modules/es6.regexp.match.js
 var es6_regexp_match = __webpack_require__("4917");
+
+// EXTERNAL MODULE: ./src/system/components/navigation/Button/Button.vue + 6 modules
+var Button = __webpack_require__("42cf");
 
 // CONCATENATED MODULE: ./node_modules/cache-loader/dist/cjs.js??ref--12-0!./node_modules/thread-loader/dist/cjs.js!./node_modules/babel-loader/lib!./node_modules/vue-loader/lib??vue-loader-options!./src/system/components/data-display/CopyField/CopyField.vue?vue&type=script&lang=js&
 
@@ -1769,8 +1772,12 @@ var es6_regexp_match = __webpack_require__("4917");
  * be copied to the users clipboard by clicking on it.
  * @version 1.0.0
  */
+
 /* harmony default export */ var CopyFieldvue_type_script_lang_js_ = ({
   name: 'DsCopyField',
+  components: {
+    DsButton: Button["default"]
+  },
   props: {
     /**
      * The size used for the text.
@@ -12598,11 +12605,19 @@ var kebabCase_default = /*#__PURE__*/__webpack_require__.n(kebabCase);
         $copyToClipboard: function $copyToClipboard(content) {
           var el = document.createElement('textarea');
           el.value = content;
+          el.setAttribute('readonly', '');
+          el.style.position = 'absolute';
+          el.style.left = '-9999px';
           document.body.appendChild(el);
+          var selected = document.getSelection().rangeCount > 0 ? document.getSelection().getRangeAt(0) : false;
           el.select();
           document.execCommand('copy');
           document.body.removeChild(el);
-          document.execCommand('copy');
+
+          if (selected) {
+            document.getSelection().removeAllRanges();
+            document.getSelection().addRange(selected);
+          }
         }
       }
     });
