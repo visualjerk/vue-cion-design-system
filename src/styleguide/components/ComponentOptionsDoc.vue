@@ -91,34 +91,46 @@ export default {
       if (!this.component.props) {
         return null
       }
-      return Object.keys(this.component.props).map(name => {
-        return {
-          name,
-          ...this.component.props[name]
-        }
-      })
+      return Object.keys(this.component.props)
+        .map(name => {
+          return {
+            name,
+            ...this.component.props[name]
+          }
+        })
+        .sort((a, b) => {
+          return a.name.localeCompare(b.name)
+        })
     },
     componentSlots() {
       if (!this.component.slots) {
         return null
       }
-      return Object.keys(this.component.slots).map(name => {
-        return {
-          name: (name.match(/[^/"\\]+/g) || []).join(''),
-          ...this.component.slots[name]
-        }
-      })
+      return Object.keys(this.component.slots)
+        .map(name => {
+          return {
+            name: (name.match(/[^/"\\]+/g) || []).join(''),
+            ...this.component.slots[name]
+          }
+        })
+        .sort((a, b) => {
+          return a.name.localeCompare(b.name)
+        })
     },
     componentEvents() {
       if (!this.component.events) {
         return null
       }
-      return Object.keys(this.component.events).map(name => {
-        return {
-          name,
-          ...this.component.events[name]
-        }
-      })
+      return Object.keys(this.component.events)
+        .map(name => {
+          return {
+            name,
+            ...this.component.events[name]
+          }
+        })
+        .sort((a, b) => {
+          return a.name.localeCompare(b.name)
+        })
     }
   }
 }
