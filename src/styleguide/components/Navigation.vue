@@ -3,7 +3,7 @@
     <div class="navigation-search">
       <ds-input
         v-model="searchString"
-        placeholder="Filter ..."
+        placeholder="Filter menu ..."
         icon="search"
         size="small" />
     </div>

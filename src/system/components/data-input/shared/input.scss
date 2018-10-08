@@ -75,6 +75,14 @@
     .#{$class}-has-focus & {
       color: $text-color-base;
     }
+
+    .#{$class}-size-small & {
+      width: $input-height-small;
+    }
+
+    .#{$class}-size-large & {
+      width: $input-height-large;
+    }
   }
   
   .#{$class}-icon-right {
@@ -85,18 +93,24 @@
   .#{$class}-has-icon {
     padding-left: $input-height;
   
-    .#{$class}-size-small &,
+    .#{$class}-size-small & {
+      padding-left: $input-height-small;
+    }
+
     .#{$class}-size-large & {
-      padding-left: $input-height;
+      padding-left: $input-height-large;
     }
   }
   
   .#{$class}-has-icon-right {
     padding-right: $input-height;
-  
-    .#{$class}-size-small &,
+
+    .#{$class}-size-small & {
+      padding-right: $input-height-small;
+    }
+
     .#{$class}-size-large & {
-      padding-right: $input-height;
+      padding-right: $input-height-large;
     }
   }         
 }
