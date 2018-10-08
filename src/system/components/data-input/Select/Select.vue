@@ -29,6 +29,11 @@
         </option>
       </select>
       <div
+        v-if="placeholder && !innerValue"
+        class="ds-select-placeholder">
+        {{ placeholder }}
+      </div>
+      <div
         v-if="iconRight"
         class="ds-select-icon-right">
         <ds-icon :name="iconRight"/>
@@ -88,7 +93,7 @@ export default {
      */
     iconRight: {
       type: String,
-      default: null
+      default: 'angle-down'
     },
     /**
      * The select options.

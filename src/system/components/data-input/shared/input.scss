@@ -4,6 +4,7 @@
   }
   
   .#{$class} {
+    appearance: none;
     box-sizing: border-box;
     font-size: $font-size-base;
     line-height: $line-height-base;
@@ -29,19 +30,19 @@
       background: $background-color-base;
     }
   
-    .#{$class}-is-disabled &,
+    .ds-input-is-disabled &,
     &:disabled {
       color: $text-color-disabled;
       opacity: $opacity-disabled;
       cursor: not-allowed;
     }
   
-    .#{$class}-has-error & {
+    .ds-input-has-error & {
       border-color: $border-color-danger;
     }
   }
   
-  .#{$class}-size-small {
+  .ds-input-size-small {
     font-size: $font-size-small;
   
     .#{$class} {
@@ -50,7 +51,7 @@
     }
   }
   
-  .#{$class}-size-large {
+  .ds-input-size-large {
     font-size: $font-size-large;
   
     .#{$class} {
@@ -71,16 +72,17 @@
     width: $input-height;
     color: $text-color-softer;
     transition: color $duration-short $ease-out;
+    pointer-events: none;
   
-    .#{$class}-has-focus & {
+    .ds-input-has-focus & {
       color: $text-color-base;
     }
 
-    .#{$class}-size-small & {
+    .ds-input-size-small & {
       width: $input-height-small;
     }
 
-    .#{$class}-size-large & {
+    .ds-input-size-large & {
       width: $input-height-large;
     }
   }
@@ -93,11 +95,11 @@
   .#{$class}-has-icon {
     padding-left: $input-height;
   
-    .#{$class}-size-small & {
+    .ds-input-size-small & {
       padding-left: $input-height-small;
     }
 
-    .#{$class}-size-large & {
+    .ds-input-size-large & {
       padding-left: $input-height-large;
     }
   }
@@ -105,11 +107,11 @@
   .#{$class}-has-icon-right {
     padding-right: $input-height;
 
-    .#{$class}-size-small & {
+    .ds-input-size-small & {
       padding-right: $input-height-small;
     }
 
-    .#{$class}-size-large & {
+    .ds-input-size-large & {
       padding-right: $input-height-large;
     }
   }         
