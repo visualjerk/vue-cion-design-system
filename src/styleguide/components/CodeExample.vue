@@ -35,21 +35,29 @@ export default {
   methods: {
     getCode() {
       const codeLines = this.code.split('\n')
-      if (codeLines[0].trim() === 'iframe') {
-        this.iframe = true
+      const codeTypeMatch = codeLines[0].trim().match(/^[A-Za-z]+$/g)
+      if (codeTypeMatch) {
         codeLines.shift()
+        const codeType = codeTypeMatch[0]
+        if (codeType === 'iframe') {
+          this.iframe = true
+        }
       }
       while (codeLines[0].trim() === '') {
         codeLines.shift()
       }
-      const code = codeLines.join('\n')
-      if (codeLines[0].trim() === '<template>') {
-        return code
+      while (codeLines[codeLines.length - 1].trim() === '') {
+        codeLines.pop()
       }
+      if (codeLines[0].trim() === '<template>') {
+        return codeLines.join('\n')
+      }
+      const code = codeLines.map(line => '    ' + line).join('\n')
       /* eslint-disable */
       return `<template>
-<div>
-${code}</div>
+  <div>
+${code}
+  </div>
 </template>
 <script><\/script>`
     }
