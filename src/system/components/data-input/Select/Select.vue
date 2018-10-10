@@ -47,7 +47,7 @@
             :class="[
               isSelected(option) && `ds-select-option-is-selected`
             ]"
-            v-for="option in options"
+            v-for="option in filteredOptions"
             @click="selectOption(option)"
             :key="option.label || option">
             <!-- @slot Slot to provide custom option items -->
@@ -140,17 +140,39 @@ export default {
       }
     }
   },
+  computed: {
+    filteredOptions() {
+      if (!this.searchString) {
+        return this.options
+      }
+      const searchParts = this.searchString.split(' ')
+
+      return this.options.filter(option => {
+        const value = option.value || option
+        return searchParts.every(part => {
+          if (!part) {
+            return true
+          }
+          return value.toLowerCase().includes(part.toLowerCase())
+        })
+      })
+    }
+  },
   methods: {
     selectOption(option) {
       this.input(option.value || option)
       if (!this.multiple) {
         this.handleBlur()
       }
+      this.resetSearch()
     },
     isSelected(option) {
       return option.value
         ? option.value === this.innerValue
         : option === this.innerValue
+    },
+    resetSearch() {
+      this.searchString = ''
     }
   }
 }
