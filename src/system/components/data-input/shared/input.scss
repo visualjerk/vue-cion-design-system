@@ -25,6 +25,7 @@
       color: $text-color-disabled;
     }
   
+    .ds-input-has-focus &,
     &:focus {
       border-color: $border-color-active;
       background: $background-color-base;

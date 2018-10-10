@@ -44,6 +44,11 @@
   margin: 0;
 }
 
+@mixin list-reset {
+  @include reset;
+  list-style: none;
+}
+
 @mixin clearfix {
   &:before, &:after {
     display: table;

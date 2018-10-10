@@ -21,7 +21,7 @@
         :readonly="readonly"
         :is="tag"
         :value.prop="innerValue"
-        @input="input"
+        @input="handleInput"
         @focus="handleFocus"
         @blur="handleBlur"
         :rows="type === 'textarea' ? rows : null"

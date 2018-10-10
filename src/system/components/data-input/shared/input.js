@@ -107,9 +107,12 @@ export default {
     }
   },
   methods: {
-    input(event) {
+    handleInput(event) {
+      this.input(event.target.value)
+    },
+    input(value) {
       if (this.$parentForm) {
-        this.$parentForm.update(this.model, event.target.value)
+        this.$parentForm.update(this.model, value)
       } else {
         /**
          * Fires after user input.
@@ -117,8 +120,8 @@ export default {
          *
          * @event input
          */
-        this.$emit('input', event.target.value)
-        this.validate(event.target.value)
+        this.$emit('input', value)
+        this.validate(value)
       }
     },
     handleFormUpdate(data, errors) {

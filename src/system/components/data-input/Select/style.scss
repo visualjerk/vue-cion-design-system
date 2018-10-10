@@ -2,7 +2,14 @@
 
 @include input(ds-select);
 
-.ds-select-placeholder {
+.ds-select {
+  .ds-input-has-focus & {
+    border-bottom-left-radius: 0;
+    border-bottom-right-radius: 0;
+  }
+}
+
+.ds-select-search, .ds-select-placeholder, .ds-select-value {
   position: absolute;
   top: 0;
   left: 0;
@@ -10,8 +17,6 @@
   bottom: 0;
   border: $input-border-size solid transparent;
   padding: $input-padding-vertical $space-x-small;
-  pointer-events: none;
-  color: $text-color-disabled;
 
   .ds-input-size-small & {
     padding: $input-padding-vertical-small $space-x-small;
@@ -44,4 +49,81 @@
       padding-right: $input-height-large;
     }
   }
+}
+
+.ds-select-search {
+  appearance: none;
+  box-sizing: border-box;
+  font-size: $font-size-base;
+  line-height: $line-height-base;
+  font-family: $font-family-text;
+  width: 100%;
+  height: $input-height;
+  background: transparent;
+  color: $text-color-base;
+  outline: none;
+
+  opacity: 0;
+
+  &::placeholder {
+    color: $text-color-disabled;
+  }
+
+  .ds-input-has-focus & {
+    opacity: 1;
+  }
+}
+
+.ds-select-placeholder, .ds-select-value {
+  pointer-events: none;
+
+  .ds-input-has-focus & {
+    opacity: 0;
+  }
+}
+
+.ds-select-placeholder {
+  color: $text-color-disabled;
+}
+
+.ds-select-dropdown {
+  position: absolute;
+  z-index: $z-index-dropdown;
+  top: 100%;
+  left: 0;
+  width: 100%;
+  background-color: $background-color-base;
+  border: $input-border-size solid $border-color-active;
+  border-top: 0;
+  border-bottom-left-radius: $border-radius-base;
+  border-bottom-right-radius: $border-radius-base;
+  visibility: hidden;
+  opacity: 0;
+  transition: all $duration-short $ease-out;
+  max-height: 240px;
+  overflow: auto;
+
+  .ds-input-has-focus & {
+    visibility: visible;
+    opacity: 1;
+  }
+}
+
+.ds-select-options {
+  @include list-reset;
+}
+
+.ds-select-option {
+  padding: $input-padding-vertical $space-x-small;
+  cursor: pointer;
+  transition: all $duration-short $ease-out;
+
+  &:hover, &:focus {
+    color: $text-color-primary;
+  }
+}
+
+.ds-select-option-is-selected {
+  background-color: $background-color-soft;
+  color: $text-color-primary;
 }
