@@ -111,6 +111,7 @@ export default {
       this.input(event.target.value)
     },
     input(value) {
+      this.innerValue = value
       if (this.$parentForm) {
         this.$parentForm.update(this.model, value)
       } else {

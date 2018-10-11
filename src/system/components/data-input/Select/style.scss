@@ -10,6 +10,7 @@
 }
 
 .ds-select-search, .ds-select-placeholder, .ds-select-value {
+  box-sizing: border-box;
   position: absolute;
   top: 0;
   left: 0;
@@ -17,6 +18,7 @@
   bottom: 0;
   border: $input-border-size solid transparent;
   padding: $input-padding-vertical $space-x-small;
+  line-height: $line-height-base;
 
   .ds-input-size-small & {
     padding: $input-padding-vertical-small $space-x-small;
@@ -26,7 +28,7 @@
     padding: $input-padding-vertical-large $space-x-small;
   }
 
-  .ds-select-has-icon + & {
+  .ds-select-has-icon & {
     padding-left: $input-height;
 
     .ds-input-size-small & {
@@ -38,7 +40,7 @@
     }
   }
 
-  .ds-select-has-icon-right + & {
+  .ds-select-has-icon-right & {
     padding-right: $input-height;
 
     .ds-input-size-small & {
@@ -53,12 +55,9 @@
 
 .ds-select-search {
   appearance: none;
-  box-sizing: border-box;
-  font-size: $font-size-base;
-  line-height: $line-height-base;
+  font-size: inherit;
   font-family: $font-family-text;
   width: 100%;
-  height: $input-height;
   background: transparent;
   color: $text-color-base;
   outline: none;

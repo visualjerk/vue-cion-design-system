@@ -2,7 +2,8 @@
   <ds-form-item>
     <div
       class="ds-select-wrap"
-      v-click-outside="handleBlur">
+      v-click-outside="handleBlur"
+      @keyup.esc="close">
       <div
         v-if="icon"
         class="ds-select-icon">
@@ -30,6 +31,7 @@
           </slot>
         </div>
         <input
+          ref="search"
           class="ds-select-search"
           :id="id"
           :name="model"
@@ -38,7 +40,8 @@
           :disabled="disabled"
           :readonly="readonly"
           v-model="searchString"
-          @focus="handleFocus">
+          @focus="handleFocus"
+          @keyup.esc="close">
       </div>
       <div class="ds-select-dropdown">
         <ul class="ds-select-options">
@@ -71,6 +74,8 @@
 <script>
 import inputMixin from '../shared/input'
 import ClickOutside from 'vue-click-outside'
+import DsFormItem from '@@/components/data-input/FormItem/FormItem'
+import DsIcon from '@@/components/typography/Icon/Icon'
 
 /**
  * Used for handling basic user input.
@@ -79,6 +84,10 @@ import ClickOutside from 'vue-click-outside'
 export default {
   name: 'DsSelect',
   mixins: [inputMixin],
+  components: {
+    DsFormItem,
+    DsIcon
+  },
   directives: {
     ClickOutside
   },
@@ -173,6 +182,10 @@ export default {
     },
     resetSearch() {
       this.searchString = ''
+    },
+    close() {
+      this.$refs.search.blur()
+      this.handleBlur()
     }
   }
 }
