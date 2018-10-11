@@ -17,6 +17,7 @@
         :type="type"
         :autofocus="autofocus"
         :placeholder="placeholder"
+        :tabindex="tabindex"
         :disabled="disabled"
         :readonly="readonly"
         :is="tag"

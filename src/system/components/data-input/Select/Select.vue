@@ -3,6 +3,7 @@
     <div
       class="ds-select-wrap"
       v-click-outside="handleBlur"
+      :tabindex="searchable ? -1 : tabindex"
       @keyup.esc="close">
       <div
         v-if="icon"
@@ -11,32 +12,66 @@
       </div>
       <div
         class="ds-select"
+        @click="handleClick"
         :class="[
           icon && `ds-select-has-icon`,
-          iconRight && `ds-select-has-icon-right`
+          iconRight && `ds-select-has-icon-right`,
+          multiple && `ds-select-multiple`
       ]">
         <div
-          v-if="placeholder && !innerValue"
-          class="ds-select-placeholder">
-          {{ placeholder }}
+          v-if="multiple"
+          class="ds-select-tags">
+          <div
+            class="ds-select-tag"
+            v-for="value in innerValue"
+            :key="value">
+            <!-- @slot Slot to provide a custom value tag display -->
+            <slot
+              name="tag"
+              :value="value">
+              {{ value }}
+            </slot>
+          </div>
+          <input
+            ref="search"
+            class="ds-select-search"
+            :id="id"
+            :name="model"
+            :autofocus="autofocus"
+            :placeholder="placeholder"
+            :tabindex="tabindex"
+            :disabled="disabled"
+            :readonly="readonly"
+            v-model="searchString"
+            @focus="handleFocus"
+            @keyup.esc="close"
+            @keydown.delete.stop="deselectLastOption">
         </div>
         <div
           v-else
           class="ds-select-value">
+          <div
+            v-if="placeholder && !innerValue"
+            class="ds-select-placeholder">
+            {{ placeholder }}
+          </div>
           <!-- @slot Slot to provide a custom value display -->
           <slot
+            v-else
             name="value"
-            :value="value">
+            :value="innerValue">
             {{ innerValue }}
           </slot>
         </div>
         <input
+          v-if="!multiple"
           ref="search"
           class="ds-select-search"
           :id="id"
           :name="model"
           :autofocus="autofocus"
           :placeholder="placeholder"
+          :tabindex="tabindex"
           :disabled="disabled"
           :readonly="readonly"
           v-model="searchString"
@@ -51,7 +86,7 @@
               isSelected(option) && `ds-select-option-is-selected`
             ]"
             v-for="option in filteredOptions"
-            @click="selectOption(option)"
+            @click="handleSelect(option)"
             :key="option.label || option">
             <!-- @slot Slot to provide custom option items -->
             <slot
@@ -73,6 +108,7 @@
 
 <script>
 import inputMixin from '../shared/input'
+import multiinputMixin from '../shared/multiinput'
 import ClickOutside from 'vue-click-outside'
 import DsFormItem from '@@/components/data-input/FormItem/FormItem'
 import DsIcon from '@@/components/typography/Icon/Icon'
@@ -83,7 +119,7 @@ import DsIcon from '@@/components/typography/Icon/Icon'
  */
 export default {
   name: 'DsSelect',
-  mixins: [inputMixin],
+  mixins: [inputMixin, multiinputMixin],
   components: {
     DsFormItem,
     DsIcon
@@ -119,13 +155,6 @@ export default {
       default: false
     },
     /**
-     * Whether the user can select multiple items
-     */
-    multiple: {
-      type: Boolean,
-      default: false
-    },
-    /**
      * The name of the input's icon.
      */
     icon: {
@@ -147,6 +176,13 @@ export default {
       default() {
         return []
       }
+    },
+    /**
+     * Whether the options are searchable
+     */
+    searchable: {
+      type: Boolean,
+      default: true
     }
   },
   computed: {
@@ -168,24 +204,38 @@ export default {
     }
   },
   methods: {
-    selectOption(option) {
-      this.input(option.value || option)
-      if (!this.multiple) {
-        this.handleBlur()
-      }
+    handleSelect(options) {
+      this.selectOption(options)
       this.resetSearch()
-    },
-    isSelected(option) {
-      return option.value
-        ? option.value === this.innerValue
-        : option === this.innerValue
+      if (this.multiple) {
+        this.$refs.search.focus()
+        this.handleFocus()
+      } else {
+        this.close()
+      }
     },
     resetSearch() {
       this.searchString = ''
     },
+    handleClick() {
+      if (!this.focus || this.multiple) {
+        this.$refs.search.focus()
+        this.handleFocus()
+      }
+    },
     close() {
       this.$refs.search.blur()
       this.handleBlur()
+    },
+    deselectLastOption() {
+      if (
+        this.multiple &&
+        this.innerValue &&
+        this.innerValue.length &&
+        !this.searchString.length
+      ) {
+        this.deselectOption(this.innerValue.length - 1)
+      }
     }
   }
 }

@@ -37,6 +37,32 @@ Use v-model to bind a value to the select input.
 </script>
 ```
 
+## Multiselect
+
+Use the multiple prop to allow the user selecting multiple values.
+
+```
+<template>
+  <div>
+    <ds-select
+      v-model="color"
+      :options="['blue', 'red', 'green']"
+      placeholder="Color ..."
+      multiple></ds-select>
+    <ds-text>Your colors: {{ color }}</ds-text>
+  </div>
+</template>
+<script>
+  export default {
+    data() {
+      return {
+        color: ''
+      }
+    }
+  }
+</script>
+```
+
 ## Validation
 
 We use <a href="https://github.com/yiminghe/async-validator" targe="_blank">async-validator schemas</a> for validation.

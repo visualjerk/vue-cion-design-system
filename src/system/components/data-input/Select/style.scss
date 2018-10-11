@@ -3,13 +3,14 @@
 @include input(ds-select);
 
 .ds-select {
+  user-select: none;
   .ds-input-has-focus & {
     border-bottom-left-radius: 0;
     border-bottom-right-radius: 0;
   }
 }
 
-.ds-select-search, .ds-select-placeholder, .ds-select-value {
+.ds-select-search, .ds-select-value {
   box-sizing: border-box;
   position: absolute;
   top: 0;
@@ -61,6 +62,7 @@
   background: transparent;
   color: $text-color-base;
   outline: none;
+  user-select: text;
 
   opacity: 0;
 
@@ -69,6 +71,15 @@
   }
 
   .ds-input-has-focus & {
+    opacity: 1;
+  }
+
+  .ds-select-multiple & {
+    position: relative;
+    display: inline-flex;
+    width: auto;
+    height: auto;
+    padding: 0;
     opacity: 1;
   }
 }
@@ -83,6 +94,19 @@
 
 .ds-select-placeholder {
   color: $text-color-disabled;
+}
+
+.ds-select-tags {
+  display: flex;
+}
+
+.ds-select-tag {
+  display: inline-flex;
+  padding: 0 $space-x-small;
+  border-radius: $border-radius-base;
+  background-color: $background-color-primary;
+  color: $text-color-primary-inverse;
+  margin-right: $space-xx-small;
 }
 
 .ds-select-dropdown {

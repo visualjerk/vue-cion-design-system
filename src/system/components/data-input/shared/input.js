@@ -20,7 +20,7 @@ export default {
      * The value of the input. Can be passed via v-model.
      */
     value: {
-      type: [String, Object, Number],
+      type: [String, Object, Number, Array],
       default: null
     },
     /**
@@ -56,7 +56,7 @@ export default {
      */
     schema: {
       type: Object,
-      default: () => ({})
+      default: () => null
     },
     /**
      * The input's size.
@@ -68,6 +68,10 @@ export default {
       validator: value => {
         return value.match(/(small|base|large)/)
       }
+    },
+    tabindex: {
+      type: Number,
+      default: 0
     }
   },
   data() {
@@ -130,6 +134,9 @@ export default {
       this.error = errors ? errors[this.model] : null
     },
     validate(value) {
+      if (!this.schema) {
+        return
+      }
       const validator = new Schema({ input: this.schema })
       // Prevent validator from printing to console
       // eslint-disable-next-line
