@@ -37,6 +37,45 @@ Use v-model to bind a value to the select input.
 </script>
 ```
 
+## Options as objects
+
+Options can be objects with a label and a value property.
+
+```
+<template>
+  <div>
+    <ds-select
+      v-model="color"
+      :options="colorOptions"
+      placeholder="Color ..."></ds-select>
+    <ds-text>Your color: {{ color }}</ds-text>
+  </div>
+</template>
+<script>
+  export default {
+    data() {
+      return {
+        color: '',
+        colorOptions: [
+          {
+            label: 'blue',
+            value: '#0e17d8'
+          },
+          {
+            label: 'red',
+            value: '#d80e3f'
+          },
+          {
+            label: 'green',
+            value: '#0ed853'
+          }
+        ]
+      }
+    }
+  }
+</script>
+```
+
 ## Validation
 
 We use <a href="https://github.com/yiminghe/async-validator" targe="_blank">async-validator schemas</a> for validation.

@@ -24,6 +24,7 @@
         @blur="handleBlur">
         <option
           v-for="option in options"
+          :value.prop="option.value || option"
           :key="option.label || option">
           {{ option.label || option }}
         </option>
