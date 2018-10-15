@@ -30,7 +30,7 @@ Use v-model to bind a value to the select input.
   export default {
     data() {
       return {
-        color: ''
+        color: 'blue'
       }
     }
   }
@@ -56,7 +56,7 @@ Use the multiple prop to allow the user selecting multiple values.
   export default {
     data() {
       return {
-        color: ''
+        color: ['blue', 'red']
       }
     }
   }

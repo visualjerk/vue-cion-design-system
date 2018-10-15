@@ -4,6 +4,9 @@
       class="ds-select-wrap"
       v-click-outside="handleBlur"
       :tabindex="searchable ? -1 : tabindex"
+      @keydown.self.down.prevent="pointerNext"
+      @keydown.self.up.prevent="pointerPrev"
+      @keypress.enter.prevent.stop.self="selectPointerOption"
       @keyup.esc="close">
       <div
         v-if="icon"
@@ -20,16 +23,21 @@
       ]">
         <div
           v-if="multiple"
-          class="ds-select-tags">
+          class="ds-selected-options">
           <div
-            class="ds-select-tag"
-            v-for="value in innerValue"
+            class="ds-selected-option"
+            v-for="(value, index) in innerValue"
             :key="value">
             <!-- @slot Slot to provide a custom value tag display -->
             <slot
-              name="tag"
+              name="optionitem"
               :value="value">
-              {{ value }}
+              <ds-chip
+                removable
+                @remove="deselectOption(index)"
+                color="primary">
+                {{ value }}
+              </ds-chip>
             </slot>
           </div>
           <input
@@ -44,8 +52,11 @@
             :readonly="readonly"
             v-model="searchString"
             @focus="handleFocus"
-            @keyup.esc="close"
-            @keydown.delete.stop="deselectLastOption">
+            @keydown.delete.stop="deselectLastOption"
+            @keydown.down.prevent="pointerNext"
+            @keydown.up.prevent="pointerPrev"
+            @keypress.enter.prevent.stop="selectPointerOption"
+            @keyup.esc="close">
         </div>
         <div
           v-else
@@ -83,10 +94,12 @@
           <li
             class="ds-select-option"
             :class="[
-              isSelected(option) && `ds-select-option-is-selected`
+              isSelected(option) && `ds-select-option-is-selected`,
+              pointer === index && `ds-select-option-hover`
             ]"
-            v-for="option in filteredOptions"
+            v-for="(option, index) in filteredOptions"
             @click="handleSelect(option)"
+            @mouseover="setCursor(index)"
             :key="option.label || option">
             <!-- @slot Slot to provide custom option items -->
             <slot
@@ -129,7 +142,8 @@ export default {
   },
   data() {
     return {
-      searchString: ''
+      searchString: '',
+      pointer: 0
     }
   },
   props: {
@@ -201,6 +215,18 @@ export default {
           return value.toLowerCase().includes(part.toLowerCase())
         })
       })
+    },
+    pointerMax() {
+      return this.filteredOptions.length - 1
+    }
+  },
+  watch: {
+    pointerMax(max) {
+      if (max < this.pointer) {
+        this.$nextTick(() => {
+          this.pointer = max
+        })
+      }
     }
   },
   methods: {
@@ -236,6 +262,26 @@ export default {
       ) {
         this.deselectOption(this.innerValue.length - 1)
       }
+    },
+    setCursor(index) {
+      this.pointer = index
+    },
+    pointerPrev() {
+      if (this.pointer === 0) {
+        this.pointer = this.pointerMax
+      } else {
+        this.pointer--
+      }
+    },
+    pointerNext() {
+      if (this.pointer === this.pointerMax) {
+        this.pointer = 0
+      } else {
+        this.pointer++
+      }
+    },
+    selectPointerOption() {
+      this.handleSelect(this.filteredOptions[this.pointer])
     }
   }
 }

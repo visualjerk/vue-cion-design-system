@@ -31,14 +31,14 @@ A chip can be deletable.
     <ds-chip
       v-for="(tag, index) in tags"
       @remove="removeTag(index)"
-      removeable
+      removable
       :key="tag">
       {{ tag }}
     </ds-chip>
     <ds-chip
       v-for="(tag, index) in tags"
       @remove="removeTag(index)"
-      removeable
+      removable
       color="primary"
       :key="tag">
       {{ tag }}

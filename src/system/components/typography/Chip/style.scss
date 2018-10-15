@@ -5,15 +5,14 @@
   display: inline-block;
   font-family: $font-family-text;
   line-height: $line-height-base;
-  padding: $space-xx-small $space-small;
+  padding: $space-xx-small $space-x-small;
   border-radius: $border-radius-base;
   font-weight: $font-weight-bold;
-  letter-spacing: $letter-spacing-large;
   color: $text-color-base;
   background-color: $background-color-softest;
 
-  &.ds-chip-removeable {
-    padding-right: $space-x-small * 2 + $space-small;
+  &.ds-chip-removable {
+    padding-right: $space-x-small + $space-small;
   }
 }
 
@@ -61,7 +60,7 @@
 .ds-chip-close {
   @include reset-button;
   position: absolute;
-  right: $space-x-small;
+  right: $space-xx-small;
   top: 50%;
   transform: translateY(-50%);
   display: inline-flex;

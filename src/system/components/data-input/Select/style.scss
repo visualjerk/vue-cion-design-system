@@ -96,16 +96,12 @@
   color: $text-color-disabled;
 }
 
-.ds-select-tags {
+.ds-selected-options {
   display: flex;
 }
 
-.ds-select-tag {
+.ds-selected-option {
   display: inline-flex;
-  padding: 0 $space-x-small;
-  border-radius: $border-radius-base;
-  background-color: $background-color-primary;
-  color: $text-color-primary-inverse;
   margin-right: $space-xx-small;
 }
 
@@ -141,8 +137,9 @@
   cursor: pointer;
   transition: all $duration-short $ease-out;
 
-  &:hover, &:focus {
-    color: $text-color-primary;
+  &.ds-select-option-hover {
+    background-color: $background-color-primary;
+    color: $text-color-primary-inverse;
   }
 }
 

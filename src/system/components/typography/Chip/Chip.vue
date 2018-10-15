@@ -5,13 +5,13 @@
     :class="[
       `ds-chip-size-${size}`,
       `ds-chip-${color}`,
-      removeable && 'ds-chip-removeable',
+      removable && 'ds-chip-removable',
       round && 'ds-chip-round'
     ]"
   >
     <slot />
     <button
-      v-if="removeable"
+      v-if="removable"
       @click="remove"
       class="ds-chip-close">
       <ds-icon name="close" />
@@ -54,7 +54,7 @@ export default {
      * Whether the chip should be removeable
      * `true, false`
      */
-    removeable: {
+    removable: {
       type: Boolean,
       default: false
     },
