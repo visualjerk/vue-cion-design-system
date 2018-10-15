@@ -133,7 +133,7 @@
 }
 
 .ds-select-options {
-  @include list-reset;
+  @include reset-list;
 }
 
 .ds-select-option {

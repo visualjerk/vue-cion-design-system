@@ -44,9 +44,30 @@
   margin: 0;
 }
 
-@mixin list-reset {
+@mixin reset-list {
   @include reset;
   list-style: none;
+}
+
+@mixin reset-button {
+  @include reset;
+  border: 0;
+  width: auto;
+  overflow: visible;
+  background: transparent;
+  color: inherit;
+  font: inherit;
+  line-height: normal;
+  outline: none;
+  font-smoothing: inherit;
+  -webkit-font-smoothing: inherit;
+  -moz-osx-font-smoothing: inherit;
+  -webkit-appearance: none;
+
+  &::-moz-focus-inner {
+    border: 0;
+    padding: 0;
+  }
 }
 
 @mixin clearfix {
