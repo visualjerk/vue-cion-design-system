@@ -19,7 +19,7 @@
   align-items: center;
   justify-content: center;
   text-decoration: none;
-  padding: $input-padding-vertical $space-small;
+  padding: 0 $space-small;
   height: $input-height;
   border-radius: $border-radius-base;
   box-shadow: $box-shadow-small-inset, $box-shadow-x-small;
@@ -160,13 +160,13 @@
 
 .ds-button-size-small {
   font-size: $font-size-small;
-  padding: $input-padding-vertical-small $space-x-small;
+  padding: 0 $space-x-small;
   height: $input-height-small;
 }
 
 .ds-button-size-large {
   font-size: $font-size-large;
-  padding: $input-padding-vertical-large $space-base;
+  padding: 0 $space-base;
   height: $input-height-large;
 }
 

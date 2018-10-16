@@ -30,7 +30,33 @@ Use v-model to bind a value to the select input.
   export default {
     data() {
       return {
-        color: ''
+        color: 'blue'
+      }
+    }
+  }
+</script>
+```
+
+## Multiselect
+
+Use the multiple prop to allow the user selecting multiple values.
+
+```
+<template>
+  <div>
+    <ds-select
+      v-model="color"
+      :options="['blue', 'red', 'green']"
+      placeholder="Color ..."
+      multiple></ds-select>
+    <ds-text>Your colors: {{ color }}</ds-text>
+  </div>
+</template>
+<script>
+  export default {
+    data() {
+      return {
+        color: ['blue', 'red']
       }
     }
   }
