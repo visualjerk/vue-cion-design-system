@@ -163,6 +163,140 @@ describe('Select.vue', () => {
     })
   })
 
+  describe('pointer', () => {
+    test('should be set by mouse over option', () => {
+      const wrapper = shallowMount(Comp, {
+        propsData: {
+          options: ['1', '2', '3']
+        }
+      })
+      const options = wrapper.findAll('.ds-select-option')
+      options.at(2).trigger('mouseover')
+      expect(wrapper.vm.pointer).toEqual(2)
+    })
+
+    test('should be set by pointerNext', () => {
+      const wrapper = shallowMount(Comp, {
+        propsData: {
+          options: ['1', '2', '3']
+        }
+      })
+      wrapper.vm.pointerNext()
+      expect(wrapper.vm.pointer).toEqual(1)
+    })
+
+    test('should be set to 0 by pointerNext when on last entry', () => {
+      const wrapper = shallowMount(Comp, {
+        propsData: {
+          options: ['1', '2', '3']
+        }
+      })
+      wrapper.vm.pointer = 2
+      wrapper.vm.pointerNext()
+      expect(wrapper.vm.pointer).toEqual(0)
+    })
+
+    test('should be set by pointerPrev', () => {
+      const wrapper = shallowMount(Comp, {
+        propsData: {
+          options: ['1', '2', '3']
+        }
+      })
+      wrapper.vm.pointer = 1
+      wrapper.vm.pointerPrev()
+      expect(wrapper.vm.pointer).toEqual(0)
+    })
+
+    test('should be set to last entry by pointerPrev when 0', () => {
+      const wrapper = shallowMount(Comp, {
+        propsData: {
+          options: ['1', '2', '3']
+        }
+      })
+      wrapper.vm.pointerPrev()
+      expect(wrapper.vm.pointer).toEqual(2)
+    })
+
+    test('should be set by key down on wrap', () => {
+      const wrapper = shallowMount(Comp, {
+        propsData: {
+          options: ['1', '2', '3']
+        }
+      })
+      const wrap = wrapper.find('.ds-select-wrap')
+      wrap.trigger('keydown.down')
+      expect(wrapper.vm.pointer).toEqual(1)
+    })
+
+    test('should be set by key up on wrap', () => {
+      const wrapper = shallowMount(Comp, {
+        propsData: {
+          options: ['1', '2', '3']
+        }
+      })
+      const wrap = wrapper.find('.ds-select-wrap')
+      wrap.trigger('keydown.up')
+      expect(wrapper.vm.pointer).toEqual(2)
+    })
+
+    test('should be set by key down on search input', () => {
+      const wrapper = shallowMount(Comp, {
+        propsData: {
+          options: ['1', '2', '3']
+        }
+      })
+      const searchInput = wrapper.find('.ds-select-search')
+      searchInput.trigger('keydown.down')
+      expect(wrapper.vm.pointer).toEqual(1)
+    })
+
+    test('should be set by key up on search input', () => {
+      const wrapper = shallowMount(Comp, {
+        propsData: {
+          options: ['1', '2', '3']
+        }
+      })
+      const searchInput = wrapper.find('.ds-select-search')
+      searchInput.trigger('keydown.up')
+      expect(wrapper.vm.pointer).toEqual(2)
+    })
+
+    test('should select option by pointer value', () => {
+      const wrapper = shallowMount(Comp, {
+        propsData: {
+          options: ['1', '2', '3']
+        }
+      })
+      wrapper.vm.pointer = 1
+      wrapper.vm.selectPointerOption()
+      expect(wrapper.vm.innerValue).toEqual('2')
+    })
+
+    test('should select option by enter key on wrap', () => {
+      const wrapper = shallowMount(Comp, {
+        propsData: {
+          options: ['1', '2', '3']
+        }
+      })
+      wrapper.vm.pointer = 1
+      const wrap = wrapper.find('.ds-select-wrap')
+      wrap.trigger('keypress.enter')
+      expect(wrapper.vm.innerValue).toEqual('2')
+    })
+
+    test('should select option by enter key on search input', () => {
+      const wrapper = shallowMount(Comp, {
+        propsData: {
+          options: ['1', '2', '3']
+        }
+      })
+      wrapper.vm.pointer = 1
+      const searchInput = wrapper.find('.ds-select-search')
+      searchInput.trigger('keypress.enter')
+      expect(wrapper.vm.innerValue).toEqual('2')
+    })
+  })
+
   it('matches snapshot', () => {
     const wrapper = shallowMount(Comp, {
       propsData: {
