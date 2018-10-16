@@ -28,7 +28,7 @@
             class="ds-selected-option"
             v-for="(value, index) in innerValue"
             :key="value">
-            <!-- @slot Slot to provide a custom value tag display -->
+            <!-- @slot Slot to provide a custom selected option display -->
             <slot
               name="optionitem"
               :value="value">
@@ -103,7 +103,7 @@
             ]"
             v-for="(option, index) in filteredOptions"
             @click="handleSelect(option)"
-            @mouseover="setCursor(index)"
+            @mouseover="setPointer(index)"
             :key="option.label || option">
             <!-- @slot Slot to provide custom option items -->
             <slot
@@ -128,6 +128,7 @@ import inputMixin from '../shared/input'
 import multiinputMixin from '../shared/multiinput'
 import ClickOutside from 'vue-click-outside'
 import DsFormItem from '@@/components/data-input/FormItem/FormItem'
+import DsChip from '@@/components/typography/Chip/Chip'
 import DsIcon from '@@/components/typography/Icon/Icon'
 
 /**
@@ -139,6 +140,7 @@ export default {
   mixins: [inputMixin, multiinputMixin],
   components: {
     DsFormItem,
+    DsChip,
     DsIcon
   },
   directives: {
@@ -267,7 +269,7 @@ export default {
         this.deselectOption(this.innerValue.length - 1)
       }
     },
-    setCursor(index) {
+    setPointer(index) {
       this.pointer = index
     },
     pointerPrev() {
