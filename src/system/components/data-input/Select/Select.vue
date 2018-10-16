@@ -87,6 +87,10 @@
           :readonly="readonly"
           v-model="searchString"
           @focus="handleFocus"
+          @keydown.delete.stop="deselectLastOption"
+          @keydown.down.prevent="pointerNext"
+          @keydown.up.prevent="pointerPrev"
+          @keypress.enter.prevent.stop="selectPointerOption"
           @keyup.esc="close">
       </div>
       <div class="ds-select-dropdown">
