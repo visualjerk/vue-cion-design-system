@@ -679,6 +679,13 @@ module.exports = { render: render };
 
 /***/ }),
 
+/***/ "0ce8":
+/***/ (function(module, exports) {
+
+module.exports = {"description":"Chips are used to represent small blocks of information.\nTheir most common usage is for displaying contacts or tags.","methods":[],"displayName":"DsChip","props":{"color":{"type":{"name":"string"},"required":"","defaultValue":{"value":"\"medium\"","func":false},"tags":{},"comment":"/**\n     * The background color used for the chip.\n     * `medium, inverse, primary, success, warning, danger`\n     */","description":"The background color used for the chip.\n`medium, inverse, primary, success, warning, danger`"},"size":{"type":{"name":"string"},"required":"","defaultValue":{"value":"\"base\"","func":false},"tags":{},"comment":"/**\n     * The size used for the text.\n     * `base, large, small`\n     */","description":"The size used for the text.\n`base, large, small`"},"removable":{"type":{"name":"boolean"},"required":"","defaultValue":{"value":"false","func":false},"tags":{},"comment":"/**\n     * Whether the chip should be removeable\n     * `true, false`\n     */","description":"Whether the chip should be removeable\n`true, false`"},"round":{"type":{"name":"boolean"},"required":"","defaultValue":{"value":"true","func":false},"tags":{},"comment":"/**\n     * Whether the chip should be rounded\n     * `true, false`\n     */","description":"Whether the chip should be rounded\n`true, false`"},"tag":{"type":{"name":"string"},"required":"","defaultValue":{"value":"\"span\"","func":false},"tags":{},"comment":"/**\n     * The html element name used for the text.\n     */","description":"The html element name used for the text."}},"comment":"/**\n * Chips are used to represent small blocks of information.\n * Their most common usage is for displaying contacts or tags.\n * @version 1.0.0\n */","tags":{"version":[{"title":"version","description":"1.0.0"}]},"events":{"remove":{"description":"Fires after user clicked the remove button.","comment":"/**\n       * Fires after user clicked the remove button.\n       *\n       * @event remove\n       */"}},"slots":{"default":{"description":""}}}
+
+/***/ }),
+
 /***/ "0d58":
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -1118,7 +1125,7 @@ module.exports = { render: render };
 /***/ "1d82":
 /***/ (function(module, exports) {
 
-module.exports = {"description":"Used for handling basic user input.","methods":[],"displayName":"DsSelect","props":{"value":{"type":{"name":"string|object|number"},"required":"","defaultValue":{"value":"null","func":false},"tags":{},"comment":"/**\n     * The value of the input. Can be passed via v-model.\n     */","description":"The value of the input. Can be passed via v-model."},"model":{"type":{"name":"string"},"required":"","defaultValue":{"value":"null","func":false},"tags":{},"comment":"/**\n     * The model name when used within a form component. Uses dot notation.\n     */","description":"The model name when used within a form component. Uses dot notation."},"label":{"type":{"name":"string"},"required":"","defaultValue":{"value":"null","func":false},"tags":{},"comment":"/**\n     * The label of the input.\n     */","description":"The label of the input."},"id":{"type":{"name":"string"},"required":"","defaultValue":{"value":"null","func":false},"tags":{},"comment":"/**\n     * The id of the input.\n     */","description":"The id of the input."},"disabled":{"type":{"name":"boolean"},"required":"","defaultValue":{"value":"false","func":false},"tags":{},"comment":"/**\n     * Whether the input is disabled or not.\n     */","description":"Whether the input is disabled or not."},"schema":{"type":{"name":"object"},"required":"","defaultValue":{"value":"() => ({})","func":true},"tags":{},"comment":"/**\n     * The async-validator schema used for the input.\n     */","description":"The async-validator schema used for the input."},"size":{"type":{"name":"string"},"required":"","defaultValue":{"value":"null","func":false},"tags":{},"comment":"/**\n     * The input's size.\n     * `small, base, large`\n     */","description":"The input's size.\n`small, base, large`"},"placeholder":{"type":{"name":"string"},"required":"","defaultValue":{"value":"null","func":false},"tags":{},"comment":"/**\n     * The placeholder shown when value is empty.\n     */","description":"The placeholder shown when value is empty."},"autofocus":{"type":{"name":"boolean"},"required":"","defaultValue":{"value":"false","func":false},"tags":{},"comment":"/**\n     * Whether the input should be automatically focused\n     */","description":"Whether the input should be automatically focused"},"readonly":{"type":{"name":"boolean"},"required":"","defaultValue":{"value":"false","func":false},"tags":{},"comment":"/**\n     * Whether the input should be read-only\n     */","description":"Whether the input should be read-only"},"multiple":{"type":{"name":"boolean"},"required":"","defaultValue":{"value":"false","func":false},"tags":{},"comment":"/**\n     * Whether the user can select multiple items\n     */","description":"Whether the user can select multiple items"},"icon":{"type":{"name":"string"},"required":"","defaultValue":{"value":"null","func":false},"tags":{},"comment":"/**\n     * The name of the input's icon.\n     */","description":"The name of the input's icon."},"iconRight":{"type":{"name":"string"},"required":"","defaultValue":{"value":"\"angle-down\"","func":false},"tags":{},"comment":"/**\n     * The name of the input's right icon.\n     */","description":"The name of the input's right icon."},"options":{"type":{"name":"array"},"required":"","defaultValue":{"value":"default() { return []; }","func":true},"tags":{},"comment":"/**\n     * The select options.\n     */","description":"The select options."}},"comment":"/**\n * Used for handling basic user input.\n * @version 1.0.0\n */","tags":{"version":[{"title":"version","description":"1.0.0"}]},"events":{"input":{"description":"Fires after user input.\nReceives the value as the only argument.","comment":"/**\n         * Fires after user input.\n         * Receives the value as the only argument.\n         *\n         * @event input\n         */"}},"slots":{}}
+module.exports = {"description":"Used for handling basic user input.","methods":[],"displayName":"DsSelect","props":{"value":{"type":{"name":"string|object|number|array"},"required":"","defaultValue":{"value":"null","func":false},"tags":{},"comment":"/**\n     * The value of the input. Can be passed via v-model.\n     */","description":"The value of the input. Can be passed via v-model."},"model":{"type":{"name":"string"},"required":"","defaultValue":{"value":"null","func":false},"tags":{},"comment":"/**\n     * The model name when used within a form component. Uses dot notation.\n     */","description":"The model name when used within a form component. Uses dot notation."},"label":{"type":{"name":"string"},"required":"","defaultValue":{"value":"null","func":false},"tags":{},"comment":"/**\n     * The label of the input.\n     */","description":"The label of the input."},"id":{"type":{"name":"string"},"required":"","defaultValue":{"value":"null","func":false},"tags":{},"comment":"/**\n     * The id of the input.\n     */","description":"The id of the input."},"disabled":{"type":{"name":"boolean"},"required":"","defaultValue":{"value":"false","func":false},"tags":{},"comment":"/**\n     * Whether the input is disabled or not.\n     */","description":"Whether the input is disabled or not."},"schema":{"type":{"name":"object"},"required":"","defaultValue":{"value":"() => null","func":true},"tags":{},"comment":"/**\n     * The async-validator schema used for the input.\n     */","description":"The async-validator schema used for the input."},"size":{"type":{"name":"string"},"required":"","defaultValue":{"value":"null","func":false},"tags":{},"comment":"/**\n     * The input's size.\n     * `small, base, large`\n     */","description":"The input's size.\n`small, base, large`"},"tabindex":{"type":{"name":"number"},"required":"","defaultValue":{"value":"0","func":false},"tags":{},"comment":"","description":""},"multiple":{"type":{"name":"boolean"},"required":"","defaultValue":{"value":"false","func":false},"tags":{},"comment":"/**\n     * Whether the user can select multiple items\n     */","description":"Whether the user can select multiple items"},"placeholder":{"type":{"name":"string"},"required":"","defaultValue":{"value":"null","func":false},"tags":{},"comment":"/**\n     * The placeholder shown when value is empty.\n     */","description":"The placeholder shown when value is empty."},"autofocus":{"type":{"name":"boolean"},"required":"","defaultValue":{"value":"false","func":false},"tags":{},"comment":"/**\n     * Whether the input should be automatically focused\n     */","description":"Whether the input should be automatically focused"},"readonly":{"type":{"name":"boolean"},"required":"","defaultValue":{"value":"false","func":false},"tags":{},"comment":"/**\n     * Whether the input should be read-only\n     */","description":"Whether the input should be read-only"},"icon":{"type":{"name":"string"},"required":"","defaultValue":{"value":"null","func":false},"tags":{},"comment":"/**\n     * The name of the input's icon.\n     */","description":"The name of the input's icon."},"iconRight":{"type":{"name":"string"},"required":"","defaultValue":{"value":"\"angle-down\"","func":false},"tags":{},"comment":"/**\n     * The name of the input's right icon.\n     */","description":"The name of the input's right icon."},"options":{"type":{"name":"array"},"required":"","defaultValue":{"value":"default() { return []; }","func":true},"tags":{},"comment":"/**\n     * The select options.\n     */","description":"The select options."},"searchable":{"type":{"name":"boolean"},"required":"","defaultValue":{"value":"true","func":false},"tags":{},"comment":"/**\n     * Whether the options are searchable\n     */","description":"Whether the options are searchable"}},"comment":"/**\n * Used for handling basic user input.\n * @version 1.0.0\n */","tags":{"version":[{"title":"version","description":"1.0.0"}]},"events":{"input":{"description":"Fires after user input.\nReceives the value as the only argument.","comment":"/**\n         * Fires after user input.\n         * Receives the value as the only argument.\n         *\n         * @event input\n         */"}},"slots":{"\\\"optionitem\\\"":{"description":"Slot to provide a custom selected option display"},"\\\"value\\\"":{"description":"Slot to provide a custom value display"},"\\\"option\\\"":{"description":"Slot to provide custom option items"}}}
 
 /***/ }),
 
@@ -2349,6 +2356,26 @@ module.exports = { render: render };
 /***/ (function(module, exports, __webpack_require__) {
 
 // extracted by mini-css-extract-plugin
+
+/***/ }),
+
+/***/ "2fdb":
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+// 21.1.3.7 String.prototype.includes(searchString, position = 0)
+
+var $export = __webpack_require__("5ca1");
+var context = __webpack_require__("d2c8");
+var INCLUDES = 'includes';
+
+$export($export.P + $export.F * __webpack_require__("5147")(INCLUDES), 'String', {
+  includes: function includes(searchString /* , position = 0 */) {
+    return !!~context(this, searchString, INCLUDES)
+      .indexOf(searchString, arguments.length > 1 ? arguments[1] : undefined);
+  }
+});
+
 
 /***/ }),
 
@@ -3750,7 +3777,7 @@ Schema.messages = messages_messages;
      * The value of the input. Can be passed via v-model.
      */
     value: {
-      type: [String, Object, Number],
+      type: [String, Object, Number, Array],
       default: null
     },
 
@@ -3792,7 +3819,7 @@ Schema.messages = messages_messages;
     schema: {
       type: Object,
       default: function _default() {
-        return {};
+        return null;
       }
     },
 
@@ -3806,6 +3833,10 @@ Schema.messages = messages_messages;
       validator: function validator(value) {
         return value.match(/(small|base|large)/);
       }
+    },
+    tabindex: {
+      type: Number,
+      default: 0
     }
   },
   data: function data() {
@@ -3840,9 +3871,14 @@ Schema.messages = messages_messages;
     }
   },
   methods: {
-    input: function input(event) {
+    handleInput: function handleInput(event) {
+      this.input(event.target.value);
+    },
+    input: function input(value) {
+      this.innerValue = value;
+
       if (this.$parentForm) {
-        this.$parentForm.update(this.model, event.target.value);
+        this.$parentForm.update(this.model, value);
       } else {
         /**
          * Fires after user input.
@@ -3850,8 +3886,8 @@ Schema.messages = messages_messages;
          *
          * @event input
          */
-        this.$emit('input', event.target.value);
-        this.validate(event.target.value);
+        this.$emit('input', value);
+        this.validate(value);
       }
     },
     handleFormUpdate: function handleFormUpdate(data, errors) {
@@ -3860,6 +3896,10 @@ Schema.messages = messages_messages;
     },
     validate: function validate(value) {
       var _this = this;
+
+      if (!this.schema) {
+        return;
+      }
 
       var validator = new es({
         input: this.schema
@@ -4087,6 +4127,23 @@ module.exports = function (NAME, exec) {
     return test !== test.toLowerCase() || test.split('"').length > 3;
   }), 'String', O);
 };
+
+
+/***/ }),
+
+/***/ "386d":
+/***/ (function(module, exports, __webpack_require__) {
+
+// @@search logic
+__webpack_require__("214f")('search', 1, function (defined, SEARCH, $search) {
+  // 21.1.3.15 String.prototype.search(regexp)
+  return [function search(regexp) {
+    'use strict';
+    var O = defined(this);
+    var fn = regexp == undefined ? undefined : regexp[SEARCH];
+    return fn !== undefined ? fn.call(regexp, O) : new RegExp(regexp)[SEARCH](String(O));
+  }, $search];
+});
 
 
 /***/ }),
@@ -5042,6 +5099,25 @@ module.exports = function (done, value) {
 
 /***/ }),
 
+/***/ "5147":
+/***/ (function(module, exports, __webpack_require__) {
+
+var MATCH = __webpack_require__("2b4c")('match');
+module.exports = function (KEY) {
+  var re = /./;
+  try {
+    '/./'[KEY](re);
+  } catch (e) {
+    try {
+      re[MATCH] = false;
+      return !'/./'[KEY](re);
+    } catch (f) { /* empty */ }
+  } return true;
+};
+
+
+/***/ }),
+
 /***/ "5168":
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -5261,7 +5337,7 @@ module.exports = { render: render };
 /***/ "5a14":
 /***/ (function(module, exports) {
 
-module.exports = {"description":"Used for handling basic user input.","methods":[],"displayName":"DsInput","props":{"value":{"type":{"name":"string|object|number"},"required":"","defaultValue":{"value":"null","func":false},"tags":{},"comment":"/**\n     * The value of the input. Can be passed via v-model.\n     */","description":"The value of the input. Can be passed via v-model."},"model":{"type":{"name":"string"},"required":"","defaultValue":{"value":"null","func":false},"tags":{},"comment":"/**\n     * The model name when used within a form component. Uses dot notation.\n     */","description":"The model name when used within a form component. Uses dot notation."},"label":{"type":{"name":"string"},"required":"","defaultValue":{"value":"null","func":false},"tags":{},"comment":"/**\n     * The label of the input.\n     */","description":"The label of the input."},"id":{"type":{"name":"string"},"required":"","defaultValue":{"value":"null","func":false},"tags":{},"comment":"/**\n     * The id of the input.\n     */","description":"The id of the input."},"disabled":{"type":{"name":"boolean"},"required":"","defaultValue":{"value":"false","func":false},"tags":{},"comment":"/**\n     * Whether the input is disabled or not.\n     */","description":"Whether the input is disabled or not."},"schema":{"type":{"name":"object"},"required":"","defaultValue":{"value":"() => ({})","func":true},"tags":{},"comment":"/**\n     * The async-validator schema used for the input.\n     */","description":"The async-validator schema used for the input."},"size":{"type":{"name":"string"},"required":"","defaultValue":{"value":"null","func":false},"tags":{},"comment":"/**\n     * The input's size.\n     * `small, base, large`\n     */","description":"The input's size.\n`small, base, large`"},"type":{"type":{"name":"string"},"required":"","defaultValue":{"value":"\"text\"","func":false},"tags":{},"comment":"/**\n     * The type of this input `url, text, password, email, search, textarea`.\n     */","description":"The type of this input `url, text, password, email, search, textarea`."},"placeholder":{"type":{"name":"string"},"required":"","defaultValue":{"value":"null","func":false},"tags":{},"comment":"/**\n     * The placeholder shown when value is empty.\n     */","description":"The placeholder shown when value is empty."},"autofocus":{"type":{"name":"boolean"},"required":"","defaultValue":{"value":"false","func":false},"tags":{},"comment":"/**\n     * Whether the input should be automatically focused\n     */","description":"Whether the input should be automatically focused"},"readonly":{"type":{"name":"boolean"},"required":"","defaultValue":{"value":"false","func":false},"tags":{},"comment":"/**\n     * Whether the input should be read-only\n     */","description":"Whether the input should be read-only"},"rows":{"type":{"name":"string|number"},"required":"","defaultValue":{"value":"1","func":false},"tags":{},"comment":"/**\n     * How many rows this input should have (only for type=\\\"textarea\\\")\n     */","description":"How many rows this input should have (only for type=\\\"textarea\\\")"},"icon":{"type":{"name":"string"},"required":"","defaultValue":{"value":"null","func":false},"tags":{},"comment":"/**\n     * The name of the input's icon.\n     */","description":"The name of the input's icon."},"iconRight":{"type":{"name":"string"},"required":"","defaultValue":{"value":"null","func":false},"tags":{},"comment":"/**\n     * The name of the input's right icon.\n     */","description":"The name of the input's right icon."}},"comment":"/**\n * Used for handling basic user input.\n * @version 1.0.0\n */","tags":{"version":[{"title":"version","description":"1.0.0"}]},"events":{"input":{"description":"Fires after user input.\nReceives the value as the only argument.","comment":"/**\n         * Fires after user input.\n         * Receives the value as the only argument.\n         *\n         * @event input\n         */"}},"slots":{}}
+module.exports = {"description":"Used for handling basic user input.","methods":[],"displayName":"DsInput","props":{"value":{"type":{"name":"string|object|number|array"},"required":"","defaultValue":{"value":"null","func":false},"tags":{},"comment":"/**\n     * The value of the input. Can be passed via v-model.\n     */","description":"The value of the input. Can be passed via v-model."},"model":{"type":{"name":"string"},"required":"","defaultValue":{"value":"null","func":false},"tags":{},"comment":"/**\n     * The model name when used within a form component. Uses dot notation.\n     */","description":"The model name when used within a form component. Uses dot notation."},"label":{"type":{"name":"string"},"required":"","defaultValue":{"value":"null","func":false},"tags":{},"comment":"/**\n     * The label of the input.\n     */","description":"The label of the input."},"id":{"type":{"name":"string"},"required":"","defaultValue":{"value":"null","func":false},"tags":{},"comment":"/**\n     * The id of the input.\n     */","description":"The id of the input."},"disabled":{"type":{"name":"boolean"},"required":"","defaultValue":{"value":"false","func":false},"tags":{},"comment":"/**\n     * Whether the input is disabled or not.\n     */","description":"Whether the input is disabled or not."},"schema":{"type":{"name":"object"},"required":"","defaultValue":{"value":"() => null","func":true},"tags":{},"comment":"/**\n     * The async-validator schema used for the input.\n     */","description":"The async-validator schema used for the input."},"size":{"type":{"name":"string"},"required":"","defaultValue":{"value":"null","func":false},"tags":{},"comment":"/**\n     * The input's size.\n     * `small, base, large`\n     */","description":"The input's size.\n`small, base, large`"},"tabindex":{"type":{"name":"number"},"required":"","defaultValue":{"value":"0","func":false},"tags":{},"comment":"","description":""},"type":{"type":{"name":"string"},"required":"","defaultValue":{"value":"\"text\"","func":false},"tags":{},"comment":"/**\n     * The type of this input `url, text, password, email, search, textarea`.\n     */","description":"The type of this input `url, text, password, email, search, textarea`."},"placeholder":{"type":{"name":"string"},"required":"","defaultValue":{"value":"null","func":false},"tags":{},"comment":"/**\n     * The placeholder shown when value is empty.\n     */","description":"The placeholder shown when value is empty."},"autofocus":{"type":{"name":"boolean"},"required":"","defaultValue":{"value":"false","func":false},"tags":{},"comment":"/**\n     * Whether the input should be automatically focused\n     */","description":"Whether the input should be automatically focused"},"readonly":{"type":{"name":"boolean"},"required":"","defaultValue":{"value":"false","func":false},"tags":{},"comment":"/**\n     * Whether the input should be read-only\n     */","description":"Whether the input should be read-only"},"rows":{"type":{"name":"string|number"},"required":"","defaultValue":{"value":"1","func":false},"tags":{},"comment":"/**\n     * How many rows this input should have (only for type=\\\"textarea\\\")\n     */","description":"How many rows this input should have (only for type=\\\"textarea\\\")"},"icon":{"type":{"name":"string"},"required":"","defaultValue":{"value":"null","func":false},"tags":{},"comment":"/**\n     * The name of the input's icon.\n     */","description":"The name of the input's icon."},"iconRight":{"type":{"name":"string"},"required":"","defaultValue":{"value":"null","func":false},"tags":{},"comment":"/**\n     * The name of the input's right icon.\n     */","description":"The name of the input's right icon."}},"comment":"/**\n * Used for handling basic user input.\n * @version 1.0.0\n */","tags":{"version":[{"title":"version","description":"1.0.0"}]},"events":{"input":{"description":"Fires after user input.\nReceives the value as the only argument.","comment":"/**\n         * Fires after user input.\n         * Receives the value as the only argument.\n         *\n         * @event input\n         */"}},"slots":{}}
 
 /***/ }),
 
@@ -5324,6 +5400,17 @@ module.exports = { render: render };
 
 var render = function () { var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;return _c('svg',{attrs:{"xmlns":"http://www.w3.org/2000/svg","viewBox":"0 0 32 32"}},[_c('path',{attrs:{"d":"M15 4.594v22.813l-1.719-1.688L8.562 21H3.999V11h4.563l4.719-4.719zm-2 4.844l-3.281 3.281-.313.281H6v6h3.406l.313.281L13 22.562V9.437zm5.5 2.593C19.439 13.09 20 14.477 20 16s-.561 2.91-1.5 3.969l-1.438-1.438C17.64 17.837 18 16.972 18 16s-.36-1.837-.938-2.531z"}})]) };
 module.exports = { render: render };
+
+/***/ }),
+
+/***/ "5c79":
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony import */ var _node_modules_mini_css_extract_plugin_dist_loader_js_node_modules_css_loader_index_js_ref_8_oneOf_1_1_node_modules_vue_loader_lib_loaders_stylePostLoader_js_node_modules_postcss_loader_lib_index_js_ref_8_oneOf_1_2_node_modules_sass_loader_lib_loader_js_ref_8_oneOf_1_3_style_scss_vue_type_style_index_0_lang_scss___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__("ad85");
+/* harmony import */ var _node_modules_mini_css_extract_plugin_dist_loader_js_node_modules_css_loader_index_js_ref_8_oneOf_1_1_node_modules_vue_loader_lib_loaders_stylePostLoader_js_node_modules_postcss_loader_lib_index_js_ref_8_oneOf_1_2_node_modules_sass_loader_lib_loader_js_ref_8_oneOf_1_3_style_scss_vue_type_style_index_0_lang_scss___WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_node_modules_mini_css_extract_plugin_dist_loader_js_node_modules_css_loader_index_js_ref_8_oneOf_1_1_node_modules_vue_loader_lib_loaders_stylePostLoader_js_node_modules_postcss_loader_lib_index_js_ref_8_oneOf_1_2_node_modules_sass_loader_lib_loader_js_ref_8_oneOf_1_3_style_scss_vue_type_style_index_0_lang_scss___WEBPACK_IMPORTED_MODULE_0__);
+/* unused harmony reexport * */
+ /* unused harmony default export */ var _unused_webpack_default_export = (_node_modules_mini_css_extract_plugin_dist_loader_js_node_modules_css_loader_index_js_ref_8_oneOf_1_1_node_modules_vue_loader_lib_loaders_stylePostLoader_js_node_modules_postcss_loader_lib_index_js_ref_8_oneOf_1_2_node_modules_sass_loader_lib_loader_js_ref_8_oneOf_1_3_style_scss_vue_type_style_index_0_lang_scss___WEBPACK_IMPORTED_MODULE_0___default.a); 
 
 /***/ }),
 
@@ -6047,6 +6134,26 @@ module.exports = isArray;
 
 /***/ }),
 
+/***/ "6762":
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+// https://github.com/tc39/Array.prototype.includes
+var $export = __webpack_require__("5ca1");
+var $includes = __webpack_require__("c366")(true);
+
+$export($export.P, 'Array', {
+  includes: function includes(el /* , fromIndex = 0 */) {
+    return $includes(this, el, arguments.length > 1 ? arguments[1] : undefined);
+  }
+});
+
+__webpack_require__("9c6c")('includes');
+
+
+/***/ }),
+
 /***/ "6799":
 /***/ (function(module, exports) {
 
@@ -6074,15 +6181,15 @@ module.exports = function (it) {
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 
-// CONCATENATED MODULE: ./node_modules/cache-loader/dist/cjs.js?{"cacheDirectory":"node_modules/.cache/vue-loader","cacheIdentifier":"41dfbe64-vue-loader-template"}!./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/cache-loader/dist/cjs.js??ref--0-0!./node_modules/vue-loader/lib??vue-loader-options!./src/system/components/data-input/Input/Input.vue?vue&type=template&id=a63d87fa&
+// CONCATENATED MODULE: ./node_modules/cache-loader/dist/cjs.js?{"cacheDirectory":"node_modules/.cache/vue-loader","cacheIdentifier":"41dfbe64-vue-loader-template"}!./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/cache-loader/dist/cjs.js??ref--0-0!./node_modules/vue-loader/lib??vue-loader-options!./src/system/components/data-input/Input/Input.vue?vue&type=template&id=ecc8da9c&
 var render = function () {var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;return _c('ds-form-item',[_c('div',{staticClass:"ds-input-wrap"},[(_vm.icon)?_c('div',{staticClass:"ds-input-icon"},[_c('ds-icon',{attrs:{"name":_vm.icon}})],1):_vm._e(),_c(_vm.tag,{tag:"component",staticClass:"ds-input",class:[
         _vm.icon && "ds-input-has-icon",
         _vm.iconRight && "ds-input-has-icon-right"
-      ],attrs:{"id":_vm.id,"name":_vm.model,"type":_vm.type,"autofocus":_vm.autofocus,"placeholder":_vm.placeholder,"disabled":_vm.disabled,"readonly":_vm.readonly,"rows":_vm.type === 'textarea' ? _vm.rows : null},domProps:{"value":_vm.innerValue,"innerHTML":_vm._s(_vm.type === 'textarea' ? _vm.innerValue : null)},on:{"input":_vm.input,"focus":_vm.handleFocus,"blur":_vm.handleBlur}}),(_vm.iconRight)?_c('div',{staticClass:"ds-input-icon-right"},[_c('ds-icon',{attrs:{"name":_vm.iconRight}})],1):_vm._e()],1)])}
+      ],attrs:{"id":_vm.id,"name":_vm.model,"type":_vm.type,"autofocus":_vm.autofocus,"placeholder":_vm.placeholder,"tabindex":_vm.tabindex,"disabled":_vm.disabled,"readonly":_vm.readonly,"rows":_vm.type === 'textarea' ? _vm.rows : null},domProps:{"value":_vm.innerValue,"innerHTML":_vm._s(_vm.type === 'textarea' ? _vm.innerValue : null)},on:{"input":_vm.handleInput,"focus":_vm.handleFocus,"blur":_vm.handleBlur}}),(_vm.iconRight)?_c('div',{staticClass:"ds-input-icon-right"},[_c('ds-icon',{attrs:{"name":_vm.iconRight}})],1):_vm._e()],1)])}
 var staticRenderFns = []
 
 
-// CONCATENATED MODULE: ./src/system/components/data-input/Input/Input.vue?vue&type=template&id=a63d87fa&
+// CONCATENATED MODULE: ./src/system/components/data-input/Input/Input.vue?vue&type=template&id=ecc8da9c&
 
 // EXTERNAL MODULE: ./node_modules/core-js/modules/es6.number.constructor.js
 var es6_number_constructor = __webpack_require__("c5f6");
@@ -6096,6 +6203,7 @@ var input = __webpack_require__("33ba");
 // CONCATENATED MODULE: ./node_modules/cache-loader/dist/cjs.js??ref--12-0!./node_modules/thread-loader/dist/cjs.js!./node_modules/babel-loader/lib!./node_modules/vue-loader/lib??vue-loader-options!./src/system/components/data-input/Input/Input.vue?vue&type=script&lang=js&
 
 
+//
 //
 //
 //
@@ -7545,31 +7653,9 @@ var staticRenderFns = []
 // EXTERNAL MODULE: ./node_modules/core-js/modules/es6.function.name.js
 var es6_function_name = __webpack_require__("7f7f");
 
-// CONCATENATED MODULE: ./node_modules/@babel/runtime/helpers/builtin/es6/arrayWithoutHoles.js
-function _arrayWithoutHoles(arr) {
-  if (Array.isArray(arr)) {
-    for (var i = 0, arr2 = new Array(arr.length); i < arr.length; i++) {
-      arr2[i] = arr[i];
-    }
+// EXTERNAL MODULE: ./node_modules/@babel/runtime/helpers/builtin/es6/toConsumableArray.js + 3 modules
+var toConsumableArray = __webpack_require__("8afe");
 
-    return arr2;
-  }
-}
-// CONCATENATED MODULE: ./node_modules/@babel/runtime/helpers/builtin/es6/iterableToArray.js
-function _iterableToArray(iter) {
-  if (Symbol.iterator in Object(iter) || Object.prototype.toString.call(iter) === "[object Arguments]") return Array.from(iter);
-}
-// CONCATENATED MODULE: ./node_modules/@babel/runtime/helpers/builtin/es6/nonIterableSpread.js
-function _nonIterableSpread() {
-  throw new TypeError("Invalid attempt to spread non-iterable instance");
-}
-// CONCATENATED MODULE: ./node_modules/@babel/runtime/helpers/builtin/es6/toConsumableArray.js
-
-
-
-function _toConsumableArray(arr) {
-  return _arrayWithoutHoles(arr) || _iterableToArray(arr) || _nonIterableSpread();
-}
 // EXTERNAL MODULE: ./node_modules/core-js/modules/es6.regexp.match.js
 var es6_regexp_match = __webpack_require__("4917");
 
@@ -7666,7 +7752,7 @@ var es6_regexp_match = __webpack_require__("4917");
 
         var parseName = this.$options.filters.kebabCase;
 
-        var routeParts = _toConsumableArray(parents).concat([route]).map(function (p) {
+        var routeParts = Object(toConsumableArray["a" /* default */])(parents).concat([route]).map(function (p) {
           return parseName(p.name);
         });
 
@@ -7875,7 +7961,7 @@ module.exports = { render: render };
 /***/ "804f":
 /***/ (function(module) {
 
-module.exports = {"aliases":{"green":{"value":"100, 69%"},"neutral":{"value":"264, 10%"},"orange":{"value":"28, 80%"},"red":{"value":"3, 65%"},"yellow":{"value":"48, 100%"},"pink":{"value":"330, 86%"},"blue":{"value":"200, 100%"},"teal":{"value":"174, 80%"},"purple":{"value":"264, 88%"},"x-large":{"value":48},"xxx-large":{"value":128},"small":{"value":16},"xx-large":{"value":64},"base":{"value":24},"xxx-small":{"value":2},"x-small":{"value":8},"xx-small":{"value":4},"large":{"value":32},"xs":{"value":480},"sm":{"value":600},"md":{"value":768},"lg":{"value":1024},"xl":{"value":1200}},"props":{"color-neutral-0":{"type":"color","category":"color","name":"color-neutral-0","value":"rgb(25, 23, 28)","originalValue":"hsla({!neutral}, 10%, 1)"},"color-neutral-10":{"type":"color","category":"color","name":"color-neutral-10","value":"rgb(40, 37, 45)","originalValue":"hsla({!neutral}, 16%, 1)"},"color-neutral-20":{"type":"color","category":"color","name":"color-neutral-20","value":"rgb(75, 69, 84)","originalValue":"hsla({!neutral}, 30%, 1)"},"color-neutral-30":{"type":"color","category":"color","name":"color-neutral-30","value":"rgb(100, 92, 112)","originalValue":"hsla({!neutral}, 40%, 1)"},"color-neutral-40":{"type":"color","category":"color","name":"color-neutral-40","value":"rgb(112, 103, 126)","originalValue":"hsla({!neutral}, 45%, 1)"},"color-neutral-50":{"type":"color","category":"color","name":"color-neutral-50","value":"rgb(151, 143, 163)","originalValue":"hsla({!neutral}, 60%, 1)"},"color-neutral-60":{"type":"color","category":"color","name":"color-neutral-60","value":"rgb(177, 171, 186)","originalValue":"hsla({!neutral}, 70%, 1)"},"color-neutral-70":{"type":"color","category":"color","name":"color-neutral-70","value":"rgb(203, 199, 209)","originalValue":"hsla({!neutral}, 80%, 1)"},"color-neutral-80":{"type":"color","category":"color","name":"color-neutral-80","value":"rgb(229, 227, 232)","originalValue":"hsla({!neutral}, 90%, 1)"},"color-neutral-85":{"type":"color","category":"color","name":"color-neutral-85","value":"rgb(239, 238, 241)","originalValue":"hsla({!neutral}, 94%, 1)"},"color-neutral-90":{"type":"color","category":"color","name":"color-neutral-90","value":"rgb(245, 244, 246)","originalValue":"hsla({!neutral}, 96%, 1)"},"color-neutral-95":{"type":"color","category":"color","name":"color-neutral-95","value":"rgb(250, 249, 250)","originalValue":"hsla({!neutral}, 98%, 1)"},"color-neutral-100":{"type":"color","category":"color","name":"color-neutral-100","value":"rgb(255, 255, 255)","originalValue":"hsla({!neutral}, 100%, 1)"},"color-primary":{"type":"color","category":"color","name":"color-primary","value":"rgb(20, 184, 167)","originalValue":"hsla({!teal}, 40%, 1)"},"color-primary-active":{"type":"color","category":"color","name":"color-primary-active","value":"rgb(22, 197, 180)","originalValue":"hsla({!teal}, 43%, 1)"},"color-primary-inverse":{"type":"color","category":"color","name":"color-primary-inverse","value":"rgb(241, 253, 252)","originalValue":"hsla({!teal}, 97%, 1)"},"color-secondary":{"type":"color","category":"color","name":"color-secondary","value":"rgb(95, 14, 216)","originalValue":"hsla({!purple}, 45%, 1)"},"color-secondary-active":{"type":"color","category":"color","name":"color-secondary-active","value":"rgb(111, 25, 240)","originalValue":"hsla({!purple}, 52%, 1)"},"color-secondary-inverse":{"type":"color","category":"color","name":"color-secondary-inverse","value":"rgb(246, 241, 254)","originalValue":"hsla({!purple}, 97%, 1)"},"color-success":{"type":"color","category":"color","name":"color-success","value":"rgb(79, 172, 32)","originalValue":"hsla({!green}, 40%, 1)"},"color-success-active":{"type":"color","category":"color","name":"color-success-active","value":"rgb(88, 194, 36)","originalValue":"hsla({!green}, 45%, 1)"},"color-success-inverse":{"type":"color","category":"color","name":"color-success-inverse","value":"rgb(246, 253, 242)","originalValue":"hsla({!green}, 97%, 1)"},"color-danger":{"type":"color","category":"color","name":"color-danger","value":"rgb(210, 53, 45)","originalValue":"hsla({!red}, 50%, 1)"},"color-danger-active":{"type":"color","category":"color","name":"color-danger-active","value":"rgb(216, 77, 70)","originalValue":"hsla({!red}, 56%, 1)"},"color-danger-inverse":{"type":"color","category":"color","name":"color-danger-inverse","value":"rgb(252, 243, 242)","originalValue":"hsla({!red}, 97%, 1)"},"color-warning":{"type":"color","category":"color","name":"color-warning","value":"rgb(230, 121, 25)","originalValue":"hsla({!orange}, 50%, 1)"},"color-warning-active":{"type":"color","category":"color","name":"color-warning-active","value":"rgb(233, 137, 53)","originalValue":"hsla({!orange}, 56%, 1)"},"color-warning-inverse":{"type":"color","category":"color","name":"color-warning-inverse","value":"rgb(253, 247, 241)","originalValue":"hsla({!orange}, 97%, 1)"},"color-yellow":{"type":"color","category":"color","name":"color-yellow","value":"rgb(245, 196, 0)","originalValue":"hsla({!yellow}, 48%, 1)"},"color-yellow-active":{"type":"color","category":"color","name":"color-yellow-active","value":"rgb(255, 206, 10)","originalValue":"hsla({!yellow}, 52%, 1)"},"color-yellow-inverse":{"type":"color","category":"color","name":"color-yellow-inverse","value":"rgb(255, 252, 240)","originalValue":"hsla({!yellow}, 97%, 1)"},"text-color-base":{"type":"color","category":"text-color","name":"text-color-base","value":"rgb(75, 69, 84)","originalValue":"hsla({!neutral}, 30%, 1)"},"text-color-soft":{"type":"color","category":"text-color","name":"text-color-soft","value":"rgb(112, 103, 126)","originalValue":"hsla({!neutral}, 45%, 1)"},"text-color-softer":{"type":"color","category":"text-color","name":"text-color-softer","value":"rgb(177, 171, 186)","originalValue":"hsla({!neutral}, 70%, 1)"},"text-color-disabled":{"type":"color","category":"text-color","name":"text-color-disabled","value":"rgb(177, 171, 186)","originalValue":"hsla({!neutral}, 70%, 1)"},"text-color-inverse":{"type":"color","category":"text-color","name":"text-color-inverse","value":"rgb(250, 249, 250)","originalValue":"hsla({!neutral}, 98%, 1)"},"text-color-link":{"type":"color","category":"text-color","name":"text-color-link","value":"rgb(20, 184, 167)","originalValue":"hsla({!teal}, 40%, 1)"},"text-color-link-active":{"type":"color","category":"text-color","name":"text-color-link-active","value":"rgb(22, 197, 180)","originalValue":"hsla({!teal}, 43%, 1)"},"text-color-primary":{"type":"color","category":"text-color","name":"text-color-primary","value":"rgb(20, 184, 167)","originalValue":"hsla({!teal}, 40%, 1)"},"text-color-primary-inverse":{"type":"color","category":"text-color","name":"text-color-primary-inverse","value":"rgb(241, 253, 252)","originalValue":"hsla({!teal}, 97%, 1)"},"text-color-secondary":{"type":"color","category":"text-color","name":"text-color-secondary","value":"rgb(95, 14, 216)","originalValue":"hsla({!purple}, 45%, 1)"},"text-color-secondary-inverse":{"type":"color","category":"text-color","name":"text-color-secondary-inverse","value":"rgb(246, 241, 254)","originalValue":"hsla({!purple}, 97%, 1)"},"text-color-success":{"type":"color","category":"text-color","name":"text-color-success","value":"rgb(79, 172, 32)","originalValue":"hsla({!green}, 40%, 1)"},"text-color-success-inverse":{"type":"color","category":"text-color","name":"text-color-success-inverse","value":"rgb(246, 253, 242)","originalValue":"hsla({!green}, 97%, 1)"},"text-color-warning":{"type":"color","category":"text-color","name":"text-color-warning","value":"rgb(230, 121, 25)","originalValue":"hsla({!orange}, 50%, 1)"},"text-color-warning-inverse":{"type":"color","category":"text-color","name":"text-color-warning-inverse","value":"rgb(253, 247, 241)","originalValue":"hsla({!orange}, 97%, 1)"},"text-color-danger":{"type":"color","category":"text-color","name":"text-color-danger","value":"rgb(210, 53, 45)","originalValue":"hsla({!red}, 50%, 1)"},"text-color-danger-inverse":{"type":"color","category":"text-color","name":"text-color-danger-inverse","value":"rgb(252, 243, 242)","originalValue":"hsla({!red}, 97%, 1)"},"background-color-base":{"type":"color","category":"background-color","name":"background-color-base","value":"rgb(255, 255, 255)","originalValue":"hsla({!neutral}, 100%, 1)"},"background-color-soft":{"type":"color","category":"background-color","name":"background-color-soft","value":"rgb(250, 249, 250)","originalValue":"hsla({!neutral}, 98%, 1)"},"background-color-softer":{"type":"color","category":"background-color","name":"background-color-softer","value":"rgb(245, 244, 246)","originalValue":"hsla({!neutral}, 96%, 1)"},"background-color-softer-active":{"type":"color","category":"background-color","name":"background-color-softer-active","value":"rgb(250, 249, 250)","originalValue":"hsla({!neutral}, 98%, 1)"},"background-color-softest":{"type":"color","category":"background-color","name":"background-color-softest","value":"rgb(239, 238, 241)","originalValue":"hsla({!neutral}, 94%, 1)"},"background-color-softest-active":{"type":"color","category":"background-color","name":"background-color-softest-active","value":"rgb(245, 244, 246)","originalValue":"hsla({!neutral}, 96%, 1)"},"background-color-inverse":{"type":"color","category":"background-color","name":"background-color-inverse","value":"rgb(25, 23, 28)","originalValue":"hsla({!neutral}, 10%, 1)"},"background-color-inverse-soft":{"type":"color","category":"background-color","name":"background-color-inverse-soft","value":"rgb(40, 37, 45)","originalValue":"hsla({!neutral}, 16%, 1)"},"background-color-inverse-softer":{"type":"color","category":"background-color","name":"background-color-inverse-softer","value":"rgb(75, 69, 84)","originalValue":"hsla({!neutral}, 30%, 1)"},"background-color-inverse-softer-active":{"type":"color","category":"background-color","name":"background-color-inverse-softer-active","value":"rgb(100, 92, 112)","originalValue":"hsla({!neutral}, 40%, 1)"},"background-color-primary":{"type":"color","category":"background-color","name":"background-color-primary","value":"rgb(20, 184, 167)","originalValue":"hsla({!teal}, 40%, 1)"},"background-color-primary-active":{"type":"color","category":"background-color","name":"background-color-primary-active","value":"rgb(22, 197, 180)","originalValue":"hsla({!teal}, 43%, 1)"},"background-color-primary-inverse":{"type":"color","category":"background-color","name":"background-color-primary-inverse","value":"rgb(241, 253, 252)","originalValue":"hsla({!teal}, 97%, 1)"},"background-color-secondary":{"type":"color","category":"background-color","name":"background-color-secondary","value":"rgb(95, 14, 216)","originalValue":"hsla({!purple}, 45%, 1)"},"background-color-secondary-active":{"type":"color","category":"background-color","name":"background-color-secondary-active","value":"rgb(111, 25, 240)","originalValue":"hsla({!purple}, 52%, 1)"},"background-color-secondary-inverse":{"type":"color","category":"background-color","name":"background-color-secondary-inverse","value":"rgb(246, 241, 254)","originalValue":"hsla({!purple}, 97%, 1)"},"background-color-success":{"type":"color","category":"background-color","name":"background-color-success","value":"rgb(79, 172, 32)","originalValue":"hsla({!green}, 40%, 1)"},"background-color-success-active":{"type":"color","category":"background-color","name":"background-color-success-active","value":"rgb(88, 194, 36)","originalValue":"hsla({!green}, 45%, 1)"},"background-color-success-inverse":{"type":"color","category":"background-color","name":"background-color-success-inverse","value":"rgb(246, 253, 242)","originalValue":"hsla({!green}, 97%, 1)"},"background-color-warning":{"type":"color","category":"background-color","name":"background-color-warning","value":"rgb(230, 121, 25)","originalValue":"hsla({!orange}, 50%, 1)"},"background-color-warning-active":{"type":"color","category":"background-color","name":"background-color-warning-active","value":"rgb(233, 137, 53)","originalValue":"hsla({!orange}, 56%, 1)"},"background-color-warning-inverse":{"type":"color","category":"background-color","name":"background-color-warning-inverse","value":"rgb(253, 247, 241)","originalValue":"hsla({!orange}, 97%, 1)"},"background-color-danger":{"type":"color","category":"background-color","name":"background-color-danger","value":"rgb(210, 53, 45)","originalValue":"hsla({!red}, 50%, 1)"},"background-color-danger-active":{"type":"color","category":"background-color","name":"background-color-danger-active","value":"rgb(216, 77, 70)","originalValue":"hsla({!red}, 56%, 1)"},"background-color-danger-inverse":{"type":"color","category":"background-color","name":"background-color-danger-inverse","value":"rgb(252, 243, 242)","originalValue":"hsla({!red}, 97%, 1)"},"border-color-base":{"type":"color","category":"border-color","name":"border-color-base","value":"rgb(177, 171, 186)","originalValue":"hsla({!neutral}, 70%, 1)"},"border-color-soft":{"type":"color","category":"border-color","name":"border-color-soft","value":"rgb(203, 199, 209)","originalValue":"hsla({!neutral}, 80%, 1)"},"border-color-softer":{"type":"color","category":"border-color","name":"border-color-softer","value":"rgb(229, 227, 232)","originalValue":"hsla({!neutral}, 90%, 1)"},"border-color-active":{"type":"color","category":"border-color","name":"border-color-active","value":"rgb(20, 184, 167)","originalValue":"hsla({!teal}, 40%, 1)"},"border-color-primary":{"type":"color","category":"border-color","name":"border-color-primary","value":"rgb(20, 184, 167)","originalValue":"hsla({!teal}, 40%, 1)"},"border-color-success":{"type":"color","category":"border-color","name":"border-color-success","value":"rgb(79, 172, 32)","originalValue":"hsla({!green}, 40%, 1)"},"border-color-warning":{"type":"color","category":"border-color","name":"border-color-warning","value":"rgb(230, 121, 25)","originalValue":"hsla({!orange}, 50%, 1)"},"border-color-danger":{"type":"color","category":"border-color","name":"border-color-danger","value":"rgb(210, 53, 45)","originalValue":"hsla({!red}, 50%, 1)"},"border-size-base":{"type":"number","category":"border-size","name":"border-size-base","value":"1px","originalValue":"1px"},"border-size-large":{"type":"number","category":"border-size","name":"border-size-large","value":"3px","originalValue":"3px"},"border-size-x-large":{"type":"number","category":"border-size","name":"border-size-x-large","value":"6px","originalValue":"6px"},"border-radius-base":{"type":"number","category":"border-radius","name":"border-radius-base","value":"3px","originalValue":"3px"},"border-radius-rounded":{"type":"number","category":"border-radius","name":"border-radius-rounded","value":"2em","originalValue":"2em"},"border-radius-circle":{"type":"number","category":"border-radius","name":"border-radius-circle","value":"50%","originalValue":"50%"},"font-size-xxxx-large":{"type":"number","category":"font-size","name":"font-size-xxxx-large","value":"3rem","originalValue":"3rem"},"font-size-xxx-large":{"type":"number","category":"font-size","name":"font-size-xxx-large","value":"2.5rem","originalValue":"2.5rem"},"font-size-xx-large":{"type":"number","category":"font-size","name":"font-size-xx-large","value":"2rem","originalValue":"2rem"},"font-size-x-large":{"type":"number","category":"font-size","name":"font-size-x-large","value":"1.5rem","originalValue":"1.5rem"},"font-size-large":{"type":"number","category":"font-size","name":"font-size-large","value":"1.25rem","originalValue":"1.25rem"},"font-size-base":{"type":"number","category":"font-size","name":"font-size-base","value":"1rem","originalValue":"1rem"},"font-size-body":{"type":"number","category":"font-size","name":"font-size-body","value":"16px","originalValue":"16px"},"font-size-small":{"type":"number","category":"font-size","name":"font-size-small","value":"0.8rem","originalValue":"0.8rem"},"font-size-x-small":{"type":"number","category":"font-size","name":"font-size-x-small","value":"0.7rem","originalValue":"0.7rem"},"font-size-xx-small":{"type":"number","category":"font-size","name":"font-size-xx-small","value":"0.6rem","originalValue":"0.6rem"},"font-space-xxxx-large":{"type":"number","category":"font-spacing","name":"font-space-xxxx-large","value":"2em","originalValue":"2em"},"font-space-xxx-large":{"type":"number","category":"font-spacing","name":"font-space-xxx-large","value":"1.5em","originalValue":"1.5em"},"font-space-xx-large":{"type":"number","category":"font-spacing","name":"font-space-xx-large","value":"1.2em","originalValue":"1.2em"},"font-space-x-large":{"type":"number","category":"font-spacing","name":"font-space-x-large","value":"1em","originalValue":"1em"},"font-space-large":{"type":"number","category":"font-spacing","name":"font-space-large","value":"0.6em","originalValue":"0.6em"},"font-space-base":{"type":"number","category":"font-spacing","name":"font-space-base","value":"0.5em","originalValue":"0.5em"},"font-space-small":{"type":"number","category":"font-spacing","name":"font-space-small","value":"0.4em","originalValue":"0.4em"},"font-space-x-small":{"type":"number","category":"font-spacing","name":"font-space-x-small","value":"0.3em","originalValue":"0.3em"},"font-space-xx-small":{"type":"number","category":"font-spacing","name":"font-space-xx-small","value":"0.2em","originalValue":"0.2em"},"font-family-heading":{"type":"...","category":"font-family","name":"font-family-heading","value":"'LatoWeb', sans-serif","originalValue":"'LatoWeb', sans-serif"},"font-family-text":{"type":"...","category":"font-family","name":"font-family-text","value":"'LatoWeb', sans-serif","originalValue":"'LatoWeb', sans-serif"},"font-family-code":{"type":"...","category":"font-family","name":"font-family-code","value":"inconsolata, monospace","originalValue":"inconsolata, monospace"},"font-weight-regular":{"type":"...","category":"font-weight","name":"font-weight-regular","value":"normal","originalValue":"normal"},"font-weight-bold":{"type":"...","category":"font-weight","name":"font-weight-bold","value":"600","originalValue":"600"},"line-height-base":{"type":"number","category":"line-height","name":"line-height-base","value":"1.5","originalValue":"1.5"},"line-height-small":{"type":"number","category":"line-height","name":"line-height-small","value":"1.3","originalValue":"1.3"},"line-height-smaller":{"type":"number","category":"line-height","name":"line-height-smaller","value":"1.1","originalValue":"1.1"},"letter-spacing-x-large":{"type":"number","category":"letter-spacing","name":"letter-spacing-x-large","value":"0.1em","originalValue":"0.1em"},"letter-spacing-large":{"type":"number","category":"letter-spacing","name":"letter-spacing-large","value":"0.05em","originalValue":"0.05em"},"letter-spacing-base":{"type":"number","category":"letter-spacing","name":"letter-spacing-base","value":"0","originalValue":"0"},"letter-spacing-small":{"type":"number","category":"letter-spacing","name":"letter-spacing-small","value":"-0.01em","originalValue":"-0.01em"},"letter-spacing-x-small":{"type":"number","category":"letter-spacing","name":"letter-spacing-x-small","value":"-0.015em","originalValue":"-0.015em"},"opacity-soft":{"type":"number","category":"opacity","name":"opacity-soft","value":"0.65","originalValue":"0.65"},"opacity-disabled":{"type":"number","category":"opacity","name":"opacity-disabled","value":"0.5","originalValue":"0.5"},"xxx-large":{"type":"number","category":"space-size","name":"xxx-large","value":128,"originalValue":128},"xx-large":{"type":"number","category":"space-size","name":"xx-large","value":64,"originalValue":64},"x-large":{"type":"number","category":"space-size","name":"x-large","value":48,"originalValue":48},"large":{"type":"number","category":"space-size","name":"large","value":32,"originalValue":32},"base":{"type":"number","category":"space-size","name":"base","value":24,"originalValue":24},"small":{"type":"number","category":"space-size","name":"small","value":16,"originalValue":16},"x-small":{"type":"number","category":"space-size","name":"x-small","value":8,"originalValue":8},"xx-small":{"type":"number","category":"space-size","name":"xx-small","value":4,"originalValue":4},"xxx-small":{"type":"number","category":"space-size","name":"xxx-small","value":2,"originalValue":2},"space-xxx-large":{"type":"number","category":"space","name":"space-xxx-large","value":"128px","originalValue":"{!xxx-large}px"},"space-xx-large":{"type":"number","category":"space","name":"space-xx-large","value":"64px","originalValue":"{!xx-large}px"},"space-x-large":{"type":"number","category":"space","name":"space-x-large","value":"48px","originalValue":"{!x-large}px"},"space-large":{"type":"number","category":"space","name":"space-large","value":"32px","originalValue":"{!large}px"},"space-base":{"type":"number","category":"space","name":"space-base","value":"24px","originalValue":"{!base}px"},"space-small":{"type":"number","category":"space","name":"space-small","value":"16px","originalValue":"{!small}px"},"space-x-small":{"type":"number","category":"space","name":"space-x-small","value":"8px","originalValue":"{!x-small}px"},"space-xx-small":{"type":"number","category":"space","name":"space-xx-small","value":"4px","originalValue":"{!xx-small}px"},"space-xxx-small":{"type":"number","category":"space","name":"space-xxx-small","value":"2px","originalValue":"{!xxx-small}px"},"size-height-base":{"type":"number","category":"size","name":"size-height-base","value":"42px","originalValue":"42px"},"size-height-large":{"type":"number","category":"size","name":"size-height-large","value":"50px","originalValue":"50px"},"size-height-xlarge":{"type":"number","category":"size","name":"size-height-xlarge","value":"60px","originalValue":"60px"},"size-tappable-square":{"type":"number","category":"size","name":"size-tappable-square","value":"44px","originalValue":"44px"},"size-height-footer":{"type":"number","category":"size","name":"size-height-footer","value":"64px","originalValue":"64px"},"box-shadow-large":{"type":"...","category":"box-shadow","name":"box-shadow-large","value":"0 20px 60px 0 rgba(0, 0, 0, .15)","originalValue":"0 20px 60px 0 rgba(0, 0, 0, .15)"},"box-shadow-base":{"type":"...","category":"box-shadow","name":"box-shadow-base","value":"0px 12px 26px -4px rgba(0, 0, 0, .1)","originalValue":"0px 12px 26px -4px rgba(0, 0, 0, .1)"},"box-shadow-small":{"type":"...","category":"box-shadow","name":"box-shadow-small","value":"0px 8px 18px -2px rgba(0, 0, 0, .1)","originalValue":"0px 8px 18px -2px rgba(0, 0, 0, .1)"},"box-shadow-x-small":{"type":"...","category":"box-shadow","name":"box-shadow-x-small","value":"0px 0px 3px 0px rgba(0, 0, 0, .1)","originalValue":"0px 0px 3px 0px rgba(0, 0, 0, .1)"},"box-shadow-active":{"type":"...","category":"box-shadow","name":"box-shadow-active","value":"0 0 6px 1px rgba(20, 100, 160, 0.5)","originalValue":"0 0 6px 1px rgba(20, 100, 160, 0.5)"},"box-shadow-inset":{"type":"...","category":"box-shadow","name":"box-shadow-inset","value":"inset 0 0 20px 1px rgba(0,0,0,.15)","originalValue":"inset 0 0 20px 1px rgba(0,0,0,.15)"},"box-shadow-small-inset":{"type":"...","category":"box-shadow","name":"box-shadow-small-inset","value":"inset 0 0 0 1px rgba(0,0,0,.05)","originalValue":"inset 0 0 0 1px rgba(0,0,0,.05)"},"duration-short":{"type":"number","category":"time","name":"duration-short","value":"0.08s","originalValue":"0.08s"},"duration-base":{"type":"number","category":"time","name":"duration-base","value":"0.5s","originalValue":"0.5s"},"duration-long":{"type":"number","category":"time","name":"duration-long","value":"0.75s","originalValue":"0.75s"},"duration-x-long":{"type":"number","category":"time","name":"duration-x-long","value":"1s","originalValue":"1s"},"duration-xx-long":{"type":"number","category":"time","name":"duration-xx-long","value":"2s","originalValue":"2s"},"ease-out":{"type":"number","category":"ease","name":"ease-out","value":"cubic-bezier(0.25, 0.46, 0.45, 0.94)","originalValue":"cubic-bezier(0.25, 0.46, 0.45, 0.94)"},"ease-out-sharp":{"type":"number","category":"ease","name":"ease-out-sharp","value":"cubic-bezier(0.165, 0.84, 0.44, 1)","originalValue":"cubic-bezier(0.165, 0.84, 0.44, 1)"},"ease-out-bounce":{"type":"number","category":"ease","name":"ease-out-bounce","value":"cubic-bezier(.87,-.41,.19,1.44)","originalValue":"cubic-bezier(.87,-.41,.19,1.44)"},"ease-in":{"type":"number","category":"ease","name":"ease-in","value":"cubic-bezier(0.55, 0.085, 0.68, 0.53)","originalValue":"cubic-bezier(0.55, 0.085, 0.68, 0.53)"},"ease-in-sharp":{"type":"number","category":"ease","name":"ease-in-sharp","value":"cubic-bezier(0.895, 0.03, 0.685, 0.22)","originalValue":"cubic-bezier(0.895, 0.03, 0.685, 0.22)"},"z-index-modal":{"type":"number","category":"z-index","name":"z-index-modal","value":"9999","originalValue":"9999"},"z-index-page-submenu":{"type":"number","category":"z-index","name":"z-index-page-submenu","value":"2500","originalValue":"2500"},"z-index-page-header":{"type":"number","category":"z-index","name":"z-index-page-header","value":"2000","originalValue":"2000"},"z-index-page-sidebar":{"type":"number","category":"z-index","name":"z-index-page-sidebar","value":"1500","originalValue":"1500"},"z-index-sticky":{"type":"number","category":"z-index","name":"z-index-sticky","value":"100","originalValue":"100"},"xs":{"type":"...","category":"media-size","name":"xs","value":480,"originalValue":480},"sm":{"type":"...","category":"media-size","name":"sm","value":600,"originalValue":600},"md":{"type":"...","category":"media-size","name":"md","value":768,"originalValue":768},"lg":{"type":"...","category":"media-size","name":"lg","value":1024,"originalValue":1024},"xl":{"type":"...","category":"media-size","name":"xl","value":1200,"originalValue":1200},"media-query-x-small":{"type":"...","category":"media-query","name":"media-query-x-small","value":"(min-width: 480px)","originalValue":"(min-width: {!xs}px)"},"media-query-small":{"type":"...","category":"media-query","name":"media-query-small","value":"(min-width: 600px)","originalValue":"(min-width: {!sm}px)"},"media-query-medium":{"type":"...","category":"media-query","name":"media-query-medium","value":"(min-width: 768px)","originalValue":"(min-width: {!md}px)"},"media-query-large":{"type":"...","category":"media-query","name":"media-query-large","value":"(min-width: 1024px)","originalValue":"(min-width: {!lg}px)"},"media-query-x-large":{"type":"...","category":"media-query","name":"media-query-x-large","value":"(min-width: 1200px)","originalValue":"(min-width: {!xl}px)"}}};
+module.exports = {"aliases":{"green":{"value":"100, 69%"},"neutral":{"value":"264, 10%"},"orange":{"value":"28, 80%"},"red":{"value":"3, 65%"},"yellow":{"value":"48, 100%"},"pink":{"value":"330, 86%"},"blue":{"value":"200, 100%"},"teal":{"value":"174, 80%"},"purple":{"value":"264, 88%"},"x-large":{"value":48},"xxx-large":{"value":128},"small":{"value":16},"xx-large":{"value":64},"base":{"value":24},"xxx-small":{"value":2},"x-small":{"value":8},"xx-small":{"value":4},"large":{"value":32},"xs":{"value":480},"sm":{"value":600},"md":{"value":768},"lg":{"value":1024},"xl":{"value":1200}},"props":{"color-neutral-0":{"type":"color","category":"color","name":"color-neutral-0","value":"rgb(25, 23, 28)","originalValue":"hsla({!neutral}, 10%, 1)"},"color-neutral-10":{"type":"color","category":"color","name":"color-neutral-10","value":"rgb(40, 37, 45)","originalValue":"hsla({!neutral}, 16%, 1)"},"color-neutral-20":{"type":"color","category":"color","name":"color-neutral-20","value":"rgb(75, 69, 84)","originalValue":"hsla({!neutral}, 30%, 1)"},"color-neutral-30":{"type":"color","category":"color","name":"color-neutral-30","value":"rgb(100, 92, 112)","originalValue":"hsla({!neutral}, 40%, 1)"},"color-neutral-40":{"type":"color","category":"color","name":"color-neutral-40","value":"rgb(112, 103, 126)","originalValue":"hsla({!neutral}, 45%, 1)"},"color-neutral-50":{"type":"color","category":"color","name":"color-neutral-50","value":"rgb(151, 143, 163)","originalValue":"hsla({!neutral}, 60%, 1)"},"color-neutral-60":{"type":"color","category":"color","name":"color-neutral-60","value":"rgb(177, 171, 186)","originalValue":"hsla({!neutral}, 70%, 1)"},"color-neutral-70":{"type":"color","category":"color","name":"color-neutral-70","value":"rgb(203, 199, 209)","originalValue":"hsla({!neutral}, 80%, 1)"},"color-neutral-80":{"type":"color","category":"color","name":"color-neutral-80","value":"rgb(229, 227, 232)","originalValue":"hsla({!neutral}, 90%, 1)"},"color-neutral-85":{"type":"color","category":"color","name":"color-neutral-85","value":"rgb(239, 238, 241)","originalValue":"hsla({!neutral}, 94%, 1)"},"color-neutral-90":{"type":"color","category":"color","name":"color-neutral-90","value":"rgb(245, 244, 246)","originalValue":"hsla({!neutral}, 96%, 1)"},"color-neutral-95":{"type":"color","category":"color","name":"color-neutral-95","value":"rgb(250, 249, 250)","originalValue":"hsla({!neutral}, 98%, 1)"},"color-neutral-100":{"type":"color","category":"color","name":"color-neutral-100","value":"rgb(255, 255, 255)","originalValue":"hsla({!neutral}, 100%, 1)"},"color-primary":{"type":"color","category":"color","name":"color-primary","value":"rgb(20, 184, 167)","originalValue":"hsla({!teal}, 40%, 1)"},"color-primary-active":{"type":"color","category":"color","name":"color-primary-active","value":"rgb(22, 197, 180)","originalValue":"hsla({!teal}, 43%, 1)"},"color-primary-inverse":{"type":"color","category":"color","name":"color-primary-inverse","value":"rgb(241, 253, 252)","originalValue":"hsla({!teal}, 97%, 1)"},"color-secondary":{"type":"color","category":"color","name":"color-secondary","value":"rgb(95, 14, 216)","originalValue":"hsla({!purple}, 45%, 1)"},"color-secondary-active":{"type":"color","category":"color","name":"color-secondary-active","value":"rgb(111, 25, 240)","originalValue":"hsla({!purple}, 52%, 1)"},"color-secondary-inverse":{"type":"color","category":"color","name":"color-secondary-inverse","value":"rgb(246, 241, 254)","originalValue":"hsla({!purple}, 97%, 1)"},"color-success":{"type":"color","category":"color","name":"color-success","value":"rgb(79, 172, 32)","originalValue":"hsla({!green}, 40%, 1)"},"color-success-active":{"type":"color","category":"color","name":"color-success-active","value":"rgb(88, 194, 36)","originalValue":"hsla({!green}, 45%, 1)"},"color-success-inverse":{"type":"color","category":"color","name":"color-success-inverse","value":"rgb(246, 253, 242)","originalValue":"hsla({!green}, 97%, 1)"},"color-danger":{"type":"color","category":"color","name":"color-danger","value":"rgb(210, 53, 45)","originalValue":"hsla({!red}, 50%, 1)"},"color-danger-active":{"type":"color","category":"color","name":"color-danger-active","value":"rgb(216, 77, 70)","originalValue":"hsla({!red}, 56%, 1)"},"color-danger-inverse":{"type":"color","category":"color","name":"color-danger-inverse","value":"rgb(252, 243, 242)","originalValue":"hsla({!red}, 97%, 1)"},"color-warning":{"type":"color","category":"color","name":"color-warning","value":"rgb(230, 121, 25)","originalValue":"hsla({!orange}, 50%, 1)"},"color-warning-active":{"type":"color","category":"color","name":"color-warning-active","value":"rgb(233, 137, 53)","originalValue":"hsla({!orange}, 56%, 1)"},"color-warning-inverse":{"type":"color","category":"color","name":"color-warning-inverse","value":"rgb(253, 247, 241)","originalValue":"hsla({!orange}, 97%, 1)"},"color-yellow":{"type":"color","category":"color","name":"color-yellow","value":"rgb(245, 196, 0)","originalValue":"hsla({!yellow}, 48%, 1)"},"color-yellow-active":{"type":"color","category":"color","name":"color-yellow-active","value":"rgb(255, 206, 10)","originalValue":"hsla({!yellow}, 52%, 1)"},"color-yellow-inverse":{"type":"color","category":"color","name":"color-yellow-inverse","value":"rgb(255, 252, 240)","originalValue":"hsla({!yellow}, 97%, 1)"},"text-color-base":{"type":"color","category":"text-color","name":"text-color-base","value":"rgb(75, 69, 84)","originalValue":"hsla({!neutral}, 30%, 1)"},"text-color-soft":{"type":"color","category":"text-color","name":"text-color-soft","value":"rgb(112, 103, 126)","originalValue":"hsla({!neutral}, 45%, 1)"},"text-color-softer":{"type":"color","category":"text-color","name":"text-color-softer","value":"rgb(177, 171, 186)","originalValue":"hsla({!neutral}, 70%, 1)"},"text-color-disabled":{"type":"color","category":"text-color","name":"text-color-disabled","value":"rgb(177, 171, 186)","originalValue":"hsla({!neutral}, 70%, 1)"},"text-color-inverse":{"type":"color","category":"text-color","name":"text-color-inverse","value":"rgb(250, 249, 250)","originalValue":"hsla({!neutral}, 98%, 1)"},"text-color-link":{"type":"color","category":"text-color","name":"text-color-link","value":"rgb(20, 184, 167)","originalValue":"hsla({!teal}, 40%, 1)"},"text-color-link-active":{"type":"color","category":"text-color","name":"text-color-link-active","value":"rgb(22, 197, 180)","originalValue":"hsla({!teal}, 43%, 1)"},"text-color-primary":{"type":"color","category":"text-color","name":"text-color-primary","value":"rgb(20, 184, 167)","originalValue":"hsla({!teal}, 40%, 1)"},"text-color-primary-inverse":{"type":"color","category":"text-color","name":"text-color-primary-inverse","value":"rgb(241, 253, 252)","originalValue":"hsla({!teal}, 97%, 1)"},"text-color-secondary":{"type":"color","category":"text-color","name":"text-color-secondary","value":"rgb(95, 14, 216)","originalValue":"hsla({!purple}, 45%, 1)"},"text-color-secondary-inverse":{"type":"color","category":"text-color","name":"text-color-secondary-inverse","value":"rgb(246, 241, 254)","originalValue":"hsla({!purple}, 97%, 1)"},"text-color-success":{"type":"color","category":"text-color","name":"text-color-success","value":"rgb(79, 172, 32)","originalValue":"hsla({!green}, 40%, 1)"},"text-color-success-inverse":{"type":"color","category":"text-color","name":"text-color-success-inverse","value":"rgb(246, 253, 242)","originalValue":"hsla({!green}, 97%, 1)"},"text-color-warning":{"type":"color","category":"text-color","name":"text-color-warning","value":"rgb(230, 121, 25)","originalValue":"hsla({!orange}, 50%, 1)"},"text-color-warning-inverse":{"type":"color","category":"text-color","name":"text-color-warning-inverse","value":"rgb(253, 247, 241)","originalValue":"hsla({!orange}, 97%, 1)"},"text-color-danger":{"type":"color","category":"text-color","name":"text-color-danger","value":"rgb(210, 53, 45)","originalValue":"hsla({!red}, 50%, 1)"},"text-color-danger-inverse":{"type":"color","category":"text-color","name":"text-color-danger-inverse","value":"rgb(252, 243, 242)","originalValue":"hsla({!red}, 97%, 1)"},"background-color-base":{"type":"color","category":"background-color","name":"background-color-base","value":"rgb(255, 255, 255)","originalValue":"hsla({!neutral}, 100%, 1)"},"background-color-soft":{"type":"color","category":"background-color","name":"background-color-soft","value":"rgb(250, 249, 250)","originalValue":"hsla({!neutral}, 98%, 1)"},"background-color-softer":{"type":"color","category":"background-color","name":"background-color-softer","value":"rgb(245, 244, 246)","originalValue":"hsla({!neutral}, 96%, 1)"},"background-color-softer-active":{"type":"color","category":"background-color","name":"background-color-softer-active","value":"rgb(250, 249, 250)","originalValue":"hsla({!neutral}, 98%, 1)"},"background-color-softest":{"type":"color","category":"background-color","name":"background-color-softest","value":"rgb(239, 238, 241)","originalValue":"hsla({!neutral}, 94%, 1)"},"background-color-softest-active":{"type":"color","category":"background-color","name":"background-color-softest-active","value":"rgb(245, 244, 246)","originalValue":"hsla({!neutral}, 96%, 1)"},"background-color-inverse":{"type":"color","category":"background-color","name":"background-color-inverse","value":"rgb(25, 23, 28)","originalValue":"hsla({!neutral}, 10%, 1)"},"background-color-inverse-soft":{"type":"color","category":"background-color","name":"background-color-inverse-soft","value":"rgb(40, 37, 45)","originalValue":"hsla({!neutral}, 16%, 1)"},"background-color-inverse-softer":{"type":"color","category":"background-color","name":"background-color-inverse-softer","value":"rgb(75, 69, 84)","originalValue":"hsla({!neutral}, 30%, 1)"},"background-color-inverse-softer-active":{"type":"color","category":"background-color","name":"background-color-inverse-softer-active","value":"rgb(100, 92, 112)","originalValue":"hsla({!neutral}, 40%, 1)"},"background-color-primary":{"type":"color","category":"background-color","name":"background-color-primary","value":"rgb(20, 184, 167)","originalValue":"hsla({!teal}, 40%, 1)"},"background-color-primary-active":{"type":"color","category":"background-color","name":"background-color-primary-active","value":"rgb(22, 197, 180)","originalValue":"hsla({!teal}, 43%, 1)"},"background-color-primary-inverse":{"type":"color","category":"background-color","name":"background-color-primary-inverse","value":"rgb(241, 253, 252)","originalValue":"hsla({!teal}, 97%, 1)"},"background-color-secondary":{"type":"color","category":"background-color","name":"background-color-secondary","value":"rgb(95, 14, 216)","originalValue":"hsla({!purple}, 45%, 1)"},"background-color-secondary-active":{"type":"color","category":"background-color","name":"background-color-secondary-active","value":"rgb(111, 25, 240)","originalValue":"hsla({!purple}, 52%, 1)"},"background-color-secondary-inverse":{"type":"color","category":"background-color","name":"background-color-secondary-inverse","value":"rgb(246, 241, 254)","originalValue":"hsla({!purple}, 97%, 1)"},"background-color-success":{"type":"color","category":"background-color","name":"background-color-success","value":"rgb(79, 172, 32)","originalValue":"hsla({!green}, 40%, 1)"},"background-color-success-active":{"type":"color","category":"background-color","name":"background-color-success-active","value":"rgb(88, 194, 36)","originalValue":"hsla({!green}, 45%, 1)"},"background-color-success-inverse":{"type":"color","category":"background-color","name":"background-color-success-inverse","value":"rgb(246, 253, 242)","originalValue":"hsla({!green}, 97%, 1)"},"background-color-warning":{"type":"color","category":"background-color","name":"background-color-warning","value":"rgb(230, 121, 25)","originalValue":"hsla({!orange}, 50%, 1)"},"background-color-warning-active":{"type":"color","category":"background-color","name":"background-color-warning-active","value":"rgb(233, 137, 53)","originalValue":"hsla({!orange}, 56%, 1)"},"background-color-warning-inverse":{"type":"color","category":"background-color","name":"background-color-warning-inverse","value":"rgb(253, 247, 241)","originalValue":"hsla({!orange}, 97%, 1)"},"background-color-danger":{"type":"color","category":"background-color","name":"background-color-danger","value":"rgb(210, 53, 45)","originalValue":"hsla({!red}, 50%, 1)"},"background-color-danger-active":{"type":"color","category":"background-color","name":"background-color-danger-active","value":"rgb(216, 77, 70)","originalValue":"hsla({!red}, 56%, 1)"},"background-color-danger-inverse":{"type":"color","category":"background-color","name":"background-color-danger-inverse","value":"rgb(252, 243, 242)","originalValue":"hsla({!red}, 97%, 1)"},"border-color-base":{"type":"color","category":"border-color","name":"border-color-base","value":"rgb(177, 171, 186)","originalValue":"hsla({!neutral}, 70%, 1)"},"border-color-soft":{"type":"color","category":"border-color","name":"border-color-soft","value":"rgb(203, 199, 209)","originalValue":"hsla({!neutral}, 80%, 1)"},"border-color-softer":{"type":"color","category":"border-color","name":"border-color-softer","value":"rgb(229, 227, 232)","originalValue":"hsla({!neutral}, 90%, 1)"},"border-color-active":{"type":"color","category":"border-color","name":"border-color-active","value":"rgb(20, 184, 167)","originalValue":"hsla({!teal}, 40%, 1)"},"border-color-primary":{"type":"color","category":"border-color","name":"border-color-primary","value":"rgb(20, 184, 167)","originalValue":"hsla({!teal}, 40%, 1)"},"border-color-success":{"type":"color","category":"border-color","name":"border-color-success","value":"rgb(79, 172, 32)","originalValue":"hsla({!green}, 40%, 1)"},"border-color-warning":{"type":"color","category":"border-color","name":"border-color-warning","value":"rgb(230, 121, 25)","originalValue":"hsla({!orange}, 50%, 1)"},"border-color-danger":{"type":"color","category":"border-color","name":"border-color-danger","value":"rgb(210, 53, 45)","originalValue":"hsla({!red}, 50%, 1)"},"border-size-base":{"type":"number","category":"border-size","name":"border-size-base","value":"1px","originalValue":"1px"},"border-size-large":{"type":"number","category":"border-size","name":"border-size-large","value":"3px","originalValue":"3px"},"border-size-x-large":{"type":"number","category":"border-size","name":"border-size-x-large","value":"6px","originalValue":"6px"},"border-radius-base":{"type":"number","category":"border-radius","name":"border-radius-base","value":"3px","originalValue":"3px"},"border-radius-rounded":{"type":"number","category":"border-radius","name":"border-radius-rounded","value":"2em","originalValue":"2em"},"border-radius-circle":{"type":"number","category":"border-radius","name":"border-radius-circle","value":"50%","originalValue":"50%"},"font-size-xxxx-large":{"type":"number","category":"font-size","name":"font-size-xxxx-large","value":"3rem","originalValue":"3rem"},"font-size-xxx-large":{"type":"number","category":"font-size","name":"font-size-xxx-large","value":"2.5rem","originalValue":"2.5rem"},"font-size-xx-large":{"type":"number","category":"font-size","name":"font-size-xx-large","value":"2rem","originalValue":"2rem"},"font-size-x-large":{"type":"number","category":"font-size","name":"font-size-x-large","value":"1.5rem","originalValue":"1.5rem"},"font-size-large":{"type":"number","category":"font-size","name":"font-size-large","value":"1.25rem","originalValue":"1.25rem"},"font-size-base":{"type":"number","category":"font-size","name":"font-size-base","value":"1rem","originalValue":"1rem"},"font-size-body":{"type":"number","category":"font-size","name":"font-size-body","value":"16px","originalValue":"16px"},"font-size-small":{"type":"number","category":"font-size","name":"font-size-small","value":"0.8rem","originalValue":"0.8rem"},"font-size-x-small":{"type":"number","category":"font-size","name":"font-size-x-small","value":"0.7rem","originalValue":"0.7rem"},"font-size-xx-small":{"type":"number","category":"font-size","name":"font-size-xx-small","value":"0.6rem","originalValue":"0.6rem"},"font-space-xxxx-large":{"type":"number","category":"font-spacing","name":"font-space-xxxx-large","value":"2em","originalValue":"2em"},"font-space-xxx-large":{"type":"number","category":"font-spacing","name":"font-space-xxx-large","value":"1.5em","originalValue":"1.5em"},"font-space-xx-large":{"type":"number","category":"font-spacing","name":"font-space-xx-large","value":"1.2em","originalValue":"1.2em"},"font-space-x-large":{"type":"number","category":"font-spacing","name":"font-space-x-large","value":"1em","originalValue":"1em"},"font-space-large":{"type":"number","category":"font-spacing","name":"font-space-large","value":"0.6em","originalValue":"0.6em"},"font-space-base":{"type":"number","category":"font-spacing","name":"font-space-base","value":"0.5em","originalValue":"0.5em"},"font-space-small":{"type":"number","category":"font-spacing","name":"font-space-small","value":"0.4em","originalValue":"0.4em"},"font-space-x-small":{"type":"number","category":"font-spacing","name":"font-space-x-small","value":"0.3em","originalValue":"0.3em"},"font-space-xx-small":{"type":"number","category":"font-spacing","name":"font-space-xx-small","value":"0.2em","originalValue":"0.2em"},"font-family-heading":{"type":"...","category":"font-family","name":"font-family-heading","value":"'LatoWeb', sans-serif","originalValue":"'LatoWeb', sans-serif"},"font-family-text":{"type":"...","category":"font-family","name":"font-family-text","value":"'LatoWeb', sans-serif","originalValue":"'LatoWeb', sans-serif"},"font-family-code":{"type":"...","category":"font-family","name":"font-family-code","value":"inconsolata, monospace","originalValue":"inconsolata, monospace"},"font-weight-regular":{"type":"...","category":"font-weight","name":"font-weight-regular","value":"normal","originalValue":"normal"},"font-weight-bold":{"type":"...","category":"font-weight","name":"font-weight-bold","value":"600","originalValue":"600"},"line-height-base":{"type":"number","category":"line-height","name":"line-height-base","value":"1.5","originalValue":"1.5"},"line-height-small":{"type":"number","category":"line-height","name":"line-height-small","value":"1.3","originalValue":"1.3"},"line-height-smaller":{"type":"number","category":"line-height","name":"line-height-smaller","value":"1.1","originalValue":"1.1"},"letter-spacing-x-large":{"type":"number","category":"letter-spacing","name":"letter-spacing-x-large","value":"0.1em","originalValue":"0.1em"},"letter-spacing-large":{"type":"number","category":"letter-spacing","name":"letter-spacing-large","value":"0.05em","originalValue":"0.05em"},"letter-spacing-base":{"type":"number","category":"letter-spacing","name":"letter-spacing-base","value":"0","originalValue":"0"},"letter-spacing-small":{"type":"number","category":"letter-spacing","name":"letter-spacing-small","value":"-0.01em","originalValue":"-0.01em"},"letter-spacing-x-small":{"type":"number","category":"letter-spacing","name":"letter-spacing-x-small","value":"-0.015em","originalValue":"-0.015em"},"opacity-soft":{"type":"number","category":"opacity","name":"opacity-soft","value":"0.65","originalValue":"0.65"},"opacity-disabled":{"type":"number","category":"opacity","name":"opacity-disabled","value":"0.5","originalValue":"0.5"},"xxx-large":{"type":"number","category":"space-size","name":"xxx-large","value":128,"originalValue":128},"xx-large":{"type":"number","category":"space-size","name":"xx-large","value":64,"originalValue":64},"x-large":{"type":"number","category":"space-size","name":"x-large","value":48,"originalValue":48},"large":{"type":"number","category":"space-size","name":"large","value":32,"originalValue":32},"base":{"type":"number","category":"space-size","name":"base","value":24,"originalValue":24},"small":{"type":"number","category":"space-size","name":"small","value":16,"originalValue":16},"x-small":{"type":"number","category":"space-size","name":"x-small","value":8,"originalValue":8},"xx-small":{"type":"number","category":"space-size","name":"xx-small","value":4,"originalValue":4},"xxx-small":{"type":"number","category":"space-size","name":"xxx-small","value":2,"originalValue":2},"space-xxx-large":{"type":"number","category":"space","name":"space-xxx-large","value":"128px","originalValue":"{!xxx-large}px"},"space-xx-large":{"type":"number","category":"space","name":"space-xx-large","value":"64px","originalValue":"{!xx-large}px"},"space-x-large":{"type":"number","category":"space","name":"space-x-large","value":"48px","originalValue":"{!x-large}px"},"space-large":{"type":"number","category":"space","name":"space-large","value":"32px","originalValue":"{!large}px"},"space-base":{"type":"number","category":"space","name":"space-base","value":"24px","originalValue":"{!base}px"},"space-small":{"type":"number","category":"space","name":"space-small","value":"16px","originalValue":"{!small}px"},"space-x-small":{"type":"number","category":"space","name":"space-x-small","value":"8px","originalValue":"{!x-small}px"},"space-xx-small":{"type":"number","category":"space","name":"space-xx-small","value":"4px","originalValue":"{!xx-small}px"},"space-xxx-small":{"type":"number","category":"space","name":"space-xxx-small","value":"2px","originalValue":"{!xxx-small}px"},"size-height-base":{"type":"number","category":"size","name":"size-height-base","value":"42px","originalValue":"42px"},"size-height-large":{"type":"number","category":"size","name":"size-height-large","value":"50px","originalValue":"50px"},"size-height-xlarge":{"type":"number","category":"size","name":"size-height-xlarge","value":"60px","originalValue":"60px"},"size-tappable-square":{"type":"number","category":"size","name":"size-tappable-square","value":"44px","originalValue":"44px"},"size-height-footer":{"type":"number","category":"size","name":"size-height-footer","value":"64px","originalValue":"64px"},"box-shadow-large":{"type":"...","category":"box-shadow","name":"box-shadow-large","value":"0 20px 60px 0 rgba(0, 0, 0, .15)","originalValue":"0 20px 60px 0 rgba(0, 0, 0, .15)"},"box-shadow-base":{"type":"...","category":"box-shadow","name":"box-shadow-base","value":"0px 12px 26px -4px rgba(0, 0, 0, .1)","originalValue":"0px 12px 26px -4px rgba(0, 0, 0, .1)"},"box-shadow-small":{"type":"...","category":"box-shadow","name":"box-shadow-small","value":"0px 8px 18px -2px rgba(0, 0, 0, .1)","originalValue":"0px 8px 18px -2px rgba(0, 0, 0, .1)"},"box-shadow-x-small":{"type":"...","category":"box-shadow","name":"box-shadow-x-small","value":"0px 0px 3px 0px rgba(0, 0, 0, .1)","originalValue":"0px 0px 3px 0px rgba(0, 0, 0, .1)"},"box-shadow-active":{"type":"...","category":"box-shadow","name":"box-shadow-active","value":"0 0 6px 1px rgba(20, 100, 160, 0.5)","originalValue":"0 0 6px 1px rgba(20, 100, 160, 0.5)"},"box-shadow-inset":{"type":"...","category":"box-shadow","name":"box-shadow-inset","value":"inset 0 0 20px 1px rgba(0,0,0,.15)","originalValue":"inset 0 0 20px 1px rgba(0,0,0,.15)"},"box-shadow-small-inset":{"type":"...","category":"box-shadow","name":"box-shadow-small-inset","value":"inset 0 0 0 1px rgba(0,0,0,.05)","originalValue":"inset 0 0 0 1px rgba(0,0,0,.05)"},"duration-short":{"type":"number","category":"time","name":"duration-short","value":"0.08s","originalValue":"0.08s"},"duration-base":{"type":"number","category":"time","name":"duration-base","value":"0.5s","originalValue":"0.5s"},"duration-long":{"type":"number","category":"time","name":"duration-long","value":"0.75s","originalValue":"0.75s"},"duration-x-long":{"type":"number","category":"time","name":"duration-x-long","value":"1s","originalValue":"1s"},"duration-xx-long":{"type":"number","category":"time","name":"duration-xx-long","value":"2s","originalValue":"2s"},"ease-out":{"type":"number","category":"ease","name":"ease-out","value":"cubic-bezier(0.25, 0.46, 0.45, 0.94)","originalValue":"cubic-bezier(0.25, 0.46, 0.45, 0.94)"},"ease-out-sharp":{"type":"number","category":"ease","name":"ease-out-sharp","value":"cubic-bezier(0.165, 0.84, 0.44, 1)","originalValue":"cubic-bezier(0.165, 0.84, 0.44, 1)"},"ease-out-bounce":{"type":"number","category":"ease","name":"ease-out-bounce","value":"cubic-bezier(.87,-.41,.19,1.44)","originalValue":"cubic-bezier(.87,-.41,.19,1.44)"},"ease-in":{"type":"number","category":"ease","name":"ease-in","value":"cubic-bezier(0.55, 0.085, 0.68, 0.53)","originalValue":"cubic-bezier(0.55, 0.085, 0.68, 0.53)"},"ease-in-sharp":{"type":"number","category":"ease","name":"ease-in-sharp","value":"cubic-bezier(0.895, 0.03, 0.685, 0.22)","originalValue":"cubic-bezier(0.895, 0.03, 0.685, 0.22)"},"z-index-modal":{"type":"number","category":"z-index","name":"z-index-modal","value":"9999","originalValue":"9999"},"z-index-dropdown":{"type":"number","category":"z-index","name":"z-index-dropdown","value":"8888","originalValue":"8888"},"z-index-page-submenu":{"type":"number","category":"z-index","name":"z-index-page-submenu","value":"2500","originalValue":"2500"},"z-index-page-header":{"type":"number","category":"z-index","name":"z-index-page-header","value":"2000","originalValue":"2000"},"z-index-page-sidebar":{"type":"number","category":"z-index","name":"z-index-page-sidebar","value":"1500","originalValue":"1500"},"z-index-sticky":{"type":"number","category":"z-index","name":"z-index-sticky","value":"100","originalValue":"100"},"xs":{"type":"...","category":"media-size","name":"xs","value":480,"originalValue":480},"sm":{"type":"...","category":"media-size","name":"sm","value":600,"originalValue":600},"md":{"type":"...","category":"media-size","name":"md","value":768,"originalValue":768},"lg":{"type":"...","category":"media-size","name":"lg","value":1024,"originalValue":1024},"xl":{"type":"...","category":"media-size","name":"xl","value":1200,"originalValue":1200},"media-query-x-small":{"type":"...","category":"media-query","name":"media-query-x-small","value":"(min-width: 480px)","originalValue":"(min-width: {!xs}px)"},"media-query-small":{"type":"...","category":"media-query","name":"media-query-small","value":"(min-width: 600px)","originalValue":"(min-width: {!sm}px)"},"media-query-medium":{"type":"...","category":"media-query","name":"media-query-medium","value":"(min-width: 768px)","originalValue":"(min-width: {!md}px)"},"media-query-large":{"type":"...","category":"media-query","name":"media-query-large","value":"(min-width: 1024px)","originalValue":"(min-width: {!lg}px)"},"media-query-x-large":{"type":"...","category":"media-query","name":"media-query-x-large","value":"(min-width: 1200px)","originalValue":"(min-width: {!xl}px)"}}};
 
 /***/ }),
 
@@ -8219,6 +8305,40 @@ module.exports = { render: render };
 
 var render = function () { var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;return _c('svg',{attrs:{"xmlns":"http://www.w3.org/2000/svg","viewBox":"0 0 32 32"}},[_c('path',{attrs:{"d":"M26.188-1.719L32.907 5l-6.719 6.719-1.406-1.438L29.063 6H8V4h21.063L24.782-.281zm-12.375 14l1.406 1.438L10.938 18h21.063v2H10.938l4.281 4.281-1.406 1.438L7.094 19l.719-.719z"}})]) };
 module.exports = { render: render };
+
+/***/ }),
+
+/***/ "8afe":
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+
+// CONCATENATED MODULE: ./node_modules/@babel/runtime/helpers/builtin/es6/arrayWithoutHoles.js
+function _arrayWithoutHoles(arr) {
+  if (Array.isArray(arr)) {
+    for (var i = 0, arr2 = new Array(arr.length); i < arr.length; i++) {
+      arr2[i] = arr[i];
+    }
+
+    return arr2;
+  }
+}
+// CONCATENATED MODULE: ./node_modules/@babel/runtime/helpers/builtin/es6/iterableToArray.js
+function _iterableToArray(iter) {
+  if (Symbol.iterator in Object(iter) || Object.prototype.toString.call(iter) === "[object Arguments]") return Array.from(iter);
+}
+// CONCATENATED MODULE: ./node_modules/@babel/runtime/helpers/builtin/es6/nonIterableSpread.js
+function _nonIterableSpread() {
+  throw new TypeError("Invalid attempt to spread non-iterable instance");
+}
+// CONCATENATED MODULE: ./node_modules/@babel/runtime/helpers/builtin/es6/toConsumableArray.js
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return _toConsumableArray; });
+
+
+
+function _toConsumableArray(arr) {
+  return _arrayWithoutHoles(arr) || _iterableToArray(arr) || _nonIterableSpread();
+}
 
 /***/ }),
 
@@ -8721,20 +8841,118 @@ module.exports = { render: render };
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 
-// CONCATENATED MODULE: ./node_modules/cache-loader/dist/cjs.js?{"cacheDirectory":"node_modules/.cache/vue-loader","cacheIdentifier":"41dfbe64-vue-loader-template"}!./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/cache-loader/dist/cjs.js??ref--0-0!./node_modules/vue-loader/lib??vue-loader-options!./src/system/components/data-input/Select/Select.vue?vue&type=template&id=da63d53a&
-var render = function () {var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;return _c('ds-form-item',[_c('div',{staticClass:"ds-select-wrap"},[(_vm.icon)?_c('div',{staticClass:"ds-select-icon"},[_c('ds-icon',{attrs:{"name":_vm.icon}})],1):_vm._e(),_c('select',{staticClass:"ds-select",class:[
+// CONCATENATED MODULE: ./node_modules/cache-loader/dist/cjs.js?{"cacheDirectory":"node_modules/.cache/vue-loader","cacheIdentifier":"41dfbe64-vue-loader-template"}!./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/cache-loader/dist/cjs.js??ref--0-0!./node_modules/vue-loader/lib??vue-loader-options!./src/system/components/data-input/Select/Select.vue?vue&type=template&id=4e77929e&
+var render = function () {var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;return _c('ds-form-item',[_c('div',{directives:[{name:"click-outside",rawName:"v-click-outside",value:(_vm.handleBlur),expression:"handleBlur"}],staticClass:"ds-select-wrap",attrs:{"tabindex":_vm.searchable ? -1 : _vm.tabindex},on:{"keydown":[function($event){if(!('button' in $event)&&_vm._k($event.keyCode,"down",40,$event.key,["Down","ArrowDown"])){ return null; }if($event.target !== $event.currentTarget){ return null; }$event.preventDefault();return _vm.pointerNext($event)},function($event){if(!('button' in $event)&&_vm._k($event.keyCode,"up",38,$event.key,["Up","ArrowUp"])){ return null; }if($event.target !== $event.currentTarget){ return null; }$event.preventDefault();return _vm.pointerPrev($event)}],"keypress":function($event){if(!('button' in $event)&&_vm._k($event.keyCode,"enter",13,$event.key,"Enter")){ return null; }$event.preventDefault();$event.stopPropagation();if($event.target !== $event.currentTarget){ return null; }return _vm.selectPointerOption($event)},"keyup":function($event){if(!('button' in $event)&&_vm._k($event.keyCode,"esc",27,$event.key,"Escape")){ return null; }return _vm.close($event)}}},[(_vm.icon)?_c('div',{staticClass:"ds-select-icon"},[_c('ds-icon',{attrs:{"name":_vm.icon}})],1):_vm._e(),_c('div',{staticClass:"ds-select",class:[
         _vm.icon && "ds-select-has-icon",
-        _vm.iconRight && "ds-select-has-icon-right"
-      ],attrs:{"id":_vm.id,"name":_vm.model,"autofocus":_vm.autofocus,"placeholder":_vm.placeholder,"disabled":_vm.disabled,"readonly":_vm.readonly},domProps:{"value":_vm.innerValue},on:{"input":_vm.input,"focus":_vm.handleFocus,"blur":_vm.handleBlur}},_vm._l((_vm.options),function(option){return _c('option',{key:option.label || option},[_vm._v("\n        "+_vm._s(option.label || option)+"\n      ")])})),(_vm.placeholder && !_vm.innerValue)?_c('div',{staticClass:"ds-select-placeholder"},[_vm._v("\n      "+_vm._s(_vm.placeholder)+"\n    ")]):_vm._e(),(_vm.iconRight)?_c('div',{staticClass:"ds-select-icon-right"},[_c('ds-icon',{attrs:{"name":_vm.iconRight}})],1):_vm._e()])])}
+        _vm.iconRight && "ds-select-has-icon-right",
+        _vm.multiple && "ds-select-multiple"
+    ],on:{"click":_vm.handleClick}},[(_vm.multiple)?_c('div',{staticClass:"ds-selected-options"},[_vm._l((_vm.innerValue),function(value,index){return _c('div',{key:value,staticClass:"ds-selected-option"},[_vm._t("optionitem",[_c('ds-chip',{attrs:{"removable":"","color":"primary"},on:{"remove":function($event){_vm.deselectOption(index)}}},[_vm._v("\n              "+_vm._s(value)+"\n            ")])],{value:value})],2)}),_c('input',{directives:[{name:"model",rawName:"v-model",value:(_vm.searchString),expression:"searchString"}],ref:"search",staticClass:"ds-select-search",attrs:{"id":_vm.id,"name":_vm.model,"autofocus":_vm.autofocus,"placeholder":_vm.placeholder,"tabindex":_vm.tabindex,"disabled":_vm.disabled,"readonly":_vm.readonly},domProps:{"value":(_vm.searchString)},on:{"focus":_vm.handleFocus,"keydown":[function($event){if(!('button' in $event)&&_vm._k($event.keyCode,"delete",[8,46],$event.key,["Backspace","Delete"])){ return null; }$event.stopPropagation();return _vm.deselectLastOption($event)},function($event){if(!('button' in $event)&&_vm._k($event.keyCode,"down",40,$event.key,["Down","ArrowDown"])){ return null; }$event.preventDefault();return _vm.pointerNext($event)},function($event){if(!('button' in $event)&&_vm._k($event.keyCode,"up",38,$event.key,["Up","ArrowUp"])){ return null; }$event.preventDefault();return _vm.pointerPrev($event)}],"keypress":function($event){if(!('button' in $event)&&_vm._k($event.keyCode,"enter",13,$event.key,"Enter")){ return null; }$event.preventDefault();$event.stopPropagation();return _vm.selectPointerOption($event)},"keyup":function($event){if(!('button' in $event)&&_vm._k($event.keyCode,"esc",27,$event.key,"Escape")){ return null; }return _vm.close($event)},"input":function($event){if($event.target.composing){ return; }_vm.searchString=$event.target.value}}})],2):_c('div',{staticClass:"ds-select-value"},[(_vm.placeholder && !_vm.innerValue)?_c('div',{staticClass:"ds-select-placeholder"},[_vm._v("\n          "+_vm._s(_vm.placeholder)+"\n        ")]):_vm._t("value",[_vm._v("\n          "+_vm._s(_vm.innerValue)+"\n        ")],{value:_vm.innerValue})],2),(!_vm.multiple)?_c('input',{directives:[{name:"model",rawName:"v-model",value:(_vm.searchString),expression:"searchString"}],ref:"search",staticClass:"ds-select-search",attrs:{"id":_vm.id,"name":_vm.model,"autofocus":_vm.autofocus,"placeholder":_vm.placeholder,"tabindex":_vm.tabindex,"disabled":_vm.disabled,"readonly":_vm.readonly},domProps:{"value":(_vm.searchString)},on:{"focus":_vm.handleFocus,"keydown":[function($event){if(!('button' in $event)&&_vm._k($event.keyCode,"delete",[8,46],$event.key,["Backspace","Delete"])){ return null; }$event.stopPropagation();return _vm.deselectLastOption($event)},function($event){if(!('button' in $event)&&_vm._k($event.keyCode,"down",40,$event.key,["Down","ArrowDown"])){ return null; }$event.preventDefault();return _vm.pointerNext($event)},function($event){if(!('button' in $event)&&_vm._k($event.keyCode,"up",38,$event.key,["Up","ArrowUp"])){ return null; }$event.preventDefault();return _vm.pointerPrev($event)}],"keypress":function($event){if(!('button' in $event)&&_vm._k($event.keyCode,"enter",13,$event.key,"Enter")){ return null; }$event.preventDefault();$event.stopPropagation();return _vm.selectPointerOption($event)},"keyup":function($event){if(!('button' in $event)&&_vm._k($event.keyCode,"esc",27,$event.key,"Escape")){ return null; }return _vm.close($event)},"input":function($event){if($event.target.composing){ return; }_vm.searchString=$event.target.value}}}):_vm._e()]),_c('div',{staticClass:"ds-select-dropdown"},[_c('ul',{staticClass:"ds-select-options"},_vm._l((_vm.filteredOptions),function(option,index){return _c('li',{key:option.label || option,staticClass:"ds-select-option",class:[
+            _vm.isSelected(option) && "ds-select-option-is-selected",
+            _vm.pointer === index && "ds-select-option-hover"
+          ],on:{"click":function($event){_vm.handleSelect(option)},"mouseover":function($event){_vm.setPointer(index)}}},[_vm._t("option",[_vm._v("\n            "+_vm._s(option.label || option)+"\n          ")],{option:option})],2)}))]),(_vm.iconRight)?_c('div',{staticClass:"ds-select-icon-right"},[_c('ds-icon',{attrs:{"name":_vm.iconRight}})],1):_vm._e()])])}
 var staticRenderFns = []
 
 
-// CONCATENATED MODULE: ./src/system/components/data-input/Select/Select.vue?vue&type=template&id=da63d53a&
+// CONCATENATED MODULE: ./src/system/components/data-input/Select/Select.vue?vue&type=template&id=4e77929e&
+
+// EXTERNAL MODULE: ./node_modules/core-js/modules/es6.regexp.search.js
+var es6_regexp_search = __webpack_require__("386d");
+
+// EXTERNAL MODULE: ./node_modules/core-js/modules/es7.array.includes.js
+var es7_array_includes = __webpack_require__("6762");
+
+// EXTERNAL MODULE: ./node_modules/core-js/modules/es6.string.includes.js
+var es6_string_includes = __webpack_require__("2fdb");
+
+// EXTERNAL MODULE: ./node_modules/core-js/modules/es6.regexp.split.js
+var es6_regexp_split = __webpack_require__("28a5");
 
 // EXTERNAL MODULE: ./src/system/components/data-input/shared/input.js + 25 modules
 var input = __webpack_require__("33ba");
 
+// EXTERNAL MODULE: ./node_modules/@babel/runtime/helpers/builtin/es6/toConsumableArray.js + 3 modules
+var toConsumableArray = __webpack_require__("8afe");
+
+// CONCATENATED MODULE: ./src/system/components/data-input/shared/multiinput.js
+
+
+
+
+/**
+ * @mixin
+ */
+/* harmony default export */ var multiinput = ({
+  props: {
+    /**
+     * Whether the user can select multiple items
+     */
+    multiple: {
+      type: Boolean,
+      default: false
+    }
+  },
+  methods: {
+    selectOption: function selectOption(option) {
+      var newValue = option.value || option;
+
+      if (this.multiple) {
+        this.selectMultiOption(newValue);
+      } else {
+        this.input(newValue);
+      }
+    },
+    selectMultiOption: function selectMultiOption(value) {
+      if (!this.innerValue) {
+        return this.input([value]);
+      }
+
+      var index = this.innerValue.indexOf(value);
+
+      if (index < 0) {
+        return this.input(Object(toConsumableArray["a" /* default */])(this.innerValue).concat([value]));
+      }
+
+      this.deselectOption(index);
+    },
+    deselectOption: function deselectOption(index) {
+      var newArray = Object(toConsumableArray["a" /* default */])(this.innerValue);
+
+      newArray.splice(index, 1);
+      this.input(newArray);
+    },
+    isSelected: function isSelected(option) {
+      if (!this.innerValue) {
+        return false;
+      }
+
+      var value = option.value || option;
+
+      if (this.multiple) {
+        return this.innerValue.includes(value);
+      }
+
+      return this.innerValue === value;
+    }
+  }
+});
+// EXTERNAL MODULE: ./node_modules/vue-click-outside/index.js
+var vue_click_outside = __webpack_require__("e67d");
+var vue_click_outside_default = /*#__PURE__*/__webpack_require__.n(vue_click_outside);
+
+// EXTERNAL MODULE: ./src/system/components/data-input/FormItem/FormItem.vue + 4 modules
+var FormItem = __webpack_require__("5d96");
+
+// EXTERNAL MODULE: ./src/system/components/typography/Chip/Chip.vue + 6 modules
+var Chip = __webpack_require__("be3c");
+
+// EXTERNAL MODULE: ./src/system/components/typography/Icon/Icon.vue + 7 modules
+var Icon = __webpack_require__("c6e1");
+
 // CONCATENATED MODULE: ./node_modules/cache-loader/dist/cjs.js??ref--12-0!./node_modules/thread-loader/dist/cjs.js!./node_modules/babel-loader/lib!./node_modules/vue-loader/lib??vue-loader-options!./src/system/components/data-input/Select/Select.vue?vue&type=script&lang=js&
+
+
+
+
 //
 //
 //
@@ -8779,6 +8997,92 @@ var input = __webpack_require__("33ba");
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+
+
+
+
+
 
 /**
  * Used for handling basic user input.
@@ -8787,7 +9091,21 @@ var input = __webpack_require__("33ba");
 
 /* harmony default export */ var Selectvue_type_script_lang_js_ = ({
   name: 'DsSelect',
-  mixins: [input["a" /* default */]],
+  mixins: [input["a" /* default */], multiinput],
+  components: {
+    DsFormItem: FormItem["default"],
+    DsChip: Chip["default"],
+    DsIcon: Icon["default"]
+  },
+  directives: {
+    ClickOutside: vue_click_outside_default.a
+  },
+  data: function data() {
+    return {
+      searchString: '',
+      pointer: 0
+    };
+  },
   props: {
     /**
      * The placeholder shown when value is empty.
@@ -8809,14 +9127,6 @@ var input = __webpack_require__("33ba");
      * Whether the input should be read-only
      */
     readonly: {
-      type: Boolean,
-      default: false
-    },
-
-    /**
-     * Whether the user can select multiple items
-     */
-    multiple: {
       type: Boolean,
       default: false
     },
@@ -8845,6 +9155,98 @@ var input = __webpack_require__("33ba");
       default: function _default() {
         return [];
       }
+    },
+
+    /**
+     * Whether the options are searchable
+     */
+    searchable: {
+      type: Boolean,
+      default: true
+    }
+  },
+  computed: {
+    filteredOptions: function filteredOptions() {
+      if (!this.searchString) {
+        return this.options;
+      }
+
+      var searchParts = this.searchString.split(' ');
+      return this.options.filter(function (option) {
+        var value = option.value || option;
+        return searchParts.every(function (part) {
+          if (!part) {
+            return true;
+          }
+
+          return value.toLowerCase().includes(part.toLowerCase());
+        });
+      });
+    },
+    pointerMax: function pointerMax() {
+      return this.filteredOptions.length - 1;
+    }
+  },
+  watch: {
+    pointerMax: function pointerMax(max) {
+      var _this = this;
+
+      if (max < this.pointer) {
+        this.$nextTick(function () {
+          _this.pointer = max;
+        });
+      }
+    }
+  },
+  methods: {
+    handleSelect: function handleSelect(options) {
+      this.selectOption(options);
+      this.resetSearch();
+
+      if (this.multiple) {
+        this.$refs.search.focus();
+        this.handleFocus();
+      } else {
+        this.close();
+      }
+    },
+    resetSearch: function resetSearch() {
+      this.searchString = '';
+    },
+    handleClick: function handleClick() {
+      if (!this.focus || this.multiple) {
+        this.$refs.search.focus();
+        this.handleFocus();
+      }
+    },
+    close: function close() {
+      this.$refs.search.blur();
+      this.handleBlur();
+    },
+    deselectLastOption: function deselectLastOption() {
+      if (this.multiple && this.innerValue && this.innerValue.length && !this.searchString.length) {
+        this.deselectOption(this.innerValue.length - 1);
+      }
+    },
+    setPointer: function setPointer(index) {
+      this.pointer = index;
+    },
+    pointerPrev: function pointerPrev() {
+      if (this.pointer === 0) {
+        this.pointer = this.pointerMax;
+      } else {
+        this.pointer--;
+      }
+    },
+    pointerNext: function pointerNext() {
+      if (this.pointer === this.pointerMax) {
+        this.pointer = 0;
+      } else {
+        this.pointer++;
+      }
+    },
+    selectPointerOption: function selectPointerOption() {
+      this.handleSelect(this.filteredOptions[this.pointer]);
     }
   }
 });
@@ -9389,6 +9791,13 @@ for (var collections = getKeys(DOMIterables), i = 0; i < collections.length; i++
 
 /***/ }),
 
+/***/ "ad85":
+/***/ (function(module, exports, __webpack_require__) {
+
+// extracted by mini-css-extract-plugin
+
+/***/ }),
+
 /***/ "aebd":
 /***/ (function(module, exports) {
 
@@ -9892,6 +10301,7 @@ var map = {
 	"./navigation/Button/Button.vue": "3644",
 	"./navigation/Menu/Menu.vue": "f978",
 	"./navigation/Menu/MenuItem.vue": "5343",
+	"./typography/Chip/Chip.vue": "0ce8",
 	"./typography/Code/Code.vue": "92b2",
 	"./typography/Heading/Heading.vue": "a6dc",
 	"./typography/Icon/Icon.vue": "5270",
@@ -9992,6 +10402,161 @@ module.exports = function (it) {
   return it;
 };
 
+
+/***/ }),
+
+/***/ "be3c":
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+
+// CONCATENATED MODULE: ./node_modules/cache-loader/dist/cjs.js?{"cacheDirectory":"node_modules/.cache/vue-loader","cacheIdentifier":"41dfbe64-vue-loader-template"}!./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/cache-loader/dist/cjs.js??ref--0-0!./node_modules/vue-loader/lib??vue-loader-options!./src/system/components/typography/Chip/Chip.vue?vue&type=template&id=d5ab8104&
+var render = function () {var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;return _c(_vm.tag,{tag:"component",staticClass:"ds-chip",class:[
+    ("ds-chip-size-" + _vm.size),
+    ("ds-chip-" + _vm.color),
+    _vm.removable && 'ds-chip-removable',
+    _vm.round && 'ds-chip-round'
+  ]},[_vm._t("default"),(_vm.removable)?_c('button',{staticClass:"ds-chip-close",on:{"click":_vm.remove}},[_c('ds-icon',{attrs:{"name":"close"}})],1):_vm._e()],2)}
+var staticRenderFns = []
+
+
+// CONCATENATED MODULE: ./src/system/components/typography/Chip/Chip.vue?vue&type=template&id=d5ab8104&
+
+// EXTERNAL MODULE: ./node_modules/core-js/modules/es6.regexp.match.js
+var es6_regexp_match = __webpack_require__("4917");
+
+// CONCATENATED MODULE: ./node_modules/cache-loader/dist/cjs.js??ref--12-0!./node_modules/thread-loader/dist/cjs.js!./node_modules/babel-loader/lib!./node_modules/vue-loader/lib??vue-loader-options!./src/system/components/typography/Chip/Chip.vue?vue&type=script&lang=js&
+
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+
+/**
+ * Chips are used to represent small blocks of information.
+ * Their most common usage is for displaying contacts or tags.
+ * @version 1.0.0
+ */
+/* harmony default export */ var Chipvue_type_script_lang_js_ = ({
+  name: 'DsChip',
+  props: {
+    /**
+     * The background color used for the chip.
+     * `medium, inverse, primary, success, warning, danger`
+     */
+    color: {
+      type: String,
+      default: 'medium',
+      validator: function validator(value) {
+        return value.match(/(medium|inverse|primary|success|warning|danger)/);
+      }
+    },
+
+    /**
+     * The size used for the text.
+     * `base, large, small`
+     */
+    size: {
+      type: String,
+      default: 'base',
+      validator: function validator(value) {
+        return value.match(/(base|large|small)/);
+      }
+    },
+
+    /**
+     * Whether the chip should be removeable
+     * `true, false`
+     */
+    removable: {
+      type: Boolean,
+      default: false
+    },
+
+    /**
+     * Whether the chip should be rounded
+     * `true, false`
+     */
+    round: {
+      type: Boolean,
+      default: true
+    },
+
+    /**
+     * The html element name used for the text.
+     */
+    tag: {
+      type: String,
+      default: 'span'
+    }
+  },
+  methods: {
+    remove: function remove() {
+      /**
+       * Fires after user clicked the remove button.
+       *
+       * @event remove
+       */
+      this.$emit('remove');
+    }
+  }
+});
+// CONCATENATED MODULE: ./src/system/components/typography/Chip/Chip.vue?vue&type=script&lang=js&
+ /* harmony default export */ var Chip_Chipvue_type_script_lang_js_ = (Chipvue_type_script_lang_js_); 
+// EXTERNAL MODULE: ./src/system/components/typography/Chip/style.scss?vue&type=style&index=0&lang=scss&
+var stylevue_type_style_index_0_lang_scss_ = __webpack_require__("5c79");
+
+// EXTERNAL MODULE: ./node_modules/vue-loader/lib/runtime/componentNormalizer.js
+var componentNormalizer = __webpack_require__("2877");
+
+// CONCATENATED MODULE: ./src/loader/docs-trim-loader.js!./src/system/components/typography/Chip/demo.md?vue&type=custom&index=0&blockType=docs&issuerPath=%2FDevelopment%2Fcion%2Fcion%2Fsrc%2Fsystem%2Fcomponents%2Ftypography%2FChip%2FChip.vue
+/* harmony default export */ var demovue_type_custom_index_0_blockType_docs_issuerPath_2FDevelopment_2Fcion_2Fcion_2Fsrc_2Fsystem_2Fcomponents_2Ftypography_2FChip_2FChip = (function () {});
+// CONCATENATED MODULE: ./src/system/components/typography/Chip/demo.md?vue&type=custom&index=0&blockType=docs&issuerPath=%2FDevelopment%2Fcion%2Fcion%2Fsrc%2Fsystem%2Fcomponents%2Ftypography%2FChip%2FChip.vue
+ /* harmony default export */ var Chip_demovue_type_custom_index_0_blockType_docs_issuerPath_2FDevelopment_2Fcion_2Fcion_2Fsrc_2Fsystem_2Fcomponents_2Ftypography_2FChip_2FChip = (demovue_type_custom_index_0_blockType_docs_issuerPath_2FDevelopment_2Fcion_2Fcion_2Fsrc_2Fsystem_2Fcomponents_2Ftypography_2FChip_2FChip); 
+// CONCATENATED MODULE: ./src/system/components/typography/Chip/Chip.vue
+
+
+
+
+
+
+/* normalize component */
+
+var component = Object(componentNormalizer["a" /* default */])(
+  Chip_Chipvue_type_script_lang_js_,
+  render,
+  staticRenderFns,
+  false,
+  null,
+  null,
+  null
+  
+)
+
+/* custom blocks */
+
+if (typeof Chip_demovue_type_custom_index_0_blockType_docs_issuerPath_2FDevelopment_2Fcion_2Fcion_2Fsrc_2Fsystem_2Fcomponents_2Ftypography_2FChip_2FChip === 'function') Chip_demovue_type_custom_index_0_blockType_docs_issuerPath_2FDevelopment_2Fcion_2Fcion_2Fsrc_2Fsystem_2Fcomponents_2Ftypography_2FChip_2FChip(component)
+
+component.options.__file = "Chip.vue"
+/* harmony default export */ var Chip = __webpack_exports__["default"] = (component.exports);
 
 /***/ }),
 
@@ -11139,6 +11704,21 @@ module.exports = createCaseFirst;
 
 /***/ }),
 
+/***/ "d2c8":
+/***/ (function(module, exports, __webpack_require__) {
+
+// helper for String#{startsWith, endsWith, includes}
+var isRegExp = __webpack_require__("aae3");
+var defined = __webpack_require__("be13");
+
+module.exports = function (that, searchString, NAME) {
+  if (isRegExp(searchString)) throw TypeError('String#' + NAME + " doesn't accept regex!");
+  return String(defined(that));
+};
+
+
+/***/ }),
+
 /***/ "d3aa":
 /***/ (function(module, exports) {
 
@@ -11210,6 +11790,7 @@ var map = {
 	"./navigation/Button/Button.vue": "42cf",
 	"./navigation/Menu/Menu.vue": "7bf7",
 	"./navigation/Menu/MenuItem.vue": "b10d",
+	"./typography/Chip/Chip.vue": "be3c",
 	"./typography/Code/Code.vue": "7120",
 	"./typography/Heading/Heading.vue": "f63e",
 	"./typography/Icon/Icon.vue": "c6e1",
