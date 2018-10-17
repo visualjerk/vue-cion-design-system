@@ -1,5 +1,13 @@
-.ds-radio-wrap {
+.ds-radio {
   outline: none;
+
+  .ds-input-is-disabled &,
+  &:disabled {
+    color: $text-color-disabled;
+    opacity: $opacity-disabled;
+    pointer-events: none;
+    cursor: not-allowed;
+  }
 }
 
 .ds-radio-option {

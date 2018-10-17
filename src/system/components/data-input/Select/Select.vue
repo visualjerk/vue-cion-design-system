@@ -169,13 +169,6 @@ export default {
       default: false
     },
     /**
-     * Whether the input should be read-only
-     */
-    readonly: {
-      type: Boolean,
-      default: false
-    },
-    /**
      * The name of the input's icon
      */
     icon: {

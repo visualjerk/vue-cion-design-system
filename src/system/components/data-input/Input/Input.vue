@@ -72,13 +72,6 @@ export default {
       default: false
     },
     /**
-     * Whether the input should be read-only
-     */
-    readonly: {
-      type: Boolean,
-      default: false
-    },
-    /**
      * How many rows this input should have (only for type="textarea")
      */
     rows: {

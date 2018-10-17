@@ -1,7 +1,7 @@
 <template>
   <ds-form-item>
     <div
-      class="ds-radio-wrap"
+      class="ds-radio"
       :tabindex="tabindex"
       @keydown.self.down.prevent="pointerNext"
       @keydown.self.up.prevent="pointerPrev">
@@ -53,13 +53,6 @@ export default {
   },
   props: {
     /**
-     * Whether the input should be read-only
-     */
-    readonly: {
-      type: Boolean,
-      default: false
-    },
-    /**
      * Whether the input should be options should be buttons
      */
     buttons: {
@@ -99,9 +92,7 @@ export default {
   },
   methods: {
     handleSelect(option) {
-      if (!this.readonly && !this.disabled) {
-        this.selectOption(option)
-      }
+      this.selectOption(option)
     },
     pointerPrev() {
       if (this.pointer === 0) {

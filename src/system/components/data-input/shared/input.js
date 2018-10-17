@@ -52,6 +52,13 @@ export default {
       default: false
     },
     /**
+     * Whether the input should be read-only
+     */
+    readonly: {
+      type: Boolean,
+      default: false
+    },
+    /**
      * The async-validator schema used for the input.
      */
     schema: {
@@ -86,6 +93,7 @@ export default {
       return [
         this.size && `ds-input-size-${this.size}`,
         this.disabled && 'ds-input-is-disabled',
+        this.readonly && 'ds-input-is-readonly',
         this.error && 'ds-input-has-error',
         this.focus && 'ds-input-has-focus'
       ]
