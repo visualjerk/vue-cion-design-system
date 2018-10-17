@@ -27,7 +27,7 @@
           <div
             class="ds-selected-option"
             v-for="(value, index) in innerValue"
-            :key="value">
+            :key="value[labelProp] || value">
             <!-- @slot Slot to provide a custom selected option display -->
             <slot
               name="optionitem"
@@ -35,8 +35,9 @@
               <ds-chip
                 removable
                 @remove="deselectOption(index)"
-                color="primary">
-                {{ value }}
+                color="primary"
+                :size="size">
+                {{ value[labelProp] || value }}
               </ds-chip>
             </slot>
           </div>
@@ -61,18 +62,18 @@
         <div
           v-else
           class="ds-select-value">
+          <!-- @slot Slot to provide a custom value display -->
+          <slot
+            v-if="innerValue"
+            name="value"
+            :value="innerValue">
+            {{ innerValue[labelProp] || innerValue }}
+          </slot>
           <div
-            v-if="placeholder && !innerValue"
+            v-else-if="placeholder"
             class="ds-select-placeholder">
             {{ placeholder }}
           </div>
-          <!-- @slot Slot to provide a custom value display -->
-          <slot
-            v-else
-            name="value"
-            :value="innerValue">
-            {{ innerValue }}
-          </slot>
         </div>
         <input
           v-if="!multiple"
@@ -104,12 +105,12 @@
             v-for="(option, index) in filteredOptions"
             @click="handleSelect(option)"
             @mouseover="setPointer(index)"
-            :key="option.label || option">
+            :key="option[labelProp] || option">
             <!-- @slot Slot to provide custom option items -->
             <slot
               name="option"
               :option="option">
-              {{ option.label || option }}
+              {{ option[labelProp] || option }}
             </slot>
           </li>
         </ul>
@@ -154,7 +155,7 @@ export default {
   },
   props: {
     /**
-     * The placeholder shown when value is empty.
+     * The placeholder shown when value is empty
      */
     placeholder: {
       type: String,
@@ -175,14 +176,14 @@ export default {
       default: false
     },
     /**
-     * The name of the input's icon.
+     * The name of the input's icon
      */
     icon: {
       type: String,
       default: null
     },
     /**
-     * The name of the input's right icon.
+     * The name of the input's right icon
      */
     iconRight: {
       type: String,
@@ -196,6 +197,13 @@ export default {
       default() {
         return []
       }
+    },
+    /**
+     * The prop to use as the label when options are objects
+     */
+    labelProp: {
+      type: String,
+      default: 'label'
     },
     /**
      * Whether the options are searchable

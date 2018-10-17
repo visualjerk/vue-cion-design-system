@@ -64,7 +64,7 @@ export default {
      */
     size: {
       type: String,
-      default: null,
+      default: 'base',
       validator: value => {
         return value.match(/(small|base|large)/)
       }

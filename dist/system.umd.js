@@ -1134,7 +1134,7 @@ module.exports = { render: render };
 /***/ "1d82":
 /***/ (function(module, exports) {
 
-module.exports = {"description":"Used for handling basic user input.","methods":[],"displayName":"DsSelect","props":{"value":{"type":{"name":"string|object|number|array"},"required":"","defaultValue":{"value":"null","func":false},"tags":{},"comment":"/**\n     * The value of the input. Can be passed via v-model.\n     */","description":"The value of the input. Can be passed via v-model."},"model":{"type":{"name":"string"},"required":"","defaultValue":{"value":"null","func":false},"tags":{},"comment":"/**\n     * The model name when used within a form component. Uses dot notation.\n     */","description":"The model name when used within a form component. Uses dot notation."},"label":{"type":{"name":"string"},"required":"","defaultValue":{"value":"null","func":false},"tags":{},"comment":"/**\n     * The label of the input.\n     */","description":"The label of the input."},"id":{"type":{"name":"string"},"required":"","defaultValue":{"value":"null","func":false},"tags":{},"comment":"/**\n     * The id of the input.\n     */","description":"The id of the input."},"disabled":{"type":{"name":"boolean"},"required":"","defaultValue":{"value":"false","func":false},"tags":{},"comment":"/**\n     * Whether the input is disabled or not.\n     */","description":"Whether the input is disabled or not."},"schema":{"type":{"name":"object"},"required":"","defaultValue":{"value":"() => null","func":true},"tags":{},"comment":"/**\n     * The async-validator schema used for the input.\n     */","description":"The async-validator schema used for the input."},"size":{"type":{"name":"string"},"required":"","defaultValue":{"value":"null","func":false},"tags":{},"comment":"/**\n     * The input's size.\n     * `small, base, large`\n     */","description":"The input's size.\n`small, base, large`"},"tabindex":{"type":{"name":"number"},"required":"","defaultValue":{"value":"0","func":false},"tags":{},"comment":"","description":""},"multiple":{"type":{"name":"boolean"},"required":"","defaultValue":{"value":"false","func":false},"tags":{},"comment":"/**\n     * Whether the user can select multiple items\n     */","description":"Whether the user can select multiple items"},"placeholder":{"type":{"name":"string"},"required":"","defaultValue":{"value":"null","func":false},"tags":{},"comment":"/**\n     * The placeholder shown when value is empty.\n     */","description":"The placeholder shown when value is empty."},"autofocus":{"type":{"name":"boolean"},"required":"","defaultValue":{"value":"false","func":false},"tags":{},"comment":"/**\n     * Whether the input should be automatically focused\n     */","description":"Whether the input should be automatically focused"},"readonly":{"type":{"name":"boolean"},"required":"","defaultValue":{"value":"false","func":false},"tags":{},"comment":"/**\n     * Whether the input should be read-only\n     */","description":"Whether the input should be read-only"},"icon":{"type":{"name":"string"},"required":"","defaultValue":{"value":"null","func":false},"tags":{},"comment":"/**\n     * The name of the input's icon.\n     */","description":"The name of the input's icon."},"iconRight":{"type":{"name":"string"},"required":"","defaultValue":{"value":"\"angle-down\"","func":false},"tags":{},"comment":"/**\n     * The name of the input's right icon.\n     */","description":"The name of the input's right icon."},"options":{"type":{"name":"array"},"required":"","defaultValue":{"value":"default() { return []; }","func":true},"tags":{},"comment":"/**\n     * The select options.\n     */","description":"The select options."},"searchable":{"type":{"name":"boolean"},"required":"","defaultValue":{"value":"true","func":false},"tags":{},"comment":"/**\n     * Whether the options are searchable\n     */","description":"Whether the options are searchable"}},"comment":"/**\n * Used for handling basic user input.\n * @version 1.0.0\n */","tags":{"version":[{"title":"version","description":"1.0.0"}]},"events":{"input":{"description":"Fires after user input.\nReceives the value as the only argument.","comment":"/**\n         * Fires after user input.\n         * Receives the value as the only argument.\n         *\n         * @event input\n         */"}},"slots":{"\\\"optionitem\\\"":{"description":"Slot to provide a custom selected option display"},"\\\"value\\\"":{"description":"Slot to provide a custom value display"},"\\\"option\\\"":{"description":"Slot to provide custom option items"}}}
+module.exports = {"description":"Used for handling basic user input.","methods":[],"displayName":"DsSelect","props":{"value":{"type":{"name":"string|object|number|array"},"required":"","defaultValue":{"value":"null","func":false},"tags":{},"comment":"/**\n     * The value of the input. Can be passed via v-model.\n     */","description":"The value of the input. Can be passed via v-model."},"model":{"type":{"name":"string"},"required":"","defaultValue":{"value":"null","func":false},"tags":{},"comment":"/**\n     * The model name when used within a form component. Uses dot notation.\n     */","description":"The model name when used within a form component. Uses dot notation."},"label":{"type":{"name":"string"},"required":"","defaultValue":{"value":"null","func":false},"tags":{},"comment":"/**\n     * The label of the input.\n     */","description":"The label of the input."},"id":{"type":{"name":"string"},"required":"","defaultValue":{"value":"null","func":false},"tags":{},"comment":"/**\n     * The id of the input.\n     */","description":"The id of the input."},"disabled":{"type":{"name":"boolean"},"required":"","defaultValue":{"value":"false","func":false},"tags":{},"comment":"/**\n     * Whether the input is disabled or not.\n     */","description":"Whether the input is disabled or not."},"schema":{"type":{"name":"object"},"required":"","defaultValue":{"value":"() => null","func":true},"tags":{},"comment":"/**\n     * The async-validator schema used for the input.\n     */","description":"The async-validator schema used for the input."},"size":{"type":{"name":"string"},"required":"","defaultValue":{"value":"\"base\"","func":false},"tags":{},"comment":"/**\n     * The input's size.\n     * `small, base, large`\n     */","description":"The input's size.\n`small, base, large`"},"tabindex":{"type":{"name":"number"},"required":"","defaultValue":{"value":"0","func":false},"tags":{},"comment":"","description":""},"multiple":{"type":{"name":"boolean"},"required":"","defaultValue":{"value":"false","func":false},"tags":{},"comment":"/**\n     * Whether the user can select multiple items\n     */","description":"Whether the user can select multiple items"},"placeholder":{"type":{"name":"string"},"required":"","defaultValue":{"value":"null","func":false},"tags":{},"comment":"/**\n     * The placeholder shown when value is empty\n     */","description":"The placeholder shown when value is empty"},"autofocus":{"type":{"name":"boolean"},"required":"","defaultValue":{"value":"false","func":false},"tags":{},"comment":"/**\n     * Whether the input should be automatically focused\n     */","description":"Whether the input should be automatically focused"},"readonly":{"type":{"name":"boolean"},"required":"","defaultValue":{"value":"false","func":false},"tags":{},"comment":"/**\n     * Whether the input should be read-only\n     */","description":"Whether the input should be read-only"},"icon":{"type":{"name":"string"},"required":"","defaultValue":{"value":"null","func":false},"tags":{},"comment":"/**\n     * The name of the input's icon\n     */","description":"The name of the input's icon"},"iconRight":{"type":{"name":"string"},"required":"","defaultValue":{"value":"\"angle-down\"","func":false},"tags":{},"comment":"/**\n     * The name of the input's right icon\n     */","description":"The name of the input's right icon"},"options":{"type":{"name":"array"},"required":"","defaultValue":{"value":"default() { return []; }","func":true},"tags":{},"comment":"/**\n     * The select options.\n     */","description":"The select options."},"labelProp":{"type":{"name":"string"},"required":"","defaultValue":{"value":"\"label\"","func":false},"tags":{},"comment":"/**\n     * The prop to use as the label when options are objects\n     */","description":"The prop to use as the label when options are objects"},"searchable":{"type":{"name":"boolean"},"required":"","defaultValue":{"value":"true","func":false},"tags":{},"comment":"/**\n     * Whether the options are searchable\n     */","description":"Whether the options are searchable"}},"comment":"/**\n * Used for handling basic user input.\n * @version 1.0.0\n */","tags":{"version":[{"title":"version","description":"1.0.0"}]},"events":{"input":{"description":"Fires after user input.\nReceives the value as the only argument.","comment":"/**\n         * Fires after user input.\n         * Receives the value as the only argument.\n         *\n         * @event input\n         */"}},"slots":{"\\\"optionitem\\\"":{"description":"Slot to provide a custom selected option display"},"\\\"value\\\"":{"description":"Slot to provide a custom value display"},"\\\"option\\\"":{"description":"Slot to provide custom option items"}}}
 
 /***/ }),
 
@@ -1241,13 +1241,6 @@ module.exports = function (it) {
   return is ? document.createElement(it) : {};
 };
 
-
-/***/ }),
-
-/***/ "236f":
-/***/ (function(module, exports, __webpack_require__) {
-
-// extracted by mini-css-extract-plugin
 
 /***/ }),
 
@@ -3838,7 +3831,7 @@ Schema.messages = messages_messages;
      */
     size: {
       type: String,
-      default: null,
+      default: 'base',
       validator: function validator(value) {
         return value.match(/(small|base|large)/);
       }
@@ -5343,10 +5336,21 @@ module.exports = { render: render };
 
 /***/ }),
 
+/***/ "59c4":
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony import */ var _node_modules_mini_css_extract_plugin_dist_loader_js_node_modules_css_loader_index_js_ref_8_oneOf_1_1_node_modules_vue_loader_lib_loaders_stylePostLoader_js_node_modules_postcss_loader_lib_index_js_ref_8_oneOf_1_2_node_modules_sass_loader_lib_loader_js_ref_8_oneOf_1_3_style_scss_vue_type_style_index_0_lang_scss___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__("5ba9");
+/* harmony import */ var _node_modules_mini_css_extract_plugin_dist_loader_js_node_modules_css_loader_index_js_ref_8_oneOf_1_1_node_modules_vue_loader_lib_loaders_stylePostLoader_js_node_modules_postcss_loader_lib_index_js_ref_8_oneOf_1_2_node_modules_sass_loader_lib_loader_js_ref_8_oneOf_1_3_style_scss_vue_type_style_index_0_lang_scss___WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_node_modules_mini_css_extract_plugin_dist_loader_js_node_modules_css_loader_index_js_ref_8_oneOf_1_1_node_modules_vue_loader_lib_loaders_stylePostLoader_js_node_modules_postcss_loader_lib_index_js_ref_8_oneOf_1_2_node_modules_sass_loader_lib_loader_js_ref_8_oneOf_1_3_style_scss_vue_type_style_index_0_lang_scss___WEBPACK_IMPORTED_MODULE_0__);
+/* unused harmony reexport * */
+ /* unused harmony default export */ var _unused_webpack_default_export = (_node_modules_mini_css_extract_plugin_dist_loader_js_node_modules_css_loader_index_js_ref_8_oneOf_1_1_node_modules_vue_loader_lib_loaders_stylePostLoader_js_node_modules_postcss_loader_lib_index_js_ref_8_oneOf_1_2_node_modules_sass_loader_lib_loader_js_ref_8_oneOf_1_3_style_scss_vue_type_style_index_0_lang_scss___WEBPACK_IMPORTED_MODULE_0___default.a); 
+
+/***/ }),
+
 /***/ "5a14":
 /***/ (function(module, exports) {
 
-module.exports = {"description":"Used for handling basic user input.","methods":[],"displayName":"DsInput","props":{"value":{"type":{"name":"string|object|number|array"},"required":"","defaultValue":{"value":"null","func":false},"tags":{},"comment":"/**\n     * The value of the input. Can be passed via v-model.\n     */","description":"The value of the input. Can be passed via v-model."},"model":{"type":{"name":"string"},"required":"","defaultValue":{"value":"null","func":false},"tags":{},"comment":"/**\n     * The model name when used within a form component. Uses dot notation.\n     */","description":"The model name when used within a form component. Uses dot notation."},"label":{"type":{"name":"string"},"required":"","defaultValue":{"value":"null","func":false},"tags":{},"comment":"/**\n     * The label of the input.\n     */","description":"The label of the input."},"id":{"type":{"name":"string"},"required":"","defaultValue":{"value":"null","func":false},"tags":{},"comment":"/**\n     * The id of the input.\n     */","description":"The id of the input."},"disabled":{"type":{"name":"boolean"},"required":"","defaultValue":{"value":"false","func":false},"tags":{},"comment":"/**\n     * Whether the input is disabled or not.\n     */","description":"Whether the input is disabled or not."},"schema":{"type":{"name":"object"},"required":"","defaultValue":{"value":"() => null","func":true},"tags":{},"comment":"/**\n     * The async-validator schema used for the input.\n     */","description":"The async-validator schema used for the input."},"size":{"type":{"name":"string"},"required":"","defaultValue":{"value":"null","func":false},"tags":{},"comment":"/**\n     * The input's size.\n     * `small, base, large`\n     */","description":"The input's size.\n`small, base, large`"},"tabindex":{"type":{"name":"number"},"required":"","defaultValue":{"value":"0","func":false},"tags":{},"comment":"","description":""},"type":{"type":{"name":"string"},"required":"","defaultValue":{"value":"\"text\"","func":false},"tags":{},"comment":"/**\n     * The type of this input `url, text, password, email, search, textarea`.\n     */","description":"The type of this input `url, text, password, email, search, textarea`."},"placeholder":{"type":{"name":"string"},"required":"","defaultValue":{"value":"null","func":false},"tags":{},"comment":"/**\n     * The placeholder shown when value is empty.\n     */","description":"The placeholder shown when value is empty."},"autofocus":{"type":{"name":"boolean"},"required":"","defaultValue":{"value":"false","func":false},"tags":{},"comment":"/**\n     * Whether the input should be automatically focused\n     */","description":"Whether the input should be automatically focused"},"readonly":{"type":{"name":"boolean"},"required":"","defaultValue":{"value":"false","func":false},"tags":{},"comment":"/**\n     * Whether the input should be read-only\n     */","description":"Whether the input should be read-only"},"rows":{"type":{"name":"string|number"},"required":"","defaultValue":{"value":"1","func":false},"tags":{},"comment":"/**\n     * How many rows this input should have (only for type=\\\"textarea\\\")\n     */","description":"How many rows this input should have (only for type=\\\"textarea\\\")"},"icon":{"type":{"name":"string"},"required":"","defaultValue":{"value":"null","func":false},"tags":{},"comment":"/**\n     * The name of the input's icon.\n     */","description":"The name of the input's icon."},"iconRight":{"type":{"name":"string"},"required":"","defaultValue":{"value":"null","func":false},"tags":{},"comment":"/**\n     * The name of the input's right icon.\n     */","description":"The name of the input's right icon."}},"comment":"/**\n * Used for handling basic user input.\n * @version 1.0.0\n */","tags":{"version":[{"title":"version","description":"1.0.0"}]},"events":{"input":{"description":"Fires after user input.\nReceives the value as the only argument.","comment":"/**\n         * Fires after user input.\n         * Receives the value as the only argument.\n         *\n         * @event input\n         */"}},"slots":{}}
+module.exports = {"description":"Used for handling basic user input.","methods":[],"displayName":"DsInput","props":{"value":{"type":{"name":"string|object|number|array"},"required":"","defaultValue":{"value":"null","func":false},"tags":{},"comment":"/**\n     * The value of the input. Can be passed via v-model.\n     */","description":"The value of the input. Can be passed via v-model."},"model":{"type":{"name":"string"},"required":"","defaultValue":{"value":"null","func":false},"tags":{},"comment":"/**\n     * The model name when used within a form component. Uses dot notation.\n     */","description":"The model name when used within a form component. Uses dot notation."},"label":{"type":{"name":"string"},"required":"","defaultValue":{"value":"null","func":false},"tags":{},"comment":"/**\n     * The label of the input.\n     */","description":"The label of the input."},"id":{"type":{"name":"string"},"required":"","defaultValue":{"value":"null","func":false},"tags":{},"comment":"/**\n     * The id of the input.\n     */","description":"The id of the input."},"disabled":{"type":{"name":"boolean"},"required":"","defaultValue":{"value":"false","func":false},"tags":{},"comment":"/**\n     * Whether the input is disabled or not.\n     */","description":"Whether the input is disabled or not."},"schema":{"type":{"name":"object"},"required":"","defaultValue":{"value":"() => null","func":true},"tags":{},"comment":"/**\n     * The async-validator schema used for the input.\n     */","description":"The async-validator schema used for the input."},"size":{"type":{"name":"string"},"required":"","defaultValue":{"value":"\"base\"","func":false},"tags":{},"comment":"/**\n     * The input's size.\n     * `small, base, large`\n     */","description":"The input's size.\n`small, base, large`"},"tabindex":{"type":{"name":"number"},"required":"","defaultValue":{"value":"0","func":false},"tags":{},"comment":"","description":""},"type":{"type":{"name":"string"},"required":"","defaultValue":{"value":"\"text\"","func":false},"tags":{},"comment":"/**\n     * The type of this input `url, text, password, email, search, textarea`.\n     */","description":"The type of this input `url, text, password, email, search, textarea`."},"placeholder":{"type":{"name":"string"},"required":"","defaultValue":{"value":"null","func":false},"tags":{},"comment":"/**\n     * The placeholder shown when value is empty.\n     */","description":"The placeholder shown when value is empty."},"autofocus":{"type":{"name":"boolean"},"required":"","defaultValue":{"value":"false","func":false},"tags":{},"comment":"/**\n     * Whether the input should be automatically focused\n     */","description":"Whether the input should be automatically focused"},"readonly":{"type":{"name":"boolean"},"required":"","defaultValue":{"value":"false","func":false},"tags":{},"comment":"/**\n     * Whether the input should be read-only\n     */","description":"Whether the input should be read-only"},"rows":{"type":{"name":"string|number"},"required":"","defaultValue":{"value":"1","func":false},"tags":{},"comment":"/**\n     * How many rows this input should have (only for type=\\\"textarea\\\")\n     */","description":"How many rows this input should have (only for type=\\\"textarea\\\")"},"icon":{"type":{"name":"string"},"required":"","defaultValue":{"value":"null","func":false},"tags":{},"comment":"/**\n     * The name of the input's icon.\n     */","description":"The name of the input's icon."},"iconRight":{"type":{"name":"string"},"required":"","defaultValue":{"value":"null","func":false},"tags":{},"comment":"/**\n     * The name of the input's right icon.\n     */","description":"The name of the input's right icon."}},"comment":"/**\n * Used for handling basic user input.\n * @version 1.0.0\n */","tags":{"version":[{"title":"version","description":"1.0.0"}]},"events":{"input":{"description":"Fires after user input.\nReceives the value as the only argument.","comment":"/**\n         * Fires after user input.\n         * Receives the value as the only argument.\n         *\n         * @event input\n         */"}},"slots":{}}
 
 /***/ }),
 
@@ -5393,6 +5397,13 @@ module.exports = function (IS_INCLUDES) {
   };
 };
 
+
+/***/ }),
+
+/***/ "5ba9":
+/***/ (function(module, exports, __webpack_require__) {
+
+// extracted by mini-css-extract-plugin
 
 /***/ }),
 
@@ -5730,12 +5741,12 @@ component.options.__file = "FlexItem.vue"
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 
-// CONCATENATED MODULE: ./node_modules/cache-loader/dist/cjs.js?{"cacheDirectory":"node_modules/.cache/vue-loader","cacheIdentifier":"41dfbe64-vue-loader-template"}!./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/cache-loader/dist/cjs.js??ref--0-0!./node_modules/vue-loader/lib??vue-loader-options!./src/system/components/data-input/FormItem/FormItem.vue?vue&type=template&id=72c16fce&
+// CONCATENATED MODULE: ./node_modules/cache-loader/dist/cjs.js?{"cacheDirectory":"node_modules/.cache/vue-loader","cacheIdentifier":"41dfbe64-vue-loader-template"}!./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/cache-loader/dist/cjs.js??ref--0-0!./node_modules/vue-loader/lib??vue-loader-options!./src/system/components/data-input/FormItem/FormItem.vue?vue&type=template&id=67bc0487&
 var render = function () {var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;return _c('div',{staticClass:"ds-form-item",class:_vm.$parentInput.stateClasses},[_c('ds-input-label',{attrs:{"label":_vm.$parentInput.label,"for":_vm.$parentInput.id}}),_vm._t("default"),_c('ds-input-error',{attrs:{"error":_vm.$parentInput.error}})],2)}
 var staticRenderFns = []
 
 
-// CONCATENATED MODULE: ./src/system/components/data-input/FormItem/FormItem.vue?vue&type=template&id=72c16fce&
+// CONCATENATED MODULE: ./src/system/components/data-input/FormItem/FormItem.vue?vue&type=template&id=67bc0487&
 
 // CONCATENATED MODULE: ./node_modules/cache-loader/dist/cjs.js??ref--12-0!./node_modules/thread-loader/dist/cjs.js!./node_modules/babel-loader/lib!./node_modules/vue-loader/lib??vue-loader-options!./src/system/components/data-input/FormItem/FormItem.vue?vue&type=script&lang=js&
 //
@@ -5761,8 +5772,8 @@ var staticRenderFns = []
 });
 // CONCATENATED MODULE: ./src/system/components/data-input/FormItem/FormItem.vue?vue&type=script&lang=js&
  /* harmony default export */ var FormItem_FormItemvue_type_script_lang_js_ = (FormItemvue_type_script_lang_js_); 
-// EXTERNAL MODULE: ./src/system/components/data-input/FormItem/FormItem.vue?vue&type=style&index=0&lang=scss&
-var FormItemvue_type_style_index_0_lang_scss_ = __webpack_require__("a6f4");
+// EXTERNAL MODULE: ./src/system/components/data-input/FormItem/style.scss?vue&type=style&index=0&lang=scss&
+var stylevue_type_style_index_0_lang_scss_ = __webpack_require__("59c4");
 
 // EXTERNAL MODULE: ./node_modules/vue-loader/lib/runtime/componentNormalizer.js
 var componentNormalizer = __webpack_require__("2877");
@@ -8850,19 +8861,19 @@ module.exports = { render: render };
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 
-// CONCATENATED MODULE: ./node_modules/cache-loader/dist/cjs.js?{"cacheDirectory":"node_modules/.cache/vue-loader","cacheIdentifier":"41dfbe64-vue-loader-template"}!./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/cache-loader/dist/cjs.js??ref--0-0!./node_modules/vue-loader/lib??vue-loader-options!./src/system/components/data-input/Select/Select.vue?vue&type=template&id=4e77929e&
+// CONCATENATED MODULE: ./node_modules/cache-loader/dist/cjs.js?{"cacheDirectory":"node_modules/.cache/vue-loader","cacheIdentifier":"41dfbe64-vue-loader-template"}!./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/cache-loader/dist/cjs.js??ref--0-0!./node_modules/vue-loader/lib??vue-loader-options!./src/system/components/data-input/Select/Select.vue?vue&type=template&id=148f2c38&
 var render = function () {var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;return _c('ds-form-item',[_c('div',{directives:[{name:"click-outside",rawName:"v-click-outside",value:(_vm.handleBlur),expression:"handleBlur"}],staticClass:"ds-select-wrap",attrs:{"tabindex":_vm.searchable ? -1 : _vm.tabindex},on:{"keydown":[function($event){if(!('button' in $event)&&_vm._k($event.keyCode,"down",40,$event.key,["Down","ArrowDown"])){ return null; }if($event.target !== $event.currentTarget){ return null; }$event.preventDefault();return _vm.pointerNext($event)},function($event){if(!('button' in $event)&&_vm._k($event.keyCode,"up",38,$event.key,["Up","ArrowUp"])){ return null; }if($event.target !== $event.currentTarget){ return null; }$event.preventDefault();return _vm.pointerPrev($event)}],"keypress":function($event){if(!('button' in $event)&&_vm._k($event.keyCode,"enter",13,$event.key,"Enter")){ return null; }$event.preventDefault();$event.stopPropagation();if($event.target !== $event.currentTarget){ return null; }return _vm.selectPointerOption($event)},"keyup":function($event){if(!('button' in $event)&&_vm._k($event.keyCode,"esc",27,$event.key,"Escape")){ return null; }return _vm.close($event)}}},[(_vm.icon)?_c('div',{staticClass:"ds-select-icon"},[_c('ds-icon',{attrs:{"name":_vm.icon}})],1):_vm._e(),_c('div',{staticClass:"ds-select",class:[
         _vm.icon && "ds-select-has-icon",
         _vm.iconRight && "ds-select-has-icon-right",
         _vm.multiple && "ds-select-multiple"
-    ],on:{"click":_vm.handleClick}},[(_vm.multiple)?_c('div',{staticClass:"ds-selected-options"},[_vm._l((_vm.innerValue),function(value,index){return _c('div',{key:value,staticClass:"ds-selected-option"},[_vm._t("optionitem",[_c('ds-chip',{attrs:{"removable":"","color":"primary"},on:{"remove":function($event){_vm.deselectOption(index)}}},[_vm._v("\n              "+_vm._s(value)+"\n            ")])],{value:value})],2)}),_c('input',{directives:[{name:"model",rawName:"v-model",value:(_vm.searchString),expression:"searchString"}],ref:"search",staticClass:"ds-select-search",attrs:{"id":_vm.id,"name":_vm.model,"autofocus":_vm.autofocus,"placeholder":_vm.placeholder,"tabindex":_vm.tabindex,"disabled":_vm.disabled,"readonly":_vm.readonly},domProps:{"value":(_vm.searchString)},on:{"focus":_vm.handleFocus,"keydown":[function($event){if(!('button' in $event)&&_vm._k($event.keyCode,"delete",[8,46],$event.key,["Backspace","Delete"])){ return null; }$event.stopPropagation();return _vm.deselectLastOption($event)},function($event){if(!('button' in $event)&&_vm._k($event.keyCode,"down",40,$event.key,["Down","ArrowDown"])){ return null; }$event.preventDefault();return _vm.pointerNext($event)},function($event){if(!('button' in $event)&&_vm._k($event.keyCode,"up",38,$event.key,["Up","ArrowUp"])){ return null; }$event.preventDefault();return _vm.pointerPrev($event)}],"keypress":function($event){if(!('button' in $event)&&_vm._k($event.keyCode,"enter",13,$event.key,"Enter")){ return null; }$event.preventDefault();$event.stopPropagation();return _vm.selectPointerOption($event)},"keyup":function($event){if(!('button' in $event)&&_vm._k($event.keyCode,"esc",27,$event.key,"Escape")){ return null; }return _vm.close($event)},"input":function($event){if($event.target.composing){ return; }_vm.searchString=$event.target.value}}})],2):_c('div',{staticClass:"ds-select-value"},[(_vm.placeholder && !_vm.innerValue)?_c('div',{staticClass:"ds-select-placeholder"},[_vm._v("\n          "+_vm._s(_vm.placeholder)+"\n        ")]):_vm._t("value",[_vm._v("\n          "+_vm._s(_vm.innerValue)+"\n        ")],{value:_vm.innerValue})],2),(!_vm.multiple)?_c('input',{directives:[{name:"model",rawName:"v-model",value:(_vm.searchString),expression:"searchString"}],ref:"search",staticClass:"ds-select-search",attrs:{"id":_vm.id,"name":_vm.model,"autofocus":_vm.autofocus,"placeholder":_vm.placeholder,"tabindex":_vm.tabindex,"disabled":_vm.disabled,"readonly":_vm.readonly},domProps:{"value":(_vm.searchString)},on:{"focus":_vm.handleFocus,"keydown":[function($event){if(!('button' in $event)&&_vm._k($event.keyCode,"delete",[8,46],$event.key,["Backspace","Delete"])){ return null; }$event.stopPropagation();return _vm.deselectLastOption($event)},function($event){if(!('button' in $event)&&_vm._k($event.keyCode,"down",40,$event.key,["Down","ArrowDown"])){ return null; }$event.preventDefault();return _vm.pointerNext($event)},function($event){if(!('button' in $event)&&_vm._k($event.keyCode,"up",38,$event.key,["Up","ArrowUp"])){ return null; }$event.preventDefault();return _vm.pointerPrev($event)}],"keypress":function($event){if(!('button' in $event)&&_vm._k($event.keyCode,"enter",13,$event.key,"Enter")){ return null; }$event.preventDefault();$event.stopPropagation();return _vm.selectPointerOption($event)},"keyup":function($event){if(!('button' in $event)&&_vm._k($event.keyCode,"esc",27,$event.key,"Escape")){ return null; }return _vm.close($event)},"input":function($event){if($event.target.composing){ return; }_vm.searchString=$event.target.value}}}):_vm._e()]),_c('div',{staticClass:"ds-select-dropdown"},[_c('ul',{staticClass:"ds-select-options"},_vm._l((_vm.filteredOptions),function(option,index){return _c('li',{key:option.label || option,staticClass:"ds-select-option",class:[
+    ],on:{"click":_vm.handleClick}},[(_vm.multiple)?_c('div',{staticClass:"ds-selected-options"},[_vm._l((_vm.innerValue),function(value,index){return _c('div',{key:value[_vm.labelProp] || value,staticClass:"ds-selected-option"},[_vm._t("optionitem",[_c('ds-chip',{attrs:{"removable":"","color":"primary","size":_vm.size},on:{"remove":function($event){_vm.deselectOption(index)}}},[_vm._v("\n              "+_vm._s(value[_vm.labelProp] || value)+"\n            ")])],{value:value})],2)}),_c('input',{directives:[{name:"model",rawName:"v-model",value:(_vm.searchString),expression:"searchString"}],ref:"search",staticClass:"ds-select-search",attrs:{"id":_vm.id,"name":_vm.model,"autofocus":_vm.autofocus,"placeholder":_vm.placeholder,"tabindex":_vm.tabindex,"disabled":_vm.disabled,"readonly":_vm.readonly},domProps:{"value":(_vm.searchString)},on:{"focus":_vm.handleFocus,"keydown":[function($event){if(!('button' in $event)&&_vm._k($event.keyCode,"delete",[8,46],$event.key,["Backspace","Delete"])){ return null; }$event.stopPropagation();return _vm.deselectLastOption($event)},function($event){if(!('button' in $event)&&_vm._k($event.keyCode,"down",40,$event.key,["Down","ArrowDown"])){ return null; }$event.preventDefault();return _vm.pointerNext($event)},function($event){if(!('button' in $event)&&_vm._k($event.keyCode,"up",38,$event.key,["Up","ArrowUp"])){ return null; }$event.preventDefault();return _vm.pointerPrev($event)}],"keypress":function($event){if(!('button' in $event)&&_vm._k($event.keyCode,"enter",13,$event.key,"Enter")){ return null; }$event.preventDefault();$event.stopPropagation();return _vm.selectPointerOption($event)},"keyup":function($event){if(!('button' in $event)&&_vm._k($event.keyCode,"esc",27,$event.key,"Escape")){ return null; }return _vm.close($event)},"input":function($event){if($event.target.composing){ return; }_vm.searchString=$event.target.value}}})],2):_c('div',{staticClass:"ds-select-value"},[(_vm.innerValue)?_vm._t("value",[_vm._v("\n          "+_vm._s(_vm.innerValue[_vm.labelProp] || _vm.innerValue)+"\n        ")],{value:_vm.innerValue}):(_vm.placeholder)?_c('div',{staticClass:"ds-select-placeholder"},[_vm._v("\n          "+_vm._s(_vm.placeholder)+"\n        ")]):_vm._e()],2),(!_vm.multiple)?_c('input',{directives:[{name:"model",rawName:"v-model",value:(_vm.searchString),expression:"searchString"}],ref:"search",staticClass:"ds-select-search",attrs:{"id":_vm.id,"name":_vm.model,"autofocus":_vm.autofocus,"placeholder":_vm.placeholder,"tabindex":_vm.tabindex,"disabled":_vm.disabled,"readonly":_vm.readonly},domProps:{"value":(_vm.searchString)},on:{"focus":_vm.handleFocus,"keydown":[function($event){if(!('button' in $event)&&_vm._k($event.keyCode,"delete",[8,46],$event.key,["Backspace","Delete"])){ return null; }$event.stopPropagation();return _vm.deselectLastOption($event)},function($event){if(!('button' in $event)&&_vm._k($event.keyCode,"down",40,$event.key,["Down","ArrowDown"])){ return null; }$event.preventDefault();return _vm.pointerNext($event)},function($event){if(!('button' in $event)&&_vm._k($event.keyCode,"up",38,$event.key,["Up","ArrowUp"])){ return null; }$event.preventDefault();return _vm.pointerPrev($event)}],"keypress":function($event){if(!('button' in $event)&&_vm._k($event.keyCode,"enter",13,$event.key,"Enter")){ return null; }$event.preventDefault();$event.stopPropagation();return _vm.selectPointerOption($event)},"keyup":function($event){if(!('button' in $event)&&_vm._k($event.keyCode,"esc",27,$event.key,"Escape")){ return null; }return _vm.close($event)},"input":function($event){if($event.target.composing){ return; }_vm.searchString=$event.target.value}}}):_vm._e()]),_c('div',{staticClass:"ds-select-dropdown"},[_c('ul',{staticClass:"ds-select-options"},_vm._l((_vm.filteredOptions),function(option,index){return _c('li',{key:option[_vm.labelProp] || option,staticClass:"ds-select-option",class:[
             _vm.isSelected(option) && "ds-select-option-is-selected",
             _vm.pointer === index && "ds-select-option-hover"
-          ],on:{"click":function($event){_vm.handleSelect(option)},"mouseover":function($event){_vm.setPointer(index)}}},[_vm._t("option",[_vm._v("\n            "+_vm._s(option.label || option)+"\n          ")],{option:option})],2)}))]),(_vm.iconRight)?_c('div',{staticClass:"ds-select-icon-right"},[_c('ds-icon',{attrs:{"name":_vm.iconRight}})],1):_vm._e()])])}
+          ],on:{"click":function($event){_vm.handleSelect(option)},"mouseover":function($event){_vm.setPointer(index)}}},[_vm._t("option",[_vm._v("\n            "+_vm._s(option[_vm.labelProp] || option)+"\n          ")],{option:option})],2)}))]),(_vm.iconRight)?_c('div',{staticClass:"ds-select-icon-right"},[_c('ds-icon',{attrs:{"name":_vm.iconRight}})],1):_vm._e()])])}
 var staticRenderFns = []
 
 
-// CONCATENATED MODULE: ./src/system/components/data-input/Select/Select.vue?vue&type=template&id=4e77929e&
+// CONCATENATED MODULE: ./src/system/components/data-input/Select/Select.vue?vue&type=template&id=148f2c38&
 
 // EXTERNAL MODULE: ./node_modules/core-js/modules/es6.regexp.search.js
 var es6_regexp_search = __webpack_require__("386d");
@@ -8902,12 +8913,10 @@ var toConsumableArray = __webpack_require__("8afe");
   },
   methods: {
     selectOption: function selectOption(option) {
-      var newValue = option.value || option;
-
       if (this.multiple) {
-        this.selectMultiOption(newValue);
+        this.selectMultiOption(option);
       } else {
-        this.input(newValue);
+        this.input(option);
       }
     },
     selectMultiOption: function selectMultiOption(value) {
@@ -8934,13 +8943,11 @@ var toConsumableArray = __webpack_require__("8afe");
         return false;
       }
 
-      var value = option.value || option;
-
       if (this.multiple) {
-        return this.innerValue.includes(value);
+        return this.innerValue.includes(option);
       }
 
-      return this.innerValue === value;
+      return this.innerValue === option;
     }
   }
 });
@@ -8962,6 +8969,7 @@ var Icon = __webpack_require__("c6e1");
 
 
 
+//
 //
 //
 //
@@ -9117,7 +9125,7 @@ var Icon = __webpack_require__("c6e1");
   },
   props: {
     /**
-     * The placeholder shown when value is empty.
+     * The placeholder shown when value is empty
      */
     placeholder: {
       type: String,
@@ -9141,7 +9149,7 @@ var Icon = __webpack_require__("c6e1");
     },
 
     /**
-     * The name of the input's icon.
+     * The name of the input's icon
      */
     icon: {
       type: String,
@@ -9149,7 +9157,7 @@ var Icon = __webpack_require__("c6e1");
     },
 
     /**
-     * The name of the input's right icon.
+     * The name of the input's right icon
      */
     iconRight: {
       type: String,
@@ -9164,6 +9172,14 @@ var Icon = __webpack_require__("c6e1");
       default: function _default() {
         return [];
       }
+    },
+
+    /**
+     * The prop to use as the label when options are objects
+     */
+    labelProp: {
+      type: String,
+      default: 'label'
     },
 
     /**
@@ -9350,17 +9366,6 @@ module.exports = { render: render };
 /***/ (function(module, exports) {
 
 module.exports = {"description":"Headings are used as the titles of each major\nsection of a page in the interface.","methods":[],"displayName":"DsHeading","props":{"tag":{"type":{"name":"string"},"required":"","defaultValue":{"value":"\"h1\"","func":false},"tags":{},"comment":"/**\n     * The heading type used for the heading.\n     * `h1, h2, h3, h4, h5, h6`\n     */","description":"The heading type used for the heading.\n`h1, h2, h3, h4, h5, h6`"},"size":{"type":{"name":"string"},"required":"","defaultValue":{"value":"null","func":false},"tags":{},"comment":"/**\n     * The size used for the heading.\n     * `h1, h2, h3, h4, h5, h6`\n     */","description":"The size used for the heading.\n`h1, h2, h3, h4, h5, h6`"},"primary":{"type":{"name":"boolean"},"required":"","defaultValue":{"value":"false","func":false},"tags":{},"comment":"/**\n     * Primary style\n     * `true, false`\n     */","description":"Primary style\n`true, false`"},"soft":{"type":{"name":"boolean"},"required":"","defaultValue":{"value":"false","func":false},"tags":{},"comment":"/**\n     * Muted style\n     * `true, false`\n     */","description":"Muted style\n`true, false`"}},"comment":"/**\n * Headings are used as the titles of each major\n * section of a page in the interface.\n *\n * @version 1.0.0\n */","tags":{"version":[{"title":"version","description":"1.0.0"}]},"events":{},"slots":{"default":{"description":""}}}
-
-/***/ }),
-
-/***/ "a6f4":
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-/* harmony import */ var _node_modules_mini_css_extract_plugin_dist_loader_js_node_modules_css_loader_index_js_ref_8_oneOf_1_1_node_modules_vue_loader_lib_loaders_stylePostLoader_js_node_modules_postcss_loader_lib_index_js_ref_8_oneOf_1_2_node_modules_sass_loader_lib_loader_js_ref_8_oneOf_1_3_node_modules_cache_loader_dist_cjs_js_ref_0_0_node_modules_vue_loader_lib_index_js_vue_loader_options_FormItem_vue_vue_type_style_index_0_lang_scss___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__("236f");
-/* harmony import */ var _node_modules_mini_css_extract_plugin_dist_loader_js_node_modules_css_loader_index_js_ref_8_oneOf_1_1_node_modules_vue_loader_lib_loaders_stylePostLoader_js_node_modules_postcss_loader_lib_index_js_ref_8_oneOf_1_2_node_modules_sass_loader_lib_loader_js_ref_8_oneOf_1_3_node_modules_cache_loader_dist_cjs_js_ref_0_0_node_modules_vue_loader_lib_index_js_vue_loader_options_FormItem_vue_vue_type_style_index_0_lang_scss___WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_node_modules_mini_css_extract_plugin_dist_loader_js_node_modules_css_loader_index_js_ref_8_oneOf_1_1_node_modules_vue_loader_lib_loaders_stylePostLoader_js_node_modules_postcss_loader_lib_index_js_ref_8_oneOf_1_2_node_modules_sass_loader_lib_loader_js_ref_8_oneOf_1_3_node_modules_cache_loader_dist_cjs_js_ref_0_0_node_modules_vue_loader_lib_index_js_vue_loader_options_FormItem_vue_vue_type_style_index_0_lang_scss___WEBPACK_IMPORTED_MODULE_0__);
-/* unused harmony reexport * */
- /* unused harmony default export */ var _unused_webpack_default_export = (_node_modules_mini_css_extract_plugin_dist_loader_js_node_modules_css_loader_index_js_ref_8_oneOf_1_1_node_modules_vue_loader_lib_loaders_stylePostLoader_js_node_modules_postcss_loader_lib_index_js_ref_8_oneOf_1_2_node_modules_sass_loader_lib_loader_js_ref_8_oneOf_1_3_node_modules_cache_loader_dist_cjs_js_ref_0_0_node_modules_vue_loader_lib_index_js_vue_loader_options_FormItem_vue_vue_type_style_index_0_lang_scss___WEBPACK_IMPORTED_MODULE_0___default.a); 
 
 /***/ }),
 

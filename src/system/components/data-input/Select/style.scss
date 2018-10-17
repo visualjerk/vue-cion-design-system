@@ -10,6 +10,12 @@
   }
 }
 
+.ds-select-multiple {
+  display: flex;
+  align-items: center;
+  max-width: 100%;
+}
+
 .ds-select-search, .ds-select-value {
   box-sizing: border-box;
   position: absolute;
@@ -98,6 +104,8 @@
 
 .ds-selected-options {
   display: flex;
+  max-width: 100%;
+  overflow: hidden;
 }
 
 .ds-selected-option {
