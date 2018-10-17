@@ -133,7 +133,7 @@ import DsChip from '@@/components/typography/Chip/Chip'
 import DsIcon from '@@/components/typography/Icon/Icon'
 
 /**
- * Used for handling basic user input.
+ * Used for letting the user choose values from a set of options.
  * @version 1.0.0
  */
 export default {
