@@ -13,7 +13,8 @@
     <button
       v-if="removable"
       @click="remove"
-      class="ds-chip-close">
+      class="ds-chip-close"
+      tabindex="-1">
       <ds-icon name="close" />
     </button>
   </component>
