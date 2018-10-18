@@ -41,8 +41,25 @@
     pointer-events: none;
   }
 
+  &:after {
+    position: absolute;
+    content: '';
+    top: $space-xxx-small;
+    left: $space-xxx-small;
+    right: $space-xxx-small;
+    bottom: $space-xxx-small;
+    border-radius: $border-radius-base;
+    border: $border-size-base dashed currentColor;
+    opacity: 0;
+    visiblity: hidden;
+    pointer-events: none;
+  }
+
   &:focus {
     outline: none;
+    &:after {
+      opacity: 0.6;
+    }
   }
 
   &:active {
@@ -175,7 +192,7 @@
   padding: 0;
   border-radius: $border-radius-rounded;
 
-  &:before {
+  &:before, &:after {
     border-radius: $border-radius-rounded;
   }
 
