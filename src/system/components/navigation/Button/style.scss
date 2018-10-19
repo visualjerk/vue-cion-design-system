@@ -49,16 +49,18 @@
     right: $space-xxx-small;
     bottom: $space-xxx-small;
     border-radius: $border-radius-base;
-    border: $border-size-base dashed currentColor;
+    border: $border-size-base dotted currentColor;
     opacity: 0;
     visiblity: hidden;
     pointer-events: none;
+    transition: all $duration-short $ease-out;
   }
 
   &:focus {
     outline: none;
     &:after {
-      opacity: 0.6;
+      opacity: 0.8;
+      visibility: visible;
     }
   }
 

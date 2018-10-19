@@ -27,10 +27,16 @@ export default {
     }
   },
   props: {
+    /**
+     * The value of the input. Can be passed via v-model.
+     */
     value: {
       type: Object,
       required: true
     },
+    /**
+     * The async-validator schema used for the form data.
+     */
     schema: {
       type: Object,
       default: () => ({})
