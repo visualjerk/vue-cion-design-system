@@ -110,6 +110,7 @@
 
 .ds-selected-option {
   display: inline-flex;
+  align-items: center;
   margin-right: $space-xx-small;
 }
 
@@ -134,6 +135,10 @@
     visibility: visible;
     opacity: 1;
   }
+}
+
+.ds-select-dropdown-message {
+  padding: $input-padding-vertical $space-x-small;
 }
 
 .ds-select-options {

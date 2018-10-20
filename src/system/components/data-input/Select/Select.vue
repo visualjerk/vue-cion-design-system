@@ -99,7 +99,19 @@
           @keyup.esc="close">
       </div>
       <div class="ds-select-dropdown">
-        <ul class="ds-select-options">
+        <div
+          class="ds-select-dropdown-message"
+          v-if="!options || !options.length">
+          {{ noOptionsAvailable }}
+        </div>
+        <div
+          class="ds-select-dropdown-message"
+          v-else-if="!filteredOptions.length">
+          {{ noOptionsFound }} "{{ searchString }}"
+        </div>
+        <ul 
+          class="ds-select-options" 
+          v-else>
           <li
             class="ds-select-option"
             :class="[
@@ -209,6 +221,20 @@ export default {
     searchable: {
       type: Boolean,
       default: true
+    },
+    /**
+     * Message to show when no options are available
+     */
+    noOptionsAvailable: {
+      type: String,
+      default: 'No options available.'
+    },
+    /**
+     * Message to show when the search result is empty
+     */
+    noOptionsFound: {
+      type: String,
+      default: 'No options found for:'
     }
   },
   computed: {
