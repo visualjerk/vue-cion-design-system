@@ -2,8 +2,12 @@
   <ds-form-item>
     <div
       class="ds-select-wrap"
-      v-click-outside="handleBlur"
+      :class="[
+        isOpen && `ds-select-is-open`
+      ]"
       :tabindex="searchable ? -1 : tabindex"
+      v-click-outside="closeAndBlur"
+      @keydown.tab="closeAndBlur"
       @keydown.self.down.prevent="pointerNext"
       @keydown.self.up.prevent="pointerPrev"
       @keypress.enter.prevent.stop.self="selectPointerOption"
@@ -15,7 +19,7 @@
       </div>
       <div
         class="ds-select"
-        @click="handleClick"
+        @click="openAndFocus"
         :class="[
           icon && `ds-select-has-icon`,
           iconRight && `ds-select-has-icon-right`,
@@ -45,18 +49,17 @@
             ref="search"
             class="ds-select-search"
             :id="id"
-            :name="model"
             :autofocus="autofocus"
             :placeholder="placeholder"
             :tabindex="tabindex"
             :disabled="disabled"
             :readonly="readonly"
             v-model="searchString"
-            @focus="handleFocus"
-            @blur="handleBlur"
+            @focus="openAndFocus"
+            @keydown.tab="closeAndBlur"
             @keydown.delete.stop="deselectLastOption"
-            @keydown.down.prevent="pointerNext"
-            @keydown.up.prevent="pointerPrev"
+            @keydown.down.prevent="handleKeyDown"
+            @keydown.up.prevent="handleKeyUp"
             @keypress.enter.prevent.stop="selectPointerOption"
             @keyup.esc="close">
         </div>
@@ -81,18 +84,17 @@
           ref="search"
           class="ds-select-search"
           :id="id"
-          :name="model"
           :autofocus="autofocus"
           :placeholder="placeholder"
           :tabindex="tabindex"
           :disabled="disabled"
           :readonly="readonly"
           v-model="searchString"
-          @focus="handleFocus"
-          @blur="handleBlur"
+          @focus="openAndFocus"
+          @keydown.tab="closeAndBlur"
           @keydown.delete.stop="deselectLastOption"
-          @keydown.down.prevent="pointerNext"
-          @keydown.up.prevent="pointerPrev"
+          @keydown.down.prevent="handleKeyDown"
+          @keydown.up.prevent="handleKeyUp"
           @keypress.enter.prevent.stop="selectPointerOption"
           @keyup.esc="close">
       </div>
@@ -152,7 +154,8 @@ export default {
   data() {
     return {
       searchString: '',
-      pointer: 0
+      pointer: 0,
+      isOpen: false
     }
   },
   props: {
@@ -252,13 +255,22 @@ export default {
     resetSearch() {
       this.searchString = ''
     },
-    handleClick() {
+    openAndFocus() {
+      this.open()
       if (!this.focus || this.multiple) {
         this.$refs.search.focus()
         this.handleFocus()
       }
     },
+    open() {
+      this.resetSearch()
+      this.isOpen = true
+    },
     close() {
+      this.isOpen = false
+    },
+    closeAndBlur() {
+      this.close()
       this.$refs.search.blur()
       this.handleBlur()
     },
@@ -271,6 +283,20 @@ export default {
       ) {
         this.deselectOption(this.innerValue.length - 1)
       }
+    },
+    handleKeyUp() {
+      if (!this.isOpen) {
+        this.open()
+        return
+      }
+      this.pointerPrev()
+    },
+    handleKeyDown() {
+      if (!this.isOpen) {
+        this.open()
+        return
+      }
+      this.pointerNext()
     },
     setPointer(index) {
       this.pointer = index

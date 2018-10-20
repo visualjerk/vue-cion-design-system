@@ -4,7 +4,7 @@
 
 .ds-select {
   user-select: none;
-  .ds-input-has-focus & {
+  .ds-select-is-open & {
     border-bottom-left-radius: 0;
     border-bottom-right-radius: 0;
   }
@@ -76,7 +76,7 @@
     color: $text-color-disabled;
   }
 
-  .ds-input-has-focus & {
+  .ds-select-is-open & {
     opacity: 1;
   }
 
@@ -93,7 +93,7 @@
 .ds-select-placeholder, .ds-select-value {
   pointer-events: none;
 
-  .ds-input-has-focus & {
+  .ds-select-is-open & {
     opacity: 0;
   }
 }
@@ -130,7 +130,7 @@
   max-height: 240px;
   overflow: auto;
 
-  .ds-input-has-focus & {
+  .ds-select-is-open & {
     visibility: visible;
     opacity: 1;
   }
