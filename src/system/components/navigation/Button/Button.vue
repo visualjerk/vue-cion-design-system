@@ -4,6 +4,7 @@
     class="ds-button"
     :class="[
       size && `ds-button-size-${size}`,
+      fullwidth && `ds-button-fullwidth`,
       primary && `ds-button-primary`,
       secondary && `ds-button-secondary`,
       danger && `ds-button-danger`,
@@ -68,6 +69,14 @@ export default {
       validator: value => {
         return value.match(/(router-link|a|button)/)
       }
+    },
+    /**
+     * Fill the full width
+     * `true, false`
+     */
+    fullwidth: {
+      type: Boolean,
+      default: false
     },
     /**
      * Primary style

@@ -32,6 +32,14 @@ Use different sizes to create hierarchy.
 <ds-button size="large">Large</ds-button>
 ```
 
+## Fullwidth button
+
+Use a fullwidth button for important actions.
+
+```
+<ds-button primary fullwidth>Fullwidth button</ds-button>
+```
+
 ## Button states
 
 A button can take different states.
