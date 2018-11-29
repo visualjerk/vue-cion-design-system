@@ -3,8 +3,10 @@
     :is="tag"
     class="ds-container"
     :class="[
-      `ds-container-${width}`
-  ]">
+      `ds-container-${width}`,
+      centered && `ds-container-centered`,
+    ]"
+  >
     <slot />
   </component>
 </template>
@@ -35,6 +37,14 @@ export default {
       validator: value => {
         return value.match(/(x-small|small|medium|large|x-large)/)
       }
+    },
+    /**
+     * Center the content
+     * `true, false`
+     */
+    centered: {
+      type: Boolean,
+      default: false
     }
   }
 }

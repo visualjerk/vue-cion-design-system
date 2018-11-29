@@ -2,7 +2,11 @@
   <component 
     :is="tag"
     :style="styles"
-    class="ds-space">
+    class="ds-space"
+    :class="[
+      centered && `ds-space-centered`,
+    ]"
+  >
     <slot />
   </component>
 </template>
@@ -44,6 +48,14 @@ export default {
     tag: {
       type: String,
       default: 'div'
+    },
+    /**
+     * Center the content
+     * `true, false`
+     */
+    centered: {
+      type: Boolean,
+      default: false
     }
   },
   computed: {

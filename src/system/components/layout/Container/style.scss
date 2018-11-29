@@ -12,6 +12,10 @@
   }
 }
 
+.ds-container-centered {
+  text-align: center;
+}
+
 .ds-container-x-small {
   max-width: #{$xs}px;
 }
