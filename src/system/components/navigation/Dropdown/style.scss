@@ -1,0 +1,39 @@
+.ds-dropdown {
+  @include reset;
+  position: relative;
+  width: auto;
+}
+
+.ds-dropdown-toggle {
+  width: auto;
+}
+
+.ds-dropdown-content {
+  position: absolute;
+  z-index: $z-index-dropdown;
+  top: 100%;
+  left: 0;
+  width: auto;
+  background-color: $background-color-base;
+  border: $input-border-size solid $border-color-softer;
+  box-shadow: $box-shadow-base;
+  border-radius: $border-radius-base;
+  visibility: hidden;
+  opacity: 0;
+  transform: translateY($space-x-small) scaleY(0.5);
+  transform-origin: 50% 0%;
+  transition: all $duration-short $ease-out;
+  max-height: 240px;
+  overflow: auto;
+
+  .ds-dropdown-is-open & {
+    visibility: visible;
+    opacity: 1;
+    transform: translateY($space-x-small) scaleX(1);
+    transition: all $duration-short $ease-out;
+  }
+}
+
+.ds-dropdown-item {
+  padding: $space-small $space-base;
+}
