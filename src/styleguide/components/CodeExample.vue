@@ -1,13 +1,18 @@
 <template>
   <div :class="`${iframe ? 'vuep-iframe' : ''}`">
     <vuep
+      ref="vuep"
       :template="template"
       :options="{ theme: 'vueds' }"
       :iframe="iframe" />
+    <ds-input type="textarea" v-model="previewHtml" rows="5" />
+    <ds-button @click="getHtml">show html</ds-button>
   </div>
 </template>
 
 <script>
+import prettier from 'prettier/standalone'
+import htmlParser from 'prettier/parser-html'
 import Vuep from 'vuep'
 import 'vuep/dist/vuep.css'
 
@@ -15,7 +20,8 @@ export default {
   name: 'CodeExample',
   data() {
     return {
-      iframe: false
+      iframe: false,
+      previewHtml: ''
     }
   },
   props: {
@@ -33,6 +39,13 @@ export default {
     }
   },
   methods: {
+    getHtml() {
+      const previewHtml = this.$refs.vuep.$el.querySelector('.vuep-preview').innerHTML
+      this.previewHtml = prettier.format(previewHtml, {
+        parser: 'html',
+        plugins: [htmlParser]
+      })
+    },
     getCode() {
       const codeLines = this.code.split('\n')
       const codeTypeMatch = codeLines[0].trim().match(/^[A-Za-z]+$/g)
