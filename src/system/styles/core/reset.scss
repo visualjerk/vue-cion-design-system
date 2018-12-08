@@ -35,6 +35,7 @@ input::-ms-clear, input::-ms-reveal {
 
 html {
   font-family: sans-serif; // 2
+  font-size: $font-size-body;
   line-height: 1.15; // 3
   -webkit-text-size-adjust: 100%; // 4
   -ms-text-size-adjust: 100%; // 4
