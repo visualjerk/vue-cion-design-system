@@ -5,11 +5,7 @@
       isOpen && `ds-dropdown-is-open`
     ]"
     v-click-outside="close">
-    <div
-      class="ds-dropdown-toggle"
-      @click="toggle">
-      <slot name="toggle"></slot>
-    </div>
+    <slot name="toggle"></slot>
     <div class="ds-dropdown-content">
       <slot></slot>
     </div>
@@ -30,12 +26,26 @@ export default {
   },
   data () {
     return {
-      isOpen: false
+      isOpen: false,
+      toggleEl: null
     }
   },
   props: {
   },
+  mounted() {
+    this.toggleEl = this.$slots.toggle ? this.$slots.toggle[0].elm : null
+    this.bindEvents(this.toggleEl)
+  },
+  beforeDestroy() {
+    this.unbindEvents(this.toggleEl)
+  },
   methods: {
+    bindEvents(toggleEl) {
+      toggleEl.addEventListener('click', this.toggle)
+    },
+    unbindEvents(toggleEl) {
+      toggleEl.removeEventListener('click', this.toggle)
+    },
     toggle() {
       return this.isOpen ? this.close() : this.open()
     },
