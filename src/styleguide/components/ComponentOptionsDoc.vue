@@ -2,44 +2,57 @@
   <div>
     <ds-space v-if="componentProps">
       <ds-heading tag="h2">{{ component.name | componentName }} Props</ds-heading>
-      <ds-table
-        :data="componentProps"
-        :fields="propFields">
-        <template
-          slot="name"
-          slot-scope="scope">
-          {{ scope.row.name }} <span v-if="scope.row.required">*</span>
-        </template>
-        <template
-          slot="type"
-          slot-scope="scope">
-          {{ scope.row.type.name }}
-        </template>
-        <template
-          slot="default"
-          slot-scope="scope">
-          <template v-if="scope.row.defaultValue">
-            <span v-if="scope.row.defaultValue.func">
-              Function()
-            </span>
-            <span v-else>
-              {{ scope.row.defaultValue.value }}
-            </span>
+      <ds-card>
+        <ds-table
+          :data="componentProps"
+          :fields="propFields">
+          <ds-text
+            slot="name"
+            slot-scope="scope">
+            {{ scope.row.name }}
+            <ds-text strong v-if="scope.row.required" color="danger">*</ds-text>
+          </ds-text>
+          <ds-chip 
+            slot="type"
+            slot-scope="scope">
+            {{ scope.row.type.name }}
+          </ds-chip>
+          <template
+            slot="default"
+            slot-scope="scope">
+            <ds-chip v-if="scope.row.defaultValue">
+              <span v-if="scope.row.defaultValue.func">
+                Function()
+              </span>
+              <span v-else>
+                {{ scope.row.defaultValue.value }}
+              </span>
+            </ds-chip>
           </template>
-        </template>
-      </ds-table>
+          <ds-text
+            color="soft"
+            slot="description"
+            slot-scope="scope">
+            {{ scope.row.description }}
+          </ds-text>
+        </ds-table>
+      </ds-card>
     </ds-space>
     <ds-space v-if="componentSlots && componentSlots.length">
       <ds-heading tag="h2">{{ component.name | componentName }} Slots</ds-heading>
-      <ds-table
-        :data="componentSlots"
-        :fields="slotFields"/>
+      <ds-card>
+        <ds-table
+          :data="componentSlots"
+          :fields="slotFields"/>
+      </ds-card>
     </ds-space>
     <ds-space v-if="componentEvents && componentEvents.length">
       <ds-heading tag="h2">{{ component.name | componentName }} Events</ds-heading>
-      <ds-table
-        :data="componentEvents"
-        :fields="eventFields"/>
+      <ds-card>
+        <ds-table
+          :data="componentEvents"
+          :fields="eventFields"/>
+      </ds-card>
     </ds-space>
   </div>
 </template>
