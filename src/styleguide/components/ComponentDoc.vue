@@ -95,10 +95,10 @@ export default {
       })
     },
     docParts() {
-      if (!this.component.docs) {
+      if (!this.component.component.__docs) {
         return []
       }
-      const parts = this.component.docs.split('```')
+      const parts = this.component.component.__docs.split('```')
       let i = 0
       const parsed = parts.reduce((result, part, index) => {
         if (index % 2 === 0) {
