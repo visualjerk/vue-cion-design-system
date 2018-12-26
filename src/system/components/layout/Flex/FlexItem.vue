@@ -25,7 +25,8 @@ export default {
   },
   props: {
     /**
-     * The width of the item.
+     * The item's width
+     * @default 1
      */
     width: {
       type: [String, Number, Object],
@@ -34,7 +35,7 @@ export default {
       }
     },
     /**
-     * The html element name used for the wrapper.
+     * The outtermost html tag
      */
     tag: {
       type: String,

@@ -48,7 +48,8 @@ export default {
   mixins: [inputMixin],
   props: {
     /**
-     * The type of this input `url, text, password, email, search, textarea`.
+     * The type of this input.
+     * @options url|text|password|email|search|textarea
      */
     type: {
       type: String,

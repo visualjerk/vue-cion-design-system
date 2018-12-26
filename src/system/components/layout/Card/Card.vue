@@ -53,22 +53,22 @@ export default {
   name: 'DsCard',
   props: {
     /**
-     * The html element name used for the card.
+     * The outtermost html tag
      */
     tag: {
       type: String,
       default: 'article'
     },
     /**
-     * The header for the card.
+     * The card's header
      */
     header: {
       type: String,
       default: null
     },
     /**
-     * The heading type used for the header.
-     * `h1, h2, h3, h4, h5, h6`
+     * The card's header tag
+     * @options h1|h2|h3|h4|h5|h6
      */
     headerTag: {
       type: String,
@@ -78,14 +78,14 @@ export default {
       }
     },
     /**
-     * The image for the card.
+     * The card's image
      */
     image: {
       type: String,
       default: null
     },
     /**
-     * The icon for the card.
+     * The card's icon
      */
     icon: {
       type: String,
@@ -93,7 +93,6 @@ export default {
     },
     /**
      * Highlight with primary color
-     * `true, false`
      */
     primary: {
       type: Boolean,
@@ -101,23 +100,20 @@ export default {
     },
     /**
      * Highlight with secondary color
-     * `true, false`
      */
     secondary: {
       type: Boolean,
       default: false
     },
     /**
-     * Center the content
-     * `true, false`
+     * Centers the content
      */
     centered: {
       type: Boolean,
       default: false
     },
     /**
-     * Make the card hoverable
-     * `true, false`
+     * Makes the card hoverable
      */
     hover: {
       type: Boolean,
