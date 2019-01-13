@@ -1,4 +1,4 @@
-## Using Spinner
+## Spinning loading indicator
 
 Multiple sizes
 
