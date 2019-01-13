@@ -23,10 +23,15 @@ function initListener() {
   if (init) {
     return
   }
-  if (window && typeof window !== 'undefined') {
-    window.addEventListener('resize', updateWindowSize)
-    updateWindowSize()
+  try {
+    if (window && typeof window !== 'undefined') {
+      window.addEventListener('resize', updateWindowSize)
+      updateWindowSize()
+    }
     init = true
+  } catch (err) {
+    init = true
+    return false
   }
 }
 
