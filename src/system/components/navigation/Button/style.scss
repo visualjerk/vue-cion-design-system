@@ -19,11 +19,11 @@
   align-items: center;
   justify-content: center;
   text-decoration: none;
-  padding: 0 $space-small;
+  padding: $input-padding-vertical $space-small;
   height: $input-height;
   border-radius: $border-radius-base;
-  box-shadow: $box-shadow-small-inset, $box-shadow-x-small;
-  border: $input-border-size solid transparent;
+  box-shadow: $box-shadow-small-inset;
+  // border: $input-border-size solid transparent;
   transition: color $duration-short $ease-out,
     background-color $duration-short $ease-out;
 
@@ -35,33 +35,14 @@
     right: $space-xxx-small;
     bottom: $space-xxx-small;
     border-radius: $border-radius-base;
-    box-shadow: $box-shadow-inset;
+    // box-shadow: $box-shadow-inset;
     opacity: 0;
     visiblity: hidden;
     pointer-events: none;
-  }
-
-  &:after {
-    position: absolute;
-    content: '';
-    top: $space-xxx-small;
-    left: $space-xxx-small;
-    right: $space-xxx-small;
-    bottom: $space-xxx-small;
-    border-radius: $border-radius-base;
-    border: 1px dotted currentColor;
-    opacity: 0;
-    visiblity: hidden;
-    pointer-events: none;
-    transition: all $duration-short $ease-out;
   }
 
   &:focus {
     outline: none;
-    &:after {
-      opacity: 0.8;
-      visibility: visible;
-    }
   }
 
   &:active {
@@ -90,10 +71,6 @@
     color: $text-color-base;
     background-color: $background-color-softer-active;
   }
-}
-
-.ds-button-fullwidth {
-  width: 100%;
 }
 
 .ds-button-primary {
@@ -183,14 +160,20 @@
 
 .ds-button-size-small {
   font-size: $font-size-small;
-  padding: 0 $space-x-small;
+  padding: $input-padding-vertical-small $space-x-small;
   height: $input-height-small;
 }
 
 .ds-button-size-large {
   font-size: $font-size-large;
-  padding: 0 $space-base;
+  padding: $input-padding-vertical-large $space-base;
   height: $input-height-large;
+}
+
+.ds-button-size-x-large {
+  font-size: $font-size-x-large;
+  padding: $input-padding-vertical-large $space-base;
+  height: $input-height-x-large;
 }
 
 .ds-button-icon-only {
@@ -198,7 +181,7 @@
   padding: 0;
   border-radius: $border-radius-rounded;
 
-  &:before, &:after {
+  &:before {
     border-radius: $border-radius-rounded;
   }
 
@@ -208,6 +191,10 @@
 
   &.ds-button-size-large {
     width: $input-height-large;
+  }
+
+  &.ds-button-size-x-large {
+    width: $input-height-x-large;
   }
 }
 
@@ -224,4 +211,24 @@
   &:last-child {
     margin-right: 0;
   }
+}
+
+.ds-button-full-width {
+  width: 100%;
+}
+
+.ds-button-wrap {
+  transition: opacity 250ms ease-out;
+  transition-delay: 0;
+  
+  .ds-button-loading & {
+    opacity: 0.1;
+    transition-delay: 250ms;
+  }
+}
+
+.ds-button .ds-spinner {
+  position: absolute;
+  width: 60% !important;
+  height: 60% !important;
 }

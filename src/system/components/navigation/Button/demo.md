@@ -30,14 +30,13 @@ Use different sizes to create hierarchy.
 <ds-button size="small">Small</ds-button>
 <ds-button>Base</ds-button>
 <ds-button size="large">Large</ds-button>
+<ds-button size="x-large">very Large</ds-button>
 ```
 
-## Fullwidth button
-
-Use a fullwidth button for important actions.
+## Button full width
 
 ```
-<ds-button primary fullwidth>Fullwidth button</ds-button>
+<ds-button full-width>Full Width</ds-button>
 ```
 
 ## Button states
@@ -48,6 +47,7 @@ A button can take different states.
 <ds-button>Default state</ds-button>
 <ds-button disabled>Disabled state</ds-button>
 <ds-button hover>Hover state</ds-button>
+<ds-button loading>Loading state</ds-button>
 ```
 
 ## Icon buttons

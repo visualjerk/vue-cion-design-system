@@ -4,27 +4,36 @@
     class="ds-button"
     :class="[
       size && `ds-button-size-${size}`,
-      fullwidth && `ds-button-fullwidth`,
       primary && `ds-button-primary`,
       secondary && `ds-button-secondary`,
       danger && `ds-button-danger`,
       ghost && `ds-button-ghost`,
       iconOnly && `ds-button-icon-only`,
-      hover && `ds-button-hover`
+      hover && `ds-button-hover`,
+      fullWidth && `ds-button-full-width`,
+      loading && `ds-button-loading`
     ]"
+    :name="name"
     v-bind="bindings"
     :is="linkTag">
-    <ds-icon 
-      v-if="icon" 
-      :name="icon"/>
-    <span 
-      class="ds-button-text"
-      v-if="$slots.default">
-      <slot />
-    </span>
-    <ds-icon 
-      v-if="iconRight" 
-      :name="iconRight"/>
+    <div class="ds-button-wrap">
+      <ds-icon
+        v-if="icon"
+        :name="icon" 
+      />
+      <span
+        class="ds-button-text"
+        v-if="$slots.default">
+        <slot />
+      </span>
+      <ds-icon
+        v-if="iconRight"
+        :name="iconRight"/>
+    </div>
+    <ds-spinner
+      v-if="loading" 
+      :inverse="!ghost && (primary || secondary || danger)"
+    />
   </component>
 </template>
 
@@ -71,12 +80,11 @@ export default {
       }
     },
     /**
-     * Fill the full width
-     * `true, false`
+     * Button name for accessibilty
      */
-    fullwidth: {
-      type: Boolean,
-      default: false
+    name: {
+      type: String,
+      default: null
     },
     /**
      * Primary style
@@ -131,6 +139,20 @@ export default {
     iconRight: {
       type: String,
       default: null
+    },
+    /**
+     * Should the button spread to the full with of the parent?
+     */
+    fullWidth: {
+      type: Boolean,
+      default: false
+    },
+    /**
+     * Show loading state
+     */
+    loading: {
+      type: Boolean,
+      default: false
     }
   },
   computed: {
@@ -141,6 +163,9 @@ export default {
       }
       if (this.path && this.linkTag === 'a') {
         bindings.href = this.path
+      }
+      if (this.loading) {
+        bindings.disabled = true
       }
       return bindings
     },
