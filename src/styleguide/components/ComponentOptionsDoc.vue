@@ -17,7 +17,7 @@
             </div>
             <ds-space :margin-bottom="null" margin-top="small">
               <div v-if="row.options">
-                <ds-chip v-for="option in row.options" :key="option">
+                <ds-chip size="small" v-for="option in row.options" :key="option">
                   {{ option }}
                 </ds-chip>
               </div>
