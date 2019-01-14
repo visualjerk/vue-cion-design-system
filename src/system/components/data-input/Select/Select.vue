@@ -48,6 +48,7 @@
           <input
             ref="search"
             class="ds-select-search"
+            autocomplete="off"
             :id="id"
             :name="name ? name : model"
             :autofocus="autofocus"
@@ -84,6 +85,7 @@
           v-if="!multiple"
           ref="search"
           class="ds-select-search"
+          autocomplete="off"
           :id="id"
           :name="name ? name : model"
           :autofocus="autofocus"
