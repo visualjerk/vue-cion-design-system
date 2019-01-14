@@ -10,7 +10,7 @@
             slot="name"
             slot-scope="{row}">
             <ds-code inline>
-              {{ row.name }}
+              {{ row.name | kebabCase }}
             </ds-code>
             <div v-if="row.required">
               <ds-tag v-if="row.required" color="warning">required</ds-tag>
