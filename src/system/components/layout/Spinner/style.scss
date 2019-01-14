@@ -1,7 +1,7 @@
 .ds-spinner {
   $scale: 40px;
   
-  animation: rotate 2s linear infinite;
+  animation: rotate 16s linear infinite;
   position: relative;
   display: inline-block;
   width: $scale;
@@ -38,7 +38,7 @@
 
 @keyframes rotate {
   100% {
-    transform: rotate(360deg);
+    transform: rotate(2160deg);
   }
 }
 
