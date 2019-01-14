@@ -47,7 +47,7 @@ export default {
     },
     /**
      * The size used for the text.
-     * `small, base, large`
+     * @options small|base|large
      */
     size: {
       type: String,
@@ -58,7 +58,7 @@ export default {
     },
     /**
      * The component / tag used for this button
-     * `router-link, a`
+     * @options router-link|a|button
      */
     linkTag: {
       type: String,
