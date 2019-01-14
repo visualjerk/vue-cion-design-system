@@ -72,7 +72,7 @@ export default {
     },
     /**
      * The component / tag used for the link of this route
-     * `router-link, a`
+     * @options router-link|a
      */
     linkTag: {
       type: String,

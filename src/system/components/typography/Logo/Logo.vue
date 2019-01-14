@@ -23,7 +23,6 @@ export default {
   props: {
     /**
      * Inverse the logo
-     * `true, false`
      */
     inverse: {
       type: Boolean,
