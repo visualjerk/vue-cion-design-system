@@ -37,6 +37,7 @@
       opacity: $opacity-disabled;
       pointer-events: none;
       cursor: not-allowed;
+      background-color: $color-neutral-80;
     }
 
     .ds-input-is-readonly & {
