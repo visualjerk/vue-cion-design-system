@@ -55,3 +55,6 @@ yarn serve
 ```
 yarn lint
 ```
+
+## License
+[MIT License](./LICENSE) - Copyright (c) Jörg Bayreuther
