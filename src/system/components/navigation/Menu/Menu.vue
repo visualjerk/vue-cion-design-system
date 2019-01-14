@@ -13,9 +13,10 @@
           :route="route"
           :parents="[]"
           :name="route.name">
+          <!-- @slot Scoped slot for providing a custom menu item -->
           <slot
             :route="route"
-            name="Navigation">
+            name="menuitem">
             <ds-menu-item
               :key="route.path ? route.path : index"
               :route="route" />
