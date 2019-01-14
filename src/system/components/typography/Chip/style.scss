@@ -1,20 +1,16 @@
 .ds-chip {
   @include reset;
   @include stack-space($space-xx-small);
+  @include inline-space($font-space-xx-small);
   position: relative;
   display: inline-block;
   font-family: $font-family-text;
   line-height: $line-height-base;
   padding: $space-xx-small $space-x-small;
-  margin-right: $font-space-xx-small;
   border-radius: $border-radius-base;
   font-weight: $font-weight-bold;
   color: $text-color-base;
   background-color: $background-color-softest;
-
-  &:last-child {
-    margin-right: 0;
-  }
 
   &.ds-chip-removable {
     padding-right: $space-x-small + $space-small;
