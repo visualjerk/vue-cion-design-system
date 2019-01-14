@@ -72,7 +72,6 @@ export default {
     },
     /**
      * Fill the full width
-     * `true, false`
      */
     fullwidth: {
       type: Boolean,
@@ -80,7 +79,6 @@ export default {
     },
     /**
      * Primary style
-     * `true, false`
      */
     primary: {
       type: Boolean,
@@ -88,7 +86,6 @@ export default {
     },
     /**
      * Secondary style
-     * `true, false`
      */
     secondary: {
       type: Boolean,
@@ -96,7 +93,6 @@ export default {
     },
     /**
      * Danger style
-     * `true, false`
      */
     danger: {
       type: Boolean,
@@ -104,7 +100,6 @@ export default {
     },
     /**
      * Toggle the hover state
-     * `true, false`
      */
     hover: {
       type: Boolean,
@@ -112,7 +107,6 @@ export default {
     },
     /**
      * Make the buttons background transparent
-     * `true, false`
      */
     ghost: {
       type: Boolean,

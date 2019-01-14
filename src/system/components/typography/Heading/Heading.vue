@@ -46,7 +46,6 @@ export default {
     },
     /**
      * Primary style
-     * `true, false`
      */
     primary: {
       type: Boolean,
@@ -54,7 +53,6 @@ export default {
     },
     /**
      * Muted style
-     * `true, false`
      */
     soft: {
       type: Boolean,

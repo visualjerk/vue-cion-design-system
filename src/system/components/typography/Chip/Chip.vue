@@ -53,7 +53,6 @@ export default {
     },
     /**
      * Whether the chip should be removeable
-     * `true, false`
      */
     removable: {
       type: Boolean,
@@ -61,7 +60,6 @@ export default {
     },
     /**
      * Whether the chip should be rounded
-     * `true, false`
      */
     round: {
       type: Boolean,

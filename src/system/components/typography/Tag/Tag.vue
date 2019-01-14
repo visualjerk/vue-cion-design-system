@@ -45,7 +45,6 @@ export default {
     },
     /**
      * Whether the tag should be round
-     * `true, false`
      */
     round: {
       type: Boolean,
