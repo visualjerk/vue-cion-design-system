@@ -51,7 +51,6 @@ export default {
     },
     /**
      * Center the content
-     * `true, false`
      */
     centered: {
       type: Boolean,
