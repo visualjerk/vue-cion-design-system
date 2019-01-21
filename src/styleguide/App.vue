@@ -6,12 +6,8 @@
           <ds-logo/>
         </router-link>
       </template>
-      <navigation
-        @navigate="$refs.page.closeDrawer()"
-        slot="sidebar"/>
-      <navigation
-        @navigate="$refs.page.closeDrawer()"
-        slot="drawer"/>
+      <navigation slot="sidebar" @navigate="$refs.page.closeDrawer()" />
+      <navigation slot="drawer" @navigate="$refs.page.closeDrawer()" />
       <router-view/>
     </ds-page>
   </div>
@@ -24,6 +20,9 @@ export default {
   name: 'App',
   components: {
     Navigation
+  },
+  beforeMount() {
+    this.$loadTheme('base')
   }
 }
 </script>

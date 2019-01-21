@@ -80,12 +80,12 @@ ul.ds-menu-list {
 
   .ds-menu-item-level-1 & {
     font-size: $font-size-small;
-    padding-left: $space-x-small * 3;
+    padding-left: calc(#{$space-x-small} * 3);
   }
 
   .ds-menu-item-level-2 & {
     font-size: $font-size-small;
-    padding-left: $space-x-small * 4;
+    padding-left: calc(#{$space-x-small} * 4);
   }
 
   .ds-menu-item-navbar & {

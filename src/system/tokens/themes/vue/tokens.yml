@@ -1,0 +1,13 @@
+#
+# GLOBAL: DESIGN TOKENS
+#
+
+imports:
+  - ./color.yml
+  - ./font-size.yml
+  - ./font.yml
+  - ./line-height.yml
+  - ./spacing.yml
+global:
+  type: global
+  category: all

@@ -1,5 +1,6 @@
 <template>
   <div class="navigation">
+    <themer />
     <div class="navigation-search">
       <ds-input
         v-model="searchString"
@@ -17,8 +18,12 @@
 </template>
 
 <script>
+import Themer from './Themer'
 export default {
   name: 'Navigation',
+  components: {
+    Themer
+  },
   data() {
     return {
       searchString: ''
