@@ -78,7 +78,7 @@ export default {
         }
         const realMargin = getSpace(margin)
         if (realMargin !== 0) {
-          styles[`margin${direction}`] = `${realMargin}px`
+          styles[`margin${direction}`] = `calc(${realMargin} * 1px)`
         }
         return styles
       }

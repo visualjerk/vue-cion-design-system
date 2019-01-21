@@ -70,8 +70,8 @@ export default {
     parseGutter(gutter) {
       const realGutter = getSpace(gutter)
       return {
-        marginLeft: `-${realGutter / 2}px`,
-        marginRight: `-${realGutter / 2}px`
+        marginLeft: `calc(${realGutter} / 2 * -1px)`,
+        marginRight: `calc(${realGutter} / 2 * -1px)`,
       }
     },
     parseDirection(direction) {

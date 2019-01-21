@@ -12,7 +12,7 @@
   background-color: $background-color-softest;
 
   &.ds-chip-removable {
-    padding-right: $space-x-small + $space-small;
+    padding-right: calc(#{$space-x-small} + #{$space-small});
   }
 }
 

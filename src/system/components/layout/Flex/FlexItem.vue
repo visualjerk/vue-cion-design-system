@@ -76,9 +76,9 @@ export default {
         return {}
       }
       return {
-        paddingLeft: `${realGutter / 2}px`,
-        paddingRight: `${realGutter / 2}px`,
-        marginBottom: `${realGutter}px`
+        paddingLeft: `calc(${realGutter} / 2 * 1px)`,
+        paddingRight: `calc(${realGutter} / 2 * 1px)`,
+        marginBottom: `calc(${realGutter} * 1px)`
       }
     }
   }
