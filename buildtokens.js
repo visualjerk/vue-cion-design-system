@@ -1,4 +1,5 @@
 const theo = require('theo')
+const kebabCase = require('lodash/kebabCase')
 const { lstatSync, readdirSync, writeFileSync } = require('fs')
 const { join, basename, dirname } = require('path')
 const mkdirp = require('mkdirp')
@@ -20,16 +21,15 @@ theo.registerValueTransform(
 theo.registerTransform('webvars', ['color/rgb', 'cssvar'])
 
 // Custom formats
-theo.registerFormat(
-  "cssvarjs",
-  `
-  export default {
-    {{#each props as |prop|}}
-      '--{{kebabcase prop.name}}': '{{prop.value}}',
-    {{/each}}
-  }
-`
-);
+theo.registerFormat("cssvarjs", result => {
+  return `export default {${result
+    .get("props")
+    .map(
+      prop => `\n  "--${kebabCase(prop.get("name"))}": "${prop.get("value")}"`
+    )
+    .toJS()}
+}`;
+});
 
 const configs = [
   { src, dist: `${dist}/tokens.map.scss`, transform: 'webvars', format: 'map.scss'},

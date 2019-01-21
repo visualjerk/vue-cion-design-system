@@ -28,3 +28,8 @@ const useTheme = (theme) => {
   ${variables}
 }`
 }
+
+// Init base theme
+if (typeof document !== 'undefined') {
+  useTheme(themeMap.base)
+}

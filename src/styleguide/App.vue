@@ -20,9 +20,6 @@ export default {
   name: 'App',
   components: {
     Navigation
-  },
-  beforeMount() {
-    this.$loadTheme('base')
   }
 }
 </script>
