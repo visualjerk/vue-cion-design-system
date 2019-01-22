@@ -1,0 +1,245 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <title>Code coverage report for system/components/index.js</title>
+    <meta charset="utf-8" />
+    <link rel="stylesheet" href="../../prettify.css" />
+    <link rel="stylesheet" href="../../base.css" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style type='text/css'>
+        .coverage-summary .sorter {
+            background-image: url(../../sort-arrow-sprite.png);
+        }
+    </style>
+</head>
+<body>
+<div class='wrapper'>
+  <div class='pad1'>
+    <h1>
+      <a href="../../index.html">All files</a> / <a href="index.html">system/components</a> index.js
+    </h1>
+    <div class='clearfix'>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">0% </span>
+        <span class="quiet">Statements</span>
+        <span class='fraction'>0/28</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">0% </span>
+        <span class="quiet">Branches</span>
+        <span class='fraction'>0/14</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">0% </span>
+        <span class="quiet">Functions</span>
+        <span class='fraction'>0/5</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">0% </span>
+        <span class="quiet">Lines</span>
+        <span class='fraction'>0/25</span>
+      </div>
+    </div>
+  </div>
+  <div class='status-line low'></div>
+<pre><table class="coverage">
+<tr><td class="line-count quiet">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28
+29
+30
+31
+32
+33
+34
+35
+36
+37
+38
+39
+40
+41
+42
+43
+44
+45
+46
+47
+48
+49
+50
+51
+52
+53
+54
+55
+56
+57
+58
+59
+60
+61</td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">// Get components
+const context<span class="cstat-no" title="statement not covered" ><span class="cstat-no" title="statement not covered" ><span class="fstat-no" title="function not covered" > = require.context('.', true, /\.vue$/)</span></span></span>
+// Get components meta info
+const contextMeta<span class="cstat-no" title="statement not covered" ><span class="cstat-no" title="statement not covered" ><span class="fstat-no" title="function not covered" > = require.context(</span></span></span>
+  '!../../loader/jsdoc-loader?modules!.',
+  true,
+  /\.vue$/
+)
+&nbsp;
+const components = <span class="cstat-no" title="statement not covered" >[]</span>
+const componentsMap = <span class="cstat-no" title="statement not covered" >{}</span>
+const componentsByName = <span class="cstat-no" title="statement not covered" >{}</span>
+context.keys().forEach(<span class="fstat-no" title="function not covered" >key</span> =&gt; {
+  const c = <span class="cstat-no" title="statement not covered" >context(key).default</span>
+  const meta = <span class="cstat-no" title="statement not covered" >contextMeta(key)</span>
+  const folder = <span class="cstat-no" title="statement not covered" >key.split('/')[1]</span>
+&nbsp;
+<span class="cstat-no" title="statement not covered" >  if (!componentsMap[folder]) {</span>
+<span class="cstat-no" title="statement not covered" >    componentsMap[folder] = []</span>
+  }
+&nbsp;
+  const hidden =
+<span class="cstat-no" title="statement not covered" >    meta.tags.access &amp;&amp; meta.tags.access[0].description === 'private'</span>
+&nbsp;
+<span class="cstat-no" title="statement not covered" >  if (!hidden) {</span>
+    const parent = <span class="cstat-no" title="statement not covered" >meta.tags.see ? meta.tags.see[0].description : null</span>
+    const componentData = <span class="cstat-no" title="statement not covered" >{</span>
+      ...meta,
+      parent,
+      folder,
+      name: c.name,
+      component: c
+    }
+&nbsp;
+<span class="cstat-no" title="statement not covered" >    componentsByName[c.name] = componentData</span>
+<span class="cstat-no" title="statement not covered" >    componentsMap[folder].push(componentsByName[c.name])</span>
+  }
+&nbsp;
+<span class="cstat-no" title="statement not covered" >  components.push(c)</span>
+})
+&nbsp;
+// Add child components data to parent
+<span class="cstat-no" title="statement not covered" >Object.keys(componentsByName).forEach(<span class="fstat-no" title="function not covered" >name</span> =&gt; {</span>
+  const component = <span class="cstat-no" title="statement not covered" >componentsByName[name]</span>
+<span class="cstat-no" title="statement not covered" >  if (!component.parent || !componentsByName[component.parent]) {</span>
+<span class="cstat-no" title="statement not covered" >    return</span>
+  }
+<span class="cstat-no" title="statement not covered" >  if (!componentsByName[component.parent].children) {</span>
+<span class="cstat-no" title="statement not covered" >    componentsByName[component.parent].children = []</span>
+  }
+<span class="cstat-no" title="statement not covered" >  componentsByName[component.parent].children.push(component)</span>
+})
+&nbsp;
+export { componentsMap }
+&nbsp;
+export default {
+  install(Vue) {
+<span class="cstat-no" title="statement not covered" >    components.forEach(<span class="fstat-no" title="function not covered" >c </span>=&gt; <span class="cstat-no" title="statement not covered" >Vue.component(c.name, c))</span></span>
+  }
+}
+&nbsp;</pre></td></tr>
+</table></pre>
+<div class='push'></div><!-- for sticky footer -->
+</div><!-- /wrapper -->
+<div class='footer quiet pad2 space-top1 center small'>
+  Code coverage
+  generated by <a href="https://istanbul.js.org/" target="_blank">istanbul</a> at Tue Jan 22 2019 22:02:51 GMT+0100 (GMT+01:00)
+</div>
+</div>
+<script src="../../prettify.js"></script>
+<script>
+window.onload = function () {
+        if (typeof prettyPrint === 'function') {
+            prettyPrint();
+        }
+};
+</script>
+<script src="../../sorter.js"></script>
+</body>
+</html>

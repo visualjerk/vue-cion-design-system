@@ -1,0 +1,13 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Button.vue matches snapshot 1`] = `
+<button
+  class="ds-button"
+>
+  <!---->
+   
+  <!---->
+   
+  <!---->
+</button>
+`;

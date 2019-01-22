@@ -1,0 +1,19 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Input.vue matches snapshot 1`] = `
+<ds-form-item-stub>
+  <div
+    class="ds-input-wrap"
+  >
+    <!---->
+     
+    <input
+      class="ds-input"
+      tabindex="0"
+      type="text"
+    />
+     
+    <!---->
+  </div>
+</ds-form-item-stub>
+`;

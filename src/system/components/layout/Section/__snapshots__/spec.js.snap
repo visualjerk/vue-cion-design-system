@@ -1,0 +1,13 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Section.vue matches snapshot 1`] = `
+<section
+  class="ds-section"
+>
+  <div
+    class="ds-section-content"
+  >
+    <ds-container-stub />
+  </div>
+</section>
+`;

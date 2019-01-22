@@ -1,0 +1,33 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Page.vue matches snapshot 1`] = `
+<div
+  class="ds-page ds-page-has-no-header"
+>
+  <header
+    class="ds-page-header"
+  >
+    <div
+      class="ds-page-header-container"
+    >
+      <div
+        class="ds-page-brand"
+      />
+       
+      <div
+        class="ds-page-navbar"
+      />
+       
+      <!---->
+    </div>
+  </header>
+   
+  <!---->
+   
+  <!---->
+   
+  <main
+    class="ds-page-content"
+  />
+</div>
+`;

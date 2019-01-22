@@ -1,0 +1,11 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Menu.vue matches snapshot 1`] = `
+<nav
+  class="ds-menu"
+>
+  <ul
+    class="ds-menu-list"
+  />
+</nav>
+`;

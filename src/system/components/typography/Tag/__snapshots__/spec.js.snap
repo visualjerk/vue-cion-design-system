@@ -1,0 +1,7 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Tag.vue matches snapshot 1`] = `
+<span
+  class="ds-tag ds-tag-size-base ds-tag-medium"
+/>
+`;

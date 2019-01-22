@@ -1,0 +1,7 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Code.vue matches snapshot 1`] = `
+<pre
+  class="ds-code"
+/>
+`;

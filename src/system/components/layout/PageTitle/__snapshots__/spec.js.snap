@@ -1,0 +1,16 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`PageTitle.vue matches snapshot 1`] = `
+<header
+  class="ds-page-title"
+>
+  <ds-container-stub>
+    <ds-heading-stub>
+      
+      
+    
+    </ds-heading-stub>
+     
+  </ds-container-stub>
+</header>
+`;

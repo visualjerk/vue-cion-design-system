@@ -1,0 +1,10 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Radio.vue matches snapshot 1`] = `
+<ds-form-item-stub>
+  <div
+    class="ds-radio"
+    tabindex="0"
+  />
+</ds-form-item-stub>
+`;

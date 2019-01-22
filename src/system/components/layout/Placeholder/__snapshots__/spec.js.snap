@@ -1,0 +1,11 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Placeholder.vue matches snapshot 1`] = `
+<div
+  class="ds-placeholder"
+>
+  <div
+    class="ds-placeholder-content"
+  />
+</div>
+`;

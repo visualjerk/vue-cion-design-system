@@ -1,0 +1,10 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Chip.vue matches snapshot 1`] = `
+<span
+  class="ds-chip ds-chip-size-base ds-chip-medium ds-chip-round"
+>
+   
+  <!---->
+</span>
+`;

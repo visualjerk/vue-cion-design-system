@@ -1,0 +1,19 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Card.vue matches snapshot 1`] = `
+<article
+  class="ds-card"
+>
+  <!---->
+   
+  <!---->
+   
+  <!---->
+   
+  <div
+    class="ds-card-content"
+  />
+   
+  <!---->
+</article>
+`;

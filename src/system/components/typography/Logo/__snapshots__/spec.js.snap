@@ -1,0 +1,11 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Logo.vue matches snapshot 1`] = `
+<div
+  class="ds-logo"
+>
+  <svg-logo-stub
+    class="ds-logo-svg"
+  />
+</div>
+`;

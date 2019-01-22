@@ -28,7 +28,7 @@ export default {
   },
   props: {
     /**
-     * The value of the input. Can be passed via v-model.
+     * The value of the form. Can be passed via v-model.
      */
     value: {
       type: Object,

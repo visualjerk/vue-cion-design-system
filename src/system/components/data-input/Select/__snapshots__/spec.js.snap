@@ -1,7 +1,7 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`Select.vue matches snapshot 1`] = `
-<dsformitem-stub>
+<ds-form-item-stub>
   <div
     class="ds-select-wrap"
     tabindex="-1"
@@ -58,12 +58,12 @@ exports[`Select.vue matches snapshot 1`] = `
     <div
       class="ds-select-icon-right"
     >
-      <dsicon-stub
+      <ds-icon-stub
         arialabel="icon"
         name="angle-down"
         tag="span"
       />
     </div>
   </div>
-</dsformitem-stub>
+</ds-form-item-stub>
 `;
