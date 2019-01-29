@@ -7,7 +7,6 @@
   font-family: $font-family-text;
   line-height: $line-height-base;
   padding: $font-space-xx-small $font-space-large;
-  padding-bottom: $font-space-xxx-small;
   border-radius: $border-radius-base;
   font-weight: $font-weight-bold;
   color: $text-color-base;
@@ -49,22 +48,16 @@
 
 .ds-chip-size-small {
   font-size: $font-size-xx-small;
-  padding: $font-space-xxx-small ($font-space-large + $font-space-xxx-small);
+  padding: $font-space-xxx-small $font-space-large;
 }
 
 .ds-chip-size-base {
   font-size: $font-size-small;
-  padding-left: $font-space-large +  $font-space-xx-small;
-  padding-right: $font-space-large +  $font-space-xx-small;
-  padding-top: $font-space-xxx-small;
 }
 
 .ds-chip-size-large {
   font-size: $font-size-base;
-  padding-left: $font-space-x-large;
-  padding-right: $font-space-x-large;
-  padding-top: $font-space-xx-small;
-  padding-bottom: $font-space-xxx-small;
+  padding: $font-space-xx-small $font-space-x-large;
 }
 
 .ds-chip-close {
@@ -80,7 +73,6 @@
   width: $space-small;
   height: $space-small;
   border-radius: $border-radius-circle;
-  //background-color: $background-color-base;
   opacity: $opacity-soft;
   cursor: pointer;
   transition: all $duration-short $ease-out-sharp;
