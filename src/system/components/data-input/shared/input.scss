@@ -37,6 +37,7 @@
       opacity: $opacity-disabled;
       pointer-events: none;
       cursor: not-allowed;
+      background-color: $background-color-disabled;
     }
 
     .ds-input-is-readonly & {
@@ -122,5 +123,5 @@
     .ds-input-size-large & {
       padding-right: $input-height-large;
     }
-  }         
+  }
 }

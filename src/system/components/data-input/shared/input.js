@@ -31,6 +31,13 @@ export default {
       default: null
     },
     /**
+     * Name to use on the input for accessibility
+     */
+    name: {
+      type: String,
+      default: null
+    },
+    /**
      * The label of the input.
      */
     label: {
