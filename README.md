@@ -56,5 +56,9 @@ yarn serve
 yarn lint
 ```
 
+## Projects that use CION
+
+* Human Connection Styleguide: https://styleguide.human-connection.org/
+
 ## License
 [MIT License](./LICENSE) - Copyright (c) Jörg Bayreuther
