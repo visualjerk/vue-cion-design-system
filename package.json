@@ -35,7 +35,7 @@
     "codemirror": "^5.39.2",
     "cross-env": "^5.2.0",
     "dot-prop": "^4.2.0",
-    "lodash": "^4.17.13",
+    "lodash": "^4.17.19",
     "markdown-it": "^8.4.2",
     "markdown-it-abbr": "^1.0.4",
     "markdown-it-deflist": "^2.0.3",
