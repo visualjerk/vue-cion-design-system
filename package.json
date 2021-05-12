@@ -32,7 +32,7 @@
     "cheerio": "^1.0.0-rc.2",
     "clipboard-copy": "^2.0.1",
     "clone-deep": "^4.0.0",
-    "codemirror": "^5.39.2",
+    "codemirror": "^5.58.2",
     "cross-env": "^5.2.0",
     "dot-prop": "^4.2.0",
     "lodash": "^4.17.13",
