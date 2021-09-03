@@ -196,6 +196,9 @@ export default {
       return attributes
     },
     getAttributesFromComment(comment) {
+      if (!comment) {
+        return {}
+      }
       const attributes = {}
       const optionsMatch = comment.match(/@options[ ]+(\S[ \S]*)\n/)
       if (optionsMatch) {
