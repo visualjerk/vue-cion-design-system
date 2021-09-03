@@ -28,7 +28,7 @@
   },
   "devDependencies": {
     "@babel/plugin-syntax-dynamic-import": "^7.0.0",
-    "@babel/standalone": "^7.0.0-beta.56",
+    "@babel/standalone": "^7.15.4",
     "@vue/cli-plugin-babel": "~4.5.13",
     "@vue/cli-plugin-eslint": "~4.5.13",
     "@vue/cli-plugin-unit-jest": "~4.5.13",
