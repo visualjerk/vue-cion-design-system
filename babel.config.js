@@ -1,6 +1,6 @@
 module.exports = function(api) {
   const config = {
-    presets: ['@vue/app'],
+    presets: ['@vue/cli-plugin-babel/preset'],
     plugins: ['@babel/plugin-syntax-dynamic-import']
   }
   if (api.env('test')) {
