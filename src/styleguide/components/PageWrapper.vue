@@ -1,6 +1,6 @@
 <template>
   <div>
-    <router-view/>
+    <router-view />
   </div>
 </template>
 
@@ -10,12 +10,12 @@ export default {
   props: {
     section: {
       type: Object,
-      required: true
+      required: true,
     },
     components: {
       type: Array,
-      default: null
-    }
-  }
+      default: null,
+    },
+  },
 }
 </script>

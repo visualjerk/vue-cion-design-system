@@ -5,10 +5,10 @@ describe('FormItem.vue', () => {
   it('matches snapshot', () => {
     const wrapper = shallowMount(Comp, {
       provide: {
-        $parentInput () {
+        $parentInput() {
           return {}
-        }
-      }
+        },
+      },
     })
     expect(wrapper.element).toMatchSnapshot()
   })

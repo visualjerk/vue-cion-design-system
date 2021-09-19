@@ -11,11 +11,11 @@ Vue.config.productionTip = false
 Vue.use(System)
 Vue.use(Components)
 
-Vue.filter('componentName', value => {
+Vue.filter('componentName', (value) => {
   return startCase(value.replace(/^Ds/, ''))
 })
 
 new Vue({
   router,
-  render: h => h(App)
+  render: (h) => h(App),
 }).$mount('#app')

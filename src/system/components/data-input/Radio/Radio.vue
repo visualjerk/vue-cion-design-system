@@ -4,25 +4,21 @@
       class="ds-radio"
       :tabindex="tabindex"
       @keydown.self.down.prevent="pointerNext"
-      @keydown.self.up.prevent="pointerPrev">
+      @keydown.self.up.prevent="pointerPrev"
+    >
       <component
         class="ds-radio-option"
-        :class="[
-          isSelected(option) && `ds-radio-option-is-selected`
-        ]"
+        :class="[isSelected(option) && `ds-radio-option-is-selected`]"
         v-for="option in options"
         @click="handleSelect(option)"
         :key="option[labelProp] || option"
         :is="buttons ? 'ds-button' : 'div'"
-        :primary="buttons && isSelected(option)">
-        <span 
-          class="ds-radio-option-mark" 
-          v-if="!buttons"/>
+        :primary="buttons && isSelected(option)"
+      >
+        <span class="ds-radio-option-mark" v-if="!buttons" />
         <span class="ds-radio-option-label">
           <!-- @slot Slot to provide custom option items -->
-          <slot
-            name="option"
-            :option="option">
+          <slot name="option" :option="option">
             {{ option[labelProp] || option }}
           </slot>
         </span>
@@ -44,11 +40,11 @@ export default {
   name: 'DsRadio',
   mixins: [inputMixin, multiinputMixin],
   components: {
-    DsFormItem
+    DsFormItem,
   },
   data() {
     return {
-      pointer: 0
+      pointer: 0,
     }
   },
   props: {
@@ -57,7 +53,7 @@ export default {
      */
     buttons: {
       type: Boolean,
-      default: false
+      default: false,
     },
     /**
      * The select options.
@@ -66,20 +62,20 @@ export default {
       type: Array,
       default() {
         return []
-      }
+      },
     },
     /**
      * The prop to use as the label when options are objects
      */
     labelProp: {
       type: String,
-      default: 'label'
-    }
+      default: 'label',
+    },
   },
   computed: {
     pointerMax() {
       return this.options.length - 1
-    }
+    },
   },
   watch: {
     pointerMax(max) {
@@ -88,7 +84,7 @@ export default {
           this.pointer = max
         })
       }
-    }
+    },
   },
   methods: {
     handleSelect(option) {
@@ -112,12 +108,11 @@ export default {
     },
     selectPointerOption() {
       this.handleSelect(this.options[this.pointer])
-    }
-  }
+    },
+  },
 }
 </script>
 
-<style lang="scss" src="./style.scss">
-</style>
+<style lang="scss" src="./style.scss"></style>
 
 <docs src="./demo.md"></docs>

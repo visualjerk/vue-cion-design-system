@@ -1,7 +1,5 @@
 <template>
-  <label
-    class="ds-input-label"
-    v-show="!!label">
+  <label class="ds-input-label" v-show="!!label">
     {{ label }}
   </label>
 </template>
@@ -17,8 +15,8 @@ export default {
     label: {
       type: String,
       required: false,
-      default: null
-    }
-  }
+      default: null,
+    },
+  },
 }
 </script>

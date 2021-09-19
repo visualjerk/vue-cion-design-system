@@ -7,50 +7,59 @@ const mkdirp = require('mkdirp')
 const src = './src/system/tokens/tokens.yml'
 const themeSrc = './src/system/tokens/themes'
 const dist = './src/system/tokens/generated'
- 
+
 // Custom transforms
-const unthemable = [
-  'media-query',
-  'media-size'
-]
+const unthemable = ['media-query', 'media-size']
 theo.registerValueTransform(
   'cssvar',
-  prop => !unthemable.includes(prop.get('category')),
-  prop => `var(--${prop.get('name')})`,
-);
+  (prop) => !unthemable.includes(prop.get('category')),
+  (prop) => `var(--${prop.get('name')})`
+)
 theo.registerTransform('webvars', ['color/rgb', 'cssvar'])
 
 // Custom formats
-theo.registerFormat("cssvarjs", result => {
+theo.registerFormat('cssvarjs', (result) => {
   return `export default {${result
-    .get("props")
+    .get('props')
     .map(
-      prop => `\n  "--${kebabCase(prop.get("name"))}": "${prop.get("value")}"`
+      (prop) => `\n  "--${kebabCase(prop.get('name'))}": "${prop.get('value')}"`
     )
     .toJS()}
-}`;
-});
+}`
+})
 
 const configs = [
-  { src, dist: `${dist}/tokens.map.scss`, transform: 'webvars', format: 'map.scss'},
-  { src, dist: `${dist}/tokens.scss`, transform: 'webvars', format: 'scss'},
-  { src, dist: `${dist}/tokens.raw.json`, transform: 'webvars', format: 'raw.json'},
-  { src, dist: `${dist}/tokens.json`, transform: 'webvars', format: 'json'},
-  { src, dist: `${dist}/themes/base.js`, transform: 'web', format: 'cssvarjs'},
+  {
+    src,
+    dist: `${dist}/tokens.map.scss`,
+    transform: 'webvars',
+    format: 'map.scss',
+  },
+  { src, dist: `${dist}/tokens.scss`, transform: 'webvars', format: 'scss' },
+  {
+    src,
+    dist: `${dist}/tokens.raw.json`,
+    transform: 'webvars',
+    format: 'raw.json',
+  },
+  { src, dist: `${dist}/tokens.json`, transform: 'webvars', format: 'json' },
+  { src, dist: `${dist}/themes/base.js`, transform: 'web', format: 'cssvarjs' },
 ]
 
-const isDirectory = source => lstatSync(source).isDirectory()
-const getDirectories = source =>
-  readdirSync(source).map(name => join(source, name)).filter(isDirectory)
+const isDirectory = (source) => lstatSync(source).isDirectory()
+const getDirectories = (source) =>
+  readdirSync(source)
+    .map((name) => join(source, name))
+    .filter(isDirectory)
 
 // Add theme configs
-const addTheme = themeDir => {
+const addTheme = (themeDir) => {
   const theme = basename(themeDir)
   const config = {
     src: `${themeDir}/tokens.yml`,
     dist: `${dist}/themes/${theme}.js`,
     transform: 'web',
-    format: 'cssvarjs'
+    format: 'cssvarjs',
   }
   configs.push(config)
 }
@@ -59,7 +68,7 @@ const addTheme = themeDir => {
 const themes = getDirectories(themeSrc)
 themes.forEach(addTheme)
 
-const write = dist => content => {
+const write = (dist) => (content) => {
   const dir = dirname(dist)
   mkdirp.sync(dir)
   writeFileSync(dist, content)
@@ -75,10 +84,10 @@ const transform = ({ src, dist, transform, format }) => {
       },
       format: {
         type: format,
-      }
+      },
     })
     .then(write(dist))
-    .catch(error => console.log(`Something went wrong: ${error}`))
+    .catch((error) => console.log(`Something went wrong: ${error}`))
 }
 
 const build = () => {
@@ -86,4 +95,3 @@ const build = () => {
 }
 
 build()
-

@@ -1,13 +1,6 @@
 <template>
-  <component
-    :is="tag"
-    :aria-label="ariaLabel"
-    class="ds-icon"
-  >
-    <component
-      v-if="svgComponent"
-      :is="svgComponent"
-      class="ds-icon-svg"/>
+  <component :is="tag" :aria-label="ariaLabel" class="ds-icon">
+    <component v-if="svgComponent" :is="svgComponent" class="ds-icon-svg" />
   </component>
 </template>
 
@@ -25,22 +18,22 @@ export default {
      */
     name: {
       type: String,
-      required: true
+      required: true,
     },
     /**
      * Descriptive text to be read to screenreaders.
      */
     ariaLabel: {
       type: String,
-      default: 'icon'
+      default: 'icon',
     },
     /**
      * The html element name used for the icon.
      */
     tag: {
       type: String,
-      default: 'span'
-    }
+      default: 'span',
+    },
   },
   computed: {
     svgComponent() {
@@ -49,12 +42,11 @@ export default {
         return false
       }
       return icon.render ? icon : icon.default
-    }
-  }
+    },
+  },
 }
 </script>
 
-<style lang="scss" src="./style.scss">
-</style>
+<style lang="scss" src="./style.scss"></style>
 
 <docs src="./demo.md"></docs>

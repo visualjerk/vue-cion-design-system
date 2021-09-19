@@ -15,8 +15,8 @@ describe('Heading.vue', () => {
   it('displays title', () => {
     const wrapper = shallowMount(Comp, {
       slots: {
-        default: 'Winter is coming'
-      }
+        default: 'Winter is coming',
+      },
     })
     expect(wrapper.text()).toEqual('Winter is coming')
   })

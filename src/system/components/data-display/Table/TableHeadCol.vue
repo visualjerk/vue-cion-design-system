@@ -17,8 +17,8 @@ export default {
   name: 'DsTableHeadCol',
   inject: {
     $parentTable: {
-      default: null
-    }
+      default: null,
+    },
   },
   props: {
     /**
@@ -28,16 +28,16 @@ export default {
       type: [Number, String, Array, Object],
       default() {
         return null
-      }
+      },
     },
     /**
      * The column width
      */
     width: {
       type: [String, Number, Object],
-      default: null
-    }
+      default: null,
+    },
   },
-  computed: {}
+  computed: {},
 }
 </script>

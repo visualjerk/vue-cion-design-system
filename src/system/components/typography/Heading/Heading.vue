@@ -5,7 +5,7 @@
     :class="[
       `ds-heading-${size || tag}`,
       primary && `ds-heading-primary`,
-      soft && `ds-heading-soft`
+      soft && `ds-heading-soft`,
     ]"
   >
     <slot />
@@ -29,9 +29,9 @@ export default {
     tag: {
       type: String,
       default: 'h1',
-      validator: value => {
+      validator: (value) => {
         return value.match(/(h1|h2|h3|h4|h5|h6)/)
-      }
+      },
     },
     /**
      * The size used for the heading.
@@ -40,29 +40,28 @@ export default {
     size: {
       type: String,
       default: null,
-      validator: value => {
+      validator: (value) => {
         return value.match(/(h1|h2|h3|h4|h5|h6)/)
-      }
+      },
     },
     /**
      * Primary style
      */
     primary: {
       type: Boolean,
-      default: false
+      default: false,
     },
     /**
      * Muted style
      */
     soft: {
       type: Boolean,
-      default: false
-    }
-  }
+      default: false,
+    },
+  },
 }
 </script>
 
-<style lang="scss" src="./style.scss">
-</style>
+<style lang="scss" src="./style.scss"></style>
 
 <docs src="./demo.md"></docs>

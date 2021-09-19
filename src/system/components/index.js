@@ -10,7 +10,7 @@ const contextMeta = require.context(
 const components = []
 const componentsMap = {}
 const componentsByName = {}
-context.keys().forEach(key => {
+context.keys().forEach((key) => {
   const c = context(key).default
   const meta = contextMeta(key)
   const folder = key.split('/')[1]
@@ -32,7 +32,7 @@ context.keys().forEach(key => {
       parent,
       folder,
       name: c.name,
-      component: c
+      component: c,
     }
 
     componentsByName[c.name] = componentData
@@ -43,7 +43,7 @@ context.keys().forEach(key => {
 })
 
 // Add child components data to parent
-Object.keys(componentsByName).forEach(name => {
+Object.keys(componentsByName).forEach((name) => {
   const component = componentsByName[name]
   if (!component.parent || !componentsByName[component.parent]) {
     return
@@ -58,6 +58,6 @@ export { componentsMap }
 
 export default {
   install(Vue) {
-    components.forEach(c => Vue.component(c.name, c))
-  }
+    components.forEach((c) => Vue.component(c.name, c))
+  },
 }

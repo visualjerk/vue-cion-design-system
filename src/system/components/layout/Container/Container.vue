@@ -1,11 +1,8 @@
 <template>
-  <component 
+  <component
     :is="tag"
     class="ds-container"
-    :class="[
-      `ds-container-${width}`,
-      centered && `ds-container-centered`,
-    ]"
+    :class="[`ds-container-${width}`, centered && `ds-container-centered`]"
   >
     <slot />
   </component>
@@ -24,7 +21,7 @@ export default {
      */
     tag: {
       type: String,
-      default: 'div'
+      default: 'div',
     },
     /**
      * The maximum width the container will take.
@@ -34,22 +31,21 @@ export default {
     width: {
       type: String,
       default: 'x-large',
-      validator: value => {
+      validator: (value) => {
         return value.match(/(x-small|small|medium|large|x-large)/)
-      }
+      },
     },
     /**
      * Center the content
      */
     centered: {
       type: Boolean,
-      default: false
-    }
-  }
+      default: false,
+    },
+  },
 }
 </script>
 
-<style lang="scss" src="./style.scss">
-</style>
+<style lang="scss" src="./style.scss"></style>
 
 <docs src="./demo.md"></docs>

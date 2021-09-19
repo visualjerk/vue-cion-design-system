@@ -15,8 +15,8 @@ describe('CopyField.vue', () => {
   it('displays text', () => {
     const wrapper = shallowMount(Comp, {
       slots: {
-        default: 'Test'
-      }
+        default: 'Test',
+      },
     })
     expect(wrapper.text()).toEqual('Test')
   })

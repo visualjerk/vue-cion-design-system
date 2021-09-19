@@ -1,8 +1,5 @@
 <template>
-  <component 
-    :is="tag"
-    :style="styles"
-    class="ds-flex-item">
+  <component :is="tag" :style="styles" class="ds-flex-item">
     <slot />
   </component>
 </template>
@@ -20,8 +17,8 @@ export default {
   mixins: [mediaQuery],
   inject: {
     $parentFlex: {
-      default: null
-    }
+      default: null,
+    },
   },
   props: {
     /**
@@ -32,15 +29,15 @@ export default {
       type: [String, Number, Object],
       default() {
         return this.$parentFlex ? this.$parentFlex.width : 1
-      }
+      },
     },
     /**
      * The outtermost html tag
      */
     tag: {
       type: String,
-      default: 'div'
-    }
+      default: 'div',
+    },
   },
   computed: {
     gutter() {
@@ -53,9 +50,9 @@ export default {
       const gutterStyle = this.parseGutter(gutter)
       return {
         ...widthStyle,
-        ...gutterStyle
+        ...gutterStyle,
       }
-    }
+    },
   },
   methods: {
     parseWidth(width) {
@@ -78,9 +75,9 @@ export default {
       return {
         paddingLeft: `calc(${realGutter} / 2 * 1px)`,
         paddingRight: `calc(${realGutter} / 2 * 1px)`,
-        marginBottom: `calc(${realGutter} * 1px)`
+        marginBottom: `calc(${realGutter} * 1px)`,
       }
-    }
-  }
+    },
+  },
 }
 </script>

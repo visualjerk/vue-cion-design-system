@@ -5,8 +5,8 @@ describe('PageTitle.vue', () => {
   it('matches snapshot', () => {
     const wrapper = shallowMount(Comp, {
       propsData: {
-        heading: ''
-      }
+        heading: '',
+      },
     })
     expect(wrapper.element).toMatchSnapshot()
   })

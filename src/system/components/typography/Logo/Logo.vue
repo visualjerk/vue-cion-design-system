@@ -1,10 +1,5 @@
 <template>
-  <component 
-    :is="tag"
-    class="ds-logo"
-    :class="[
-      inverse && `ds-logo-inverse`
-  ]">
+  <component :is="tag" class="ds-logo" :class="[inverse && `ds-logo-inverse`]">
     <svg-logo class="ds-logo-svg" />
   </component>
 </template>
@@ -18,7 +13,7 @@ import svgLogo from '@@/assets/img/logo_cion.svg'
 export default {
   name: 'DsLogo',
   components: {
-    svgLogo
+    svgLogo,
   },
   props: {
     /**
@@ -26,20 +21,19 @@ export default {
      */
     inverse: {
       type: Boolean,
-      default: false
+      default: false,
     },
     /**
      * The html element name used for the logo.
      */
     tag: {
       type: String,
-      default: 'div'
-    }
-  }
+      default: 'div',
+    },
+  },
 }
 </script>
 
-<style lang="scss" src="./style.scss">
-</style>
+<style lang="scss" src="./style.scss"></style>
 
 <docs src="./demo.md"></docs>

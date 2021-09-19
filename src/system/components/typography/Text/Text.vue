@@ -1,12 +1,12 @@
 <template>
-  <component 
+  <component
     :is="tag"
     class="ds-text"
     :class="[
       size && `ds-text-size-${size}`,
       color && `ds-text-${color}`,
       bold && `ds-text-bold`,
-      inline && `ds-text-inline`
+      inline && `ds-text-inline`,
     ]"
   >
     <slot />
@@ -24,13 +24,13 @@ export default {
   name: 'DsText',
   provide() {
     return {
-      $parentText: this
+      $parentText: this,
     }
   },
   inject: {
     $parentText: {
-      default: null
-    }
+      default: null,
+    },
   },
   props: {
     /**
@@ -40,18 +40,18 @@ export default {
     color: {
       type: String,
       default: null,
-      validator: value => {
+      validator: (value) => {
         return value.match(
           /(default|soft|softer|primary|inverse|success|warning|danger)/
         )
-      }
+      },
     },
     /**
      * Whether the text is bold.
      */
     bold: {
       type: Boolean,
-      default: null
+      default: null,
     },
     /**
      * Whether the text is inline.
@@ -61,7 +61,7 @@ export default {
       type: Boolean,
       default() {
         return !!this.$parentText
-      }
+      },
     },
     /**
      * The size used for the text.
@@ -70,9 +70,9 @@ export default {
     size: {
       type: String,
       default: null,
-      validator: value => {
+      validator: (value) => {
         return value.match(/(small|base|large|x-large)/)
-      }
+      },
     },
     /**
      * The html tag used for the text.
@@ -82,13 +82,12 @@ export default {
       type: String,
       default() {
         return this.inline ? 'span' : 'p'
-      }
-    }
-  }
+      },
+    },
+  },
 }
 </script>
 
-<style lang="scss" src="./style.scss">
-</style>
+<style lang="scss" src="./style.scss"></style>
 
 <docs src="./demo.md"></docs>

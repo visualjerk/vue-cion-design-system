@@ -2,11 +2,12 @@
   <div>
     <div
       v-if="!hideTokenGroups.includes(this.token.category)"
-      :style="styles" 
-      :class="`token-item${timeGroups.includes(this.token.category) ? ' hover' : ''}`">
-      <span v-if="textGroups.includes(this.token.category)">
-        Aa
-      </span>
+      :style="styles"
+      :class="`token-item${
+        timeGroups.includes(this.token.category) ? ' hover' : ''
+      }`"
+    >
+      <span v-if="textGroups.includes(this.token.category)"> Aa </span>
     </div>
     <div>
       <code>{{ token.value }}</code>
@@ -22,8 +23,8 @@ export default {
   props: {
     token: {
       type: Object,
-      required: true
-    }
+      required: true,
+    },
   },
   data() {
     return {
@@ -34,10 +35,10 @@ export default {
         'font-weight',
         'font-spacing',
         'letter-spacing',
-        'line-height'
+        'line-height',
       ],
       timeGroups: ['time', 'ease'],
-      hideTokenGroups: ['space-size', 'media-size', 'z-index', 'media-query']
+      hideTokenGroups: ['space-size', 'media-size', 'z-index', 'media-query'],
     }
   },
   computed: {
@@ -103,8 +104,8 @@ export default {
           break
       }
       return styles
-    }
-  }
+    },
+  },
 }
 </script>
 

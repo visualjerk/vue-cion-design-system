@@ -5,8 +5,8 @@ describe('Form.vue', () => {
   it('matches snapshot', () => {
     const wrapper = shallowMount(Comp, {
       propsData: {
-        value: {}
-      }
+        value: {},
+      },
     })
     expect(wrapper.element).toMatchSnapshot()
   })
