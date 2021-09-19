@@ -1,17 +1,19 @@
 <template>
   <ds-page ref="page">
     <template slot="brand">
-      <ds-logo/>
+      <ds-logo />
     </template>
     <ds-menu
       @navigate="$refs.page.closeDrawer()"
       slot="sidebar"
-      :routes="routes"/>
+      :routes="routes"
+    />
     <ds-menu
       @navigate="$refs.page.closeDrawer()"
       slot="drawer"
-      :routes="routes"/>
-    <ds-page-title heading="Example Application"/>
+      :routes="routes"
+    />
+    <ds-page-title heading="Example Application" />
     <ds-container>
       <ds-space margin-top="large">
         <ds-text size="x-large">
@@ -20,36 +22,28 @@
       </ds-space>
       <ds-space>
         <ds-heading tag="h2">Content</ds-heading>
-        <ds-flex
-          gutter="base"
-          :width="{ base: '100%', sm: 1 }">
+        <ds-flex gutter="base" :width="{ base: '100%', sm: 1 }">
           <ds-flex-item>
             <ds-card
               header="The header"
-              image="https://picsum.photos/400/300?image=1063">
+              image="https://picsum.photos/400/300?image=1063"
+            >
               Look ma! I'm in a card.
               <template slot="footer">
-                <ds-button
-                  icon="user"
-                  primary>User Settings</ds-button>
-                <ds-button
-                  icon="plus"
-                  ghost/>
+                <ds-button icon="user" primary>User Settings</ds-button>
+                <ds-button icon="plus" ghost />
               </template>
             </ds-card>
           </ds-flex-item>
           <ds-flex-item>
             <ds-card
               header="The header"
-              image="https://picsum.photos/400/300?image=260">
+              image="https://picsum.photos/400/300?image=260"
+            >
               Look ma! I'm in a card.
               <template slot="footer">
-                <ds-button
-                  icon="calendar"
-                  primary>Calendar</ds-button>
-                <ds-button
-                  icon="plus"
-                  ghost/>
+                <ds-button icon="calendar" primary>Calendar</ds-button>
+                <ds-button icon="plus" ghost />
               </template>
             </ds-card>
           </ds-flex-item>
@@ -70,13 +64,13 @@ export default {
           children: [
             { name: 'Container' },
             { name: 'Page' },
-            { name: 'Page Title' }
-          ]
+            { name: 'Page Title' },
+          ],
         },
         { name: 'Typography' },
-        { name: 'Navigation' }
-      ]
+        { name: 'Navigation' },
+      ],
     }
-  }
+  },
 }
 </script>
