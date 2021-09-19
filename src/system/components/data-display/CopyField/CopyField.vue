@@ -1,26 +1,14 @@
 <template>
-  <component 
-    :is="tag"
-    class="ds-copy-field"
-    :class="`ds-copy-field-${size}`">
+  <component :is="tag" class="ds-copy-field" :class="`ds-copy-field-${size}`">
     <div ref="text">
       <slot />
     </div>
-    <div
-      class="ds-copy-field-link">
-      <ds-button
-        @click="copy"
-        icon="copy"
-        color="soft"
-        ghost/>
+    <div class="ds-copy-field-link">
+      <ds-button @click="copy" icon="copy" color="soft" ghost />
     </div>
     <transition name="ds-copy-field-message">
-      <div
-        v-show="showMessage"
-        class="ds-copy-field-message">
-        <div 
-          class="ds-copy-field-message-text"
-          ref="messageText"/>
+      <div v-show="showMessage" class="ds-copy-field-message">
+        <div class="ds-copy-field-message-text" ref="messageText" />
       </div>
     </transition>
   </component>
@@ -36,31 +24,31 @@ import DsButton from '@@/components/navigation/Button/Button'
 export default {
   name: 'DsCopyField',
   components: {
-    DsButton
+    DsButton,
   },
   props: {
     /**
      * The size used for the text.
-     * @options small|base|large
+     * @values small, base, large
      */
     size: {
       type: String,
       default: 'base',
-      validator: value => {
+      validator: (value) => {
         return value.match(/(small|base|large)/)
-      }
+      },
     },
     /**
      * The html element name used for the copy field.
      */
     tag: {
       type: String,
-      default: 'div'
-    }
+      default: 'div',
+    },
   },
   data() {
     return {
-      showMessage: false
+      showMessage: false,
     }
   },
   methods: {
@@ -72,12 +60,11 @@ export default {
       this.$nextTick(() => {
         this.showMessage = false
       })
-    }
-  }
+    },
+  },
 }
 </script>
 
-<style lang="scss" src="./style.scss">
-</style>
+<style lang="scss" src="./style.scss"></style>
 
 <docs src="./demo.md"></docs>

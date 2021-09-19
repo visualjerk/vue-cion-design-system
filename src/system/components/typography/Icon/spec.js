@@ -5,8 +5,8 @@ describe('Icon.vue', () => {
   it('matches snapshot', () => {
     const wrapper = shallowMount(Comp, {
       propsData: {
-        name: 'plus'
-      }
+        name: 'plus',
+      },
     })
     expect(wrapper.element).toMatchSnapshot()
   })

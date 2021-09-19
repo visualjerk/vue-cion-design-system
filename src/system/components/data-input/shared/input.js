@@ -7,12 +7,12 @@ import Schema from 'async-validator'
 export default {
   inject: {
     $parentForm: {
-      default: null
-    }
+      default: null,
+    },
   },
   provide() {
     return {
-      $parentInput: this
+      $parentInput: this,
     }
   },
   props: {
@@ -21,49 +21,49 @@ export default {
      */
     value: {
       type: [String, Object, Number, Array],
-      default: null
+      default: null,
     },
     /**
      * The model name when used within a form component. Uses dot notation.
      */
     model: {
       type: String,
-      default: null
+      default: null,
     },
     /**
      * Name to use on the input for accessibility
      */
     name: {
       type: String,
-      default: null
+      default: null,
     },
     /**
      * The label of the input.
      */
     label: {
       type: String,
-      default: null
+      default: null,
     },
     /**
      * The id of the input.
      */
     id: {
       type: String,
-      default: null
+      default: null,
     },
     /**
      * Whether the input is disabled or not.
      */
     disabled: {
       type: Boolean,
-      default: false
+      default: false,
     },
     /**
      * Whether the input should be read-only
      */
     readonly: {
       type: Boolean,
-      default: false
+      default: false,
     },
     /**
      * The async-validator schema used for the input.
@@ -71,29 +71,29 @@ export default {
      */
     schema: {
       type: Object,
-      default: () => null
+      default: () => null,
     },
     /**
      * The input's size.
-     * @options small|base|large
+     * @values small, base, large
      */
     size: {
       type: String,
       default: 'base',
-      validator: value => {
+      validator: (value) => {
         return value.match(/(small|base|large)/)
-      }
+      },
     },
     tabindex: {
       type: Number,
-      default: 0
-    }
+      default: 0,
+    },
   },
   data() {
     return {
       innerValue: null,
       error: null,
-      focus: false
+      focus: false,
     }
   },
   computed: {
@@ -103,9 +103,9 @@ export default {
         this.disabled && 'ds-input-is-disabled',
         this.readonly && 'ds-input-is-readonly',
         this.error && 'ds-input-has-error',
-        this.focus && 'ds-input-has-focus'
+        this.focus && 'ds-input-has-focus',
       ]
-    }
+    },
   },
   watch: {
     value: {
@@ -113,8 +113,8 @@ export default {
         this.innerValue = value
       },
       deep: true,
-      immediate: true
-    }
+      immediate: true,
+    },
   },
   created() {
     if (this.$parentForm) {
@@ -159,7 +159,7 @@ export default {
       const warn = console.warn;
       // eslint-disable-next-line
       console.warn = () => {};
-      validator.validate({ input: value }, errors => {
+      validator.validate({ input: value }, (errors) => {
         if (errors) {
           this.error = errors[0].message
         } else {
@@ -174,6 +174,6 @@ export default {
     },
     handleBlur() {
       this.focus = false
-    }
-  }
+    },
+  },
 }

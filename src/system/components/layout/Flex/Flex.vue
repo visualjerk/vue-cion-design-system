@@ -1,8 +1,5 @@
 <template>
-  <component 
-    :is="tag"
-    :style="styles"
-    class="ds-flex">
+  <component :is="tag" :style="styles" class="ds-flex">
     <slot />
   </component>
 </template>
@@ -20,7 +17,7 @@ export default {
   mixins: [mediaQuery],
   provide() {
     return {
-      $parentFlex: this
+      $parentFlex: this,
     }
   },
   props: {
@@ -29,30 +26,30 @@ export default {
      */
     gutter: {
       type: [String, Object],
-      default: null
+      default: null,
     },
     /**
      * Default width of columns
      */
     width: {
       type: [String, Number, Object],
-      default: 1
+      default: 1,
     },
     /**
      * Direction of the flex items
-     * @options row|row-reverse|column|column-reverse
+     * @values row, row-reverse, column, column-reverse
      */
     direction: {
       type: [String, Object],
-      default: null
+      default: null,
     },
     /**
      * The outtermost html tag
      */
     tag: {
       type: String,
-      default: 'div'
-    }
+      default: 'div',
+    },
   },
   computed: {
     styles() {
@@ -62,9 +59,9 @@ export default {
       const directionStyle = direction ? this.parseDirection(direction) : {}
       return {
         ...gutterStyle,
-        ...directionStyle
+        ...directionStyle,
       }
-    }
+    },
   },
   methods: {
     parseGutter(gutter) {
@@ -76,14 +73,13 @@ export default {
     },
     parseDirection(direction) {
       return {
-        flexDirection: direction
+        flexDirection: direction,
       }
-    }
-  }
+    },
+  },
 }
 </script>
 
-<style lang="scss" src="./style.scss">
-</style>
+<style lang="scss" src="./style.scss"></style>
 
 <docs src="./demo.md"></docs>

@@ -1,10 +1,8 @@
 <template>
-  <component 
+  <component
     :is="tag"
     class="ds-page-title"
-    :class="[
-      highlight && `ds-page-title-highlight`
-    ]"
+    :class="[highlight && `ds-page-title-highlight`]"
   >
     <ds-container>
       <ds-heading>
@@ -29,27 +27,26 @@ export default {
     heading: {
       type: String,
       default: '',
-      required: true
+      required: true,
     },
     /**
      * Whether this title should be highlighted
      */
     highlight: {
       type: Boolean,
-      default: false
+      default: false,
     },
     /**
      * The html element name used for the title.
      */
     tag: {
       type: String,
-      default: 'header'
-    }
-  }
+      default: 'header',
+    },
+  },
 }
 </script>
 
-<style lang="scss" src="./style.scss">
-</style>
+<style lang="scss" src="./style.scss"></style>
 
 <docs src="./demo.md"></docs>

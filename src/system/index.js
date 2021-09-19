@@ -6,5 +6,5 @@ export default {
   install(Vue) {
     Vue.use(plugins)
     Vue.use(components)
-  }
+  },
 }

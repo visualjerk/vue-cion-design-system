@@ -1,39 +1,30 @@
 <template>
-  <div
-    class="ds-table-wrap"
-    v-if="dataArray">
-    <table
-      cellpadding="0"
-      cellspacing="0"
-      class="ds-table">
+  <div class="ds-table-wrap" v-if="dataArray">
+    <table cellpadding="0" cellspacing="0" class="ds-table">
       <colgroup>
         <col
           v-for="header in headers"
           :key="header.key"
-          :width="header.width">
+          :width="header.width"
+        />
       </colgroup>
       <thead>
         <tr>
-          <ds-table-head-col
-            v-for="header in headers"
-            :key="header.key">
+          <ds-table-head-col v-for="header in headers" :key="header.key">
             {{ header.label }}
           </ds-table-head-col>
         </tr>
       </thead>
       <tbody>
-        <tr
-          v-for="(row, index) in rows"
-          :key="index">
-          <ds-table-col
-            v-for="col in row"
-            :key="col.key">
+        <tr v-for="(row, index) in rows" :key="index">
+          <ds-table-col v-for="col in row" :key="col.key">
             <!-- @slot Slots are named by fields -->
             <slot
               :name="col.key"
               :row="dataArray[index] ? dataArray[index] : null"
               :col="col"
-              :index="index">
+              :index="index"
+            >
               {{ col.value }}
             </slot>
           </ds-table-col>
@@ -54,7 +45,7 @@ export default {
   name: 'DsTable',
   provide() {
     return {
-      $parentTable: this
+      $parentTable: this,
     }
   },
   props: {
@@ -65,7 +56,7 @@ export default {
       type: [Array, Object],
       default() {
         return []
-      }
+      },
     },
     /**
      * The table's header config
@@ -74,8 +65,8 @@ export default {
       type: [Array, Object],
       default() {
         return null
-      }
-    }
+      },
+    },
   },
   computed: {
     dataArray() {
@@ -83,7 +74,7 @@ export default {
         return this.data
       }
       if (typeof this.data === 'object') {
-        return Object.keys(this.data).map(key => this.data[key])
+        return Object.keys(this.data).map((key) => this.data[key])
       }
       return []
     },
@@ -99,11 +90,11 @@ export default {
         }
       }
 
-      return keys.map(key => {
+      return keys.map((key) => {
         let header = {
           key,
           label: this.parseLabel(key),
-          width: ''
+          width: '',
         }
         if (headerObj[key]) {
           const headerMerge =
@@ -117,31 +108,30 @@ export default {
     },
     rows() {
       let keys = this.dataArray[0] ? Object.keys(this.dataArray[0]) : []
-      return this.dataArray.map(row => {
+      return this.dataArray.map((row) => {
         if (this.fields) {
           keys = Array.isArray(this.fields)
             ? this.fields
             : Object.keys(this.fields)
         }
 
-        return keys.map(key => {
+        return keys.map((key) => {
           return {
             key,
-            value: row[key]
+            value: row[key],
           }
         })
       })
-    }
+    },
   },
   methods: {
     parseLabel(label) {
       return startCase(label)
-    }
-  }
+    },
+  },
 }
 </script>
 
-<style lang="scss" src="./style.scss">
-</style>
+<style lang="scss" src="./style.scss"></style>
 
 <docs src="./demo.md"></docs>

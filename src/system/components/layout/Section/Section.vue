@@ -1,12 +1,12 @@
 <template>
-  <component 
+  <component
     :is="tag"
     class="ds-section"
     :class="[
       fullheight && `ds-section-fullheight`,
       primary && `ds-section-primary`,
       secondary && `ds-section-secondary`,
-      centered && `ds-section-centered`
+      centered && `ds-section-centered`,
     ]"
   >
     <div class="ds-section-content">
@@ -30,41 +30,40 @@ export default {
      */
     fullheight: {
       type: Boolean,
-      default: false
+      default: false,
     },
     /**
      * Highlight with primary color
      */
     primary: {
       type: Boolean,
-      default: false
+      default: false,
     },
     /**
      * Highlight with secondary color
      */
     secondary: {
       type: Boolean,
-      default: false
+      default: false,
     },
     /**
      * Center the content
      */
     centered: {
       type: Boolean,
-      default: false
+      default: false,
     },
     /**
      * The html element name used for the section.
      */
     tag: {
       type: String,
-      default: 'section'
-    }
-  }
+      default: 'section',
+    },
+  },
 }
 </script>
 
-<style lang="scss" src="./style.scss">
-</style>
+<style lang="scss" src="./style.scss"></style>
 
 <docs src="./demo.md"></docs>

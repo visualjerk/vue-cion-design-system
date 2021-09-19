@@ -2,9 +2,7 @@
   <component
     class="ds-code"
     :is="inline ? 'code' : 'pre'"
-    :class="[
-      inline && `ds-code-inline`
-    ]"
+    :class="[inline && `ds-code-inline`]"
   >
     <slot />
   </component>
@@ -23,13 +21,12 @@ export default {
      */
     inline: {
       type: Boolean,
-      default: false
-    }
-  }
+      default: false,
+    },
+  },
 }
 </script>
 
-<style lang="scss" src="./style.scss">
-</style>
+<style lang="scss" src="./style.scss"></style>
 
 <docs src="./demo.md"></docs>

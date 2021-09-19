@@ -7,5 +7,5 @@ export default {
     Vue.filter('startCase', startCase)
     Vue.filter('camelCase', camelCase)
     Vue.filter('kebabCase', kebabCase)
-  }
+  },
 }

@@ -6,8 +6,8 @@ export default {
       methods: {
         $copyToClipboard(content) {
           return copy(content)
-        }
-      }
+        },
+      },
     })
-  }
+  },
 }

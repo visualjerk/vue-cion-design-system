@@ -2,7 +2,7 @@ import { tokenMap } from '@@/tokens'
 
 const windowSize = {
   width: null,
-  height: null
+  height: null,
 }
 
 function updateWindowSize() {
@@ -41,7 +41,7 @@ function initListener() {
 export default {
   data() {
     return {
-      mediaQueryWindowSize: windowSize
+      mediaQueryWindowSize: windowSize,
     }
   },
   methods: {
@@ -53,7 +53,7 @@ export default {
       let result = arg.base
       Object.keys(tokenMap.mediaSize)
         .reverse()
-        .some(key => {
+        .some((key) => {
           const width = tokenMap.mediaSize[key].value
           if (width <= this.mediaQueryWindowSize.width && arg[key]) {
             result = arg[key]
@@ -61,6 +61,6 @@ export default {
           }
         })
       return result
-    }
-  }
+    },
+  },
 }

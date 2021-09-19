@@ -1,11 +1,9 @@
 <template>
-  <component 
+  <component
     :is="tag"
     :style="styles"
     class="ds-space"
-    :class="[
-      centered && `ds-space-centered`
-    ]"
+    :class="[centered && `ds-space-centered`]"
   >
     <slot />
   </component>
@@ -24,8 +22,8 @@ export default {
   mixins: [mediaQuery],
   inject: {
     $parentRow: {
-      default: null
-    }
+      default: null,
+    },
   },
   props: {
     /**
@@ -33,29 +31,29 @@ export default {
      */
     marginTop: {
       type: [String, Object],
-      default: null
+      default: null,
     },
     /**
      * The bottom margin of this space.
      */
     marginBottom: {
       type: [String, Object],
-      default: 'large'
+      default: 'large',
     },
     /**
      * The html element name used for this space.
      */
     tag: {
       type: String,
-      default: 'div'
+      default: 'div',
     },
     /**
      * Center the content
      */
     centered: {
       type: Boolean,
-      default: false
-    }
+      default: false,
+    },
   },
   computed: {
     styles() {
@@ -65,13 +63,13 @@ export default {
       const marginBottomStyle = this.parseMargin('Bottom')(marginBottom)
       return {
         ...marginTopStyle,
-        ...marginBottomStyle
+        ...marginBottomStyle,
       }
-    }
+    },
   },
   methods: {
     parseMargin(direction) {
-      return margin => {
+      return (margin) => {
         const styles = {}
         if (!margin) {
           return styles
@@ -82,12 +80,11 @@ export default {
         }
         return styles
       }
-    }
-  }
+    },
+  },
 }
 </script>
 
-<style lang="scss" src="./style.scss">
-</style>
+<style lang="scss" src="./style.scss"></style>
 
 <docs src="./demo.md"></docs>

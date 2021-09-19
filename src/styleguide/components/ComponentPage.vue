@@ -12,11 +12,11 @@ export default {
   props: {
     component: {
       type: Object,
-      required: true
-    }
+      required: true,
+    },
   },
   components: {
-    ComponentDoc
-  }
+    ComponentDoc,
+  },
 }
 </script>

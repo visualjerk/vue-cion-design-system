@@ -1,10 +1,7 @@
 <template>
   <nav
     class="ds-menu"
-    :class="[
-      inverse && 'ds-menu-inverse',
-      navbar && 'ds-menu-navbar'
-    ]"
+    :class="[inverse && 'ds-menu-inverse', navbar && 'ds-menu-navbar']"
   >
     <ul class="ds-menu-list">
       <slot>
@@ -12,14 +9,14 @@
           v-for="(route, index) in routes"
           :route="route"
           :parents="[]"
-          :name="route.name">
+          :name="route.name"
+        >
           <!-- @slot Scoped slot for providing a custom menu item -->
-          <slot
-            :route="route"
-            name="menuitem">
+          <slot :route="route" name="menuitem">
             <ds-menu-item
               :key="route.path ? route.path : index"
-              :route="route" />
+              :route="route"
+            />
           </slot>
         </slot>
       </slot>
@@ -36,7 +33,7 @@ export default {
   name: 'DsMenu',
   provide() {
     return {
-      $parentMenu: this
+      $parentMenu: this,
     }
   },
   props: {
@@ -47,34 +44,34 @@ export default {
       type: Array,
       default() {
         return null
-      }
+      },
     },
     /**
      * Set to true, if you use it on dark background
      */
     inverse: {
       type: Boolean,
-      default: false
+      default: false,
     },
     /**
      * Display menu as a navbar
      */
     navbar: {
       type: Boolean,
-      default: false
+      default: false,
     },
     /**
      * The default component / tag used for the link of menu items
-     * @options router-link|a
+     * @values router-link, a
      */
     linkTag: {
       type: String,
       default() {
         return this.$router ? 'router-link' : 'a'
       },
-      validator: value => {
+      validator: (value) => {
         return value.match(/(router-link|a)/)
-      }
+      },
     },
     /**
      * Function that parses the url for each menu item
@@ -86,9 +83,9 @@ export default {
           return route.path
         }
         const parseName = this.$options.filters.kebabCase
-        const routeParts = [...parents, route].map(p => parseName(p.name))
+        const routeParts = [...parents, route].map((p) => parseName(p.name))
         return '/' + routeParts.join('/')
-      }
+      },
     },
     /**
      * Function that parses the name for each menu item
@@ -97,7 +94,7 @@ export default {
       type: Function,
       default(route) {
         return route.name
-      }
+      },
     },
     /**
      * Function that checks if the url must be matched exactly in order to activate the menu item. By default only '/' must be matched exactly.
@@ -106,8 +103,8 @@ export default {
       type: Function,
       default(url) {
         return url === '/' || url.path === '/'
-      }
-    }
+      },
+    },
   },
   computed: {},
   methods: {
@@ -118,12 +115,11 @@ export default {
        * @event navigate
        */
       this.$emit('navigate')
-    }
-  }
+    },
+  },
 }
 </script>
 
-<style lang="scss" src="./style.scss">
-</style>
+<style lang="scss" src="./style.scss"></style>
 
 <docs src="./demo.md"></docs>

@@ -13,7 +13,7 @@ Vue.use(VueRouter)
 function createRoute(section) {
   const components = componentsMap[kebabCase(section.name)]
   const filteredComponents = components
-    ? components.filter(c => !c.parent)
+    ? components.filter((c) => !c.parent)
     : null
 
   const route = {
@@ -23,9 +23,9 @@ function createRoute(section) {
       {
         path: '',
         name: section.name,
-        component: createSectionPage(section, filteredComponents)
-      }
-    ]
+        component: createSectionPage(section, filteredComponents),
+      },
+    ],
   }
   if (filteredComponents) {
     route.children = route.children.concat(
@@ -37,25 +37,25 @@ function createRoute(section) {
 
 function createPageWrapper(section, components) {
   return {
-    render: h =>
+    render: (h) =>
       h(PageWrapper, {
         props: {
           section: section,
-          components: components
-        }
-      })
+          components: components,
+        },
+      }),
   }
 }
 
 function createSectionPage(section, components) {
   return {
-    render: h =>
+    render: (h) =>
       h(SectionPage, {
         props: {
           section: section,
-          components: components
-        }
-      })
+          components: components,
+        },
+      }),
   }
 }
 
@@ -63,7 +63,7 @@ function createComponentRoute(component) {
   return {
     path: createUrl(component.name, false),
     name: component.name,
-    component: createComponentPage(component)
+    component: createComponentPage(component),
   }
 }
 
@@ -72,15 +72,15 @@ function createComponentPage(component) {
     // Necessary to keep reactivity (hot-reload)
     data() {
       return {
-        component
+        component,
       }
     },
-    render: h =>
+    render: (h) =>
       h(ComponentPage, {
         props: {
-          component
-        }
-      })
+          component,
+        },
+      }),
   }
 }
 
@@ -103,7 +103,7 @@ const router = new VueRouter({
   scrollBehavior(to, from, savedPosition) {
     if (to.hash) {
       return {
-        selector: to.hash
+        selector: to.hash,
       }
     }
     if (savedPosition) {
@@ -111,7 +111,7 @@ const router = new VueRouter({
     } else {
       return { x: 0, y: 0 }
     }
-  }
+  },
 })
 
 // Redirect for github pages

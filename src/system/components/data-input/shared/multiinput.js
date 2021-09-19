@@ -8,8 +8,8 @@ export default {
      */
     multiple: {
       type: Boolean,
-      default: false
-    }
+      default: false,
+    },
   },
   methods: {
     selectOption(option) {
@@ -42,6 +42,6 @@ export default {
         return this.innerValue.includes(option)
       }
       return this.innerValue === option
-    }
-  }
+    },
+  },
 }

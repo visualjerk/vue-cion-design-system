@@ -1,12 +1,12 @@
 <template>
-  <component 
+  <component
     :is="tag"
     class="ds-chip"
     :class="[
       `ds-chip-size-${size}`,
       `ds-chip-${color}`,
       removable && 'ds-chip-removable',
-      round && 'ds-chip-round'
+      round && 'ds-chip-round',
     ]"
   >
     <slot />
@@ -14,7 +14,8 @@
       v-if="removable"
       @click="remove"
       class="ds-chip-close"
-      tabindex="-1">
+      tabindex="-1"
+    >
       <ds-icon name="close" />
     </button>
   </component>
@@ -31,47 +32,47 @@ export default {
   props: {
     /**
      * The background color used for the chip.
-     * @options medium|inverse|primary|success|warning|danger
+     * @values medium, inverse, primary, success, warning, danger
      */
     color: {
       type: String,
       default: 'medium',
-      validator: value => {
+      validator: (value) => {
         return value.match(/(medium|inverse|primary|success|warning|danger)/)
-      }
+      },
     },
     /**
      * The size used for the text.
-     * @options base|large|small
+     * @values base, large, small
      */
     size: {
       type: String,
       default: 'base',
-      validator: value => {
+      validator: (value) => {
         return value.match(/(base|large|small)/)
-      }
+      },
     },
     /**
      * Whether the chip should be removeable
      */
     removable: {
       type: Boolean,
-      default: false
+      default: false,
     },
     /**
      * Whether the chip should be rounded
      */
     round: {
       type: Boolean,
-      default: true
+      default: true,
     },
     /**
      * The html element name used for the text.
      */
     tag: {
       type: String,
-      default: 'span'
-    }
+      default: 'span',
+    },
   },
   methods: {
     remove() {
@@ -81,12 +82,11 @@ export default {
        * @event remove
        */
       this.$emit('remove')
-    }
-  }
+    },
+  },
 }
 </script>
 
-<style lang="scss" src="./style.scss">
-</style>
+<style lang="scss" src="./style.scss"></style>
 
 <docs src="./demo.md"></docs>

@@ -1,16 +1,14 @@
 <template>
   <ds-form-item>
     <div class="ds-input-wrap">
-      <div
-        v-if="icon"
-        class="ds-input-icon">
-        <ds-icon :name="icon"/>
+      <div v-if="icon" class="ds-input-icon">
+        <ds-icon :name="icon" />
       </div>
       <component
         class="ds-input"
         :class="[
           icon && `ds-input-has-icon`,
-          iconRight && `ds-input-has-icon-right`
+          iconRight && `ds-input-has-icon-right`,
         ]"
         :id="id"
         :name="name ? name : model"
@@ -26,11 +24,10 @@
         @focus="handleFocus"
         @blur="handleBlur"
         :rows="type === 'textarea' ? rows : null"
-        v-html="type === 'textarea' ? innerValue : null"/>
-      <div
-        v-if="iconRight"
-        class="ds-input-icon-right">
-        <ds-icon :name="iconRight"/>
+        v-html="type === 'textarea' ? innerValue : null"
+      />
+      <div v-if="iconRight" class="ds-input-icon-right">
+        <ds-icon :name="iconRight" />
       </div>
     </div>
   </ds-form-item>
@@ -49,50 +46,50 @@ export default {
   props: {
     /**
      * The type of this input.
-     * @options url|text|password|email|search|textarea
+     * @values url, text, password, email, search, textarea
      */
     type: {
       type: String,
       default: 'text',
-      validator: value => {
+      validator: (value) => {
         return value.match(/(url|text|password|email|search|textarea)/)
-      }
+      },
     },
     /**
      * The placeholder shown when value is empty.
      */
     placeholder: {
       type: String,
-      default: null
+      default: null,
     },
     /**
      * Whether the input should be automatically focused
      */
     autofocus: {
       type: Boolean,
-      default: false
+      default: false,
     },
     /**
      * How many rows this input should have (only for type="textarea")
      */
     rows: {
       type: [String, Number],
-      default: 1
+      default: 1,
     },
     /**
      * The name of the input's icon.
      */
     icon: {
       type: String,
-      default: null
+      default: null,
     },
     /**
      * The name of the input's right icon.
      */
     iconRight: {
       type: String,
-      default: null
-    }
+      default: null,
+    },
   },
   computed: {
     tag() {
@@ -100,12 +97,11 @@ export default {
         return 'textarea'
       }
       return 'input'
-    }
-  }
+    },
+  },
 }
 </script>
 
-<style lang="scss" src="./style.scss">
-</style>
+<style lang="scss" src="./style.scss"></style>
 
 <docs src="./demo.md"></docs>

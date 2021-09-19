@@ -1,10 +1,9 @@
 <template>
-  <component 
+  <component
     :is="ordered ? 'ol' : 'ul'"
     class="ds-list"
-    :class="[
-      size && `ds-list-size-${size}`
-  ]">
+    :class="[size && `ds-list-size-${size}`]"
+  >
     <slot />
   </component>
 </template>
@@ -18,13 +17,13 @@ export default {
   name: 'DsList',
   provide() {
     return {
-      $parentList: this
+      $parentList: this,
     }
   },
   inject: {
     $parentList: {
-      default: null
-    }
+      default: null,
+    },
   },
   props: {
     /**
@@ -32,31 +31,30 @@ export default {
      */
     ordered: {
       type: Boolean,
-      default: false
+      default: false,
     },
     /**
      * The size used for the list.
-     * @options small|base|large|x-large
+     * @values small, base, large, x-large
      */
     size: {
       type: String,
       default: null,
-      validator: value => {
+      validator: (value) => {
         return value.match(/(small|base|large|x-large)/)
-      }
+      },
     },
     /**
      * The name of the list icon.
      */
     icon: {
       type: String,
-      default: 'angle-right'
-    }
-  }
+      default: 'angle-right',
+    },
+  },
 }
 </script>
 
-<style lang="scss" src="./style.scss">
-</style>
+<style lang="scss" src="./style.scss"></style>
 
 <docs src="./demo.md"></docs>

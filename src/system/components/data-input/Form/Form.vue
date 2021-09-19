@@ -3,10 +3,9 @@
     class="ds-form"
     @submit.prevent="submit"
     novalidate="true"
-    autocomplete="off">
-    <slot 
-      :errors="errors" 
-      :reset="reset" />
+    autocomplete="off"
+  >
+    <slot :errors="errors" :reset="reset" />
   </form>
 </template>
 
@@ -23,7 +22,7 @@ export default {
   name: 'DsForm',
   provide() {
     return {
-      $parentForm: this
+      $parentForm: this,
     }
   },
   props: {
@@ -32,21 +31,21 @@ export default {
      */
     value: {
       type: Object,
-      required: true
+      required: true,
     },
     /**
      * The async-validator schema used for the form data.
      */
     schema: {
       type: Object,
-      default: () => ({})
-    }
+      default: () => ({}),
+    },
   },
   data() {
     return {
       newData: null,
       subscriber: [],
-      errors: null
+      errors: null,
     }
   },
   watch: {
@@ -55,8 +54,8 @@ export default {
         this.newData = cloneDeep(value)
         this.notify(value, this.errors)
       },
-      deep: true
-    }
+      deep: true,
+    },
   },
   methods: {
     submit() {
@@ -84,7 +83,7 @@ export default {
       const warn = console.warn;
       // eslint-disable-next-line
       console.warn = () => {};
-      validator.validate(this.newData, errors => {
+      validator.validate(this.newData, (errors) => {
         if (errors) {
           this.errors = errors.reduce((errorObj, error) => {
             const result = { ...errorObj }
@@ -115,7 +114,7 @@ export default {
       }
     },
     notify(data, errors) {
-      this.subscriber.forEach(cb => {
+      this.subscriber.forEach((cb) => {
         cb(cloneDeep(data), errors)
       })
     },
@@ -125,15 +124,14 @@ export default {
     },
     reset() {
       this.$emit('input', cloneDeep(this.value))
-    }
+    },
   },
   created() {
     this.newData = cloneDeep(this.value)
-  }
+  },
 }
 </script>
 
-<style lang="scss" src="./style.scss">
-</style>
+<style lang="scss" src="./style.scss"></style>
 
 <docs src="./demo.md"></docs>

@@ -10,21 +10,16 @@
       danger && `ds-button-danger`,
       ghost && `ds-button-ghost`,
       iconOnly && `ds-button-icon-only`,
-      hover && `ds-button-hover`
+      hover && `ds-button-hover`,
     ]"
     v-bind="bindings"
-    :is="linkTag">
-    <ds-icon 
-      v-if="icon" 
-      :name="icon"/>
-    <span 
-      class="ds-button-text"
-      v-if="$slots.default">
+    :is="linkTag"
+  >
+    <ds-icon v-if="icon" :name="icon" />
+    <span class="ds-button-text" v-if="$slots.default">
       <slot />
     </span>
-    <ds-icon 
-      v-if="iconRight" 
-      :name="iconRight"/>
+    <ds-icon v-if="iconRight" :name="iconRight" />
   </component>
 </template>
 
@@ -43,22 +38,22 @@ export default {
       type: [String, Object],
       default() {
         return null
-      }
+      },
     },
     /**
      * The size used for the text.
-     * @options small|base|large
+     * @values small, base, large
      */
     size: {
       type: String,
       default: null,
-      validator: value => {
+      validator: (value) => {
         return value.match(/(small|base|large)/)
-      }
+      },
     },
     /**
      * The component / tag used for this button
-     * @options router-link|a|button
+     * @values router-link, a, button
      */
     linkTag: {
       type: String,
@@ -66,66 +61,66 @@ export default {
         const defaultLink = this.$router ? 'router-link' : 'a'
         return this.path ? defaultLink : 'button'
       },
-      validator: value => {
+      validator: (value) => {
         return value.match(/(router-link|a|button)/)
-      }
+      },
     },
     /**
      * Fill the full width
      */
     fullwidth: {
       type: Boolean,
-      default: false
+      default: false,
     },
     /**
      * Primary style
      */
     primary: {
       type: Boolean,
-      default: false
+      default: false,
     },
     /**
      * Secondary style
      */
     secondary: {
       type: Boolean,
-      default: false
+      default: false,
     },
     /**
      * Danger style
      */
     danger: {
       type: Boolean,
-      default: false
+      default: false,
     },
     /**
      * Toggle the hover state
      */
     hover: {
       type: Boolean,
-      default: false
+      default: false,
     },
     /**
      * Make the buttons background transparent
      */
     ghost: {
       type: Boolean,
-      default: false
+      default: false,
     },
     /**
      * The name of the buttons icon.
      */
     icon: {
       type: String,
-      default: null
+      default: null,
     },
     /**
      * The name of the buttons right icon.
      */
     iconRight: {
       type: String,
-      default: null
-    }
+      default: null,
+    },
   },
   computed: {
     bindings() {
@@ -140,7 +135,7 @@ export default {
     },
     iconOnly() {
       return !this.$slots.default && this.icon && !this.iconRight
-    }
+    },
   },
   methods: {
     handleClick(event) {
@@ -152,12 +147,11 @@ export default {
        * @event click
        */
       this.$emit('click', event, this.route)
-    }
-  }
+    },
+  },
 }
 </script>
 
-<style lang="scss" src="./style.scss">
-</style>
+<style lang="scss" src="./style.scss"></style>
 
 <docs src="./demo.md"></docs>

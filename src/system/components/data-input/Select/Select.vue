@@ -2,20 +2,17 @@
   <ds-form-item>
     <div
       class="ds-select-wrap"
-      :class="[
-        isOpen && `ds-select-is-open`
-      ]"
+      :class="[isOpen && `ds-select-is-open`]"
       :tabindex="searchable ? -1 : tabindex"
       v-click-outside="closeAndBlur"
       @keydown.tab="closeAndBlur"
       @keydown.self.down.prevent="pointerNext"
       @keydown.self.up.prevent="pointerPrev"
       @keypress.enter.prevent.stop.self="selectPointerOption"
-      @keyup.esc="close">
-      <div
-        v-if="icon"
-        class="ds-select-icon">
-        <ds-icon :name="icon"/>
+      @keyup.esc="close"
+    >
+      <div v-if="icon" class="ds-select-icon">
+        <ds-icon :name="icon" />
       </div>
       <div
         class="ds-select"
@@ -23,24 +20,23 @@
         :class="[
           icon && `ds-select-has-icon`,
           iconRight && `ds-select-has-icon-right`,
-          multiple && `ds-select-multiple`
-      ]">
-        <div
-          v-if="multiple"
-          class="ds-selected-options">
+          multiple && `ds-select-multiple`,
+        ]"
+      >
+        <div v-if="multiple" class="ds-selected-options">
           <div
             class="ds-selected-option"
             v-for="(value, index) in innerValue"
-            :key="value[labelProp] || value">
+            :key="value[labelProp] || value"
+          >
             <!-- @slot Slot to provide a custom selected option display -->
-            <slot
-              name="optionitem"
-              :value="value">
+            <slot name="optionitem" :value="value">
               <ds-chip
                 removable
                 @remove="deselectOption(index)"
                 color="primary"
-                :size="size">
+                :size="size"
+              >
                 {{ value[labelProp] || value }}
               </ds-chip>
             </slot>
@@ -63,21 +59,15 @@
             @keydown.down.prevent="handleKeyDown"
             @keydown.up.prevent="handleKeyUp"
             @keypress.enter.prevent.stop="selectPointerOption"
-            @keyup.esc="close">
+            @keyup.esc="close"
+          />
         </div>
-        <div
-          v-else
-          class="ds-select-value">
+        <div v-else class="ds-select-value">
           <!-- @slot Slot to provide a custom value display -->
-          <slot
-            v-if="innerValue"
-            name="value"
-            :value="innerValue">
+          <slot v-if="innerValue" name="value" :value="innerValue">
             {{ innerValue[labelProp] || innerValue }}
           </slot>
-          <div
-            v-else-if="placeholder"
-            class="ds-select-placeholder">
+          <div v-else-if="placeholder" class="ds-select-placeholder">
             {{ placeholder }}
           </div>
         </div>
@@ -100,45 +90,43 @@
           @keydown.down.prevent="handleKeyDown"
           @keydown.up.prevent="handleKeyUp"
           @keypress.enter.prevent.stop="selectPointerOption"
-          @keyup.esc="close">
+          @keyup.esc="close"
+        />
       </div>
       <div class="ds-select-dropdown">
         <div
           class="ds-select-dropdown-message"
-          v-if="!options || !options.length">
+          v-if="!options || !options.length"
+        >
           {{ noOptionsAvailable }}
         </div>
         <div
           class="ds-select-dropdown-message"
-          v-else-if="!filteredOptions.length">
+          v-else-if="!filteredOptions.length"
+        >
           {{ noOptionsFound }} "{{ searchString }}"
         </div>
-        <ul 
-          class="ds-select-options" 
-          v-else>
+        <ul class="ds-select-options" v-else>
           <li
             class="ds-select-option"
             :class="[
               isSelected(option) && `ds-select-option-is-selected`,
-              pointer === index && `ds-select-option-hover`
+              pointer === index && `ds-select-option-hover`,
             ]"
             v-for="(option, index) in filteredOptions"
             @click="handleSelect(option)"
             @mouseover="setPointer(index)"
-            :key="option[labelProp] || option">
+            :key="option[labelProp] || option"
+          >
             <!-- @slot Slot to provide custom option items -->
-            <slot
-              name="option"
-              :option="option">
+            <slot name="option" :option="option">
               {{ option[labelProp] || option }}
             </slot>
           </li>
         </ul>
       </div>
-      <div
-        v-if="iconRight"
-        class="ds-select-icon-right">
-        <ds-icon :name="iconRight"/>
+      <div v-if="iconRight" class="ds-select-icon-right">
+        <ds-icon :name="iconRight" />
       </div>
     </div>
   </ds-form-item>
@@ -162,16 +150,16 @@ export default {
   components: {
     DsFormItem,
     DsChip,
-    DsIcon
+    DsIcon,
   },
   directives: {
-    ClickOutside
+    ClickOutside,
   },
   data() {
     return {
       searchString: '',
       pointer: 0,
-      isOpen: false
+      isOpen: false,
     }
   },
   props: {
@@ -180,28 +168,28 @@ export default {
      */
     placeholder: {
       type: String,
-      default: null
+      default: null,
     },
     /**
      * Whether the input should be automatically focused
      */
     autofocus: {
       type: Boolean,
-      default: false
+      default: false,
     },
     /**
      * The name of the input's icon
      */
     icon: {
       type: String,
-      default: null
+      default: null,
     },
     /**
      * The name of the input's right icon
      */
     iconRight: {
       type: String,
-      default: 'angle-down'
+      default: 'angle-down',
     },
     /**
      * The select options.
@@ -210,36 +198,36 @@ export default {
       type: Array,
       default() {
         return []
-      }
+      },
     },
     /**
      * The prop to use as the label when options are objects
      */
     labelProp: {
       type: String,
-      default: 'label'
+      default: 'label',
     },
     /**
      * Whether the options are searchable
      */
     searchable: {
       type: Boolean,
-      default: true
+      default: true,
     },
     /**
      * Message to show when no options are available
      */
     noOptionsAvailable: {
       type: String,
-      default: 'No options available.'
+      default: 'No options available.',
     },
     /**
      * Message to show when the search result is empty
      */
     noOptionsFound: {
       type: String,
-      default: 'No options found for:'
-    }
+      default: 'No options found for:',
+    },
   },
   computed: {
     filteredOptions() {
@@ -248,9 +236,9 @@ export default {
       }
       const searchParts = this.searchString.split(' ')
 
-      return this.options.filter(option => {
+      return this.options.filter((option) => {
         const value = option.value || option
-        return searchParts.every(part => {
+        return searchParts.every((part) => {
           if (!part) {
             return true
           }
@@ -260,7 +248,7 @@ export default {
     },
     pointerMax() {
       return this.filteredOptions.length - 1
-    }
+    },
   },
   watch: {
     pointerMax(max) {
@@ -269,7 +257,7 @@ export default {
           this.pointer = max
         })
       }
-    }
+    },
   },
   methods: {
     handleSelect(options) {
@@ -347,12 +335,11 @@ export default {
     },
     selectPointerOption() {
       this.handleSelect(this.filteredOptions[this.pointer])
-    }
-  }
+    },
+  },
 }
 </script>
 
-<style lang="scss" src="./style.scss">
-</style>
+<style lang="scss" src="./style.scss"></style>
 
 <docs src="./demo.md"></docs>

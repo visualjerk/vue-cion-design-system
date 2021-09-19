@@ -1,7 +1,5 @@
 <template>
-  <component
-    v-if="parsedComponent"
-    :is="parsedComponent"/>
+  <component v-if="parsedComponent" :is="parsedComponent" />
 </template>
 
 <script>
@@ -25,12 +23,12 @@ export default {
   props: {
     content: {
       type: String,
-      required: true
+      required: true,
     },
     components: {
       type: Object,
-      default: null
-    }
+      default: null,
+    },
   },
   data() {
     return {
@@ -44,7 +42,7 @@ export default {
         .use(insert)
         .use(mark)
         .use(katex, { throwOnError: false, errorColor: ' #cc0000' })
-        .use(tasklists)
+        .use(tasklists),
     }
   },
   computed: {
@@ -53,7 +51,7 @@ export default {
         return false
       }
       return this.parseComponent()
-    }
+    },
   },
   methods: {
     parseComponent() {
@@ -64,7 +62,7 @@ export default {
       this.md.set({
         html: true,
         xhtmlOut: true,
-        linkify: true
+        linkify: true,
       })
 
       const html = this.md.render(this.content) || ''
@@ -90,7 +88,7 @@ export default {
         // Handle component tags
         if (
           $(item).children().length &&
-          Array.from($(item).children()).some(c => c.name.indexOf('-') > -1)
+          Array.from($(item).children()).some((c) => c.name.indexOf('-') > -1)
         ) {
           $(item).replaceWith($('<div>' + $(item).html() + '</div>'))
         } else {
@@ -130,14 +128,13 @@ export default {
       }
 
       this.$options.components['parsed-markdown-component'] = {
-        ...component
+        ...component,
       }
 
       return 'parsed-markdown-component'
-    }
-  }
+    },
+  },
 }
 </script>
 
-<style lang="scss">
-</style>
+<style lang="scss"></style>

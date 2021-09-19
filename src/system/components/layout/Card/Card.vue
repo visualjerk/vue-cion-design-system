@@ -7,39 +7,30 @@
       primary && `ds-card-primary`,
       secondary && `ds-card-secondary`,
       centered && `ds-card-centered`,
-      hover && `ds-card-hover`
-  ]">
-    <div
-      class="ds-card-image"
-      v-if="image || $slots.image">
+      hover && `ds-card-hover`,
+    ]"
+  >
+    <div class="ds-card-image" v-if="image || $slots.image">
       <!-- @slot Content of the card's image -->
       <slot name="image">
-        <img :src="image" >
+        <img :src="image" />
       </slot>
     </div>
-    <div
-      class="ds-card-icon"
-      v-if="icon">
-      <ds-icon :name="icon"/>
+    <div class="ds-card-icon" v-if="icon">
+      <ds-icon :name="icon" />
     </div>
-    <header
-      class="ds-card-header"
-      v-if="header || $slots.header">
+    <header class="ds-card-header" v-if="header || $slots.header">
       <!-- @slot Content of the card's header -->
       <slot name="header">
-        <ds-heading 
-          :tag="headerTag"
-          size="h3">{{ header }}</ds-heading>
+        <ds-heading :tag="headerTag" size="h3">{{ header }}</ds-heading>
       </slot>
     </header>
     <div class="ds-card-content">
       <slot />
     </div>
-    <footer
-      class="ds-card-footer"
-      v-if="$slots.footer">
+    <footer class="ds-card-footer" v-if="$slots.footer">
       <!-- @slot Content of the card's footer -->
-      <slot name="footer"/>
+      <slot name="footer" />
     </footer>
   </component>
 </template>
@@ -57,73 +48,72 @@ export default {
      */
     tag: {
       type: String,
-      default: 'article'
+      default: 'article',
     },
     /**
      * The card's header
      */
     header: {
       type: String,
-      default: null
+      default: null,
     },
     /**
      * The card's header tag
-     * @options h1|h2|h3|h4|h5|h6
+     * @values h1, h2, h3, h4, h5, h6
      */
     headerTag: {
       type: String,
       default: 'h3',
-      validator: value => {
+      validator: (value) => {
         return value.match(/(h1|h2|h3|h4|h5|h6)/)
-      }
+      },
     },
     /**
      * The card's image
      */
     image: {
       type: String,
-      default: null
+      default: null,
     },
     /**
      * The card's icon
      */
     icon: {
       type: String,
-      default: null
+      default: null,
     },
     /**
      * Highlight with primary color
      */
     primary: {
       type: Boolean,
-      default: false
+      default: false,
     },
     /**
      * Highlight with secondary color
      */
     secondary: {
       type: Boolean,
-      default: false
+      default: false,
     },
     /**
      * Centers the content
      */
     centered: {
       type: Boolean,
-      default: false
+      default: false,
     },
     /**
      * Makes the card hoverable
      */
     hover: {
       type: Boolean,
-      default: false
-    }
-  }
+      default: false,
+    },
+  },
 }
 </script>
 
-<style lang="scss" src="./style.scss">
-</style>
+<style lang="scss" src="./style.scss"></style>
 
 <docs src="./demo.md"></docs>

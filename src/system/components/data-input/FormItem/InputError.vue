@@ -1,8 +1,6 @@
 <template>
   <transition name="ds-input-error">
-    <div
-      class="ds-input-error"
-      v-show="!!error">
+    <div class="ds-input-error" v-show="!!error">
       {{ error }}
     </div>
   </transition>
@@ -19,8 +17,8 @@ export default {
     error: {
       type: String,
       required: false,
-      default: null
-    }
-  }
+      default: null,
+    },
+  },
 }
 </script>

@@ -8,8 +8,8 @@ describe('Select.vue', () => {
         const wrapper = shallowMount(Comp, {
           propsData: {
             value: '3',
-            options: ['1', '2', '3']
-          }
+            options: ['1', '2', '3'],
+          },
         })
         wrapper.vm.selectOption(wrapper.vm.options[0])
         expect(wrapper.emitted().input[0]).toEqual(['1'])
@@ -18,8 +18,8 @@ describe('Select.vue', () => {
         const wrapper = shallowMount(Comp, {
           propsData: {
             value: '3',
-            options: ['1', '2', '3']
-          }
+            options: ['1', '2', '3'],
+          },
         })
         wrapper.find('.ds-select-option').trigger('click')
         expect(wrapper.emitted().input[0]).toEqual(['1'])
@@ -32,8 +32,8 @@ describe('Select.vue', () => {
       const wrapper = shallowMount(Comp, {
         propsData: {
           value: '1',
-          options: ['1', '2', '3']
-        }
+          options: ['1', '2', '3'],
+        },
       })
       expect(wrapper.vm.innerValue).toEqual('1')
     })
@@ -42,8 +42,8 @@ describe('Select.vue', () => {
         propsData: {
           value: ['1'],
           options: ['1', '2', '3'],
-          multiple: true
-        }
+          multiple: true,
+        },
       })
       expect(wrapper.vm.innerValue).toEqual(['1'])
     })
@@ -54,8 +54,8 @@ describe('Select.vue', () => {
       const wrapper = shallowMount(Comp, {
         propsData: {
           value: '1',
-          options: ['1', '2', '3']
-        }
+          options: ['1', '2', '3'],
+        },
       })
       const option = wrapper.find('.ds-select-option')
       expect(option.classes()).toContain('ds-select-option-is-selected')
@@ -65,8 +65,8 @@ describe('Select.vue', () => {
         propsData: {
           value: ['1', '2'],
           options: ['1', '2', '3'],
-          multiple: true
-        }
+          multiple: true,
+        },
       })
       const option = wrapper.findAll('.ds-select-option')
       expect(option.at(0).classes()).toContain('ds-select-option-is-selected')
@@ -79,8 +79,8 @@ describe('Select.vue', () => {
       const wrapper = shallowMount(Comp, {
         propsData: {
           value: '3',
-          options: ['1', '2', '3']
-        }
+          options: ['1', '2', '3'],
+        },
       })
       wrapper.vm.selectOption(wrapper.vm.options[0])
       expect(wrapper.vm.innerValue).toEqual('1')
@@ -90,8 +90,8 @@ describe('Select.vue', () => {
         propsData: {
           value: ['3'],
           options: ['1', '2', '3'],
-          multiple: true
-        }
+          multiple: true,
+        },
       })
       wrapper.vm.selectOption(wrapper.vm.options[0])
       expect(wrapper.vm.innerValue).toEqual(['3', '1'])
@@ -101,8 +101,8 @@ describe('Select.vue', () => {
         propsData: {
           value: ['3', '1'],
           options: ['1', '2', '3'],
-          multiple: true
-        }
+          multiple: true,
+        },
       })
       wrapper.vm.selectOption(wrapper.vm.options[0])
       expect(wrapper.vm.innerValue).toEqual(['3'])
@@ -113,8 +113,8 @@ describe('Select.vue', () => {
     test('should filter options by search string', () => {
       const wrapper = shallowMount(Comp, {
         propsData: {
-          options: ['cat', 'duck', 'dog']
-        }
+          options: ['cat', 'duck', 'dog'],
+        },
       })
       wrapper.vm.searchString = 'do'
       expect(wrapper.vm.filteredOptions).toEqual(['dog'])
@@ -123,8 +123,8 @@ describe('Select.vue', () => {
     test('should be case insensitive', () => {
       const wrapper = shallowMount(Comp, {
         propsData: {
-          options: ['cat', 'duck', 'dog']
-        }
+          options: ['cat', 'duck', 'dog'],
+        },
       })
       wrapper.vm.searchString = 'DO'
       expect(wrapper.vm.filteredOptions).toEqual(['dog'])
@@ -133,8 +133,8 @@ describe('Select.vue', () => {
     test('should ignore spaces', () => {
       const wrapper = shallowMount(Comp, {
         propsData: {
-          options: ['cat', 'duck', 'dog']
-        }
+          options: ['cat', 'duck', 'dog'],
+        },
       })
       wrapper.vm.searchString = 'd o'
       expect(wrapper.vm.filteredOptions).toEqual(['dog'])
@@ -143,19 +143,19 @@ describe('Select.vue', () => {
     test('should display filtered options', () => {
       const wrapper = shallowMount(Comp, {
         propsData: {
-          options: ['cat', 'duck', 'dog']
-        }
+          options: ['cat', 'duck', 'dog'],
+        },
       })
       wrapper.vm.searchString = 'do'
       const filteredOptions = wrapper.findAll('.ds-select-option')
-      expect(filteredOptions.length).toEqual(1)
+      expect(wrapper.vm.filteredOptions).toHaveLength(1)
     })
 
     test('should work when using search input', () => {
       const wrapper = shallowMount(Comp, {
         propsData: {
-          options: ['cat', 'duck', 'dog']
-        }
+          options: ['cat', 'duck', 'dog'],
+        },
       })
       const searchInput = wrapper.find('.ds-select-search')
       searchInput.setValue('do')
@@ -167,8 +167,8 @@ describe('Select.vue', () => {
     test('should be set by mouse over option', () => {
       const wrapper = shallowMount(Comp, {
         propsData: {
-          options: ['1', '2', '3']
-        }
+          options: ['1', '2', '3'],
+        },
       })
       const options = wrapper.findAll('.ds-select-option')
       options.at(2).trigger('mouseover')
@@ -178,8 +178,8 @@ describe('Select.vue', () => {
     test('should be set by pointerNext', () => {
       const wrapper = shallowMount(Comp, {
         propsData: {
-          options: ['1', '2', '3']
-        }
+          options: ['1', '2', '3'],
+        },
       })
       wrapper.vm.pointerNext()
       expect(wrapper.vm.pointer).toEqual(1)
@@ -188,8 +188,8 @@ describe('Select.vue', () => {
     test('should be set to 0 by pointerNext when on last entry', () => {
       const wrapper = shallowMount(Comp, {
         propsData: {
-          options: ['1', '2', '3']
-        }
+          options: ['1', '2', '3'],
+        },
       })
       wrapper.vm.pointer = 2
       wrapper.vm.pointerNext()
@@ -199,8 +199,8 @@ describe('Select.vue', () => {
     test('should be set by pointerPrev', () => {
       const wrapper = shallowMount(Comp, {
         propsData: {
-          options: ['1', '2', '3']
-        }
+          options: ['1', '2', '3'],
+        },
       })
       wrapper.vm.pointer = 1
       wrapper.vm.pointerPrev()
@@ -210,8 +210,8 @@ describe('Select.vue', () => {
     test('should be set to last entry by pointerPrev when 0', () => {
       const wrapper = shallowMount(Comp, {
         propsData: {
-          options: ['1', '2', '3']
-        }
+          options: ['1', '2', '3'],
+        },
       })
       wrapper.vm.pointerPrev()
       expect(wrapper.vm.pointer).toEqual(2)
@@ -220,8 +220,8 @@ describe('Select.vue', () => {
     test('should be set by key down on wrap', () => {
       const wrapper = shallowMount(Comp, {
         propsData: {
-          options: ['1', '2', '3']
-        }
+          options: ['1', '2', '3'],
+        },
       })
       const wrap = wrapper.find('.ds-select-wrap')
       wrap.trigger('keydown.down')
@@ -231,8 +231,8 @@ describe('Select.vue', () => {
     test('should be set by key up on wrap', () => {
       const wrapper = shallowMount(Comp, {
         propsData: {
-          options: ['1', '2', '3']
-        }
+          options: ['1', '2', '3'],
+        },
       })
       const wrap = wrapper.find('.ds-select-wrap')
       wrap.trigger('keydown.up')
@@ -242,8 +242,8 @@ describe('Select.vue', () => {
     test('should be set by key down on search input when open', () => {
       const wrapper = shallowMount(Comp, {
         propsData: {
-          options: ['1', '2', '3']
-        }
+          options: ['1', '2', '3'],
+        },
       })
       wrapper.vm.open()
       const searchInput = wrapper.find('.ds-select-search')
@@ -254,8 +254,8 @@ describe('Select.vue', () => {
     test('should be set by key up on search input when open', () => {
       const wrapper = shallowMount(Comp, {
         propsData: {
-          options: ['1', '2', '3']
-        }
+          options: ['1', '2', '3'],
+        },
       })
       wrapper.vm.open()
       const searchInput = wrapper.find('.ds-select-search')
@@ -266,8 +266,8 @@ describe('Select.vue', () => {
     test('should select option by pointer value', () => {
       const wrapper = shallowMount(Comp, {
         propsData: {
-          options: ['1', '2', '3']
-        }
+          options: ['1', '2', '3'],
+        },
       })
       wrapper.vm.pointer = 1
       wrapper.vm.selectPointerOption()
@@ -277,8 +277,8 @@ describe('Select.vue', () => {
     test('should select option by enter key on wrap', () => {
       const wrapper = shallowMount(Comp, {
         propsData: {
-          options: ['1', '2', '3']
-        }
+          options: ['1', '2', '3'],
+        },
       })
       wrapper.vm.pointer = 1
       const wrap = wrapper.find('.ds-select-wrap')
@@ -289,8 +289,8 @@ describe('Select.vue', () => {
     test('should select option by enter key on search input', () => {
       const wrapper = shallowMount(Comp, {
         propsData: {
-          options: ['1', '2', '3']
-        }
+          options: ['1', '2', '3'],
+        },
       })
       wrapper.vm.pointer = 1
       const searchInput = wrapper.find('.ds-select-search')
@@ -303,8 +303,8 @@ describe('Select.vue', () => {
     const wrapper = shallowMount(Comp, {
       propsData: {
         value: '1',
-        options: ['1', '2', '3']
-      }
+        options: ['1', '2', '3'],
+      },
     })
     expect(wrapper.element).toMatchSnapshot()
   })

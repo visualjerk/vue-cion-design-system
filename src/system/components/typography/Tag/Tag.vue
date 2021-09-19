@@ -1,12 +1,8 @@
 <template>
-  <component 
+  <component
     :is="tag"
     class="ds-tag"
-    :class="[
-      `ds-tag-size-${size}`,
-      `ds-tag-${color}`,
-      round && 'ds-tag-round'
-    ]"
+    :class="[`ds-tag-size-${size}`, `ds-tag-${color}`, round && 'ds-tag-round']"
   >
     <slot />
   </component>
@@ -23,45 +19,44 @@ export default {
   props: {
     /**
      * The background color used for the tag.
-     * @options medium|inverse|primary|success|warning|danger
+     * @values medium, inverse, primary, success, warning, danger
      */
     color: {
       type: String,
       default: 'medium',
-      validator: value => {
+      validator: (value) => {
         return value.match(/(medium|inverse|primary|success|warning|danger)/)
-      }
+      },
     },
     /**
      * The size used for the text.
-     * @options base|large|small
+     * @values base, large, small
      */
     size: {
       type: String,
       default: 'base',
-      validator: value => {
+      validator: (value) => {
         return value.match(/(base|large|small)/)
-      }
+      },
     },
     /**
      * Whether the tag should be round
      */
     round: {
       type: Boolean,
-      default: false
+      default: false,
     },
     /**
      * The html element name used for the text.
      */
     tag: {
       type: String,
-      default: 'span'
-    }
-  }
+      default: 'span',
+    },
+  },
 }
 </script>
 
-<style lang="scss" src="./style.scss">
-</style>
+<style lang="scss" src="./style.scss"></style>
 
 <docs src="./demo.md"></docs>

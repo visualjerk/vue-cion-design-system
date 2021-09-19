@@ -1,9 +1,6 @@
 <template>
   <div :class="`${iframe ? 'vuep-iframe' : ''}`">
-    <vuep
-      :value="template"
-      :options="{ theme: 'vueds' }"
-      :iframe="iframe" />
+    <vuep :value="template" :options="{ theme: 'vueds' }" :iframe="iframe" />
   </div>
 </template>
 
@@ -15,22 +12,22 @@ export default {
   name: 'CodeExample',
   data() {
     return {
-      iframe: false
+      iframe: false,
     }
   },
   props: {
     code: {
       type: String,
-      required: true
-    }
+      required: true,
+    },
   },
   components: {
-    Vuep
+    Vuep,
   },
   computed: {
     template() {
       return this.getCode()
-    }
+    },
   },
   methods: {
     getCode() {
@@ -52,7 +49,7 @@ export default {
       if (codeLines[0].trim() === '<template>') {
         return codeLines.join('\n')
       }
-      const code = codeLines.map(line => '    ' + line).join('\n')
+      const code = codeLines.map((line) => '    ' + line).join('\n')
       /* eslint-disable */
       return `<template>
   <div>

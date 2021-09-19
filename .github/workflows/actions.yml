@@ -1,0 +1,36 @@
+name: NodeJS with Webpack
+
+on:
+  push:
+    branches: [ master ]
+  pull_request:
+    branches: [ master ]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    strategy:
+      matrix:
+        node-version: [14.x, 16.x]
+    
+    steps:
+    - uses: actions/checkout@v2
+
+    - name: Use Node.js ${{ matrix.node-version }}
+      uses: actions/setup-node@v2
+      with:
+        node-version: ${{ matrix.node-version }}
+
+    - name: Install dependencies
+      run: yarn install
+    - name: Lint files
+      run: yarn lint
+    - name: Run tests
+      run: yarn theo && yarn test:unit
+    - name: Build library
+      run: yarn build:lib
+    - name: Build documentation
+      run: yarn build
+    - name: Build examples
+      run: cd _examples/landingpage && yarn install && yarn build

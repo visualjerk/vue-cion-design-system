@@ -5,31 +5,32 @@
       `ds-menu-item-level-${level}`,
       $parentMenu.inverse && 'ds-menu-item-inverse',
       $parentMenu.navbar && 'ds-menu-item-navbar',
-      showSubmenu && 'ds-menu-item-show-submenu'
+      showSubmenu && 'ds-menu-item-show-submenu',
     ]"
     @mouseover="handleMouseOver"
     @mouseout="handleMouseOut"
     @click.capture="handleClick"
-    v-click-outside="handleClickOutside">
+    v-click-outside="handleClickOutside"
+  >
     <component
       v-if="route"
       class="ds-menu-item-link"
       v-bind="bindings"
       :exact="isExact"
       :is="linkTag"
-      ref="link">
+      ref="link"
+    >
       <slot>
         {{ name }}
       </slot>
     </component>
-    <ul
-      class="ds-menu-item-submenu"
-      v-if="hasSubmenu">
+    <ul class="ds-menu-item-submenu" v-if="hasSubmenu">
       <ds-menu-item
         v-for="child in route.children"
         :key="child.name"
         :route="child"
-        :parents="[...parents, route]"/>
+        :parents="[...parents, route]"
+      />
     </ul>
   </li>
 </template>
@@ -45,11 +46,11 @@ export default {
   name: 'DsMenuItem',
   inject: {
     $parentMenu: {
-      default: null
-    }
+      default: null,
+    },
   },
   directives: {
-    ClickOutside
+    ClickOutside,
   },
   props: {
     /**
@@ -59,7 +60,7 @@ export default {
       type: Object,
       default() {
         return null
-      }
+      },
     },
     /**
      * The parents of this route
@@ -68,11 +69,11 @@ export default {
       type: Array,
       default() {
         return []
-      }
+      },
     },
     /**
      * The component / tag used for the link of this route
-     * @options router-link|a
+     * @values router-link, a
      */
     linkTag: {
       type: String,
@@ -81,16 +82,16 @@ export default {
           ? this.$parentMenu.linkTag
           : 'router-link'
       },
-      validator: value => {
+      validator: (value) => {
         return value.match(/(router-link|a)/)
-      }
-    }
+      },
+    },
   },
   data() {
     return {
       showSubmenu: false,
       openMenuTimeout: null,
-      closeMenuTimeout: null
+      closeMenuTimeout: null,
     }
   },
   computed: {
@@ -118,7 +119,7 @@ export default {
         bindings.href = this.url
       }
       return bindings
-    }
+    },
   },
   methods: {
     handleMouseOver() {
@@ -167,7 +168,7 @@ export default {
     },
     handleClickOutside() {
       this.showSubmenu = false
-    }
-  }
+    },
+  },
 }
 </script>

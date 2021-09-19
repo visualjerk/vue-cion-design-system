@@ -5,14 +5,16 @@
       <ds-input
         v-model="searchString"
         placeholder="Filter menu ..."
-        icon="search" />
+        icon="search"
+      />
     </div>
     <ds-menu
       @navigate="$emit('navigate')"
       :routes="routes"
       :url-parser="urlParser"
       :name-parser="nameParser"
-      :is-exact="isExact"/>
+      :is-exact="isExact"
+    />
   </div>
 </template>
 
@@ -21,38 +23,38 @@ import Themer from './Themer'
 export default {
   name: 'Navigation',
   components: {
-    Themer
+    Themer,
   },
   data() {
     return {
-      searchString: ''
+      searchString: '',
     }
   },
   computed: {
     routes() {
-      const routes = this.$router.options.routes.filter(route => {
+      const routes = this.$router.options.routes.filter((route) => {
         return route.path !== '*'
       })
       return routes
-        .map(route => {
+        .map((route) => {
           const [parent, ...children] = [...route.children]
           parent.children = children.filter(this.fitsSearch)
           return parent
         })
-        .filter(route => {
+        .filter((route) => {
           return route.children.length || this.fitsSearch(route)
         })
     },
     searchParts() {
       return this.searchString.split(' ')
-    }
+    },
   },
   methods: {
     fitsSearch(route) {
       if (!this.searchString) {
         return true
       }
-      return this.searchParts.every(search => {
+      return this.searchParts.every((search) => {
         if (!search) {
           return true
         }
@@ -64,13 +66,13 @@ export default {
     },
     urlParser(route) {
       return {
-        name: route.name
+        name: route.name,
       }
     },
     isExact(url) {
       return url.name === 'Introduction'
-    }
-  }
+    },
+  },
 }
 </script>
 

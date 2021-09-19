@@ -7,5 +7,5 @@ export default {
     Vue.use(filters)
     Vue.use(utils)
     Vue.use(themer)
-  }
+  },
 }

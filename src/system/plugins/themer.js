@@ -10,10 +10,10 @@ export default {
         console.warn(`Theme '${name}' not found.`)
         return
       }
-      const theme = { ...themeMap.base, ... themeMap[name] }
+      const theme = { ...themeMap.base, ...themeMap[name] }
       useTheme(theme)
     }
-  }
+  },
 }
 
 const useTheme = (theme) => {
@@ -21,9 +21,11 @@ const useTheme = (theme) => {
     stylesheet = document.createElement('style')
     document.querySelector('head').append(stylesheet)
   }
-  const variables = Object.keys(theme).map(key => {
-    return `${key}: ${theme[key]};`
-  }).join('\n')
+  const variables = Object.keys(theme)
+    .map((key) => {
+      return `${key}: ${theme[key]};`
+    })
+    .join('\n')
   stylesheet.innerHTML = `:root {
   ${variables}
 }`

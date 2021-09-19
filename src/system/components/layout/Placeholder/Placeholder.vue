@@ -1,7 +1,5 @@
 <template>
-  <component 
-    :is="tag"
-    class="ds-placeholder">
+  <component :is="tag" class="ds-placeholder">
     <div class="ds-placeholder-content">
       <slot />
     </div>
@@ -21,13 +19,12 @@ export default {
      */
     tag: {
       type: String,
-      default: 'div'
-    }
-  }
+      default: 'div',
+    },
+  },
 }
 </script>
 
-<style lang="scss" src="./style.scss">
-</style>
+<style lang="scss" src="./style.scss"></style>
 
 <docs src="./demo.md"></docs>
