@@ -20,6 +20,7 @@ exports[`Select.vue matches snapshot 1`] = `
       </div>
        
       <input
+        autocomplete="off"
         class="ds-select-search"
         tabindex="0"
       />

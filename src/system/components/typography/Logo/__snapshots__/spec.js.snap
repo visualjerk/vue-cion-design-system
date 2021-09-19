@@ -4,7 +4,7 @@ exports[`Logo.vue matches snapshot 1`] = `
 <div
   class="ds-logo"
 >
-  <svg-logo-stub
+  <svg-logo
     class="ds-logo-svg"
   />
 </div>
