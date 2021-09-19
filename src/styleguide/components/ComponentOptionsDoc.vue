@@ -16,8 +16,8 @@
               <ds-tag v-if="row.required" color="warning">required</ds-tag>
             </div>
             <ds-space :margin-bottom="null" margin-top="small">
-              <div v-if="row.options">
-                <ds-chip size="small" v-for="option in row.options" :key="option">
+              <div v-if="row.values">
+                <ds-chip size="small" v-for="option in row.values" :key="option">
                   {{ option }}
                 </ds-chip>
               </div>

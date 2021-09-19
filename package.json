@@ -70,7 +70,7 @@
     "sass-loader": "^10",
     "theo": "^8.0.0-beta.2",
     "vue-click-outside": "^1.0.7",
-    "vue-docgen-api": "^3.0.0",
+    "vue-docgen-api": "^4.41.2",
     "vue-router": "^3.0.1",
     "vue-svg-loader": "^0.16.0",
     "vue-template-compiler": "^2.5.17",

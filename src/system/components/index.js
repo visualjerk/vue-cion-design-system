@@ -20,10 +20,13 @@ context.keys().forEach(key => {
   }
 
   const hidden =
-    meta.tags.access && meta.tags.access[0].description === 'private'
+    meta.tags &&
+    meta.tags.access &&
+    meta.tags.access[0].description === 'private'
 
   if (!hidden) {
-    const parent = meta.tags.see ? meta.tags.see[0].description : null
+    const parent =
+      meta.tags && meta.tags.see ? meta.tags.see[0].description : null
     const componentData = {
       ...meta,
       parent,
