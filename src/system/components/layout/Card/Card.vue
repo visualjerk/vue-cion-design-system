@@ -68,7 +68,7 @@ export default {
     },
     /**
      * The card's header tag
-     * @options h1|h2|h3|h4|h5|h6
+     * @values h1, h2, h3, h4, h5, h6
      */
     headerTag: {
       type: String,

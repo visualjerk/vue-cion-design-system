@@ -35,7 +35,7 @@ export default {
   props: {
     /**
      * The color used for the text.
-     * @options default|soft|softer|primary|inverse|success|warning|danger
+     * @values default, soft, softer, primary, inverse, success, warning, danger
      */
     color: {
       type: String,
@@ -65,7 +65,7 @@ export default {
     },
     /**
      * The size used for the text.
-     * @options small|base|large|x-large
+     * @values small, base, large, x-large
      */
     size: {
       type: String,

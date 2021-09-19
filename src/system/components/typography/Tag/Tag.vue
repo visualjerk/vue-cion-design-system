@@ -23,7 +23,7 @@ export default {
   props: {
     /**
      * The background color used for the tag.
-     * @options medium|inverse|primary|success|warning|danger
+     * @values medium, inverse, primary, success, warning, danger
      */
     color: {
       type: String,
@@ -34,7 +34,7 @@ export default {
     },
     /**
      * The size used for the text.
-     * @options base|large|small
+     * @values base, large, small
      */
     size: {
       type: String,

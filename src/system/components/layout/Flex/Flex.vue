@@ -40,7 +40,7 @@ export default {
     },
     /**
      * Direction of the flex items
-     * @options row|row-reverse|column|column-reverse
+     * @values row, row-reverse, column, column-reverse
      */
     direction: {
       type: [String, Object],

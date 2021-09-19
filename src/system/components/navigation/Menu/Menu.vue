@@ -65,7 +65,7 @@ export default {
     },
     /**
      * The default component / tag used for the link of menu items
-     * @options router-link|a
+     * @values router-link, a
      */
     linkTag: {
       type: String,

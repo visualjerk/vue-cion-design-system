@@ -29,7 +29,7 @@ export default {
     /**
      * The maximum width the container will take.
      * The widths correspond to the different media breakpoints.
-     * @options x-small|small|medium|large|x-large
+     * @values x-small, small, medium, large, x-large
      */
     width: {
       type: String,

@@ -49,7 +49,7 @@ export default {
   props: {
     /**
      * The type of this input.
-     * @options url|text|password|email|search|textarea
+     * @values url, text, password, email, search, textarea
      */
     type: {
       type: String,

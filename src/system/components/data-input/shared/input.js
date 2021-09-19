@@ -75,7 +75,7 @@ export default {
     },
     /**
      * The input's size.
-     * @options small|base|large
+     * @values small, base, large
      */
     size: {
       type: String,

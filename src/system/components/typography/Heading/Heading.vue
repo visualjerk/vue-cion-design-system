@@ -24,7 +24,7 @@ export default {
   props: {
     /**
      * The heading type used for the heading.
-     * @options h1|h2|h3|h4|h5|h6
+     * @values h1, h2, h3, h4, h5, h6
      */
     tag: {
       type: String,
@@ -35,7 +35,7 @@ export default {
     },
     /**
      * The size used for the heading.
-     * @options h1|h2|h3|h4|h5|h6
+     * @values h1, h2, h3, h4, h5, h6
      */
     size: {
       type: String,
