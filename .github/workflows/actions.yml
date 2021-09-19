@@ -32,3 +32,5 @@ jobs:
       run: yarn build:lib
     - name: Build documentation
       run: yarn build
+    - name: Build examples
+      run: cd _examples/landingpage && yarn install && yarn build
