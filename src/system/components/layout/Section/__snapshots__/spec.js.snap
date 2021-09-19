@@ -7,7 +7,7 @@ exports[`Section.vue matches snapshot 1`] = `
   <div
     class="ds-section-content"
   >
-    <ds-container />
+    <ds-container-stub />
   </div>
 </section>
 `;

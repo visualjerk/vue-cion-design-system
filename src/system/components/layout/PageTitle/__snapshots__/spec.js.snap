@@ -4,13 +4,13 @@ exports[`PageTitle.vue matches snapshot 1`] = `
 <header
   class="ds-page-title"
 >
-  <ds-container>
-    <ds-heading>
+  <ds-container-stub>
+    <ds-heading-stub>
       
       
     
-    </ds-heading>
+    </ds-heading-stub>
      
-  </ds-container>
+  </ds-container-stub>
 </header>
 `;

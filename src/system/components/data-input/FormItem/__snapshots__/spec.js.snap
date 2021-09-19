@@ -4,8 +4,8 @@ exports[`FormItem.vue matches snapshot 1`] = `
 <div
   class="ds-form-item"
 >
-  <ds-input-label />
+  <ds-input-label-stub />
     
-  <ds-input-error />
+  <ds-input-error-stub />
 </div>
 `;

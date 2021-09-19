@@ -148,7 +148,7 @@ describe('Select.vue', () => {
       })
       wrapper.vm.searchString = 'do'
       const filteredOptions = wrapper.findAll('.ds-select-option')
-      expect(filteredOptions.length).toEqual(1)
+      expect(wrapper.vm.filteredOptions).toHaveLength(1)
     })
 
     test('should work when using search input', () => {
